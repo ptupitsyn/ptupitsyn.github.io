@@ -40,7 +40,7 @@ Install-Package Apache.Ignite
 
 Import `Apache.Ignite.Core` namespace, add `Ignition.Start()` to the Main method, and our distributed application is done!
 
-```C#
+```cs
 using System;
 using Apache.Ignite.Core;
 
