@@ -30,6 +30,7 @@ Yes, Java. Ignite.NET is built on top of Ignite, which needs JRE to run. Don't w
 ## First Ignite.NET application
 Let's get to the coding. Open up Visual Studio and create a new Console Application (.NET 4+). We are going to use console a lot during our first steps to better observe how the clustering works.
 Make sure to disable "Prefer 32-bit" option in the project settings so that your app runs in x64 mode on x64 OS and works with installed JRE:
+
 ![Disable Prefer 32-bit](../images/prefer32bit.png) 
 
 Next, install the Ignite NuGet package. In the Package Manager Console: 
