@@ -4,7 +4,11 @@ title: About
 permalink: /about/
 ---
 
-Pavel Tupitsyn
+.NET developer since 2005.
+
+Have been doing all kinds of work: web and desktop, client and server, ASP.NET, Silverlight, WPF, WCF, Entity Framework, C++ interop, etc.
+
+Currently working on .NET support in [Apache Ignite](https://ignite.apache.org).   
 
 ### Contact me
 
