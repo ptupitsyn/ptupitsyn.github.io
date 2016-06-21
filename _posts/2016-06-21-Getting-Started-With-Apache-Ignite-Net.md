@@ -29,9 +29,13 @@ Yes, Java. Ignite.NET is built on top of Ignite, which needs JRE to run. Don't w
 ## First Ignite.NET application
 Let's get to the coding. Open up Visual Studio and create a new Console Application (.NET 4+). We are going to use console a lot during our first steps to better observe how the clustering works.
 
-Next, install the Ignite NuGet package. In the Package Manager Console: ```Install-Package Apache.Ignite```
+Next, install the Ignite NuGet package. In the Package Manager Console: 
 
-Import ```Apache.Ignite.Core``` namespace, add ```Ignition.Start()``` line to the Main method, and our distributed application is done!
+```
+Install-Package Apache.Ignite
+```
+
+Import ```Apache.Ignite.Core``` namespace, add ```Ignition.Start()``` to the Main method, and our distributed application is done!
 
 ```
 using System;
@@ -44,19 +48,23 @@ namespace ConsoleApplication7
         static void Main(string[] args)
         {
             Ignition.Start();
-            Console.ReadKey();  // keep the node running
+            
+            // keep the node running
+            Console.ReadKey();  
         }
     }
 }
 ```
 
 Start the program and observe the console output. In particular, we are interested in the following line:
+
 ```
 [17:35:33] Topology snapshot [ver=1, servers=1, clients=0, CPUs=8, heap=1.8GB]
 ```
 We can see that there is one server node in the cluster. 
 
 Do not close the running app and start it once again (use Ctrl-F5 in Visual Studio to run without a debugger). You should see how two applications connect to each other:
+
 ```
 [17:41:35] Topology snapshot [ver=2, servers=2, clients=0, CPUs=8, heap=3.5GB]
 ```
@@ -64,6 +72,7 @@ Do not close the running app and start it once again (use Ctrl-F5 in Visual Stud
 ![cosole output](../images/topology_snapshot.png)
 
 Close one of the nodes. In a moment, remaining node will detect that another one has disconnected, and report another toplogy change:
+
 ```
 [17:44:12] Topology snapshot [ver=3, servers=1, clients=0, CPUs=8, heap=1.8GB]
 ``` 
