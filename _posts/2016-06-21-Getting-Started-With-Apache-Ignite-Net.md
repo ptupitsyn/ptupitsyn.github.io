@@ -3,9 +3,10 @@ layout: post
 title: Getting Started with Apache Ignite.NET
 ---
 
+This post opens a blog series about [Apache Ignite.NET](https://apacheignite-net.readme.io/), distributed in-memory platform.
+
 ![ignite logo](../images/ignite_logo.png)
 
-This post opens a blog series about [Apache Ignite.NET](https://apacheignite-net.readme.io/), distributed in-memory platform.
 We are going to start from the basics, and work our way up to implement a simple fully-functional social network site in a distributed and automatically scalable fashion.
 
 ## What exactly is Apache Ignite?
@@ -28,6 +29,8 @@ Yes, Java. Ignite.NET is built on top of Ignite, which needs JRE to run. Don't w
 
 ## First Ignite.NET application
 Let's get to the coding. Open up Visual Studio and create a new Console Application (.NET 4+). We are going to use console a lot during our first steps to better observe how the clustering works.
+Make sure to disable "Prefer 32-bit" option in the project settings so that your app runs in x64 mode on x64 OS and works with installed JRE:
+![Disable Prefer 32-bit](../images/prefer32bit.png) 
 
 Next, install the Ignite NuGet package. In the Package Manager Console: 
 
@@ -35,9 +38,9 @@ Next, install the Ignite NuGet package. In the Package Manager Console:
 Install-Package Apache.Ignite
 ```
 
-Import ```Apache.Ignite.Core``` namespace, add ```Ignition.Start()``` to the Main method, and our distributed application is done!
+Import `Apache.Ignite.Core` namespace, add `Ignition.Start()` to the Main method, and our distributed application is done!
 
-```
+```C#
 using System;
 using Apache.Ignite.Core;
 
