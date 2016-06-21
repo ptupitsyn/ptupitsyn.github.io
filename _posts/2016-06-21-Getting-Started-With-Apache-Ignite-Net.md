@@ -44,17 +44,12 @@ Import `Apache.Ignite.Core` namespace, add `Ignition.Start()` to the Main method
 using System;
 using Apache.Ignite.Core;
 
-namespace ConsoleApplication7
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Ignition.Start();
-            
-            // keep the node running
-            Console.ReadKey();  
-        }
+        Ignition.Start();
+        Console.ReadKey(); // keep the node running
     }
 }
 ```
