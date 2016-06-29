@@ -43,4 +43,43 @@ else
 ![console output](../images/2016-06-28-Getting-Started-With-Apache-Ignite-Net-2-Cache/PutIfAbsent.png)
 
 ## Complex objects
-Since Ignite cache is distributed, we need a way to serialize cache data to send it over the wire to remote nodes.
+Since Ignite cache is distributed, we need a way to serialize cache data to send it over the wire to remote nodes. Simple data types (all primitive types, strings, Guids, and arrays of these) are supported by default. 
+For any other type, Ignite supports two serialization mechanisms:
+* .NET Binary Serialization: mark your class with `[Serializable]` attribute. 
+Pros: simple; no need to register the class before node start. 
+Cons: performance; SQL won't work; class modification is required.
+* Ignite Binary Serialization. Pros: compact and fast; enables SQL queries; does not require class modification. Cons: requires type registration.
+
+The following code demonstates how to work with a user-defined class and Ignite serialization:
+```cs
+static void Main()
+{
+    var cfg = new IgniteConfiguration
+    {
+        // Register custom class for Ignite serialization
+        BinaryConfiguration = new BinaryConfiguration(typeof(Person))
+    };
+    IIgnite ignite = Ignition.Start(cfg);
+
+    ICache<int, Person> cache = ignite.GetOrCreateCache<int, Person>("persons");
+    cache[1] = new Person {Name = "John Doe", Age = 27};
+
+    foreach (ICacheEntry<int, Person> cacheEntry in cache)
+        Console.WriteLine(cacheEntry);
+}
+
+class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public override string ToString()
+    {
+        return $"Person [Name={Name}, Age={Age}]";
+    }
+}
+```
+And the output is:
+```
+CacheEntry [Key=1, Value=Person [Name=John Doe, Age=27]]
+```
