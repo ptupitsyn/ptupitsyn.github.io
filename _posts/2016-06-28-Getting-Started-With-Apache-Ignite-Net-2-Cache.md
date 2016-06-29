@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Getting Started with Apache Ignite.NET Part 2: Distributed Cache
+title: Getting Started with Apache Ignite.NET Part 2&#58; Distributed Cache
 ---
 
 This part covers basic cache operations and user object serialization.
