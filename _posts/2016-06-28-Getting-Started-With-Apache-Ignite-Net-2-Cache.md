@@ -9,5 +9,38 @@ In this part we will add data to the distributed cache, perform atomic operation
 * Part 2: Distributed Cache  
 
 ## What is Ignite Cache
-You can think of Ignite cache as `Dictionary<K, V>` where entries are distributed across multiple machines. 
-In `Partitioned` cache mode, each Ignite node stores only a part of all cache entries. However, all cache entries can be accessed by any given node at any moment. 
+You can think of Ignite cache as `ConcurrentDictionary<K, V>` where entries are distributed across multiple machines, and all cache entries can be accessed by any given node at any moment.  
+* In `Partitioned` cache mode, each Ignite node stores only a part of all cache entries. Adding more nodes increases total memory for cache entries.
+* In `Replicated` cache mode, each node holds a copy of all cache entries. 
+
+All cache operations guarantee thread safety and cluster-wide atomicity.
+
+## Basic cache operations
+Ignite cache is represented by `ICache<K, V>` interface. There can be any number of caches per cluster. Caches are identified by a cluster-wide `string` name.
+Use `IIgnite.CreateCache`, `GetOrCreateCache` and `GetCache` methods to create and retrieve cache instances by name.
+
+`Put` and `Get` methods provide a basic way to write and read the data from cache:
+```cs
+IIgnite ignite = Ignition.Start();	
+ICache<int, string> cache = ignite.GetOrCreateCache<int, string>("test");
+cache.Put(1, "Hello, World!");
+Console.WriteLine(cache.Get(1));
+```
+
+## Multi-node demo
+To demonstrate cache atomicity and sharing data between nodes, let's implement a scenario where one node adds data, and another one reads it.
+To make sure that only one node writes to cache, we can use `ICache.PutIfAbsent` method which guarantees that the cache entry will be created only once.
+
+Put the following code inside the Main method and run the app twice (or more times):
+```cs
+IIgnite ignite = Ignition.Start();
+ICache<int, string> cache = ignite.GetOrCreateCache<int, string>("test");
+if (cache.PutIfAbsent(1, "Hello, World!"))
+	Console.WriteLine("Added a value to the cache!")
+else
+	Console.WriteLine(cache.Get(1));
+``` 
+![console output](../images/2016-06-28-Getting-Started-With-Apache-Ignite-Net-2-Cache/PutIfAbsent.png)
+
+## Complex objects
+Since Ignite cache is distributed, we need a way to serialize cache data to send it over the wire to remote nodes.
