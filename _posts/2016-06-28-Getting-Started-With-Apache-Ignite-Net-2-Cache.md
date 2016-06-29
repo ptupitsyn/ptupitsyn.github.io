@@ -102,6 +102,7 @@ Console.WriteLine(binPerson.GetField<string>("Name"));
 Here we retrieve a Person object in binary form, and deserialize a single Name field.
 
 Binary mode can be used:
+
 * To improve performance (when only some fields are needed)
 * When the class is not available on the node and deserialization is not possible
 * For cross-platform interoperation (put an object in Java, read in .NET)  
