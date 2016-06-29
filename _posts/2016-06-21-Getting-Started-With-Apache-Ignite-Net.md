@@ -78,4 +78,5 @@ Close one of the nodes. In a moment, remaining node will detect that another one
 
 You can start as many nodes as you want, locally or on multiple machines within the same network (don't forget about firewalls though).
 
+---
 [Next time: working with distributed cache.](https://ptupitsyn.github.io/Getting-Started-With-Apache-Ignite-Net-2-Cache/)   
