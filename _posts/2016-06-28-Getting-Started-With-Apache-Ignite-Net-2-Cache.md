@@ -10,6 +10,7 @@ This part covers basic cache operations and user object serialization.
 
 ## What is Ignite Cache
 You can think of Ignite cache as `ConcurrentDictionary<K, V>` where entries are distributed across multiple machines, and all cache entries can be accessed by any given node at any moment.  
+
 * In `Partitioned` cache mode, each Ignite node stores only a part of all cache entries. Adding more nodes increases total memory for cache entries.
 * In `Replicated` cache mode, each node holds a copy of all cache entries. 
 
@@ -20,6 +21,7 @@ Ignite cache is represented by `ICache<K, V>` interface. There can be any number
 Use `IIgnite.CreateCache`, `GetOrCreateCache` and `GetCache` methods to create and retrieve cache instances by name.
 
 `Put` and `Get` methods provide a basic way to write and read the data from cache:
+
 ```cs
 IIgnite ignite = Ignition.Start();	
 ICache<int, string> cache = ignite.GetOrCreateCache<int, string>("test");
@@ -32,6 +34,7 @@ To demonstrate cache atomicity and sharing data between nodes, let's implement a
 To make sure that only one node writes to cache, we can use `ICache.PutIfAbsent` method which guarantees that the cache entry will be created only once.
 
 Put the following code inside the Main method and run the app twice (or more times):
+
 ```cs
 IIgnite ignite = Ignition.Start();
 ICache<int, string> cache = ignite.GetOrCreateCache<int, string>("test");
@@ -45,12 +48,14 @@ else
 ## Complex objects
 Since Ignite cache is distributed, we need a way to serialize cache data to send it over the wire to remote nodes. Simple data types (all primitive types, strings, Guids, and arrays of these) are supported by default. 
 For any other type, Ignite supports two serialization mechanisms:
+
 * .NET Binary Serialization: mark your class with `[Serializable]` attribute. 
 Pros: simple; no need to register the class before node start. 
 Cons: performance; SQL won't work; class modification is required.
 * Ignite Binary Serialization. Pros: compact and fast; enables SQL queries; does not require class modification. Cons: requires type registration.
 
 The following code demonstates how to work with a user-defined class and Ignite serialization:
+
 ```cs
 static void Main()
 {
@@ -80,6 +85,7 @@ class Person
 }
 ```
 And the output is:
+
 ```
 CacheEntry [Key=1, Value=Person [Name=John Doe, Age=27]]
 ```
@@ -87,7 +93,8 @@ CacheEntry [Key=1, Value=Person [Name=John Doe, Age=27]]
 ## Binary Mode
 Another advantage of Ignite binary serialization is the ability to work with cache data in a non-deserialized mode. 
 Extend the example above with the following code:
-```
+
+```cs
 var binCache = cache.WithKeepBinary<int, IBinaryObject>();
 IBinaryObject binPerson = binCache[1];
 Console.WriteLine(binPerson.GetField<string>("Name"));
