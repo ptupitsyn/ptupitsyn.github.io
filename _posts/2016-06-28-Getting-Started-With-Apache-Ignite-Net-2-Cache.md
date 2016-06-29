@@ -3,7 +3,7 @@ layout: post
 title: Getting Started with Apache Ignite.NET Part 2: Distributed Cache
 ---
 
-In this part we will add data to the distributed cache, perform atomic operations, and retrieve data with SQL and LINQ.
+This part covers basic cache operations and user object serialization.
 
 * [Part 1: Getting Started](https://ptupitsyn.github.io/Getting-Started-With-Apache-Ignite-Net/)
 * Part 2: Distributed Cache  
@@ -83,3 +83,22 @@ And the output is:
 ```
 CacheEntry [Key=1, Value=Person [Name=John Doe, Age=27]]
 ```
+
+## Binary Mode
+Another advantage of Ignite binary serialization is the ability to work with cache data in a non-deserialized mode. 
+Extend the example above with the following code:
+```
+var binCache = cache.WithKeepBinary<int, IBinaryObject>();
+IBinaryObject binPerson = binCache[1];
+Console.WriteLine(binPerson.GetField<string>("Name"));
+```
+Here we retrieve a Person object in binary form, and deserialize a single Name field.
+
+Binary mode can be used:
+* To improve performance (when only some fields are needed)
+* When the class is not available on the node and deserialization is not possible
+* For cross-platform interoperation (put an object in Java, read in .NET)  
+
+
+---
+Next time: query cache data with SQL and LINQ.
