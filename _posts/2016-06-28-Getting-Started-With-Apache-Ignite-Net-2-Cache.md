@@ -16,7 +16,7 @@ You can think of Ignite cache as `ConcurrentDictionary<K, V>` where entries are 
 
 All cache operations guarantee thread safety and cluster-wide atomicity.
 
-## Basic cache operations
+## Basic Cache Operations
 Ignite cache is represented by `ICache<K, V>` interface. There can be any number of caches per cluster. Caches are identified by a cluster-wide `string` name.
 Use `IIgnite.CreateCache`, `GetOrCreateCache` and `GetCache` methods to create and retrieve cache instances by name.
 
@@ -29,7 +29,7 @@ cache.Put(1, "Hello, World!");
 Console.WriteLine(cache.Get(1));
 ```
 
-## Multi-node demo
+## Multi-Node Demo
 To demonstrate cache atomicity and sharing data between nodes, let's implement a scenario where one node adds data, and another one reads it.
 To make sure that only one node writes to cache, we can use `ICache.PutIfAbsent` method which guarantees that the cache entry will be created only once.
 
@@ -45,7 +45,7 @@ else
 ``` 
 ![console output](../images/2016-06-28-Getting-Started-With-Apache-Ignite-Net-2-Cache/PutIfAbsent.png)
 
-## Complex objects
+## Complex Objects
 Since Ignite cache is distributed, we need a way to serialize cache data to send it over the wire to remote nodes. Simple data types (all primitive types, strings, Guids, and arrays of these) are supported by default. 
 For any other type, Ignite supports two serialization mechanisms:
 
