@@ -103,7 +103,7 @@ ICache<int, Person> cache = ignite.GetOrCreateCache<int, Person>(
 And now we can replace the `ScanQuery` with equivalent `SqlQuery`:
 
 ```cs
-var sqlQuery = new SqlQuery(typeof(Person), "WHERE age > ?", 30);
+var sqlQuery = new SqlQuery(typeof(Person), "where age > ?", 30);
 IQueryCursor<ICacheEntry<int, Person>> queryCursor = cache.Query(sqlQuery);
 ```
 
@@ -111,9 +111,54 @@ And the output will be the same: `CacheEntry [Key=2, Value=Person [Name=Jane Moe
 
 Queries are parametrized with `?` symbol, and parameter values are provided in the same order after the query text. `SELECT` and `FROM` can be omitted since there is only one SQL-enabled type in the cache, and we don't select individual fields.
 
-Notice that we still use a single NuGet package, our program fits on screen, and we run a full-fledged SQL over our custom data. *How cool is that?*
+Notice that we still use a single NuGet package, our program fits on screen, and we run a full-fledged SQL over our custom data. How cool is that?
 
+## Fields Queries
+`SqlQuery` class only allows selecting entire `ICacheEntry`. To select individual fields or aggregates, there is `ICache.QueryFields` method which accepts `SqlFieldsQuery`:
 
+```cs
+var fieldsQuery = new SqlFieldsQuery("select name from Person where age > ?", 30);
+IQueryCursor<IList> queryCursor = cache.QueryFields(fieldsQuery);
+
+foreach (IList fieldList in queryCursor)
+    Console.WriteLine(fieldList[0]);
+```
+
+`Person` is the name of our class without namespace. Here we select individual `name` field, so the output looks like `Jane Moe`.
+
+Aggregates can be done in a similar way, the result is a single row with a single column:
+
+```cs
+var fieldsQuery = new SqlFieldsQuery("select sum(age) from Person");
+IQueryCursor<IList> queryCursor = cache.QueryFields(fieldsQuery);
+Console.WriteLine(queryCursor.GetAll()[0][0]);   // 70
+```
+
+## SQL Joins
+Let's extend our data model with one more entity:
+
+```cs
+class Person
+{
+    [QuerySqlField]
+    public string Name { get; set; }
+
+    [QuerySqlField]
+    public int Age { get; set; }
+
+    [QuerySqlField]
+    public int OrgId { get; set; }
+}
+
+class Organization
+{
+    [QuerySqlField]
+    public string Name { get; set; }
+
+    [QuerySqlField]
+    public int Id { get; set; }
+}
+```
 
 
 ---
