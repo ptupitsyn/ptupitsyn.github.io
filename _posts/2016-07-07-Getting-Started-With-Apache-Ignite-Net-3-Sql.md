@@ -19,9 +19,9 @@ However, in a distributed system this will cause all cache entries to be transmi
 
 
  More efficient approach is to filter the entries *before* sending them to the requesting node, minimizing network overhead and splitting the filtering load between the nodes. Ignite has multiple query mechanisms that achieve this:
- * `ScanQuery`
- * `SqlQuery` (and `SqlFieldsQuery`)
- * `TextQuery`  
+ * `ScanQuery`: user-defined filter predicate is sent to remote nodes, executed, and matching entries are sent back.
+ * `SqlQuery` (and `SqlFieldsQuery`): write SQL as you will do normally, and Ignite will take care of executing the query on multiple nodes and aggregating the result.
+ * `TextQuery`: [Lucene](https://lucene.apache.org/core/)-based full-text search. Similarly to SQL, you write a query in [Lucene syntax](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html), and Ignite takes care of executing it in a distributed manner.  
 
 
 ---
