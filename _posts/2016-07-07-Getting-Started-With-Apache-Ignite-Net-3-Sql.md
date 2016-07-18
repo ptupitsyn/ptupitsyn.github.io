@@ -197,8 +197,23 @@ Notice that SQL schema name is the cache name. Since we call `QueryFields` on `p
 
 ## How SQL queries work
 
-Ignite uses [H2 Database](http://www.h2database.com/html/main.html) internally. Cache data is represented as SQL tables according to configured query entities. You can examine H2 database at runtime by opening H2 Debug Console:
- 
+Ignite uses [H2 Database](http://www.h2database.com/html/main.html) internally. Cache data is represented as SQL tables according to configured query entities. 
+To open H2 debug console and examine database at runtime, set `IGNITE_H2_DEBUG_CONSOLE` environment variable to `true` before starting Ignite:
+
+```cs
+Environment.SetEnvironmentVariable("IGNITE_H2_DEBUG_CONSOLE", "true");
+```
+
+During Ignite startup, a new browser window will open and show the current state of the H2 database on the current node. You may have to wait for caches to start and refresh the browser.
+
+`SQL Joins` example from above yields the following:
+
+![H2 Debug Console](../images/2016-07-07-Getting-Started-With-Apache-Ignite-Net-3-Sql/h2-debug-console.png)
+
+Note `orgs` and `persons` SQL schemas and table names. 
+As you can see, besides configured SQL fields, there are predefined `_KEY` and `_VAL` fields which contain entire cache key and value objects.
+
+H2 console can be used to try out SQL queries at runtime. However, keep in mind that these queries are local only. In multinode scenario, with `Partitioned` cache, only part of the data will be shown.
 
 ---
 // TODO:
