@@ -253,3 +253,15 @@ var join2 = from person in persons
     select person.Value.Name;
 ```
 
+LINQ provider translates the C# expression to Ignite FieldsQuery. You can examine generated SQL and extracted parameters by casting LINQ expression to `ICacheQueryable`:
+
+```cs
+var cacheQueryable = (ICacheQueryable) join2;
+Console.WriteLine(cacheQueryable.GetFieldsQuery().Sql);
+```
+
+And the output is:
+
+```
+select _T0.Name from "persons".Person as _T0, "orgs".Organization as _T1 where ((_T0.OrgId = _T1.Id) and (_T1.Name = ?))
+```
