@@ -215,6 +215,41 @@ As you can see, besides configured SQL fields, there are predefined `_KEY` and `
 
 H2 console can be used to try out SQL queries at runtime. However, keep in mind that these queries are local only. In multinode scenario, with `Partitioned` cache, only part of the data will be shown.
 
----
-// TODO:
-How SQL queries work; H2 Debug Console
+## LINQ
+
+Ignite includes a LINQ provider for SQL queries. It supports most of the SQL features and does not require additional configuration.
+LINQ provider is in a separate assembly and NuGet package:
+
+```
+Install-Package Apache.Ignite.Linq
+```
+
+`Apache.Ignite.Linq.CacheLinqExtensions` class provides extension methods for `ICache<K, V>`.
+Let's extend upon the latest SQL Join code and rewrite all previous examples with LINQ:
+
+```cs
+IQueryable<ICacheEntry<int, Person>> persons = personCache.AsCacheQueryable();
+IQueryable<ICacheEntry<int, Organization>> orgs = orgCache.AsCacheQueryable();
+
+// Simple filtering
+IQueryable<ICacheEntry<int, Person>> qry = persons.Where(e => e.Value.Age > 30);
+
+// Fields query
+IQueryable<string> fieldsQry = persons
+    .Where(e => e.Value.Age > 30)
+    .Select(e => e.Value.Name);
+
+// Join
+IQueryable<string> join = persons
+    .Join(orgs.Where(org => org.Value.Name == "Apache"),
+        person => person.Value.OrgId,
+        org => org.Value.Id,
+        (person, org) => person.Value.Name);
+
+// Join with query syntax
+var join2 = from person in persons
+    from org in orgs
+    where person.Value.OrgId == org.Value.Id && org.Value.Name == "Apache"
+    select person.Value.Name;
+```
+
