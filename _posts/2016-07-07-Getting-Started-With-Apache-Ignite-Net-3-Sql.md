@@ -265,3 +265,8 @@ And the output is:
 ```
 select _T0.Name from "persons".Person as _T0, "orgs".Organization as _T1 where ((_T0.OrgId = _T1.Id) and (_T1.Name = ?))
 ```
+
+---
+
+We have explored enough Ignite cache features to start building some real-world application. 
+Next time we'll design a data schema for a simple social network and start implementing it.
