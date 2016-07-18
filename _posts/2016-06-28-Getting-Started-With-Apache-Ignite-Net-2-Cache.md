@@ -6,7 +6,8 @@ title: Getting Started with Apache Ignite.NET Part 2&#58; Distributed Cache
 This part covers basic cache operations and user object serialization.
 
 * [Part 1: Getting Started](https://ptupitsyn.github.io/Getting-Started-With-Apache-Ignite-Net/)
-* Part 2: Distributed Cache  
+* Part 2: Distributed Cache
+* [Part 3: Cache Queries](https://ptupitsyn.github.io/Getting-Started-With-Apache-Ignite-Net-3-Sql/)
 
 ## What is Ignite Cache
 You can think of Ignite cache as `ConcurrentDictionary<K, V>` where entries are distributed across multiple machines, and all cache entries can be accessed by any given node at any moment.  
@@ -109,4 +110,4 @@ Binary mode can be used:
 
 
 ---
-Next time: query cache data with SQL and LINQ.
+[Next time: query cache data with SQL and LINQ.](https://ptupitsyn.github.io/Getting-Started-With-Apache-Ignite-Net-3-Sql/)
