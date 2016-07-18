@@ -14,14 +14,16 @@ This part covers cache queries: Scan, SQL, LINQ, and Text.
 Cache queries provide a way to retrieve multiple cache entries based on a condition. Since `ICache<K, V>` implements `IEnumerable<ICacheEntry<K, V>>`, the simplest way to find some entries is to enumerate the cache (via `foreach` or LINQ to objects). 
 
 However, in a distributed system this will cause all cache entries to be transmitted to a local machine and filtered there:
- * Irrelevant entries get transmitted over the network
- * Only one node of the distributed system does the filtering
+
+* Irrelevant entries get transmitted over the network
+* Only one node of the distributed system does the filtering
 
 
  More efficient approach is to filter the entries *before* sending them to the requesting node, minimizing network overhead and splitting the filtering load between the nodes. Ignite has multiple query mechanisms that achieve this:
- * `ScanQuery`: user-defined filter predicate is sent to remote nodes, executed, and matching entries are sent back.
- * `SqlQuery` (and `SqlFieldsQuery`): write SQL as you will do normally, and Ignite will take care of executing the query on multiple nodes and aggregating the result.
- * `TextQuery`: [Lucene](https://lucene.apache.org/core/)-based full-text search. Similarly to SQL, you write a query in [Lucene syntax](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html), and Ignite takes care of executing it in a distributed manner.  
+
+* `ScanQuery`: user-defined filter predicate is sent to remote nodes, executed, and matching entries are sent back.
+* `SqlQuery` (and `SqlFieldsQuery`): write SQL as you will do normally, and Ignite will take care of executing the query on multiple nodes and aggregating the result.
+* `TextQuery`: [Lucene](https://lucene.apache.org/core/)-based full-text search. Similarly to SQL, you write a query in [Lucene syntax](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html), and Ignite takes care of executing it in a distributed manner.  
 
 ## Scan Queries
 
@@ -32,7 +34,8 @@ static void Main()
 {
     var cfg = new IgniteConfiguration
     {
-        BinaryConfiguration = new BinaryConfiguration(typeof(Person), typeof(PersonFilter))
+        BinaryConfiguration = new BinaryConfiguration(typeof(Person), 
+            typeof(PersonFilter))
     };
     IIgnite ignite = Ignition.Start(cfg);
     
@@ -119,7 +122,8 @@ Notice that we still use a single NuGet package, our program fits on screen, and
 `SqlQuery` class only allows selecting entire `ICacheEntry`. To select individual fields or aggregates, there is `ICache.QueryFields` method which accepts `SqlFieldsQuery`:
 
 ```cs
-var fieldsQuery = new SqlFieldsQuery("select name from Person where age > ?", 30);
+var fieldsQuery = new SqlFieldsQuery(
+    "select name from Person where age > ?", 30);
 IQueryCursor<IList> queryCursor = cache.QueryFields(fieldsQuery);
 
 foreach (IList fieldList in queryCursor)
@@ -168,7 +172,8 @@ Register new class in `BinaryConfiguration`, create new cache, add some more tes
 ```cs
 var cfg = new IgniteConfiguration
 {
-    BinaryConfiguration = new BinaryConfiguration(typeof(Person), typeof(Organization))
+    BinaryConfiguration = new BinaryConfiguration(typeof(Person), 
+        typeof(Organization))
 };
 IIgnite ignite = Ignition.Start(cfg);
 
@@ -185,9 +190,10 @@ personCache[3] = new Person {Name = "Ivan Petrov", Age = 59, OrgId = 2};
 orgCache[1] = new Organization {Id = 1, Name = "Contoso"};
 orgCache[2] = new Organization {Id = 2, Name = "Apache"};
 
-var fieldsQuery = new SqlFieldsQuery("select Person.Name from Person " +
-                                     "join \"orgs\".Organization as org on (Person.OrgId = org.Id) " +
-                                     "where org.Name = ?", "Apache");
+var fieldsQuery = new SqlFieldsQuery(
+    "select Person.Name from Person " +
+    "join \"orgs\".Organization as org on (Person.OrgId = org.Id) " +
+    "where org.Name = ?", "Apache");
 
 foreach (var fieldList in personCache.QueryFields(fieldsQuery))
     Console.WriteLine(fieldList[0]);  // Jane Moe, Ivan Petrov
@@ -263,7 +269,8 @@ Console.WriteLine(cacheQueryable.GetFieldsQuery().Sql);
 And the output is:
 
 ```
-select _T0.Name from "persons".Person as _T0, "orgs".Organization as _T1 where ((_T0.OrgId = _T1.Id) and (_T1.Name = ?))
+select _T0.Name from "persons".Person as _T0, "orgs".Organization as _T1 
+where ((_T0.OrgId = _T1.Id) and (_T1.Name = ?))
 ```
 
 ---
