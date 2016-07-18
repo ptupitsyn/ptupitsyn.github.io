@@ -24,6 +24,7 @@ However, in a distributed system this will cause all cache entries to be transmi
  * `TextQuery`: [Lucene](https://lucene.apache.org/core/)-based full-text search. Similarly to SQL, you write a query in [Lucene syntax](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html), and Ignite takes care of executing it in a distributed manner.  
 
 ## Scan Queries
+
 To demonstrate the query API, we'll use our Person class from the previous post: 
 
 ```cs
@@ -114,6 +115,7 @@ Queries are parametrized with `?` symbol, and parameter values are provided in t
 Notice that we still use a single NuGet package, our program fits on screen, and we run a full-fledged SQL over our custom data. How cool is that?
 
 ## Fields Queries
+
 `SqlQuery` class only allows selecting entire `ICacheEntry`. To select individual fields or aggregates, there is `ICache.QueryFields` method which accepts `SqlFieldsQuery`:
 
 ```cs
@@ -135,6 +137,7 @@ Console.WriteLine(queryCursor.GetAll()[0][0]);   // 70
 ```
 
 ## SQL Joins
+
 Let's extend our data model with one more entity:
 
 ```cs
@@ -190,6 +193,12 @@ foreach (var fieldList in personCache.QueryFields(fieldsQuery))
     Console.WriteLine(fieldList[0]);  // Jane Moe, Ivan Petrov
 ```
 
+Notice that SQL schema name is the cache name. Since we call `QueryFields` on `personCache`, `persons` is the default schema, and `orgs` has to be specified explicitly. 
+
+## How SQL queries work
+
+Ignite uses [H2 Database](http://www.h2database.com/html/main.html) internally. Cache data is represented as SQL tables according to configured query entities. You can examine H2 database at runtime by opening H2 Debug Console:
+ 
 
 ---
 // TODO:
