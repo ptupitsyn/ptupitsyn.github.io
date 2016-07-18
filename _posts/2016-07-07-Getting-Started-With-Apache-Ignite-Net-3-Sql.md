@@ -245,6 +245,9 @@ IQueryable<string> fieldsQry = persons
     .Where(e => e.Value.Age > 30)
     .Select(e => e.Value.Name);
 
+// Aggregate
+int sum = persons.Sum(e => e.Value.Age);
+
 // Join
 IQueryable<string> join = persons
     .Join(orgs.Where(org => org.Value.Name == "Apache"),
