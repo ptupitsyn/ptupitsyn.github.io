@@ -201,7 +201,7 @@ foreach (var fieldList in personCache.QueryFields(fieldsQuery))
 
 Notice that SQL schema name is the cache name. Since we call `QueryFields` on `personCache`, `persons` is the default schema, and `orgs` has to be specified explicitly. 
 
-## How SQL queries work
+## How SQL Queries Work
 
 Ignite uses [H2 Database](http://www.h2database.com/html/main.html) internally. Cache data is represented as SQL tables according to configured query entities. 
 To open H2 debug console and examine database at runtime, set `IGNITE_H2_DEBUG_CONSOLE` environment variable to `true` before starting Ignite:
