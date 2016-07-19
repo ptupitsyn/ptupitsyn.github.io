@@ -276,6 +276,33 @@ select _T0.Name from "persons".Person as _T0, "orgs".Organization as _T1
 where ((_T0.OrgId = _T1.Id) and (_T1.Name = ?))
 ```
 
+## Full-Text Search
+
+To enable Lucene-based full-text indexing for a field, mark it with `[QueryTextField]` attribute:
+
+```cs
+class Person
+{
+    [QueryTextField]
+    public string Name { get; set; }
+
+    ...
+}
+```
+
+Use `TextQuery` class to perform full-text search:
+
+```cs
+IQueryCursor<ICacheEntry<int, Person>> cursor =
+    personCache.Query(new TextQuery(typeof(Person), "J*n*"));
+
+foreach (var cacheEntry in cursor)
+    Console.WriteLine(cacheEntry);
+```
+
+This will match both `John Doe` and `Jane Moe`. You can learn more about Lucene syntax on their site:
+[lucene.apache.org](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html).
+
 ---
 
 We have explored enough Ignite cache features to start building some real-world application. 
