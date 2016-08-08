@@ -92,4 +92,14 @@ With the full stack trace, we can tell what is wrong: `idleConnTimeout > 0` chec
 
 ## Configuration schema NuGet package
 
+IgniteConfigurationSection.xsd file is now distributed in a dedicated NuGet package, so it is easy to include a proper version into your project.
+
+```text
+Install-Package Apache.Ignite.Schema
+```
+
+This schema file, when included in the project, enables Intellisense(TM) when editing IgniteConfigurationSection in app.config and web.config in Visual Studio:
+
+![IgniteConfigurationSection IntelliSense](../images/2016-08-08-Whats-New-In-Ignite-Net-1-7.1/xsd-autocomplete.png)
+
 ## ASP.NET Output Cache provider
