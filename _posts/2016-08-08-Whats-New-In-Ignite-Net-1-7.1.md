@@ -103,3 +103,5 @@ This schema file, when included in the project, enables Intellisense(TM) when ed
 ![IgniteConfigurationSection IntelliSense](../images/2016-08-08-Whats-New-In-Ignite-Net-1-7.1/xsd-autocomplete.png)
 
 ## ASP.NET Output Cache provider
+
+Uses Ignite distributed cache for ASP.NET output caching. More info on readme.io: [ASP.NET Output Caching](https://apacheignite-net.readme.io/docs/aspnet-output-caching).
