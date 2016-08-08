@@ -44,7 +44,7 @@ Ignite 1.7 has this fixed. All console output is now written using native .NET m
 
 Another debugging-related improvement is inclusion of underlying Java exception details in `IgniteException.InnerException` (where applicable).
 
-In 1.6, when exception occured on Java side of things, all you got in .NET was some basic exception type mapping, and the exception message text.
+In 1.6, when exception occurred on Java side of things, all you got in .NET was some basic exception type mapping, and the exception message text.
 This was often not enough to understand the problem.
 For example, if you attempt to start Ignite with invalid configuration, exception message will have some vague `Failed to start manager: GridManagerAdapter` text. All the details are buried down the stack trace:
 

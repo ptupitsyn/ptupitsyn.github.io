@@ -55,7 +55,7 @@ Pros: simple; no need to register the class before node start.
 Cons: performance; SQL won't work; class modification is required.
 * Ignite Binary Serialization. Pros: compact and fast; enables SQL queries; does not require class modification. Cons: requires type registration.
 
-The following code demonstates how to work with a user-defined class and Ignite serialization:
+The following code demonstrates how to work with a user-defined class and Ignite serialization:
 
 ```cs
 static void Main()

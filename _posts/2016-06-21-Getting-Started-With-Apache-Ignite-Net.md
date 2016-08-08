@@ -23,7 +23,7 @@ Our first step is to start a cluster locally and see how Ignite nodes connect to
 
 ## Terminology
 * Ignite Node: An instance produced by one of the ```Ignition.Start*``` methods. There can be multiple nodes per machine or even per process. 
-* Cluster, Topology: A set of interconnected nodes. There can be multiple separate clusters on the same machine, or even in the same procesee.
+* Cluster, Topology: A set of interconnected nodes. There can be multiple separate clusters on the same machine, or even in the same process.
 * Server: Ignite Node running in server mode (default mode)
 * Client: Ignite Node running in client mode (```IgniteConfiguration.ClientMode = true```)
 
