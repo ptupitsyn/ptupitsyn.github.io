@@ -29,8 +29,16 @@ In addition to predefined `FairAffinityFunction` and `RendezvousAffinityFunction
 ## .NET configuration in Apache.Ignite.exe
 
 Apache.Ignite.exe standalone node runner got two new command-line arguments: `ConfigFileName` and `ConfigSectionName`. These can be used to load `IgniteConfigurationSection` either from Apache.Ignite.exe.config, or from any other config file.
+See [Getting Started](https://apacheignite-net.readme.io/docs/getting-started-2#section-using-app-config).
 
 ## Forward Java output to the .NET console
+
+Ignite writes useful information to console: topology snapshots, metrics, errors and warnings, etc. This information is also written to the log, but console may be more handy during development.
+
+Most of this information is written from underlying Java code. This is fine when you run a console application. However, this does not work with tools that intercept .NET console: unit test runners (Visual Studio and ReSharper), LINQPad, etc.
+
+Ignite 1.7 has this fixed. All console output is now written using native .NET mechanism, and you can expect any tooling to work properly. Below is a screenshot of Ignite running in LINQPad.
+![Ignite in LINQPad](../images/2016-08-08-Whats-New-In-Ignite-Net-1-7.1/linqpad-output.png)
 
 ## Add Java stack trace on .NET side in IgniteException.InnerException
 
