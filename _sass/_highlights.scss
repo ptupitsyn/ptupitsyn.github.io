@@ -1,10 +1,10 @@
 .highlighter-rouge {
 	margin:2em 0;
-	padding-bottom:1px;
 	background-color:$reserve-bg-color;
 	font-family:$code-font-family;
 	font-size: 85%;
-	border-radius: 3px; // don't add padding, gives scrollbars
+	border-radius: 3px;
+	overflow: scroll;
 
 	pre {
 		margin:0;
