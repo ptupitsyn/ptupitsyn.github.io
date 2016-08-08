@@ -42,7 +42,7 @@ Ignite 1.7 has this fixed. All console output is now written using native .NET m
 
 ## Java exception information in InnerException
 
-Another debugging-related improvement is inclusion of underlying Java exception details in IgniteException.InnerException (where applicable).
+Another debugging-related improvement is inclusion of underlying Java exception details in `gniteException.InnerException` (where applicable).
 
 In 1.6, when exception occured on Java side of things, all you got in .NET was some basic exception type mapping, and the exception message text.
 This was often not enough to understand the problem.
@@ -60,7 +60,10 @@ Ignition.Start(new IgniteConfiguration
 ```
 
 ```text
-Apache.Ignite.Core.Common.IgniteException: Failed to start manager: GridManagerAdapter [enabled=true, name=org.apache.ignite.internal.managers.communication.GridIoManager] ---> Apache.Ignite.Core.Common.JavaException: class org.apache.ignite.IgniteException: Failed to start manager: GridManagerAdapter [enabled=true, name=org.apache.ignite.internal.managers.communication.GridIoManager]
+Apache.Ignite.Core.Common.IgniteException: Failed to start manager: GridManagerAdapter
+   [enabled=true, name=org.apache.ignite.internal.managers.communication.GridIoManager]
+---> Apache.Ignite.Core.Common.JavaException: class org.apache.ignite.IgniteException: 
+Failed to start manager: GridManagerAdapter [enabled=true, name=org.apache.ignite.internal.managers.communication.GridIoManager]
   at org.apache.ignite.internal.util.IgniteUtils.convertException(IgniteUtils.java:908)
   at org.apache.ignite.internal.processors.platform.PlatformAbstractBootstrap.start(PlatformAbstractBootstrap.java:48)
   at org.apache.ignite.internal.processors.platform.PlatformIgnition.start(PlatformIgnition.java:76)
