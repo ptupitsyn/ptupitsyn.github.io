@@ -42,7 +42,7 @@ Ignite 1.7 has this fixed. All console output is now written using native .NET m
 
 ## Java exception information in InnerException
 
-Another debugging-related improvement is inclusion of underlying Java exception details in `gniteException.InnerException` (where applicable).
+Another debugging-related improvement is inclusion of underlying Java exception details in `IgniteException.InnerException` (where applicable).
 
 In 1.6, when exception occured on Java side of things, all you got in .NET was some basic exception type mapping, and the exception message text.
 This was often not enough to understand the problem.
