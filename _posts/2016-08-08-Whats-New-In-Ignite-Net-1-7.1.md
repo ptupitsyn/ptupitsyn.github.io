@@ -24,12 +24,16 @@ Where `QueryOptions` class has `EnableDistributedJoins` property.
 
 ## User-defined AffinityFunction
 
-## ASP.NET Output Cache provider
+In addition to predefined `FairAffinityFunction` and `RendezvousAffinityFunction`, it is now possible to create a custom one by implementing `IAffinityFunction` interface or inheriting one of the predefined classes.
 
 ## .NET configuration in Apache.Ignite.exe
+
+Apache.Ignite.exe standalone node runner got two new command-line arguments: `ConfigFileName` and `ConfigSectionName`. These can be used to load `IgniteConfigurationSection` either from Apache.Ignite.exe.config, or from any other config file.
 
 ## Forward Java output to the .NET console
 
 ## Add Java stack trace on .NET side in IgniteException.InnerException
 
 ## Configuration schema NuGet package
+
+## ASP.NET Output Cache provider
