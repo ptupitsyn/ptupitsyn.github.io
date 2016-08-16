@@ -65,4 +65,28 @@ cache[Guid.NewGuid()] = DateTime.Now;
 cache.Dump();
 ```
 
-In contrary to several seconds for a fresh node start, this code runs in a couple of milliseconds. 
+In contrary to several seconds for a fresh node start, this code runs in a couple of milliseconds.
+
+
+## Usage Tips and Tricks
+
+Besides exploring the Ignite API in general, I've come up with the following Ignite+LINQPad use cases:
+
+### Examine Cache in a Running Cluster
+
+[Visor command line](https://apacheignite.readme.io/docs/command-line-interface) can show the cache contents,
+but doing this in LINQPad is much more flexible and user friendly. Since we don't have any actual classes in the LINQPad script,
+we have to use cache in binary mode in order to be able to read the contents.
+
+The following code shows a list of all caches along with top 5 cache entries from each of them:
+
+```cs
+var ignite = Ignition.TryGetIgnite() ?? Ignition.Start();
+
+foreach (var cacheName in ignite.GetCacheNames())
+    ignite.GetCache<object, object>(cacheName)
+        .WithKeepBinary<object, object>()
+        .Select(x => x.ToString())
+        .Take(5)
+        .Dump(cacheName);
+```
