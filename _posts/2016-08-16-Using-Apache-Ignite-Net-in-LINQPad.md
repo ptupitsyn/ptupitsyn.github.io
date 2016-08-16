@@ -45,3 +45,7 @@ This script can be run multiple times with no issues, since every time we start 
 
 
 ## Reusing Started Node
+
+Ignite node takes some time to start (8 seconds on my machine) due to JVM startup and network discovery process.
+To quickly iterate on our code in LINQPad, we can reuse started node between runs. For example, the following code reuses started Ignite
+instance and reuses existing cache, adding one item per run and showing existing items:
