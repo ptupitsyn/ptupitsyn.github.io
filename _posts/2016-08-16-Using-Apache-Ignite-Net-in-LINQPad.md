@@ -21,5 +21,16 @@ title: Using Apache Ignite.NET in LINQPad
 
 Ignite node starts and you can see the usual console output in the output pane, as well as the resulting Ignite object dump.
 
+Check out the bundled examples on "Samples" tab to the left.
 
-## 
+
+## Recycling the worker process
+
+LINQPad runs user code in a separate process. By default, this process is reused between runs (for performance reasons). 
+
+This has two consequences:
+
+1. Ignite.NET starts an in-process JVM. This JVM is reused when the process is reused, so you can't change the JVM options.
+2. `Ignition` class keeps all started nodes in a static map. These nodes will keep running when the process is reused, which may cause `Default Ignite instance has already been started.` exception if you run `Ignition.Start()` code twice.
+
+This behavior may be useful in some scenarios and unwanted in other, but the best thing is that we can control it via built-in `Util.NewProcess` propery.   
