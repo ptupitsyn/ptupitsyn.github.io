@@ -100,3 +100,69 @@ Ignite.NET 1.5, where Spring XML was the only configuration mechanism.
 
 You can simply start a node with said Spring XML file and call `GetConfiguration()` to see how it looks in .NET:
 
+```cs
+Ignition.Start(@"spring-config.xml").GetConfiguration()
+```
+
+### Convert IgniteConfiguration to app.config XML
+
+Ignite.NET supports [app.config & web.config configuration](https://apacheignite-net.readme.io/docs/configuration#appconfig--webconfig).
+However, writing XML is no fun. Using `IgniteConfiguration` in C# is easier, IDE helps a lot, and invalid code just won't compile.
+
+To help us with XML, there is a hidden way to convert `IgniteConfiguration` instance to the XML representation.
+The following snippet shows how to use it via Reflection (make sure to set Language dropdown to C# Program):
+
+```cs
+void Main()
+{
+    new IgniteConfiguration
+    {
+        CacheConfiguration = new[]
+        {
+            new CacheConfiguration
+            {
+                Name = "myCache",
+                CacheMode = CacheMode.Replicated
+            }
+        }
+    }.ToXml().Dump();
+}
+
+public static class IgniteConfigurationExtensions
+{
+    public static string ToXml(this IgniteConfiguration cfg)
+    {
+        var sb = new StringBuilder();
+
+        var settings = new XmlWriterSettings
+        {
+            Indent = true
+        };
+
+        using (var xmlWriter = XmlWriter.Create(sb, settings))
+        {
+            typeof(Ignition).Assembly
+                .GetType("Apache.Ignite.Core.Impl.Common.IgniteConfigurationXmlSerializer")
+                .GetMethod("Serialize")
+                .Invoke(null, new object[] {cfg, xmlWriter, "igniteConfiguration"});
+        }
+
+        return sb.ToString();
+    }
+}
+```
+
+And the result is:
+
+```xml
+<?xml version="1.0" encoding="utf-16"?>
+<igniteConfiguration xmlns="http://ignite.apache.org/schema/dotnet/IgniteConfigurationSection">
+  <cacheConfiguration>
+    <cacheConfiguration name="myCache" cacheMode="Replicated" />
+  </cacheConfiguration>
+</igniteConfiguration>
+```
+
+Combined with the previous Spring XML use case, you can also convert Spring XML to app.config XML!
+
+Next Ignite.NET versions will include this `ToXml` method as part of the public API, but for 1.6 and 1.7 Reflection is the way to go. 
