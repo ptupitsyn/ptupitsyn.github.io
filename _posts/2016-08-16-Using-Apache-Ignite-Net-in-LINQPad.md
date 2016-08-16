@@ -64,3 +64,5 @@ cache[Guid.NewGuid()] = DateTime.Now;
 // Show all entries
 cache.Dump();
 ```
+
+In contrary to several seconds for a fresh node start, this code runs in a couple of milliseconds. 
