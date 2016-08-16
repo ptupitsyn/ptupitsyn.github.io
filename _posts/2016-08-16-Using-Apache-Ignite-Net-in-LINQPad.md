@@ -23,6 +23,7 @@ Ignite node starts and you can see the usual console output in the output pane, 
 
 Check out the bundled examples on "Samples" tab to the left.
 
+![Ignite in LINQPad](../images/2016-08-08-Whats-New-In-Ignite-Net-1-7.1/linqpad-output.png)
 
 ## Recycling the Worker Process
 
@@ -49,3 +50,17 @@ This script can be run multiple times with no issues, since every time we start 
 Ignite node takes some time to start (8 seconds on my machine) due to JVM startup and network discovery process.
 To quickly iterate on our code in LINQPad, we can reuse started node between runs. For example, the following code reuses started Ignite
 instance and reuses existing cache, adding one item per run and showing existing items:
+
+```cs
+// Get existing instance or start a new one
+var ignite = Ignition.TryGetIgnite() ?? Ignition.Start();
+
+// Get existing cache or create a new one
+var cache = ignite.GetOrCreateCache<Guid, DateTime>("cache");
+
+// Add a new entry
+cache[Guid.NewGuid()] = DateTime.Now;
+
+// Show all entries
+cache.Dump();
+```
