@@ -67,6 +67,8 @@ cache.Dump();
 
 In contrary to several seconds for a fresh node start, this code runs in a couple of milliseconds.
 
+When needed, use `Shift+Control+F5` to unload the AppDomain and start from scratch.
+
 
 ## Usage Tips and Tricks
 
@@ -90,3 +92,11 @@ foreach (var cacheName in ignite.GetCacheNames())
         .Take(5)
         .Dump(cacheName);
 ```
+
+### Convert Spring XML Configuration to C# IgniteConfiguration
+
+Let's say you have some Ignite Sring XML configuration file and need the same configuration for Ignite.NET; or you are migrating from
+Ignite.NET 1.5, where Spring XML was the only configuration mechanism.
+
+You can simply start a node with said Spring XML file and call `GetConfiguration()` to see how it looks in .NET:
+
