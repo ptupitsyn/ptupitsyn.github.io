@@ -16,6 +16,8 @@ We are going to use the following software:
 * Visual Studio 2015 (includes NuGet; free Community edition)
 * IntelliJ IDEA (includes Maven; free Community edition)
 
+Complete source code for this post is available on GitHub: TODO
+
 # Goals
 
 * Connect Java and .NET node
@@ -120,5 +122,21 @@ IgniteSpiException: Local node's binary configuration is not equal to remote nod
 ```
 
 The problem here is that .NET nodes only support `BinaryBasicIdMapper` and `BinaryBasicNameMapper` in `BinaryConfiguration`, and we should set them explicitly in Java.
-Replace `Ignition.start();` line with the following:
+Replace `Ignition.start();` line with the following code:
 
+```java
+BinaryConfiguration binCfg = new BinaryConfiguration();
+
+binCfg.setIdMapper(new BinaryBasicIdMapper());
+binCfg.setNameMapper(new BinaryBasicNameMapper());
+
+IgniteConfiguration cfg = new IgniteConfiguration().setBinaryConfiguration(binCfg);
+
+Ignition.start(cfg);
+```
+
+Run both .NET and Java nodes and verify that they join each other:
+
+```text
+[15:04:17] Topology snapshot [ver=2, servers=2, clients=0, CPUs=8, heap=7.1GB]
+```
