@@ -16,14 +16,13 @@ We are going to use the following software:
 * Visual Studio 2015 (includes NuGet; free Community edition)
 * IntelliJ IDEA (includes Maven; free Community edition)
 
-Complete source code for this post is available on GitHub: TODO
+Complete source code for this post is available on GitHub: [github.com/ptupitsyn/ignite-multi-platform-demo](https://github.com/ptupitsyn/ignite-multi-platform-demo)
 
 # Goals
 
 * Connect Java and .NET node
 * Share data through Ignite cache using Java and .NET classes with the same name and fields
 * Run continuous query to see real-time updates from another platform
-* Call Java service from .NET
 
 # Setting Up Java Project
 
@@ -140,3 +139,8 @@ Run both .NET and Java nodes and verify that they join each other:
 ```text
 [15:04:17] Topology snapshot [ver=2, servers=2, clients=0, CPUs=8, heap=7.1GB]
 ```
+
+# Exchange Data Through Ignite cache
+
+TODO: Chat application with similar code in both platforms
+* use Message class with Author and Text fields
