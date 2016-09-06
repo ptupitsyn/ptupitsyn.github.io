@@ -13,8 +13,8 @@ This post is both for .NET developers who may be new to Java and vice versa, so 
 
 We are going to use the following software:
 
-* Visual Studio 2015 (includes NuGet; free Community edition)
-* IntelliJ IDEA (includes Maven; free Community edition)
+* [Visual Studio 2015](https://www.visualstudio.com/downloads/) (includes NuGet; free Community edition)
+* [IntelliJ IDEA](https://www.jetbrains.com/idea/#chooseYourEdition) (includes Maven; free Community edition)
 
 Complete source code for this post is available on GitHub: [github.com/ptupitsyn/ignite-multi-platform-demo](https://github.com/ptupitsyn/ignite-multi-platform-demo)
 
