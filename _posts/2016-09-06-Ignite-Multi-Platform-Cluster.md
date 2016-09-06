@@ -298,3 +298,5 @@ As an excercise, you can make this even better:
 * Set `ContinuousQuery.InitialQuery` property (see [Inital Query](https://apacheignite.readme.io/docs/continuous-queries#section-initial-query)), so that each new node displays previous messages immediately
 
 This way as long as at least one node is alive, entire chat history will be preserved, and new nodes will display it on join.
+
+Complete chat demo source code: [github.com/ptupitsyn/ignite-multi-platform-demo](https://github.com/ptupitsyn/ignite-multi-platform-demo)
