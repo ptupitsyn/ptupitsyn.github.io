@@ -147,7 +147,7 @@ The code will be very similar, since API is the same, and language syntax is clo
 
 First, let's define classes with identical names and members.
 
-**Java Message Class**
+## Java Message Class
 
 Right-click on src\main\java project folder and select New -> Java Class, enter `Message` name. Replace the code with this:
 
@@ -163,7 +163,7 @@ public class Message {
 }
 ```
 
-**C# Message Class**
+## .NET Message Class
 
 Right-click project node in Solution Explorer and select Add -> Class..., enter `Message` name. Replace the code with this:
 
@@ -187,11 +187,105 @@ therefore these two classes will map to each other: we can put Message instance 
 Now let's write the chat itself. The logic is simple: user enters a chat message, we put it into the cache.
 [Continuous Query](http://apacheignite.gridgain.org/docs/continuous-queries) receives all cache update notifications and displays them.
 
+## Java Chat
 
+Update our `main` method with the following:
 
+```java
+// Retrieve user name
+System.out.print("Hi, enter your name: ");
+Scanner consoleScanner = new Scanner(System.in);
+String name = consoleScanner.nextLine();
 
+// Get or create cache
+IgniteCache<Long, Message> cache = ignite.getOrCreateCache("chat");
 
+// Initialize unique ID sequence
+IgniteAtomicSequence messageId = ignite.atomicSequence("chatId", 0, true);
 
+// Set up continuous query
+ContinuousQuery<Long, Message> qry = new ContinuousQuery<>();
+
+qry.setLocalListener(iterable -> {
+    // This will be invoked immediately on each cache update
+    for (CacheEntryEvent<? extends Long, ? extends Message> evt : iterable)
+        System.out.println(evt.getValue().author + ": " + evt.getValue().text);
+});
+
+cache.query(qry);
+
+// Run the chat loop
+while (true) {
+    System.out.print("> ");
+
+    String msgText = consoleScanner.nextLine();
+    Long msgId = messageId.incrementAndGet();
+
+    cache.put(msgId, new Message(name, msgText));
+}
+```
+
+## .NET Chat
+
+There are two differences in Ignite.NET (these features are expected in the next release):
+
+* We have to register a type in BinaryConfiguration to use it in cache (Java does this automatically)
+* Lambda expressions are not supported in the API and we have to implement `ICacheEntryEventListener<K, V>` interface separately
+
+Therefore, create a new class with the following code:
+
+```cs
+using System;
+using System.Collections.Generic;
+using Apache.Ignite.Core.Cache.Event;
+
+class CacheListener : ICacheEntryEventListener<long, Message>
+{
+    public void OnEvent(IEnumerable<ICacheEntryEvent<long, Message>> evts)
+    {
+        foreach (var evt in evts)
+            Console.WriteLine($"{evt.Value.Author}: {evt.Value.Text}");
+    }
+}```
+
+Then update the `Main` metod:
+
+```cs
+// Retrieve user name
+Console.Write("Hi, enter your name: ");
+var name = Console.ReadLine();
+
+// Register Message type
+var cfg = new IgniteConfiguration
+{
+    BinaryConfiguration = new BinaryConfiguration(typeof(Message))
+};
+
+// Start Ignite and retrieve cache
+var ignite = Ignition.Start(cfg);
+var cache = ignite.GetOrCreateCache<long, Message>("chat");
+
+// Initialize unique ID sequence
+var messageId = ignite.GetAtomicSequence("chatId", 0, true);
+
+// Set up continuous query
+cache.QueryContinuous(new ContinuousQuery<long, Message>(new CacheListener()));
+
+// Run the chat loop
+while (true)
+{
+    Console.Write("> ");
+
+    var msgText = Console.ReadLine();
+    var msgId = messageId.Increment();
+
+    cache[msgId] = new Message(name, msgText);
+}
+```
+
+# Conclusion
+
+Run both nodes and type some messages:
 
 
 
