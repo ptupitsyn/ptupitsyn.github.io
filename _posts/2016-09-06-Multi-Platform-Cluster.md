@@ -9,8 +9,7 @@ Ignite cluster can consist of nodes on any supported platform: Java, .NET and C+
 
 # Prerequisites
 
-This post is both for Java developers who need to run Ignite.NET and .NET developers who need to run Ignite on Java,
-so I'll try to provide detailed steps on both sides.
+This post is both for .NET developers who may be new to Java and vice versa, so I'll provide very detailed steps.
 
 We are going to use the following software:
 
@@ -74,3 +73,5 @@ public class Demo {
 Run it with `Shift+F10` and verify that node starts in IDEA console:
 
 ![IDEA Test Program](../images/Multi-Platform-Cluster/idea6.png)
+
+# Setting Up .NET Project
