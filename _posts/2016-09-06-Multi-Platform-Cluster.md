@@ -246,7 +246,8 @@ class CacheListener : ICacheEntryEventListener<long, Message>
         foreach (var evt in evts)
             Console.WriteLine($"{evt.Value.Author}: {evt.Value.Text}");
     }
-}```
+}
+```
 
 Then update the `Main` metod:
 
