@@ -140,7 +140,59 @@ Run both .NET and Java nodes and verify that they join each other:
 [15:04:17] Topology snapshot [ver=2, servers=2, clients=0, CPUs=8, heap=7.1GB]
 ```
 
-# Exchange Data Through Ignite cache
+# Exchange Data Through Ignite Cache
 
-TODO: Chat application with similar code in both platforms
-* use Message class with Author and Text fields
+Now that we have our nodes connected, let's write a simple chat on both platforms to demonstrate data exchange.
+The code will be very similar, since API is the same, and language syntax is close.
+
+First, let's define classes with identical names and members.
+
+**Java Message Class**
+
+Right-click on src\main\java project folder and select New -> Java Class, enter `Message` name. Replace the code with this:
+
+```java
+public class Message {
+    public Message(String author, String text) {
+        this.author = author;
+        this.text = text;
+    }
+
+    final String author;
+    final String text;
+}
+```
+
+**C# Message Class**
+
+Right-click project node in Solution Explorer and select Add -> Class..., enter `Message` name. Replace the code with this:
+
+```cs
+class Message
+{
+    public Message(string author, string text)
+    {
+        Author = author;
+        Text = text;
+    }
+
+    public string Author { get; }
+    public string Text { get; }
+}
+```
+
+`Basic` mappers are case-insensitive and ignore namespaces (packages),
+therefore these two classes will map to each other: we can put Message instance to cache on one platform and get on another.
+
+Now let's write the chat itself. The logic is simple: user enters a chat message, we put it into the cache.
+[Continuous Query](http://apacheignite.gridgain.org/docs/continuous-queries) receives all cache update notifications and displays them.
+
+
+
+
+
+
+
+
+
+cross-platform peer-to-peer
