@@ -285,8 +285,15 @@ while (true)
 
 # Conclusion
 
-Run both nodes and type some messages:
+Run both nodes, place windows side by side, type some messages and watch them appear instantly in the other window:
 
+![Chat Demo](../images/Multi-Platform-Cluster/chat.png)
 
+That's it! We have created a cross-platform peer-to-peer chat! There is no centralized server, any number of clients can join and leave at any moment.
 
-cross-platform peer-to-peer
+As an excercise, you can make this even better:
+
+* Change cache mode to `Replicated` (see [Cache Modes](https://apacheignite.readme.io/docs/cache-modes)), so that each chat node holds entire chat history
+* Set `ContinuousQuery.InitialQuery` property (see [Inital Query](https://apacheignite.readme.io/docs/continuous-queries#section-initial-query)), so that each new node displays previous messages immediately
+
+This way as long as at least one node is alive, entire chat history will be preserved, and new nodes will display it on join.
