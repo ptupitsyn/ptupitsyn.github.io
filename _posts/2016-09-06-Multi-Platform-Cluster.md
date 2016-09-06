@@ -43,6 +43,8 @@ As a result, you should see the `pom.xml` file of the new project open:
 
 ![IDEA Main Screen](../images/Multi-Platform-Cluster/idea5.png)
 
+Add Ignite dependency to the `<project>` section:
+
 ```xml
 <dependencies>
     <dependency>
@@ -52,3 +54,23 @@ As a result, you should see the `pom.xml` file of the new project open:
     </dependency>
 </dependencies>
 ```
+
+IDEA may ask you to import project changes, click any of the links:
+
+![IDEA Import Changes](../images/Multi-Platform-Cluster/maven-auto-import.png)
+
+Add `Demo` class to src\main\java with the following code: 
+
+```java
+import org.apache.ignite.Ignition;
+
+public class Demo {
+    public static void main(String[] args) {
+        Ignition.start();
+    }
+}
+```
+
+Run it with `Shift+F10` and verify that node starts in IDEA console:
+
+![IDEA Test Program](../images/Multi-Platform-Cluster/idea6.png)
