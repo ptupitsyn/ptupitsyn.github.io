@@ -18,6 +18,8 @@ We are going to use the following software:
 
 Complete source code for this post is available on GitHub: [github.com/ptupitsyn/ignite-multi-platform-demo](https://github.com/ptupitsyn/ignite-multi-platform-demo)
 
+The code is not perfect for the sake of brevity (public fields, no namespaces, etc).
+
 # Goals
 
 * Connect Java and .NET node
