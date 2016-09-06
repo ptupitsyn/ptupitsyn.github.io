@@ -249,7 +249,7 @@ class CacheListener : ICacheEntryEventListener<long, Message>
 }
 ```
 
-Then update the `Main` metod:
+Then update the `Main` method:
 
 ```cs
 // Retrieve user name
