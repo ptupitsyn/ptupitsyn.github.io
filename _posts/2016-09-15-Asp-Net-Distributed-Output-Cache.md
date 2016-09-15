@@ -42,12 +42,15 @@ Enabling output caching is as simple as marking your controller action with the 
 * Enable caching with five second expiration for the home page:
 
 ```cs
-[OutputCache(Duration = 5)]
+[OutputCache(Duration = 5, Location = OutputCacheLocation.Server)]
 public ActionResult Index()
 {
     return View();
 }
 ```
+
+Default cache location includes both Client and Server, so we won't be able to test our solution locally:
+server will return `304 Not Modified` without the content, and our server-side cache won't be hit. That's why `OutputCacheLocation.Server` is used.
 
 To verify that caching does work, add `DateTime` output to the home page title:
 
@@ -87,3 +90,6 @@ displayed time will never be the same, since each server maintains a separate ca
     </outputCache>
 </caching>
 ```
+
+That's it! No code changes are required, we have replaced regular in-process output cache with a distributed cache.
+Run this on two or more servers in the same LAN and verify that all of them return the same cached data with identical time stamp.
