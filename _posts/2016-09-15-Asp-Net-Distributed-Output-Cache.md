@@ -93,3 +93,17 @@ displayed time will never be the same, since each server maintains a separate ca
 
 That's it! No code changes are required, we have replaced regular in-process output cache with a distributed cache.
 Run this on two or more servers in the same LAN and verify that all of them return the same cached data with identical time stamp.
+
+Here we have configured Ignite to run and keep data in the same process where ASP.NET runs.
+In production, you may want to run standalone Ignite nodes in server mode, and switch ASP.NET cache providers to client mode.
+See [Clients and Servers](https://apacheignite-net.readme.io/docs/clients-and-servers).
+
+# Performance
+
+Quick test with [Fiddler](http://www.telerik.com/fiddler) on my machine shows that cached main page loads in 1 ms, while non-cached load takes 4 ms.
+4 times improvement for essentially an empty page is not bad. This is going to be a lot more for the real-world pages that do something.
+
+By default, Ignite caches use `CacheMode.Partitioned`. This mode splits the data between servers, effectively combining their RAM to store more data.
+However, this mode causes network trips when cached data is on another server.
+
+Use `CacheMode.Replicated` to have copies of all cache entries on each node. This uses more memory, but provides better read performance.
