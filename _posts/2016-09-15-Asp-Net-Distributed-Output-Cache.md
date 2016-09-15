@@ -63,13 +63,26 @@ displayed time will never be the same, since each server maintains a separate ca
 # Configuring Apache Ignite.NET Output Cache Provider
 
 * Install Ignite ASP.NET provider via NuGet: `Install-Package Apache.Ignite.AspNet`
-* Add the following to the `system.web` section of the `web.config`:
+* Import Ignite configuration section by adding the following to `<configSections>` in the `web.config`:
+
+```xml
+<section name="igniteConfiguration" type="Apache.Ignite.Core.IgniteConfigurationSection, Apache.Ignite.Core" />
+```
+
+* Configure default Ignite instance:
+
+```xml
+<igniteConfiguration />
+```
+
+* Configure default caching provider by adding the following to the `system.web`:
 
 ```xml
 <caching>
     <outputCache defaultProvider="apacheIgnite">
         <providers>
-            <add name="apacheIgnite" type="Apache.Ignite.AspNet.IgniteOutputCacheProvider, Apache.Ignite.AspNet" />
+            <add name="apacheIgnite" type="Apache.Ignite.AspNet.IgniteOutputCacheProvider, Apache.Ignite.AspNet"
+                 igniteConfigurationSectionName="igniteConfiguration" />
         </providers>
     </outputCache>
 </caching>
