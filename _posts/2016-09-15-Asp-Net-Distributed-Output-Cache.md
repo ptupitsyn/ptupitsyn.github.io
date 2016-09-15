@@ -25,3 +25,32 @@ Distributed cache solves this issue and provides other benefits:
 * RAM from all servers is combined to allow more data to be cached.
 
 Let's see how to set up ASP.NET Output Caching with Apache Ignite.
+
+# Test Project
+
+We are going to use [Contoso University](https://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
+sample project from Microsoft which is an ASP.NET MVC 5 application with multiple pages.
+
+* Download the project: [https://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8](https://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8).
+* Unpack, open in Visual Studio, build and run. Verify that the app works as expected.
+
+# Setting Up Output Caching
+
+Enabling output caching is as simple as marking your controller action with the `[OutputCache]` attribute:
+
+* Navigate to `HomeController` class.
+* Enable caching with five second expiration for the home page:
+
+```cs
+[OutputCache(Duration = 5)]
+public ActionResult Index()
+{
+    return View();
+}
+```
+
+To verify that caching does work, add `DateTime` output to the home page title:
+
+```html
+<h1>Contoso University @DateTime.Now.TimeOfDay</h1>
+```
