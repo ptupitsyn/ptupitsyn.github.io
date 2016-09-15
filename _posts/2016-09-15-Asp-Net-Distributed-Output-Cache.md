@@ -54,3 +54,23 @@ To verify that caching does work, add `DateTime` output to the home page title:
 ```html
 <h1>Contoso University @DateTime.Now.TimeOfDay</h1>
 ```
+
+Now if you reload the page repeatedly, the time will only change once in 5 seconds.
+
+We have configured default output caching mechanism. If you deploy our web application to two servers and view the home page from both of them side by side,
+displayed time will never be the same, since each server maintains a separate cache.
+
+# Configuring Apache Ignite.NET Output Cache Provider
+
+* Install Ignite ASP.NET provider via NuGet: `Install-Package Apache.Ignite.AspNet`
+* Add the following to the `system.web` section of the `web.config`:
+
+```xml
+<caching>
+    <outputCache defaultProvider="apacheIgnite">
+        <providers>
+            <add name="apacheIgnite" type="Apache.Ignite.AspNet.IgniteOutputCacheProvider, Apache.Ignite.AspNet" />
+        </providers>
+    </outputCache>
+</caching>
+```
