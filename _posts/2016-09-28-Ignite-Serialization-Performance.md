@@ -107,9 +107,12 @@ Results:
       Reflective Raw |  7.8528 us | 0.1163 us |
      Binarizable Raw |  7.4358 us | 0.1583 us |
 
-Conclusions:
+Summary:
 
-* Ignite is on par with Protobuf on this particular data set. This can vary quite a bit depending on field types and values.
-* Ignite raw mode is ~7% faster than non-raw mode. Raw mode will typically have more advantage with more fields.
-* Reflective serialization is ~5% slower than manual Binarizable implementation. Ignite compiles a list of write & read method calls, so there is some overhead due to list iteration and delegate invocation.
+* Ignite is on par with Protobuf on this particular data set (keep in mind that this can vary quite a bit depending on field types and values).
+* Ignite raw mode is ~7% faster than non-raw mode. The gap will be wider when there are more fields.
+* Reflective serialization is ~5% slower than manual Binarizable implementation (Ignite compiles a list of write & read method calls, so there is some overhead due to list iteration and delegate invocation).
 * Serializable is a lot slower. The only advantage here is that we don't need to register the type in BinaryConfiguration.
+
+As a conclusion, we can say that non-raw reflective Ignite serialization is perfectly fine for most use cases.
+It enables all Ignite features (SQL, binary mode, etc), does not require user code modification, is fast and compact.
