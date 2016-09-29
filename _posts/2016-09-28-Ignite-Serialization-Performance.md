@@ -31,8 +31,43 @@ This post does not aim to provide very fair and comprehensive performance compar
 Ignite serializer is not a general purpose serializer (you can't even use it directly, as we'll see below), it is tailored specifically for distributed environment.
 Our goal is to have a general idea of performance characteristics of various serialization modes.
 
-# Benchmarking
-
 # Size Comparison
+
+The following data object is used for all comparisons, initialized by CreateInstance method:
+
+```cs
+public class Person
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Data { get; set; }
+    public Guid Guid { get; set; }
+
+    public static T CreateInstance<T>() where T : Person, new()
+    {
+        return new T
+        {
+            Id = int.MinValue,
+            Name = "John Johnson",
+            Data = new string('g', 1000),
+            Guid = Guid.NewGuid()
+        };
+    }
+}
+```
+
+Full source code is available on [GitHub](https://github.com/ptupitsyn/IgniteNetBenchmarks).
+
+Resulting size in serialized form:
+
+              Method | Size (bytes) |
+-------------------- |--------------|
+        Serializable |  1426        |
+          Reflective |  1076        |
+         Binarizable |  1076        |
+      Reflective Raw |  1067        |
+     Binarizable Raw |  1067        |
+            Protobuf |  1048        |
+
 
 # Speed Comparison
