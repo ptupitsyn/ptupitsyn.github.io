@@ -60,15 +60,15 @@ Full source code is available on [GitHub](https://github.com/ptupitsyn/IgniteNet
 
 Resulting size in serialized form:
 
-              Method | Size (bytes) |
--------------------- |--------------|
-        Serializable |  1426        |
-          Reflective |  1076        |
-         Binarizable |  1076        |
-      Reflective Raw |  1067        |
-     Binarizable Raw |  1067        |
-            Protobuf |  1048        |
-            Payload  |  1032        |
+|              Method | Size (bytes) |
+|---------------------|--------------|
+|        Serializable |  1426        |
+|          Reflective |  1076        |
+|         Binarizable |  1076        |
+|      Reflective Raw |  1067        |
+|     Binarizable Raw |  1067        |
+|            Protobuf |  1048        |
+|            Payload  |  1032        |
 
 Last row (Payload) is the raw data size (without string lengths even).
 
