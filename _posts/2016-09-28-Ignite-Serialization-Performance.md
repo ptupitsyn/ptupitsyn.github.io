@@ -87,3 +87,22 @@ Protobuf is simply a set of fieldKey+value pairs (see [docs](https://developers.
 Protobuf format is quite similar to Ignite non-raw format, and, as we can see, the size is quite close (Ignite non-raw without header is 1052 bytes).
 
 # Speed Comparison
+
+[BenchmarkDotNet](https://github.com/PerfDotNet/BenchmarkDotNet) from Andrey Akinshin is used to measure performance.
+
+Test methods serialize the data object to a byte array, deserialize it back, and verify equality. Default benchmark settings are used.
+
+Ignite serializer can not be called directly, so we have to use Reflection to access the [Marshaller class](https://github.com/apache/ignite/blob/master/modules/platforms/dotnet/Apache.Ignite.Core/Impl/Binary/Marshaller.cs).
+
+There are multiple classes that derive from `Person` class in order to configure different modes in Ignite.
+
+Results:
+
+              Method |     Median |    StdDev |
+-------------------- |----------- |---------- |
+        Serializable | 54.7112 us | 3.2140 us |
+            Protobuf |  8.6584 us | 0.1308 us |
+          Reflective |  8.4182 us | 0.1102 us |
+         Binarizable |  7.9148 us | 0.1148 us |
+      Reflective Raw |  7.8528 us | 0.1163 us |
+     Binarizable Raw |  7.4358 us | 0.1583 us |
