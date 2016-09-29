@@ -61,7 +61,7 @@ Full source code is available on [GitHub](https://github.com/ptupitsyn/IgniteNet
 Resulting size in serialized form:
 
               Method | Size (bytes) |
--------------------- | ------------ |
+|---------|
         Serializable |  1426        |
           Reflective |  1076        |
          Binarizable |  1076        |
@@ -71,13 +71,6 @@ Resulting size in serialized form:
             Payload  |  1032        |
 
 Last row (Payload) is the raw data size (without string lengths even).
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
 
 * As expected, Reflective and Binarizable produce exactly the same result (reflective does the same thing as we do in IBinarizable implementation).
 * Raw mode is 9 bytes shorter
