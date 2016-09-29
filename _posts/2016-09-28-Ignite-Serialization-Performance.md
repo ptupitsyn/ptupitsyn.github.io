@@ -47,10 +47,10 @@ public class Person
     {
         return new T
         {
-            Id = int.MinValue,
-            Name = "John Johnson",
-            Data = new string('g', 1000),
-            Guid = Guid.NewGuid()
+            Id = int.MinValue,              // 4 bytes
+            Name = "John Johnson",          // 12 bytes
+            Data = new string('g', 1000),   // 1000 bytes
+            Guid = Guid.NewGuid()           // 16 bytes
         };
     }
 }
@@ -68,6 +68,22 @@ Resulting size in serialized form:
       Reflective Raw |  1067        |
      Binarizable Raw |  1067        |
             Protobuf |  1048        |
+            Payload  |  1032        |
 
+Last row (Payload) is the raw data size (without string lengths even).
+
+* As expected, Reflective and Binarizable produce exactly the same result (reflective does the same thing as we do in IBinarizable implementation).
+* Raw mode is 9 bytes shorter
+* Protobuf is 19 bytes shorter than Ignite raw
+* Serializable takes quite a lot more space
+
+To understand the differences, let's see how `int` field is written:
+
+* Ignite non-raw: 1 byte type code, 4 bytes value
+* Ignite raw: 4 bytes value
+* Protobuf: 1 byte field key (wire type + field number), 1-5 bytes value
+
+Protobuf is simply a set of fieldKey+value pairs (see [docs](https://developers.google.com/protocol-buffers/docs/encoding)), while Ignite serialized object always has a header of 24 bytes (which contains, among other things, protocol version and type information).
+Protobuf format is quite similar to Ignite non-raw format, and, as we can see, the size is quite close (Ignite non-raw without header is 1052 bytes).
 
 # Speed Comparison
