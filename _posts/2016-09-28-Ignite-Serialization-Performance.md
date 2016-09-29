@@ -60,15 +60,17 @@ Full source code is available on [GitHub](https://github.com/ptupitsyn/IgniteNet
 
 Resulting size in serialized form:
 
-Method | Size (bytes) |
-|---------|
-Serializable |  1426        |
-Reflective |  1076        |
-Binarizable |  1076        |
-Reflective Raw |  1067        |
-Binarizable Raw |  1067        |
-Protobuf |  1048        |
-Payload  |  1032        |
+```text
+          Method | Size (bytes) |
+-----------------|--------------|
+    Serializable |  1426        |
+      Reflective |  1076        |
+     Binarizable |  1076        |
+  Reflective Raw |  1067        |
+ Binarizable Raw |  1067        |
+        Protobuf |  1048        |
+        Payload  |  1032        |
+```
 
 Last row (Payload) is the raw data size (without string lengths even).
 
@@ -98,14 +100,16 @@ There are multiple classes that derive from `Person` class in order to configure
 
 Results:
 
-Method |     Median |    StdDev |
+```text
+              Method |     Median |    StdDev |
 -------------------- |----------- |---------- |
-Serializable | 54.7112 us | 3.2140 us |
-Protobuf |  8.6584 us | 0.1308 us |
-Reflective |  8.4182 us | 0.1102 us |
-Binarizable |  7.9148 us | 0.1148 us |
-Reflective Raw |  7.8528 us | 0.1163 us |
-Binarizable Raw |  7.4358 us | 0.1583 us |
+        Serializable | 54.7112 us | 3.2140 us |
+            Protobuf |  8.6584 us | 0.1308 us |
+          Reflective |  8.4182 us | 0.1102 us |
+         Binarizable |  7.9148 us | 0.1148 us |
+      Reflective Raw |  7.8528 us | 0.1163 us |
+     Binarizable Raw |  7.4358 us | 0.1583 us |
+```
 
 Summary:
 
