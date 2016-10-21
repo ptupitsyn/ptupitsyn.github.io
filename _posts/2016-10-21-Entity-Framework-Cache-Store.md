@@ -95,3 +95,5 @@ Here we ask Entity Framework context for the Blog with the key `1` and return it
 Ignite then stores the value in cache and returns it to the caller.
 Subsequent requests to the key `1` will be served from Ignite cache directly, without cache store invocation.
 
+Since we reuse the same model class, we can return it directly from EF to Ignite.
+Navigation properties (`Blog.Posts` and `Post.Blog`) are not populated (`null`) when `ProxyCreationEnabled` is set to `false`, so Ignite won't cache irrelevant data.
