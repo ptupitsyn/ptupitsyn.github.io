@@ -187,3 +187,8 @@ Lastly, we remove the newly created Post, which also deletes it from SQL databas
 Removing post with id 1...
 PostCacheStore.Delete(1) called.
 ```
+
+
+# Generic EF Cache Store
+
+TODO
