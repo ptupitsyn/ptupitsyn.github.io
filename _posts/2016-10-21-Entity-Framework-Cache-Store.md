@@ -97,3 +97,38 @@ Subsequent requests to the key `1` will be served from Ignite cache directly, wi
 
 Since we reuse the same model class, we can return it directly from EF to Ignite.
 Navigation properties (`Blog.Posts` and `Post.Blog`) are not populated (`null`) when `ProxyCreationEnabled` is set to `false`, so Ignite won't cache irrelevant data.
+
+
+# Setting Up Cache Store
+
+Persistent store can be enabled for each Ignite cache separately via `CacheConfiguration.CacheStoreFactory` property.
+CacheStoreFactory requires `IFactory<ICacheStore>` instance, which is implemented like this:
+
+```cs
+[Serializable]
+public class BlogCacheStoreFactory : IFactory<ICacheStore>
+{
+    public ICacheStore CreateInstance()
+    {
+        return new BlogCacheStore();
+    }
+}
+```
+
+ICacheStore implementation is not serialized by Ignite, so there are no requirements for BinaryConfiguration or `[Serializable]`.
+Instead, CacheStoreFactory is serialized when cache is deployed to remote nodes, and it should be `[Serializable]` (no option for Ignite serialization here).
+
+Other `CacheConfiguration` properties to be enabled for cache store to work are 
+`ReadThrough`, `WriteThrough` and `WriteBehind` (see [(docs)](https://apacheignite-net.readme.io/docs/persistent-store) for more details).
+
+So the resulting configuration for our case look like this:
+
+```cs
+new CacheConfiguration
+{
+    CacheStoreFactory = new BlogCacheStoreFactory(),
+    ReadThrough = true,
+    WriteThrough = true,
+    KeepBinaryInStore = false
+}
+```
