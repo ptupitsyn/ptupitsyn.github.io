@@ -73,7 +73,8 @@ public class Post
 
 The "meat" of the `ICacheStore` interface are `Load`, `Write` and `Delete` methods, which are called when related operations are invoked on `ICache`.
 
-For example, when `ICache.Get(1)` is called, Ignite calls `ICacheStore.Load` method, which can be implemented like this:
+For example, when `ICache.Get(1)` is called, and there is no cache entry with specified key in Ignite cache,
+Ignite calls `ICacheStore.Load` method, which can be implemented like this:
 
 ```cs
 public object Load(object key)
@@ -90,4 +91,7 @@ public object Load(object key)
 }
 ```
 
+Here we ask Entity Framework context for the Blog with the key `1` and return it back to Ignite.
+Ignite then stores the value in cache and returns it to the caller.
+Subsequent requests to the key `1` will be served from Ignite cache directly, without cache store invocation.
 
