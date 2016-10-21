@@ -41,4 +41,5 @@ There are a couple of gotchas with using EF model classes in Ignite cache withou
 
 * By default, EF returns from `IDbSet` proxy objects of anonymous generated classes, which can not be serialized by Ignite. To disable this, set `DbContext.Configuration.ProxyCreationEnabled` to `false`.
 * By default, `CacheConfiguration.KeepBinaryInStore` is true in Ignite, which means that ICacheStore methods receive IBinaryObject instances instead of actual objects. We want to use model classes directly, so this has to be disabled as well.
+* Model classes have to be registered in BinaryConfiguration to enable Ignite serialization for them.
 
