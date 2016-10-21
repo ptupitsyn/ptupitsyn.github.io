@@ -132,3 +132,58 @@ new CacheConfiguration
     KeepBinaryInStore = false
 }
 ```
+
+
+# Running The Example
+
+I've added a bunch of `WriteLine` calls to better understand what happens when we work with Ignite cache with cache store enabled.
+
+First, we initialize the SQL database with one Blog and one Post
+
+```text
+Database created at C:\W\ignite-net-examples\EFCacheStore\IgniteEFCacheStore\bin\Debug\blogs.db with 2 entities.
+```
+
+Then, we call `LoadCache` on `posts` cache, but not on `blogs` cache.
+This call delegates to `ICacheStore.LoadCache()` which loads all Posts from SQL db into Ignite cache.
+
+```text
+Calling ICache.LoadCache...
+PostCacheStore.LoadCache() called.
+```
+
+After that we iterate over Post entities in Ignite cache and retrieve related Blog entities.
+Since Blogs were not preloaded, each `ICache.Get` delegates to `ICacheStore.Load()` method:
+
+```text
+>>> List of all posts:
+Retrieving blog with id 0...
+BlogCacheStore.Load(0) called.
+>>> Post 'Getting Started With Ignite.NET' in blog 'Ignite Blog'
+>>> End list.
+```
+
+Then we add a new Post entity to Ignite cache, which propagates to `ICacheStore.Write` to persist the new entity in SQL db:
+
+```text
+Adding new post to existing blog..
+PostCacheStore.Write(1, IgniteEFCacheStore.Post) called.
+```
+
+When iterating over Posts again, Ignite no longer delegates `blogs.Get` calls to cache store, since Blog entity is already in Ignite memory:
+
+```text
+>>> List of all posts:
+Retrieving blog with id 0...
+>>> Post 'Getting Started With Ignite.NET' in blog 'Ignite Blog'
+Retrieving blog with id 0...
+>>> Post 'New Post From Ignite' in blog 'Ignite Blog'
+>>> End list.
+```
+
+Lastly, we remove the newly created Post, which also deletes it from SQL database:
+
+```text
+Removing post with id 1...
+PostCacheStore.Delete(1) called.
+```
