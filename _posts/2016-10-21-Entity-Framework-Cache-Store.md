@@ -42,8 +42,31 @@ There are a couple of gotchas with using EF model classes in Ignite cache withou
 * By default, EF returns from `IDbSet` proxy objects of anonymous generated classes, which can not be serialized by Ignite. To disable this, set `DbContext.Configuration.ProxyCreationEnabled` to `false`.
 * By default, `CacheConfiguration.KeepBinaryInStore` is true in Ignite, which means that ICacheStore methods receive IBinaryObject instances instead of actual objects. We want to use model classes directly, so this has to be disabled as well.
 * Model classes have to be registered in BinaryConfiguration to enable Ignite serialization for them.
+* Database-generated ids have to be disabled, because we need to know the id value before inserting it into ignite cache.
 
-The data model itself is a simple one-to-many relationship of Blogs and Posts.
+The data model itself is a simple one-to-many relationship of Blogs and Posts:
+
+```cs
+public class Blog
+{
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+    public int BlogId { get; set; }
+    public string Name { get; set; }
+    public virtual List<Post> Posts { get; set; }
+}
+
+public class Post
+{
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+    public int PostId { get; set; }
+    public string Title { get; set; }
+    public string Content { get; set; }
+    public int BlogId { get; set; }
+    public virtual Blog Blog { get; set; }
+}
+```
 
 
 # Implementing Cache Store
@@ -60,7 +83,9 @@ public object Load(object key)
         Configuration = { ProxyCreationEnabled = false }
     })
     {
-        return ctx.Blogs.Find(key);
+        Blog blog = ctx.Blogs.Find(key);
+
+        return blog;
     }
 }
 ```
