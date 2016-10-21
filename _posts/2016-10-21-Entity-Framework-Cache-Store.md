@@ -43,3 +43,26 @@ There are a couple of gotchas with using EF model classes in Ignite cache withou
 * By default, `CacheConfiguration.KeepBinaryInStore` is true in Ignite, which means that ICacheStore methods receive IBinaryObject instances instead of actual objects. We want to use model classes directly, so this has to be disabled as well.
 * Model classes have to be registered in BinaryConfiguration to enable Ignite serialization for them.
 
+The data model itself is a simple one-to-many relationship of Blogs and Posts.
+
+
+# Implementing Cache Store
+
+The "meat" of the `ICacheStore` interface are `Load`, `Write` and `Delete` methods, which are called when related operations are invoked on `ICache`.
+
+For example, when `ICache.Get(1)` is called, Ignite calls `ICacheStore.Load` method, which can be implemented like this:
+
+```cs
+public object Load(object key)
+{
+    using (var ctx = new BloggingContext
+    {
+        Configuration = { ProxyCreationEnabled = false }
+    })
+    {
+        return ctx.Blogs.Find(key);
+    }
+}
+```
+
+
