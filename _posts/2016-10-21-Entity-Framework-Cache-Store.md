@@ -191,4 +191,6 @@ PostCacheStore.Delete(1) called.
 
 # Generic EF Cache Store
 
-TODO
+Looking at `BlogCacheStore` and `PostCacheStore` classes, one can notice that they are very similar.
+My attempt at generifying the implementation can be found in [`EntityFrameworkCacheStore<TEntity, TContext>`](https://github.com/ptupitsyn/ignite-net-examples/blob/master/EFCacheStore/IgniteEFCacheStore/EntityFrameworkCacheStore.cs) class.
+It is far from perfect (for example, LoadAll is inefficient), but you get the idea.
