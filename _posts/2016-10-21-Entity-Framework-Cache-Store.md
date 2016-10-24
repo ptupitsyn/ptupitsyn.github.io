@@ -201,8 +201,6 @@ It is far from perfect (for example, LoadAll is inefficient), but you get the id
 As [mirhagk noted on Reddit](https://www.reddit.com/r/programming/comments/593ep1/entity_framework_as_ignitenet_cache_store/d95mnt6/),
 Entity Framework incurs quite an overhead. This post is just an example of Ignite cache store; EF is used because it is well-known and easy.
 
-```text
-I would thoroughly recommend you do not use entity framework in instances where performance is critical.
+*I would thoroughly recommend you do not use entity framework in instances where performance is critical.
 Let me be clear, EF is fantastic at doing what it's meant to do, but most people will never use all the features it has and it's quite heavy because of those features.
-Something like PetaPoco is orders of magnitude faster though, not just because of tiny amount of overhead but because it forces you to think through what you are doing. I'm not just talking about joins (which aren't nearly as expensive as people make them out to be, as long as you use a real database), but the lazy loading features of EF makes it very easy to write code that hits the databases hundreds of times in a web request, and no matter how much EF might optimize the latency to the database is going to dominate all other performance concerns.
-```
+Something like PetaPoco is orders of magnitude faster though, not just because of tiny amount of overhead but because it forces you to think through what you are doing. I'm not just talking about joins (which aren't nearly as expensive as people make them out to be, as long as you use a real database), but the lazy loading features of EF makes it very easy to write code that hits the databases hundreds of times in a web request, and no matter how much EF might optimize the latency to the database is going to dominate all other performance concerns.*
