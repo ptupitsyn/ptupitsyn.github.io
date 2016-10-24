@@ -3,7 +3,7 @@ layout: post
 title: Entity Framework As Ignite.NET Cache Store
 ---
 
-Implement persistent store with Entity Framework and SQL Server.
+Implement Ignite.NET persistent store with Entity Framework and SQL Server.
 
 
 # What Is Persistent Store
@@ -37,10 +37,10 @@ It uses SQL Server Compact (via NuGet) and creates a database in the bin folder 
 
 Other approaches are possible. Ignite cache store can work in binary mode and use raw SQL to store and retrieve data from an RDBMS, for example.
 
-There are a couple of gotchas with using EF model classes in Ignite cache without modification:
+There are a couple of gotchas with using EF model classes in Ignite cache:
 
-* By default, EF returns from `IDbSet` proxy objects of anonymous generated classes, which can not be serialized by Ignite. To disable this, set `DbContext.Configuration.ProxyCreationEnabled` to `false`.
-* By default, `CacheConfiguration.KeepBinaryInStore` is true in Ignite, which means that ICacheStore methods receive IBinaryObject instances instead of actual objects. We want to use model classes directly, so this has to be disabled as well.
+* By default, EF queries return proxy objects of runtime-generated classes, which can not be serialized by Ignite. To disable this, set `DbContext.Configuration.ProxyCreationEnabled` to `false`.
+* By default, `CacheConfiguration.KeepBinaryInStore` is true in Ignite, which means that `ICacheStore` methods receive `IBinaryObject` instances instead of actual objects. We want to use model classes directly, so this has to be disabled as well.
 * Model classes have to be registered in BinaryConfiguration to enable Ignite serialization for them.
 * Database-generated ids may have to be disabled when you reuse id values as Ignite cache keys.
 
@@ -115,8 +115,8 @@ public class BlogCacheStoreFactory : IFactory<ICacheStore>
 }
 ```
 
-ICacheStore implementation is not serialized by Ignite, so there are no requirements for BinaryConfiguration or `[Serializable]`.
-Instead, CacheStoreFactory is serialized when cache is deployed to remote nodes, and it should be `[Serializable]` (no option for Ignite serialization here).
+`ICacheStore` implementation is not serialized by Ignite, so there are no requirements for `BinaryConfiguration` or `[Serializable]`.
+Instead, `CacheStoreFactory` is serialized when cache is deployed to remote nodes, and it should be `[Serializable]` (no option for Ignite serialization here).
 
 Other `CacheConfiguration` properties to be enabled for cache store to work are 
 `ReadThrough`, `WriteThrough` and `WriteBehind` (see [(docs)](https://apacheignite-net.readme.io/docs/persistent-store) for more details).
