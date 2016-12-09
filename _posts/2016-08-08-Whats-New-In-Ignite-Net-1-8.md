@@ -11,7 +11,11 @@ Three big new features are Entity Framework 2nd level cache, ASP.NET session sta
 
 # Entity Framework Second Level Cache
 
-Apache Ignite is often used as a middleware
+Apache Ignite is often used as a middle layer between disk-based RDBMS and the application logic to increase performance.
+Common approach is to implement a write-through & read-through [cache store](https://ptupitsyn.github.io/Entity-Framework-Cache-Store/).
+However, this approach requires changing existing data layer completely and switching to Ignite APIs.
+
+Now there is a new way to boost database performance in Entity Framework 6.x applications which requires only minimal configuration changes.
 
 https://apacheignite-net.readme.io/docs/entity-framework-second-level-cache
 
