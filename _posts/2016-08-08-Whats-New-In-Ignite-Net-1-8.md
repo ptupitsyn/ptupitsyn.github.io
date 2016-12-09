@@ -91,6 +91,19 @@ which compiles an existing query to a delegate `CompiledQueryFunc<T>(params obje
 This method provides a lot of flexibility, because you can build LINQ expression dynamically, and it can have any number of arguments:
 
 ```cs
+  var nameFilter = "";
+  decimal? maxPrice = 20;
+  
+  var cache = ignite.GetCache<int, Product>("products");		
+  var qry = cache.AsCacheQueryable();
+  
+  if (nameFilter != null)
+    qry = qry.Where(x => x.Value.Name.Contains(nameFilter));
+    
+  if (maxPrice != null)
+    qry = qry.Where(x => x.Value.Price <= maxPrice);
+    
+  var compiledQry = CompiledQuery2
 ```
 
 The downside here is that arguments should be provided carefully to the compiled delegate in correct order.
