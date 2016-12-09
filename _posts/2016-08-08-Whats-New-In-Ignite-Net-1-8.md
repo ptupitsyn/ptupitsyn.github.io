@@ -75,3 +75,14 @@ I like these three in particular:
 * `TransactionDeadlockDetectionExample` shows how transaction deadlock can be caused, detected, and handled.
 * `BinaryModeExample` demonstrates cache and SQL usage without classes, with dynamically generated entities
 * `MultiTieredCacheExample` shows how cache entries are stored in heap, on-heap, and swap memory.
+
+# LINQ Improvements
+
+`CompiledQuery` class is deprecated in favor of `CompiledQuery2`, which removes a lot of limitations:
+
+* Skip & Take are supported
+* Embedded arguments are allowed (`.Where(x => x.Key > 5)`)
+* Argument reuse is allowed (`.Where(x=>x.Key > foo && x.Value.Id > foo)`)
+
+`CompiledQuery2` has a similar API, but it takes `Expression<Func<T1, IQueryable<T>>>` instead of `Func<T1, IQueryable<T>>`, which allows better query inspection.
+
