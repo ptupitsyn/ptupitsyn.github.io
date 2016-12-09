@@ -45,7 +45,7 @@ Here is an example of colorized console output using `IgniteNLogLogger`:
 var logCfg = new LoggingConfiguration();
 var target = new ColoredConsoleTarget();
 logCfg.AddTarget("con", target);
-logCfg.LoggingRules.Add(new LoggingRule("*", LogLevel.Info, target));
+logCfg.LoggingRules.Add(new LoggingRule("*", NLog.LogLevel.Info, target));
 
 LogManager.Configuration = logCfg;
 
