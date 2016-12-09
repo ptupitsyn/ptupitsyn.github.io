@@ -7,8 +7,6 @@ Apache Ignite 1.8 [has been released](https://ignite.apache.org/news.html#releas
 
 ![ignite logo](../images/ignite_logo.png)
 
-Three big new features are Entity Framework 2nd level cache, ASP.NET session state cache, and custom logging.
-
 # Entity Framework Second Level Cache
 
 Apache Ignite is often used as a middle layer between disk-based RDBMS and the application logic to increase performance.
