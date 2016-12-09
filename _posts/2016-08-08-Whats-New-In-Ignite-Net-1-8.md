@@ -59,3 +59,18 @@ var ignite = Ignition.Start(cfg);
 
 ignite.Logger.Info("Hello World!");
 ```
+
+# Transaction Deadlock Detection
+
+TODO
+
+# New Examples
+
+Binary and source distributions (available on [ignite.apache.org](https://ignite.apache.org/download.cgi#binaries))
+now include a lot more examples in `platforms\dotnet\examples`.
+
+I like these three in particular:
+
+* `TransactionDeadlockDetectionExample` shows how transaction deadlock can be caused, detected, and handled.
+* `BinaryModeExample` demonstrates cache and SQL usage without classes, with dynamically generated entities
+* `MultiTieredCacheExample` shows how cache entries are stored in heap, on-heap, and swap memory.
