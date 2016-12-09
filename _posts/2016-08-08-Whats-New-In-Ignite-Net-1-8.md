@@ -86,3 +86,11 @@ I like these three in particular:
 
 `CompiledQuery2` has a similar API, but it takes `Expression<Func<T1, IQueryable<T>>>` instead of `Func<T1, IQueryable<T>>`, which allows better query inspection.
 
+There is also a new method, `CompiledQueryFunc<T> Compile<T>(IQueryable<T> query)`,
+which compiles an existing query to a delegate `CompiledQueryFunc<T>(params object[] args)`.
+This method provides a lot of flexibility, because you can build LINQ expression dynamically, and it can have any number of arguments:
+
+```cs
+```
+
+The downside here is that arguments should be provided carefully to the compiled delegate in correct order.
