@@ -27,4 +27,11 @@ which also shares data between servers, but is faster and more fault tolerant th
 
 # Custom Logging
 
-https://apacheignite-net.readme.io/docs/logging
+In previous Ignite.NET versions all logging happened in Java, there was no possibility to configure logging or write to the log on .NET side.
+
+New version [provides](https://apacheignite-net.readme.io/docs/logging) `ILogger` interface and `IgniteConfiguration.Logger` property to define a custom logger,
+and there are `ILogger` implementations for NLog and log4net.
+When `IgniteConfiguration.Logger` is not specified (default), old behavior with Java logging is in effect.
+When the property is set, all logs from Java and .NET are redirected to the specified implementation.
+
+Here is an example of colorized console output using `IgniteNLogLogger`:
