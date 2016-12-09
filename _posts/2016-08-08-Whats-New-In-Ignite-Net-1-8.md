@@ -62,7 +62,8 @@ ignite.Logger.Info("Hello World!");
 
 # Transaction Deadlock Detection
 
-TODO
+Ignite now detects deadlocks in pessimistic transactions automatically when transaction timeout is specified, and throws `TransactionDeadlockException`.
+See [documentation](https://apacheignite-net.readme.io/docs/transactions#deadlock-detection-in-pessimistic-transactions) for more details.
 
 # New Examples
 
