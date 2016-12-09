@@ -37,6 +37,25 @@ When the property is set, all logs from Java and .NET are redirected to the spec
 You can also write to the log (no matter if custom logger is configured) via `IIgnite.Logger`.
 `ILogger` interface has only one logging method with all the details.
 Helper extension methods with simpler signatures are in `Apache.Ignite.Core.Log.LoggerExtensions` class.
-This design means that `ILogger` implementors have only two methods to write and don't have to inherit anything. 
+This design means that `ILogger` implementors have only two methods to write and don't have to inherit anything.
 
 Here is an example of colorized console output using `IgniteNLogLogger`:
+
+```cs
+var logCfg = new LoggingConfiguration();
+var target = new ColoredConsoleTarget();
+logCfg.AddTarget("con", target);
+logCfg.LoggingRules.Add(new LoggingRule("*", LogLevel.Info, target));
+
+LogManager.Configuration = logCfg;
+
+var cfg = new IgniteConfiguration
+{
+    Logger = new IgniteNLogLogger(),
+    JvmOptions = new [] {"-DIGNITE_QUIET=false"}
+};
+
+var ignite = Ignition.Start(cfg);
+
+ignite.Logger.Info("Hello World!");
+```
