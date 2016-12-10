@@ -72,7 +72,7 @@ I like these three in particular:
 
 * `TransactionDeadlockDetectionExample` shows how transaction deadlock can be caused, detected, and handled.
 * `BinaryModeExample` demonstrates cache and SQL usage without classes, with dynamically generated entities.
-* `MultiTieredCacheExample` shows how cache entries are stored in heap, on-heap, and swap memory.
+* `MultiTieredCacheExample` shows how cache entries are stored in heap, off-heap, and swap memory.
 
 # LINQ Improvements
 
