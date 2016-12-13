@@ -120,3 +120,4 @@ has been improved in certain areas. Have a look at the following sections:
 * [Java Type Mapping and DateTime](https://apacheignite-net.readme.io/docs/sql-queries#section-java-type-name-mapping) - hot topic, everyone needs `DateTime` and you have to be aware of SQL-related specifics.
 * [Off-Heap Memory](https://apacheignite-net.readme.io/docs/off-heap-memory)
 * [Near Caches](https://apacheignite-net.readme.io/docs/near-caches)
+* [Binary Mode](https://apacheignite-net.readme.io/docs/binary-mode)
