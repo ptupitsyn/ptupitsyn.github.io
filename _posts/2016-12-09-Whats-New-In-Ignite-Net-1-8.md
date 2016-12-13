@@ -101,4 +101,22 @@ if (maxPrice != null)
 var compiledQry = CompiledQuery2.Compile(qry);
 ```
 
-The downside here is that arguments should be provided carefully to the compiled delegate in correct order.
+The difference from other overloads here is that compiled delegate takes `params object[]` instead of specific argument types,
+so you have to carefully provide arguments in correct order.
+
+# Misc
+
+There are a number of bugfixes and other improvements:
+
+* Query configuration supports nullable types
+* NuGet upgrade procedure fixed (should no longer require manual bin folder cleanup)
+* `IgniteConfiguration.WorkDirectory` no longer ignored in some cases
+
+Documentation on [apacheignite-net.readme.io](https://apacheignite-net.readme.io/)
+has been improved in certain areas. Have a look at the following sections:
+
+* [Calling Java Services](https://apacheignite-net.readme.io/docs/calling-java-services) - awesome feature which is supported since 1.7.
+* [Standalone Nodes](https://apacheignite-net.readme.io/docs/standalone-nodes) - details on `Apache.Ignite.exe`.
+* [Java Type Mapping and DateTime](https://apacheignite-net.readme.io/docs/sql-queries#section-java-type-name-mapping) - hot topic, everyone needs `DateTime` and you have to be aware of SQL-related specifics.
+* [Off-Heap Memory](https://apacheignite-net.readme.io/docs/off-heap-memory)
+* [Near Caches](https://apacheignite-net.readme.io/docs/near-caches)
