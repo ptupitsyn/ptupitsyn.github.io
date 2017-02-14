@@ -9,6 +9,8 @@ LINQ has many benefits over SQL, but at what cost?
 
 Let's get straight to the results!
 
+// TODO: Add string array conversion to demostrate compiled advantage
+
 ```
             Method |      Median |     StdDev |
 ------------------ |------------ |----------- |
