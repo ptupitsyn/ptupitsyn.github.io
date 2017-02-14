@@ -29,4 +29,25 @@ Anyway, how can we explain these results? Why compiled LINQ is faster than raw S
 
 # How Ignite LINQ Works
 
+```cs
+ICache<int, SqlPerson> cache = ignite.GetCache<int, SqlPerson>("persons");
+
+IQueryable<ICacheEntry<int, SqlPerson>> qry = cache.AsCacheQueryable().Where(x => x.Key > 5);
+
+ICacheEntry<int, SqlPerson>[] res = qry.ToArray();
+```
+
+If we run the above code in Visual Studio debugger and look at `qry` variable, we'll see something like this:
+
+![ICacheQueryable Debug View](../images/Linq-vs-Sql/ICacheQueryable-debug.png)
+
+Compiler has translated `.Where(x => x.Key > 5)` to an Expression Tree and passed it to `CacheFieldsQueryProvider`,
+which, as we can see, turns into a regular Ignite.NET `SqlFieldsQuery`. This process is not free, that's where the overhead comes from.
+
+We can get that `SqlFieldsQuery` and run it manually:
+
+```cs
 TODO
+```
+
+TODO: However, LINQ results in [generic result], and `QuerySqlFields` gives us `IQueryCursor<IList>` TODO
