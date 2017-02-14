@@ -5,7 +5,18 @@ title: LINQ vs SQL in Ignite.NET
 
 LINQ has many benefits over SQL, but at what cost?
 
-# Query Performance Costs
+# How Ignite LINQ Works
 
-TODO: What makes up query execution?
-(parsing, execution, deserialization)
+Let's say we have the following equivalent queries:
+
+```cs
+var orgs = ignite.GetCache<int, Organization>("orgs");
+
+
+
+
+```
+
+
+
+The code can be found at https://github.com/ptupitsyn/IgniteNetBenchmarks
