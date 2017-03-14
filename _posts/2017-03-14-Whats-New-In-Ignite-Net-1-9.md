@@ -79,7 +79,6 @@ var res = persons.Where(x => x.Value.BirthDay.DayOfYear == 0x100);
 
 // Generated SQL:
 // select _T0._key, _T0._val from "persons".Person as _T0 where (day_of_year(_T0.BirthDay) = ?)
-
 ```
 
 ## Inline Joins
