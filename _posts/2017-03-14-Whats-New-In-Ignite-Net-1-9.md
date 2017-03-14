@@ -43,6 +43,8 @@ cache.QueryFields(new SqlFieldsQuery(
     "INSERT INTO Person(_key, firstName, lastName) VALUES(?, ?, ?)", 1L, "John", "Smith"));
 ```
 
+These statements are translated to `ICache.Put()` and `ICache.InvokeAll()` calls.
+
 Documentation page: [apacheignite-net.readme.io/docs/distributed-dml](https://apacheignite-net.readme.io/docs/distributed-dml)
 
 # LINQ Improvements
