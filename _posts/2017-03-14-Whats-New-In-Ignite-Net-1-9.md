@@ -26,13 +26,16 @@ using (var ts = new TransactionScope())
 }
 ```
 
-Besides being easier to use, `TransactionScope` API allows performing transactional operations across multiple systems (via [Two Phase Commit](https://en.wikipedia.org/wiki/Two-phase_commit_protocol)).
-
-
+Besides being easier to use, `TransactionScope` API allows performing transactional operations across multiple systems (via [Two Phase Commit](https://en.wikipedia.org/wiki/Two-phase_commit_protocol)). For example, you can update SQL Server database and Ignite cache within a single `TransactionScope` block. All operations will participate in a common transaction, so that either both systems are updated, or all changes are reverted.
 
 Documentation page: https://apacheignite-net.readme.io/docs/transactionscope-api
 
 # Distributed DML
+
+In previous versions Ignite SQL worked only in data retrieval mode (`SELECT` statements). [Data Manipulation Language](https://en.wikipedia.org/wiki/Data_manipulation_language) statements (`INSERT`, `UPDATE`, `DELETE`, `MERGE`) support has been added in 1.9:
+
+```cs
+```
 
 Documentation page: https://apacheignite-net.readme.io/docs/distributed-dml
 
