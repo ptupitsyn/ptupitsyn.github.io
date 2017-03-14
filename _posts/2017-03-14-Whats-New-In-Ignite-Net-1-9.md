@@ -7,6 +7,7 @@ Apache Ignite 1.9 [has been released](https://ignite.apache.org/news.html#apache
 
 ![ignite logo](../images/ignite_logo.png)
 
+
 # TransactionScope API
 
 Before 1.9, Ignite transactions could only be started explicitly with `IIgnite.GetTransactions().TxStart()` call.
@@ -30,6 +31,7 @@ Besides being easier to use, `TransactionScope` API allows performing transactio
 
 Documentation page: [apacheignite-net.readme.io/docs/transactionscope-api](https://apacheignite-net.readme.io/docs/transactionscope-api)
 
+
 # Distributed DML
 
 In previous versions, Ignite SQL worked only in data retrieval mode (`SELECT` statements). [Data Manipulation Language](https://en.wikipedia.org/wiki/Data_manipulation_language) statements (`INSERT`, `UPDATE`, `DELETE`, `MERGE`) support has been added in 1.9 via existing `QueryFields` API:
@@ -47,9 +49,11 @@ These statements are translated to `ICache.Put()` and `ICache.InvokeAll()` calls
 
 Documentation page: [apacheignite-net.readme.io/docs/distributed-dml](https://apacheignite-net.readme.io/docs/distributed-dml)
 
+
 # LINQ Improvements
 
 Distributed LINQ continues to evolve:
+
 
 ## Contains
 
@@ -67,6 +71,7 @@ var res = cache.Select(x => x.Value).Where(p => new[] {1, 2, 3}.Contains(p.Id));
 
 Keep in mind that queries with `IN` clause are not always optimal: [apacheignite-net.readme.io/docs/sql-queries#section-performance-and-usability-considerations](https://apacheignite-net.readme.io/docs/sql-queries#section-performance-and-usability-considerations).
 
+
 ## DateTime Properties
 
 The following `DateTime` properties can be used in LINQ: `Year`, `Month`, `Day`, `Hour`, `Minute`, `Second`, `DayOfYear`, `DayOfWeek`. 
@@ -82,3 +87,23 @@ var res = persons.Where(x => x.Value.BirthDay.DayOfYear == 0x100);
 ```
 
 ## Inline Joins
+
+Previous limitation where you had to have a separate variable for joined caches no longer exists:
+
+```cs
+// Before:
+var roles = GetRoleCache().AsCacheQueryable();
+var res = GetPersonCache().AsCacheQueryable().Join(roles, 
+                person => person.Key, role => role.Key.Foo, (person, role) => role).ToArray();
+
+// After:
+var res = GetPersonCache().AsCacheQueryable().Join(GetRoleCache().AsCacheQueryable(), 
+                person => person.Key, role => role.Key.Foo, (person, role) => role).ToArray();
+
+// Query syntax:
+var res =
+          from person in GetPersonCache().AsCacheQueryable()
+          from role in GetRoleCache().AsCacheQueryable()
+          where person.Key == role.Key.Foo
+          select new {Person = person.Value.Name, Role = role.Value.Name};
+```
