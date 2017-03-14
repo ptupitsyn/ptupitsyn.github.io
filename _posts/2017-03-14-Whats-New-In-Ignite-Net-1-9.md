@@ -53,6 +53,25 @@ Distributed LINQ continues to evolve:
 
 ## Contains
 
+`IEnumerable.Contains` and `IQueryable.Contains` extension methods are now supported:
+
+```cs
+var cache = ignite.GetCache<int, Person>("persons");
+
+// Select persons with specific ids using inline collection:
+var res = cache.AsCacheQueryable().Select(x => x.Value)
+  .Where(p => new[] {1, 2, 3}.Contains(p.Id));
+
+// Generated SQL:
+// select _T0._val from "persons".Person as _T0 where (_T0.Id IN (?, ?, ?))
+
+
+// Select persons with specific ids using result of another query:
+
+```
+
+These statements are translated to SQL `IN` clauses. Keep in mind that such queries are not always optimal: [apacheignite-net.readme.io/docs/sql-queries#section-performance-and-usability-considerations](https://apacheignite-net.readme.io/docs/sql-queries#section-performance-and-usability-considerations).
+
 ## DateTime Properties
 
 ## Inline Joins
