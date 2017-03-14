@@ -28,16 +28,22 @@ using (var ts = new TransactionScope())
 
 Besides being easier to use, `TransactionScope` API allows performing transactional operations across multiple systems (via [Two Phase Commit](https://en.wikipedia.org/wiki/Two-phase_commit_protocol)). For example, you can update SQL Server database and Ignite cache within a single `TransactionScope` block. All operations will participate in a common transaction, so that either both systems are updated, or all changes are reverted.
 
-Documentation page: https://apacheignite-net.readme.io/docs/transactionscope-api
+Documentation page: [apacheignite-net.readme.io/docs/transactionscope-api](https://apacheignite-net.readme.io/docs/transactionscope-api)
 
 # Distributed DML
 
-In previous versions Ignite SQL worked only in data retrieval mode (`SELECT` statements). [Data Manipulation Language](https://en.wikipedia.org/wiki/Data_manipulation_language) statements (`INSERT`, `UPDATE`, `DELETE`, `MERGE`) support has been added in 1.9:
+In previous versions, Ignite SQL worked only in data retrieval mode (`SELECT` statements). [Data Manipulation Language](https://en.wikipedia.org/wiki/Data_manipulation_language) statements (`INSERT`, `UPDATE`, `DELETE`, `MERGE`) support has been added in 1.9 via existing `QueryFields` API:
 
 ```cs
+// Insert person as object:
+cache.QueryFields(new SqlFieldsQuery("INSERT INTO Person(_key, _val) VALUES(?, ?)", 1L, new Person("John", "Smith")));
+
+// Insert person as fields:
+cache.QueryFields(new SqlFieldsQuery(
+    "INSERT INTO Person(_key, firstName, lastName) VALUES(?, ?, ?)", 1L, "John", "Smith"));
 ```
 
-Documentation page: https://apacheignite-net.readme.io/docs/distributed-dml
+Documentation page: [apacheignite-net.readme.io/docs/distributed-dml](https://apacheignite-net.readme.io/docs/distributed-dml)
 
 # LINQ Improvements
 
