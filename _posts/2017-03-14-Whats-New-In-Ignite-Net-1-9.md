@@ -79,7 +79,7 @@ The following `DateTime` properties can be used in LINQ: `Year`, `Month`, `Day`,
 ```cs
 var persons = ignite.GetCache<int, Person>("persons").AsCacheQueryable();
 
-// Find people born on Programmers` Day
+// Find people born on Programmers` Day:
 var res = persons.Where(x => x.Value.BirthDay.DayOfYear == 0x100);
 
 // Generated SQL:
