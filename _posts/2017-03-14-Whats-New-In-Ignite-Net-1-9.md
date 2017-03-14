@@ -69,4 +69,10 @@ Keep in mind that queries with `IN` clause are not always optimal: [apacheignite
 
 ## DateTime Properties
 
+The following `DateTime` properties can be used in LINQ: `Year`, `Month`, `Day`, `Hour`, `Minute`, `Second`, `DayOfYear`, `DayOfWeek`. 
+
+```cs
+
+```
+
 ## Inline Joins
