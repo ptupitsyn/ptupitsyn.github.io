@@ -9,18 +9,39 @@ Apache Ignite 1.9 [has been released](https://ignite.apache.org/news.html#apache
 
 # TransactionScope API
 
-https://apacheignite-net.readme.io/docs/transactionscope-api
+Before 1.9, Ignite transactions could only be started explicitly with `IIgnite.GetTransactions().TxStart()` call.
+
+Now you can also use standard `TransactionScope` API:
+
+```cs
+using (var ts = new TransactionScope())
+{
+  cache[1] = 2;
+  cache[2] = 1;
+
+  // Transaction has been started on first transactional ICache method call.
+  Debug.Assert(ignite.GetTransactions().Tx != null);
+
+  ts.Complete();
+}
+```
+
+Besides being easier to use, `TransactionScope` API allows performing transactional operations across multiple systems (via [Two Phase Commit](https://en.wikipedia.org/wiki/Two-phase_commit_protocol)).
+
+
+
+Documentation page: https://apacheignite-net.readme.io/docs/transactionscope-api
 
 # Distributed DML
 
-https://apacheignite-net.readme.io/docs/distributed-dml
+Documentation page: https://apacheignite-net.readme.io/docs/distributed-dml
 
 # LINQ Improvements
 
 Distributed LINQ continues to evolve:
 
-## `Contains`
+## Contains
 
-## `DateTime` Properties
+## DateTime Properties
 
 ## Inline Joins
