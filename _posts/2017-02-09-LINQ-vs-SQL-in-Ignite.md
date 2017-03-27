@@ -9,8 +9,6 @@ LINQ has many benefits over SQL, but at what cost?
 
 Let's get straight to the results!
 
-// TODO: Add string array conversion to demostrate compiled advantage
-
 ```
             Method |      Median |    StdDev |
 ------------------ |------------ |---------- |
@@ -22,7 +20,7 @@ Let's get straight to the results!
 Code is at [github.com/ptupitsyn/IgniteNetBenchmarks](https://github.com/ptupitsyn/IgniteNetBenchmarks/blob/master/IgniteLinqBenchmark.cs).
 
 This is a comparison of equivalent queries via SQL, LINQ and Compiled LINQ.
-Query is very simple (`select Name from SqlPerson where (SqlPerson.Id < ?)`), data set is very small (40 items, 20 returned): this exposes LINQ overhead better.
+Query is very simple (`select Age from SqlPerson where (SqlPerson.Id < ?)`), data set is very small (40 items, 20 returned): this exposes LINQ overhead better.
 
 We can see right away that LINQ is a lot slower than raw SQL, but compiled LINQ is a bit faster.
 Note that results are in *micro*seconds: real-world queries may take tens or even hundreds of *milli*seconds, so LINQ overhead will be hardly noticeable.
@@ -72,4 +70,4 @@ This is where LINQ advantage comes from: it is aware of resulting data types and
 
 # Conclusion
 
-LINQ is not only much nicer to work with than SQL, it can also be on par or faster when used properly! Just don't forget to use `CompiledQuery` when on a hot path.
+LINQ is not only [much nicer to work with than SQL](https://www.linqpad.net/WhyLINQBeatsSQL.aspx), it can also be on par or faster when used properly! Just don't forget to use `CompiledQuery` when on a hot path.
