@@ -36,7 +36,7 @@ ICache<int, SqlPerson> cache = ignite.GetCache<int, SqlPerson>("persons");
 
 IQueryable<int> qry = cache.AsCacheQueryable().Select(x => x.Value.Age);
 
-int[] res = qry.ToArray();
+IList<int> res = qry.GetAll();
 ```
 
 If we run the above code in Visual Studio debugger and look at `qry` variable, we'll see something like this:
@@ -51,8 +51,19 @@ We can get that `SqlFieldsQuery` and run it manually:
 ```cs
 SqlFieldsQuery fieldsQry = ((ICacheQueryable)cache.AsCacheQueryable().Select(x => x.Value.Age)).GetFieldsQuery();
 
-IList<IList> res = cache.QueryFields(fieldsQry).GetAll();
+IQueryable<IList> res = cache.QueryFields(fieldsQry);
 ```
 
-However, LINQ produces `int[]`, and fields query always returns a list, where each element is a list with a single int element. How is this achieved?
-You may think that LINQ engine iterates over `IList` returned from `QueryFields` and populates an `int` array, but it is more clever than that.
+However, LINQ produces typed `IQueryable<int>` instead of untyped `IQueryable<IList>`. How is this achieved?
+You may think that LINQ engine iterates over `IQueryCursor` returned from `QueryFields` and populates `List<int>`, but it is more clever than that.
+
+There is a hidden API, `ICacheInternal`, which has `IQueryCursor<T> QueryFields<T>(SqlFieldsQuery qry, Func<IBinaryRawReader, int, T> readerFunc)` method.
+SQL engine returns fields query results as a raw memory stream where field values are written one after another.
+So for a query above with one `int` field LINQ engine will produce the following code:
+
+```cs
+var cacheInt = (ICacheInternal) cache;
+var fieldQry = new SqlFieldsQuery("SELECT Age from SqlPerson");
+Func<IBinaryRawReader, int, int> readerFunc = (reader, fieldCount) => reader.readInt();
+IQueryCursor<int> cur = cacheInt.QueryFields(fieldQry, readerFunc);
+```
