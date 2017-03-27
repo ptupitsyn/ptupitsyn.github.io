@@ -1,6 +1,6 @@
 ---
 layout: post
-title: LINQ vs SQL in Ignite.NET
+title: LINQ vs SQL in Ignite.NET&#58; Performance
 ---
 
 LINQ has many benefits over SQL, but at what cost?
