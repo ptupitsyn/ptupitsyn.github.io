@@ -62,11 +62,11 @@ So for a query above with one `int` field LINQ engine will produce the following
 ```cs
 var cacheInt = (ICacheInternal) cache;
 var fieldQry = new SqlFieldsQuery("SELECT Age from SqlPerson");
-Func<IBinaryRawReader, int, int> readerFunc = (reader, fieldCount) => reader.readInt();
+Func<IBinaryRawReader, int, int> readerFunc = (reader, fieldCount) => reader.ReadObject<int>();
 IQueryCursor<int> cur = cacheInt.QueryFields(fieldQry, readerFunc);
 ```
 
-This is where LINQ advantage comes from: it is aware of resulting data types and can generate specialized deserialization code, while regular SQL query reads all field values as objects, which causes excessive allocations (`IList` for each row, boxing of value types) and requires type casting.
+This code produces zero extra allocations and zero type casts while reading query results. That is where LINQ advantage comes from: it is aware of resulting data types and can generate specialized deserialization code, while regular SQL query reads all field values as objects, which causes excessive allocations (`IList` for each row, boxing of value types) and requires type casting.
 
 # Conclusion
 
