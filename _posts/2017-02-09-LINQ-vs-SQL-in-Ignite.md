@@ -34,22 +34,25 @@ Anyway, how can we explain these results? Why compiled LINQ is faster than raw S
 ```cs
 ICache<int, SqlPerson> cache = ignite.GetCache<int, SqlPerson>("persons");
 
-IQueryable<ICacheEntry<int, SqlPerson>> qry = cache.AsCacheQueryable().Where(x => x.Key > 5);
+IQueryable<int> qry = cache.AsCacheQueryable().Select(x => x.Value.Age);
 
-ICacheEntry<int, SqlPerson>[] res = qry.ToArray();
+int[] res = qry.ToArray();
 ```
 
 If we run the above code in Visual Studio debugger and look at `qry` variable, we'll see something like this:
 
 ![ICacheQueryable Debug View](../images/Linq-vs-Sql/ICacheQueryable-debug.png)
 
-Compiler has translated `.Where(x => x.Key > 5)` to an Expression Tree and passed it to `CacheFieldsQueryProvider`,
+Compiler has translated `.Select(x => x.Value.Age)` to an Expression Tree and passed it to `CacheFieldsQueryProvider`,
 which, as we can see, turns into a regular Ignite.NET `SqlFieldsQuery`. This process is not free, that's where the overhead comes from.
 
 We can get that `SqlFieldsQuery` and run it manually:
 
 ```cs
-TODO
+SqlFieldsQuery fieldsQry = ((ICacheQueryable)cache.AsCacheQueryable().Select(x => x.Value.Age)).GetFieldsQuery();
+
+IList<IList> res = cache.QueryFields(fieldsQry).GetAll();
 ```
 
-TODO: However, LINQ results in [generic result], and `QuerySqlFields` gives us `IQueryCursor<IList>` TODO
+However, LINQ produces `int[]`, and fields query always returns a list, where each element is a list with a single int element. How is this achieved?
+You may think that LINQ engine iterates over `IList` returned from `QueryFields` and populates an `int` array, but it is more clever than that.
