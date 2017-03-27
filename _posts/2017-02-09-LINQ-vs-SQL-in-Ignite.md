@@ -67,3 +67,5 @@ var fieldQry = new SqlFieldsQuery("SELECT Age from SqlPerson");
 Func<IBinaryRawReader, int, int> readerFunc = (reader, fieldCount) => reader.readInt();
 IQueryCursor<int> cur = cacheInt.QueryFields(fieldQry, readerFunc);
 ```
+
+This is where LINQ advantage comes from: it is aware of resulting data types and can generate specialized deserialization code, while regular SQL query reads all field values as objects, which causes excessive allocations (`IList` for each row, boxing of value types) and requires type casting.
