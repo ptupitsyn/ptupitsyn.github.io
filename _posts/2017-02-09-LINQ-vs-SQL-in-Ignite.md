@@ -24,7 +24,7 @@ Code is at [github.com/ptupitsyn/IgniteNetBenchmarks](https://github.com/ptupits
 This is a comparison of equivalent queries via SQL, LINQ and Compiled LINQ.
 Query is very simple (`select Name from SqlPerson where (SqlPerson.Id < ?)`), data set is very small (40 items, 20 returned): this exposes LINQ overhead better.
 
-We can see right away that LINQ is a lot slower than raw SQL, but compiled LINQ is a bit faster bit faster.
+We can see right away that LINQ is a lot slower than raw SQL, but compiled LINQ is a bit faster.
 Note that results are in *micro*seconds: real-world queries may take tens or even hundreds of *milli*seconds, so LINQ overhead will be hardly noticeable.
 
 Anyway, how can we explain these results? Why compiled LINQ is faster than raw SQL?
@@ -69,3 +69,7 @@ IQueryCursor<int> cur = cacheInt.QueryFields(fieldQry, readerFunc);
 ```
 
 This is where LINQ advantage comes from: it is aware of resulting data types and can generate specialized deserialization code, while regular SQL query reads all field values as objects, which causes excessive allocations (`IList` for each row, boxing of value types) and requires type casting.
+
+# Conclusion
+
+LINQ is not only much nicer to work with than SQL, it can also be on par or faster when used properly! Just don't forget to use `CompiledQuery` when on a hot path.
