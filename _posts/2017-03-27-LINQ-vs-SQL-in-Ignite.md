@@ -3,7 +3,11 @@ layout: post
 title: LINQ vs SQL in Ignite.NET&#58; Performance
 ---
 
-LINQ has many benefits over SQL, but at what cost?
+Ignite.NET offers a LINQ provider which translates C# expressions to SQL queries. LINQ has many benefits over SQL, but at what cost?
+
+# Introduction
+
+Detailed explanation of Ignite.NET distributed queries can be found in [Getting Started With Apache Ignite.NET Part 3: Cache Queries](https://ptupitsyn.github.io/Getting-Started-With-Apache-Ignite-Net-3-Sql/). If you are new to Ignite, please read that first.
 
 # Benchmark Results
 
