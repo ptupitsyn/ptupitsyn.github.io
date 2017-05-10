@@ -107,7 +107,20 @@ We have put a piece of code into distributed cache, and any node can easily retr
 Below are some fancy tricks you can do with dynamic serializer:
 
 ```cs
-TODO
+using (var ignite = Ignition.Start())
+{
+    var cache = ignite.CreateCache<int, object>("c");
+
+    // Serialize Type instance.
+    cache[1] = typeof(int);
+    Console.WriteLine(ReferenceEquals(typeof(int), cache[1]));  // true
+
+    // Serialize delegates.
+    cache[2] = (Action) (() => { Console.WriteLine("Hi!"); });
+    ((Action) cache[2])();  // Hi!
+
+    // Modify captured variable.
+}
 ```
 
 
