@@ -189,7 +189,12 @@ As a result, Ignite.NET can be easily used in IIS environment when `AutoGenerate
 
 Full release notes are there: [ignite.apache.org/releases/2.0.0/release_notes.html](https://ignite.apache.org/releases/2.0.0/release_notes.html).
 
-TODO
+Among others:
+
+* Types are now mapped using `Type.FullName` instead of `Type.Name` during serialization, which reduces the chance of conflict. However, this [affects Java interoperability](https://apacheignite-net.readme.io/docs/platform-interoperability).
+* `ICacheStore` is now generic. This provides a cleaner API and removes boxing/unboxing overhead.
+* Java and .NET nodes can join with default configs, no extra steps required.
+* F# record types serialization is fixed, so that SQL works as expected (I have plans for 'Ignite.NET in F#' blog post).
 
 # Breaking Changes
 
