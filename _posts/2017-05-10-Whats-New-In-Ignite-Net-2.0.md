@@ -185,6 +185,35 @@ As a result, Ignite.NET can be easily used in IIS environment when `AutoGenerate
 * Call `Ignition.GetIgnite()` whenever you need to work with Ignite in code.
 
 
+# LINQ
+
+As usual, Ignite LINQ to SQL engine continues to improve.
+
+This time changes are subtle, but still important: all limitations to splitting queries into multiple statements or joining multiple subqueries into one has been addressed, so all of the following queries work:
+
+```cs
+// Join with separate variables:
+var contracts = GetCache<Contract>().AsCacheQueryable();
+var paymentPlans = GetCache<PaymentPlan>().AsCacheQueryable();
+var query = from ic in contracts
+    from pp in paymentPlans
+    select pp.Value;
+
+// One statement join:
+var query = from ic in GetCache<Contract>().AsCacheQueryable()
+    from pp in GetCache<PaymentPlan>().AsCacheQueryable()
+    select pp.Value;
+
+// Contains with separate variable:
+var orgIds = orgsQry.Where(o => o.Value.Size < 100000).Select(o => o.Key);
+		
+var res = personsQry.Where(x => orgIds.Contains(x.Value.OrgId));
+
+// One statement:
+var res = personsQry.Where(x => orgsQry.Where(o => o.Value.Size < 100000)
+                                .Select(o => o.Key).Contains(x.Value.OrgId));
+```
+
 # Other Improvements
 
 Full release notes are there: [ignite.apache.org/releases/2.0.0/release_notes.html](https://ignite.apache.org/releases/2.0.0/release_notes.html).
@@ -195,6 +224,7 @@ Among others:
 * `ICacheStore` is now generic. This provides a cleaner API and removes boxing/unboxing overhead.
 * Java and .NET nodes can join with default configs, no extra steps required.
 * F# record types serialization is fixed, so that SQL works as expected (I have plans for 'Ignite.NET in F#' blog post).
+
 
 # Breaking Changes
 
