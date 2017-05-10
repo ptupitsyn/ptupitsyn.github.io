@@ -175,7 +175,13 @@ Keep in mind that `IN` queries have some limitations: [apacheignite.readme.io/do
 
 ### DateTime Properties
 
+`DateTime` properties, such as `Year` and `Day`, are now supported. They are translated to corresponding SQL functions, such as `YEAR` and `DAY_OF_MONTH`:
+
+```cs
 TODO
+```
+
+Don't forget that some extra steps may be required to use `DateTime` in Ignite SQL: [apacheignite-net.readme.io/docs/sql-queries#section-java-type-name-mapping](https://apacheignite-net.readme.io/docs/sql-queries#section-java-type-name-mapping).
 
 
 # Other Improvements
