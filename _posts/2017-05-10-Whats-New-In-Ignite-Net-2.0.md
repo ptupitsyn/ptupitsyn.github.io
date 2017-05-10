@@ -147,7 +147,11 @@ As you can see, the possibilities are endless!
 
 # Plugin System
 
-TODO
+Ignite.NET is built on top of Ignite Java: .NET code starts a JVM in process and communicates with it via JNI and unmanaged memory regions, so that code is reused as much as possible, and performance is maximized.
+
+Ignite 2.0 exposes this interoperation subsystem in form of plugins, which consist of .NET and Java parts which can establish two-way communication and expose new APIs to the users.
+
+In the next blog post we will implement such a plugin; for now you can have a look at the docs: [apacheignite-net.readme.io/docs/plugins](https://apacheignite-net.readme.io/docs/plugins).
 
 # LINQ Improvements
 
