@@ -22,7 +22,7 @@ First, you **don't need to register types** in `BinaryConfiguration` to be able 
 ```cs
 class Person
 {
-    string Name { get; set; }
+    public string Name { get; set; }
 }
 
 class ComputeAction : IComputeAction
@@ -49,28 +49,30 @@ Next, **SQL works for `[Serializable]` and `ISerializable`**:
 class Person : ISerializable
 {
     [QuerySqlField]
-    string Name { get; set; }
+    public string Name { get; set; }
 
-    public Person(SerializationInfo info, StreamingContext context)
-    {
-        Name = info.GetString("Name");
-    }
+    public Person() { }
 
-    public void GetObjectData(SerializationInfo info, StreamingContext context)
-    {
-        info.AddValue("Name", Name);
-    }    
+    public Person(SerializationInfo info, StreamingContext context) 
+        => Name = info.GetString("Name");
+
+    public void GetObjectData(SerializationInfo info, StreamingContext context) 
+        => info.AddValue("Name", Name);
 }
 
 void Main()
 {
     var ignite = Ignition.Start();
+
+    var cache = ignite.CreateCache<int, Person>(
+        new CacheConfiguration("persons", typeof(Person)));
     
-    var cache = ignite.CreateCache<int, Person>("persons", typeof(Person));
     cache[1] = new Person { Name = "John Doe" };
 
-    var res = cache.QueryFields(new SqlFieldsQuery("select name from person where name like 'John%'")).GetAll();
-    ...
+    var res = cache.QueryFields(new SqlFieldsQuery(
+        "select name from person where name like 'John%'")).GetAll();
+
+    Console.WriteLine(res[0][0]);
 }
 ```
 
