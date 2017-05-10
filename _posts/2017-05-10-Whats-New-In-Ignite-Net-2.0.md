@@ -166,7 +166,7 @@ In Ignite.NET 2.0:
 
 As a result, Ignite.NET can be easily used in IIS environment when `AutoGenerateIgniteInstanceName` is `true`:
 
-1. Configure everything in `web.config`:
+* Configure everything in `web.config`:
 
 ```xml
 <configuration>
@@ -182,7 +182,7 @@ As a result, Ignite.NET can be easily used in IIS environment when `AutoGenerate
 </configuration>
 ```
 
-2. Call `Ignition.GetIgnite()` whenever you need to work with Ignite in code.
+* Call `Ignition.GetIgnite()` whenever you need to work with Ignite in code.
 
 
 # Other Improvements
