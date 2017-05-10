@@ -153,35 +153,36 @@ Ignite 2.0 exposes this interoperation subsystem in form of plugins: each plugin
 
 In the next blog post we will implement such a plugin; for now you can have a look at the docs: [apacheignite-net.readme.io/docs/plugins](https://apacheignite-net.readme.io/docs/plugins).
 
-# LINQ Improvements
+# ASP.NET
 
-As usual, Ignite LINQ to SQL engine continues to evolve.
+A number of improvements has been made to address the issue with IIS application lifecycle, where AppDomains are loaded and unloaded within the same worker process.
+Java part of Ignite does not belong to an `AppDomain`, so additional steps were required to deal with it.
 
-### Contains
-`Contains` extension is typically used to select multiple entries by some identifier:
+In Ignite.NET 2.0:
 
-```cs
-    ICache<int, Person> persons = ignite.GetCache<int, Person("persons");
-    var res = persons.AsCacheQueryable().Where(x => new[] {1, 3}.Contains(x.Key));
+1. `Ignition.StopAll(true)` is called automatically on domain unload, so that Java part is cleaned up properly.
+2. `IgniteConfiguration.AutoGenerateIgniteInstanceName` property added to avoid instance name (`GridName` earlier) conflicts.
+3. `Ignition.GetIgnite()` returns Ignite instance with any name, as long as there is only one instance present.
+
+As a result, Ignite.NET can be easily used in IIS environment when `AutoGenerateIgniteInstanceName` is `true`:
+
+1. Configure everything in `web.config`:
+
+```xml
+<configuration>
+    <configSections>
+        <section name="igniteConfiguration" type="Apache.Ignite.Core.IgniteConfigurationSection, Apache.Ignite.Core" />
+    </configSections>
+
+    <igniteConfiguration autoGenerateIgniteInstanceName="true">
+        <cacheConfiguration>
+            <cacheConfiguration name='myWebCache' />
+        </cacheConfiguration>
+    </igniteConfiguration>
+</configuration>
 ```
 
-Which is translated to the following SQL:
-
-```sql
-select _T0._key, _T0._val from "persons".Person as _T0 where (_T0._key IN (?, ?))
-```
-
-Keep in mind that `IN` queries have some limitations: [apacheignite.readme.io/docs/sql-performance-and-debugging#sql-performance-and-usability-considerations](https://apacheignite.readme.io/docs/sql-performance-and-debugging#sql-performance-and-usability-considerations).
-
-### DateTime Properties
-
-`DateTime` properties, such as `Year` and `Day`, are now supported. They are translated to corresponding SQL functions, such as `YEAR` and `DAY_OF_MONTH`:
-
-```cs
-TODO
-```
-
-Don't forget that some extra steps may be required to use `DateTime` in Ignite SQL: [apacheignite-net.readme.io/docs/sql-queries#section-java-type-name-mapping](https://apacheignite-net.readme.io/docs/sql-queries#section-java-type-name-mapping).
+2. Call `Ignition.GetIgnite()` whenever you need to work with Ignite in code.
 
 
 # Other Improvements
