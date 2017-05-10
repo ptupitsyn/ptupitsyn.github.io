@@ -115,11 +115,18 @@ using (var ignite = Ignition.Start())
     cache[1] = typeof(int);
     Console.WriteLine(ReferenceEquals(typeof(int), cache[1]));  // true
 
-    // Serialize delegates.
-    cache[2] = (Action) (() => { Console.WriteLine("Hi!"); });
+    // Serialize delegate.
+    var greeting = "Hi!";
+    cache[2] = (Action) (() => { Console.WriteLine(greeting); });
     ((Action) cache[2])();  // Hi!
 
-    // Modify captured variable.
+    // Modify serialized delegate.
+    var binDelegate = binCache[2];
+    var target = binDelegate.GetField<IBinaryObject>("target0");
+    target = target.ToBuilder().SetField("greeting", "Woot!").Build();
+    binCache[2] = binDelegate.ToBuilder().SetField("target0", target).Build();
+
+    ((Action)cache[2])();  // Woot!
 }
 ```
 
