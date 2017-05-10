@@ -159,6 +159,8 @@ TODO
 
 # Other Improvements
 
+Full release notes are there: [ignite.apache.org/releases/2.0.0/release_notes.html](https://ignite.apache.org/releases/2.0.0/release_notes.html).
+
 TODO
 
 # Breaking Changes
