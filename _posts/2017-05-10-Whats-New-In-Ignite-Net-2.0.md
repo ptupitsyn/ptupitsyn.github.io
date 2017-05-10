@@ -14,7 +14,7 @@ This is a huge one! In short:
 
 * No need for `BinaryConfiguration` anymore. Types are registered within cluster automatically.
 * Everything is serialized in Ignite format, no more limitations for `[Serializable]` and `ISerializable`, SQL always works.
-* **Anything** can be serialized! Classes, structs, system types, delegates, anonymous types, expression trees, you name it!
+* **Anything** can be serialized! Classes, structs, system types, delegates, anonymous types, expression trees, generics, you name it!
 
 Now let's see this in action.
 First, you **don't need to register types** in `BinaryConfiguration` to be able to use them in Ignite, so the following works:
@@ -45,7 +45,7 @@ void Main()
 }
 ```
 
-Next, **SQL works for `[Serializable]` and `ISerializable`**:
+Next, `[Serializable]` and `ISerializable` types are written in Ignite binary format, which means **SQL works for `[Serializable]` and `ISerializable`**:
 
 ```cs
 class Person : ISerializable
@@ -80,6 +80,17 @@ void Main()
 
 `ISerializable` classes are serialized the same way as `IBinarizable`, the difference is only in API.
 See [apacheignite-net.readme.io/docs/serialization](https://apacheignite-net.readme.io/docs/serialization) for more details.
+
+Finally, as a consequence of the above, **anything and everything can be serialized in Ignite**, including object hierarchies that combine `ISerializable` and regular types.
+I think the most awesome example here are **Expression Trees**. There is no built-in way in .NET to serialize an
+Expression Tree (see [google search for 'serialize expression tree'](https://www.google.ru/search?q=serialize+expression+tree)), but you can do this in Ignite no problemo:
+
+```cs
+using (var ignite = Ignition.Start())
+{
+    
+}
+```
 
 
 # Plugin System
