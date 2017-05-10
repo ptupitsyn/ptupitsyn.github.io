@@ -142,6 +142,8 @@ using (var ignite = Ignition.Start())
 }
 ```
 
+As you can see, the possibilities are endless!
+
 
 # Plugin System
 
