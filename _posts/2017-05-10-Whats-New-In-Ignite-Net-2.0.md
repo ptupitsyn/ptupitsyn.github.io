@@ -37,7 +37,7 @@ void Main()
     // Zero configuration.
     var ignite = Ignition.Start();
     
-    // Put arbitrary data to cache without prior configuration.
+    // Put arbitrary data to cache.
     var cache = ignite.CreateCache<int, Person>("persons");
     cache[1] = new Person { Name = "John Doe" };
 
