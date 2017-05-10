@@ -74,7 +74,7 @@ void Main()
     var res = cache.QueryFields(new SqlFieldsQuery(
         "select name from person where name like 'John%'")).GetAll();
 
-    Console.WriteLine(res[0][0]);
+    Console.WriteLine(res[0][0]);  // John Doe
 }
 ```
 
@@ -132,8 +132,13 @@ using (var ignite = Ignition.Start())
     cache[3] = new { Foo = "foo", Bar = 42 };
     Console.WriteLine(binCache[3]);  // ...[<Bar>i__Field=42, <Foo>i__Field=foo]
 
-    // Dynamic type.
-    TODO: ???
+    // Dynamic ExpandoObject.
+    dynamic dynObj = new ExpandoObject();
+    dynObj.Baz = "baz";
+    dynObj.Qux = 1.28;
+
+    cache[4] = dynObj;
+    Console.WriteLine(binCache[4]); // _keys=[Baz, Qux], _dataArray=[baz, 1.28, ]
 }
 ```
 
