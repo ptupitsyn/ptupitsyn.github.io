@@ -13,11 +13,11 @@ Apache Ignite 2.0 [has been released](https://blogs.apache.org/ignite/entry/apac
 This is a huge one! In short:
 
 * No need for `BinaryConfiguration` anymore. Types are registered within cluster automatically.
-* Everything is serialized in Ignite format, no more limitations for `[Serializable]`, SQL always works.
-* **Anything** can be serialized! Classes, structs, system types, delegates, anonymous types, you name it!
+* Everything is serialized in Ignite format, no more limitations for `[Serializable]` and `ISerializable`, SQL always works.
+* **Anything** can be serialized! Classes, structs, system types, delegates, anonymous types, expression trees, you name it!
 
 Now let's see this in action.
-First, you don't need to register types in `BinaryConfiguration` to be able to use them in Ignite, so the following works:
+First, you **don't need to register types** in `BinaryConfiguration` to be able to use them in Ignite, so the following works:
 
 ```cs
 class Person
@@ -41,7 +41,37 @@ void Main()
     // Execute computations: print "Hello World!" on all nodes.
     ignite.GetCompute().Broadcast(new ComputeAction());
 }
+```
 
+Next, **SQL works for `[Serializable]` and `ISerializable`**:
+
+```cs
+class Person : ISerializable
+{
+    [QuerySqlField]
+    string Name { get; set; }
+
+    public Person(SerializationInfo info, StreamingContext context)
+    {
+        Name = info.GetString("Name");
+    }
+
+    public void GetObjectData(SerializationInfo info, StreamingContext context)
+    {
+        info.AddValue("Name", Name);
+    }    
+}
+
+void Main()
+{
+    var ignite = Ignition.Start();
+    
+    var cache = ignite.CreateCache<int, Person>("persons", typeof(Person));
+    cache[1] = new Person { Name = "John Doe" };
+
+    var res = cache.QueryFields(new SqlFieldsQuery("select name from person where name like 'John%'")).GetAll();
+    ...
+}
 ```
 
 # Plugin System
