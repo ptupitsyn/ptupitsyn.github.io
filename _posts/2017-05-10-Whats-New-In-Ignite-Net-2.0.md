@@ -111,11 +111,11 @@ using (var ignite = Ignition.Start())
 {
     var cache = ignite.CreateCache<int, object>("c");
 
-    // Serialize Type instance.
+    // Type instance.
     cache[1] = typeof(int);
     Console.WriteLine(ReferenceEquals(typeof(int), cache[1]));  // true
 
-    // Serialize delegate.
+    // Delegate.
     var greeting = "Hi!";
     cache[2] = (Action) (() => { Console.WriteLine(greeting); });
     ((Action) cache[2])();  // Hi!
@@ -127,6 +127,13 @@ using (var ignite = Ignition.Start())
     binCache[2] = binDelegate.ToBuilder().SetField("target0", target).Build();
 
     ((Action)cache[2])();  // Woot!
+
+    // Anonymous type.
+    cache[3] = new { Foo = "foo", Bar = 42 };
+    Console.WriteLine(binCache[3]);  // ...[<Bar>i__Field=42, <Foo>i__Field=foo]
+
+    // Dynamic type.
+    TODO: ???
 }
 ```
 
