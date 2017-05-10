@@ -155,7 +155,28 @@ In the next blog post we will implement such a plugin; for now you can have a lo
 
 # LINQ Improvements
 
+As usual, Ignite LINQ to SQL engine continues to evolve.
+
+### Contains
+`Contains` extension is typically used to select multiple entries by some identifier:
+
+```cs
+    ICache<int, Person> persons = ignite.GetCache<int, Person("persons");
+    var res = persons.AsCacheQueryable().Where(x => new[] {1, 3}.Contains(x.Key));
+```
+
+Which is translated to the following SQL:
+
+```sql
+select _T0._key, _T0._val from "persons".Person as _T0 where (_T0._key IN (?, ?))
+```
+
+Keep in mind that `IN` queries have some limitations: [apacheignite.readme.io/docs/sql-performance-and-debugging#sql-performance-and-usability-considerations](https://apacheignite.readme.io/docs/sql-performance-and-debugging#sql-performance-and-usability-considerations).
+
+### DateTime Properties
+
 TODO
+
 
 # Other Improvements
 
