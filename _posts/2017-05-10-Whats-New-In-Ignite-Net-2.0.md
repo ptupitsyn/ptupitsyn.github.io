@@ -16,6 +16,34 @@ This is a huge one! In short:
 * Everything is serialized in Ignite format, no more limitations for `[Serializable]`, SQL always works.
 * **Anything** can be serialized! Classes, structs, system types, delegates, anonymous types, you name it!
 
+Now let's see this in action.
+First, you don't need to register types in `BinaryConfiguration` to be able to use them in Ignite, so the following works:
+
+```cs
+class Person
+{
+    string Name { get; set; }
+}
+
+class ComputeAction : IComputeAction
+{
+    public void Invoke() => Console.WriteLine("Hello World!");
+}
+
+void Main()
+{
+    var ignite = Ignition.Start();
+    
+    // Put arbitrary data to cache without prior configuration.
+    var cache = ignite.CreateCache<int, Person>("persons");
+    cache[1] = new Person { Name = "John Doe" };
+
+    // Execute computations: print "Hello World!" on all nodes.
+    ignite.GetCompute().Broadcast(new ComputeAction());
+}
+
+```
+
 # Plugin System
 
 TODO
