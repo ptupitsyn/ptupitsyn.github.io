@@ -20,6 +20,7 @@ Now let's see this in action.
 First, you **don't need to register types** in `BinaryConfiguration` to be able to use them in Ignite, so the following works:
 
 ```cs
+// Just a simple class, no attributes or interfaces.
 class Person
 {
     public string Name { get; set; }
@@ -39,6 +40,7 @@ void Main()
     cache[1] = new Person { Name = "John Doe" };
 
     // Execute computations: print "Hello World!" on all nodes.
+    // Keep in mind that assembly with ComputeAction must be present on all nodes.
     ignite.GetCompute().Broadcast(new ComputeAction());
 }
 ```
@@ -75,6 +77,10 @@ void Main()
     Console.WriteLine(res[0][0]);
 }
 ```
+
+`ISerializable` classes are serialized the same way as `IBinarizable`, the difference is only in API.
+See [apacheignite-net.readme.io/docs/serialization](https://apacheignite-net.readme.io/docs/serialization) for more details.
+
 
 # Plugin System
 
