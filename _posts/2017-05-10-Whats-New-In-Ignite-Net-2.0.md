@@ -88,8 +88,26 @@ Expression Tree (see [google search for 'serialize expression tree'](https://www
 ```cs
 using (var ignite = Ignition.Start())
 {
-    
+    var cache = ignite.CreateCache<int, Expression<Func<int, int>>>("c");
+
+    Expression<Func<int, int>> addOne = x => x + 1;
+
+    cache[1] = addOne;
+
+    var result = cache[1];
+
+    Console.WriteLine(result.Compile().Invoke(5));  // 6
 }
+```
+
+We have put a piece of code into distributed cache, and any node can easily retrieve and execute it!
+
+### More Tricks
+
+Below are some fancy tricks you can do with dynamic serializer:
+
+```cs
+TODO
 ```
 
 
