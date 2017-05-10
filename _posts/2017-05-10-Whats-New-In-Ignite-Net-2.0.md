@@ -34,6 +34,7 @@ class ComputeAction : IComputeAction
 
 void Main()
 {
+    // Zero configuration.
     var ignite = Ignition.Start();
     
     // Put arbitrary data to cache without prior configuration.
