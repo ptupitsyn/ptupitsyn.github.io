@@ -78,7 +78,7 @@ cars[1] = car;
 
 # Cache Store Configuration
 
-Configuration is almost the same as in Entity Framework store, but with important different: `KeepBinaryInStore` is `true`:
+Configuration is almost the same as in Entity Framework store, but with important difference: `KeepBinaryInStore` is `true`:
 
 ```cs
 var cacheCfg = new CacheConfiguration
