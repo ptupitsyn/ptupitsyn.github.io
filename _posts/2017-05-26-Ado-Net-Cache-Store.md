@@ -62,7 +62,8 @@ In Ignite this can be represented with `ICache<int, Car>` where `Car` class has 
 
 ```cs
 // Retrieve cache and switch to binary mode.
-ICache<int, IBinaryObject> cars = ignite.GetCache<int, object>("cars").WithKeepBinary<int, IBinaryObject>();
+ICache<int, IBinaryObject> cars = ignite.GetCache<int, object>("cars")
+    .WithKeepBinary<int, IBinaryObject>();
 
 // Create new value with binary builder.
 IBinaryObject car = ignite.GetBinary()
@@ -157,9 +158,8 @@ Again, we create serialized object directly from the data reader, keeping alloca
 
 # Running The Example
 
-As you have probably noted, I use SQL Server Compact Edition (via NuGet). This way you don't need to install anything on your machine.
-Just download the code (`git clone https://github.com/ptupitsyn/ignite-net-examples.git`), open `AdoNetCacheStore\AdoNetCacheStore.sln` and run.
+Download the code (`git clone https://github.com/ptupitsyn/ignite-net-examples.git`), open `AdoNetCacheStore\AdoNetCacheStore.sln` and run.
 
-Database will be created automatically. I recommend setting breakpoints on cache operations and cache store methods to see it all in action.
+I recommend setting breakpoints on cache operations and cache store methods to see it all in action.
 
 `ICacheStore.Delete` is not implemented, by the way. I leave it up to the readers to implement it and test by calling `cache.Remove(1)`.
