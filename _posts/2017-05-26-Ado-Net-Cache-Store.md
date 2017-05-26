@@ -36,7 +36,11 @@ class MyStore : ICacheStore<int, string>
 
 # Ignite Binary Mode
 
-TODO
+By default, Ignite works with user-defined objects and types, serializing / deserializing them as needed. While this serialization is very [efficient](https://ptupitsyn.github.io/Ignite-Serialization-Performance/), it is still not free.
+
+To squeeze every bit of performance there is a [binary mode](https://apacheignite-net.readme.io/docs/binary-mode) where we work with objects in serialized form, retrieving and modifying individual fields.
+
+We are going to use this binary mode both on cache side and cache store side.
 
 # Code
 
@@ -44,7 +48,6 @@ The full source code is on [github.com/ptupitsyn/ignite-net-examples](https://gi
 
 The project is self-sufficient, you can download the sources and run it without setting anything up.
 It uses SQL Server Compact (via NuGet) and creates a database in the bin folder when needed.
-
 
 # Data Model
 
