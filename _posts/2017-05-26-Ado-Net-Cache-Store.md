@@ -3,16 +3,21 @@ layout: post
 title: ADO.NET As Ignite.NET Cache Store
 ---
 
-Implementing Ignite.NET 2.0 persistent store with ADO.NET and SQL Server: continue the story from [Entity Framework Cache Store](https://ptupitsyn.github.io/Entity-Framework-Cache-Store/).
+Implementing efficient Ignite.NET persistent store with ADO.NET and SQL Server: continue the story from [Entity Framework Cache Store](https://ptupitsyn.github.io/Entity-Framework-Cache-Store/).
 
 
 # ADO.NET vs Entity Framework
 
-TODO
+Previous article, [Entity Framework Cache Store](https://ptupitsyn.github.io/Entity-Framework-Cache-Store/), describes a way to persist Ignite in-memory data in SQL server using Entity Framework. The code is nice and elegant, but not efficient (as mentioned on [reddit](https://www.reddit.com/r/programming/comments/593ep1/entity_framework_as_ignitenet_cache_store/d95mnt6/)), because converting object operations to SQL queries introduces overhead.
+
+Today we are going to cut out all the middlemen:
+
+* Work with SQL directly to read and write data
+* Use binary mode in Ignite to avoid serialization costs
 
 # Ignite 2.0 Generic Cache Store
 
-TODO
+Cache store interface has been reworked in Ignite.NET 2.0: TODO
 
 # Code
 
