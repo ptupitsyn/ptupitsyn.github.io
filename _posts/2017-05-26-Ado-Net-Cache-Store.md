@@ -17,7 +17,26 @@ Today we are going to cut out all the middlemen:
 
 # Ignite 2.0 Generic Cache Store
 
-Cache store interface has been reworked in Ignite.NET 2.0: TODO
+Cache store interface has been reworked in Ignite.NET 2.0 to operate on generic arguments. This reduces casting and boxing, making code nicer and faster:
+
+```cs
+// Ignite 1.x
+class MyStore : ICacheStore
+{
+    public object Load(object key) => db.Find((int) key);
+}
+
+// Ignite 2.x
+class MyStore : ICacheStore<int, string>
+{
+    public string Load(int key) => db.Find(key);
+}
+
+```
+
+# Ignite Binary Mode
+
+TODO
 
 # Code
 
