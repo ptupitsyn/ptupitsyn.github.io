@@ -76,6 +76,8 @@ IBinaryObject car = ignite.GetBinary()
 cars[1] = car;
 ```
 
+Of course you can mix and match binary and non-binary modes (store can work with binary objects while cache operations are with classes, and vice versa).
+
 # Cache Store Configuration
 
 Configuration is almost the same as in Entity Framework store, but with important difference: `KeepBinaryInStore` is `true`:
