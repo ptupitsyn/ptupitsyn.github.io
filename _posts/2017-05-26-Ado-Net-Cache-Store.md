@@ -51,3 +51,75 @@ It uses SQL Server Compact (via NuGet) and creates a database in the bin folder 
 
 # Data Model
 
+Our model will be defined in SQL server like this:
+
+```sql
+CREATE TABLE Cars (ID int, Name NVARCHAR(200), Power int)
+```
+
+In Ignite this can be represented with `ICache<int, Car>` where `Car` class has `Name` and `Power` fields. However, we are going to use binary mode where classes are not needed:
+
+```cs
+// Retrieve cache and switch to binary mode.
+ICache<int, IBinaryObject> cars = ignite.GetCache<int, object>("cars").WithKeepBinary<int, IBinaryObject>();
+
+// Create new value with binary builder.
+IBinaryObject car = ignite.GetBinary()
+    .GetBuilder("Car")
+    .SetStringField("Name", "Honda NSX")
+    .SetIntField("Power", 600)
+    .Build();
+
+// Put to cache, this causes ICacheStore.Write call (when store is configured and write-through).
+cars[1] = car;
+```
+
+# Cache Store Configuration
+
+Configuration is almost the same as in Entity Framework store, but with important different: `KeepBinaryInStore` is `true`:
+
+```cs
+var cacheCfg = new CacheConfiguration
+{
+    Name = "cars",
+    CacheStoreFactory = new AdoNetCacheStoreFactory(),
+    KeepBinaryInStore = true,
+    ReadThrough = true,
+    WriteThrough = true
+};
+```
+
+This way cache store implementation receives `IBinaryObject` instances directly without any deserialization.
+
+# Implementing Cache Store
+
+Let's look at `Write` method first, which is called under the hood of `cache.Put`:
+
+```cs
+public class AdoNetCacheStore : ICacheStore<int, IBinaryObject>
+{
+    // Notice that method arguments correspond to ICache<int, IBinaryObject> above.
+    public void Write(int key, IBinaryObject val)
+    {
+        using (var conn = new SqlCeConnection(ConnectionString))
+        {
+            using (var cmd = new SqlCeCommand(@"INSERT INTO Cars (ID, name, Power) VALUES (@id, @name, @power)", conn))
+            {
+                cmd.Parameters.AddWithValue("@id", key);
+
+                // Transfer data directly from binary object to SQL query.
+                cmd.Parameters.AddWithValue("@name", val.GetField<string>("Name"));
+                cmd.Parameters.AddWithValue("@power", val.GetField<int>("Power"));
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+    }
+
+    ...
+}
+```
+
+There are no intermediate objects, we operate on raw field values here, which is as efficient as it gets.
+
