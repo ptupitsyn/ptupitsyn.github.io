@@ -8,7 +8,7 @@ Implementing efficient [Ignite.NET](https://ignite.apache.org/) persistent store
 
 # ADO.NET vs Entity Framework
 
-Previous article, [Entity Framework Cache Store](https://ptupitsyn.github.io/Entity-Framework-Cache-Store/), describes a way to persist Ignite in-memory data in SQL server using Entity Framework. The code is nice and elegant, but not efficient (as mentioned on [reddit](https://www.reddit.com/r/programming/comments/593ep1/entity_framework_as_ignitenet_cache_store/d95mnt6/)), because converting object operations to SQL queries introduces overhead.
+Previous article, [Entity Framework Cache Store](https://ptupitsyn.github.io/Entity-Framework-Cache-Store/), describes a way to persist Ignite in-memory data in SQL Server using Entity Framework. The code is nice and elegant, but not efficient (as mentioned on [reddit](https://www.reddit.com/r/programming/comments/593ep1/entity_framework_as_ignitenet_cache_store/d95mnt6/)), because converting object operations to SQL queries introduces overhead.
 
 Today we are going to cut out all the middlemen:
 
@@ -44,7 +44,8 @@ We are going to use this binary mode both on cache side and cache store side.
 
 # Code
 
-The full source code is on [github.com/ptupitsyn/ignite-net-examples](https://github.com/ptupitsyn/ignite-net-examples), under AdoNetCacheStore folder.
+The full source code is on [github.com/ptupitsyn/ignite-net-examples](https://github.com/ptupitsyn/ignite-net-examples),
+under [AdoNetCacheStore](https://github.com/ptupitsyn/ignite-net-examples/tree/master/AdoNetCacheStore) folder.
 
 The project is self-sufficient, you can download the sources and run it without setting anything up.
 It uses SQL Server Compact (via NuGet) and creates a database in the bin folder when needed.
