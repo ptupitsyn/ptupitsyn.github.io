@@ -3,7 +3,7 @@ layout: post
 title: ADO.NET As Ignite.NET Cache Store
 ---
 
-Implementing efficient Ignite.NET persistent store with ADO.NET and SQL Server: continue the story from [Entity Framework Cache Store](https://ptupitsyn.github.io/Entity-Framework-Cache-Store/).
+Implementing efficient [Ignite.NET](https://ignite.apache.org/) persistent store with ADO.NET and SQL Server: continue the story from [Entity Framework Cache Store](https://ptupitsyn.github.io/Entity-Framework-Cache-Store/).
 
 
 # ADO.NET vs Entity Framework
@@ -17,7 +17,7 @@ Today we are going to cut out all the middlemen:
 
 # Ignite 2.0 Generic Cache Store
 
-Cache store interface has been reworked in Ignite.NET 2.0 to operate on generic arguments. This reduces casting and boxing, making code nicer and faster:
+Cache store interface has been reworked in [Ignite.NET 2.0](https://ptupitsyn.github.io/Whats-New-In-Ignite-Net-2.0/) to operate on generic arguments. This reduces casting and boxing, making code nicer and faster:
 
 ```cs
 // Ignite 1.x
@@ -154,9 +154,11 @@ public IBinaryObject Load(int key)
 
 Again, we create serialized object directly from the data reader, keeping allocations and overhead to a minimum.
 
-# Running the Example
+# Running The Example
 
 As you have probably noted, I use SQL Server Compact Edition (via NuGet). This way you don't need to install anything on your machine.
 Just download the code (`git clone https://github.com/ptupitsyn/ignite-net-examples.git`), open `AdoNetCacheStore\AdoNetCacheStore.sln` and run.
 
 Database will be created automatically. I recommend setting breakpoints on cache operations and cache store methods to see it all in action.
+
+`ICacheStore.Delete` is not implemented, by the way. I leave it up to the readers to implement it and test by calling `cache.Remove(1)`.
