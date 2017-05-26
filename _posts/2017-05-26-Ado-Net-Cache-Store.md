@@ -123,3 +123,40 @@ public class AdoNetCacheStore : ICacheStore<int, IBinaryObject>
 
 There are no intermediate objects, we operate on raw field values here, which is as efficient as it gets.
 
+Read method is in similar fashion:
+
+```cs
+public IBinaryObject Load(int key)
+{
+    using (var conn = new SqlCeConnection(ConnectionString))
+    {
+        using (var cmd = new SqlCeCommand(@"SELECT Name, Power FROM Cars WHERE Id = @id", conn))
+        {
+            cmd.Parameters.AddWithValue("@id", key);
+
+            conn.Open();
+
+            foreach (IDataRecord row in cmd.ExecuteReader())
+            {
+                // Return first record.
+                return Ignite.GetBinary()
+                    .GetBuilder("Car")
+                    .SetStringField("Name", row.GetString(0))
+                    .SetIntField("Power", row.GetInt32(1))
+                    .Build();
+            }
+
+            return null;
+        }
+    }
+}
+```
+
+Again, we create serialized object directly from the data reader, keeping allocations and overhead to a minimum.
+
+# Running the Example
+
+As you have probably noted, I use SQL Server Compact Edition (via NuGet). This way you don't need to install anything on your machine.
+Just download the code (`git clone https://github.com/ptupitsyn/ignite-net-examples.git`), open `AdoNetCacheStore\AdoNetCacheStore.sln` and run.
+
+Database will be created automatically. I recommend setting breakpoints on cache operations and cache store methods to see it all in action.
