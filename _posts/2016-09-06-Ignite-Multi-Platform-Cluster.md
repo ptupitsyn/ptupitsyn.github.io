@@ -7,6 +7,12 @@ Ignite cluster can consist of nodes on any supported platform: Java, .NET and C+
 
 ![Apache Ignite Java + .NET](../images/multi-platform-cluster.png)
 
+# UPDATE
+
+This post was written when the latest version of Apache Ignite was 1.7.
+There are some breaking changes in Ignite 2.0, see discussion in comments below. Working example for 2.0+ can be found in `ignite-2.0` branch: 
+https://github.com/ptupitsyn/ignite-multi-platform-demo/tree/ignite-2.0
+
 # Prerequisites
 
 This post is both for .NET developers who may be new to Java and vice versa, so I'll provide very detailed steps.
