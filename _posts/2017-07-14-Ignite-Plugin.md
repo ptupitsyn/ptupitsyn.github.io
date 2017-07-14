@@ -46,27 +46,48 @@ Every plugin starts with `PluginConfiguration`. Our plugin does not need any con
 public class IgniteNetSemaphorePluginConfiguration implements PluginConfiguration {}
 ```
 
-Then comes the entry point: `PluginProvider<PluginConfiguration>`. This interface has lots of methods, but most of them can be left empty 
+Then comes the plugin entry point: `PluginProvider<PluginConfiguration>`. This interface has lots of methods, but most of them can be left empty 
 (`name` and `version` must not be null, so put something in there).
 We are interested only in `initExtensions` method, which allows us to provide a cross-platform interoperation entry point. This is done by registering `PlatformPluginExtension` implementation:
 
 ```java
 public class IgniteNetSemaphorePluginProvider implements PluginProvider<IgniteNetSemaphorePluginConfiguration> {
-    public String name() {
-        return "DotNetSemaphore";
-    }
-
-    public String version() {
-        return "1.0";
-    }
+    public String name() { return "DotNetSemaphore"; }
+    public String version() { return "1.0"; }
 
     public void initExtensions(PluginContext pluginContext, ExtensionRegistry extensionRegistry) 
             throws IgniteCheckedException {
         extensionRegistry.registerExtension(PlatformPluginExtension.class,
                 new IgniteNetSemaphorePluginExtension(pluginContext.grid()));
     }
-
 ...
-
 }
 ```
+
+`PlatformPluginExtension` has a unique `id` to retrieve it from .NET side and a `PlatformTarget createTarget()` method to create an object that can be invoked from .NET.
+
+[`PlatformTarget` interface in Java](https://github.com/apache/ignite/blob/master/modules/core/src/main/java/org/apache/ignite/internal/processors/platform/PlatformTarget.java)  mirrors [`IPlatformTarget` interface in .NET](https://github.com/apache/ignite/blob/master/modules/platforms/dotnet/Apache.Ignite.Core/Interop/IPlatformTarget.cs). When you call `IPlatformTarget.InLongOutLong` in .NET, `PlatformTarget.processInLongOutLong` is called in Java on your implementation. There are a number of other methods that allow exchanging primitives, serialized data, and objects. Each method has a `type` parameter which specifies an operation code, in case when there are many different methods on your plugin.
+
+We are going to need two `PlatformTarget` classes: one that represents our plugin as a whole and has `getOrCreateSemaphore` method, and another one to represent each particular semaphore. First one should take a `string` name and `int` count and return an object, so we need to implement `PlatformTarget.processInStreamOutObject`. Other methods are not needed and can be left blank:
+
+```java
+public class IgniteNetPluginTarget implements PlatformTarget {
+    private final Ignite ignite;
+
+    public IgniteNetPluginTarget(Ignite ignite) {
+        this.ignite = ignite;
+    }
+
+    public PlatformTarget processInStreamOutObject(int i, BinaryRawReaderEx binaryRawReaderEx) throws IgniteCheckedException {
+        String name = binaryRawReaderEx.readString();
+        int count = binaryRawReaderEx.readInt();
+
+        IgniteSemaphore semaphore = ignite.semaphore(name, count, true, true);
+
+        return new IgniteNetSemaphore(semaphore);
+    }
+...
+}
+```
+
+For each `ISemaphore` object in .NET there will be one `IgniteNetSemaphore`, which is also a `PlatformTarget`. And this object will handle `WaitOne` and `Release` methods and delegate them to underlying `IgniteSemaphore` object.
