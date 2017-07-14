@@ -124,4 +124,21 @@ Ignite node starts up and we should see our plugin name in the log:
 [16:02:38]   ^-- DotNetSemaphore 1.0
 ```
 
-Great, now 
+Great! For the .NET part we'll take an API-first approach: implement the extension method first and continue from there.
+
+```cs
+public static class IgniteExtensions
+{
+    public static Semaphore GetOrCreateSemaphore(this IIgnite ignite, string name, int count)
+    {
+        return ignite.GetPlugin<SemaphorePlugin>("semaphorePlugin").GetOrCreateSemaphore(name, count);
+    }
+}
+```
+
+For the `GetPlugin` method to work, `IgniteConfiguration.PluginConfigurations` property should be set. It takes a collection of `IPluginConfiguration` implementations, and each implementation must, in turn, link to a `IPluginProvider` implementation with an attribute:
+
+```cs
+[PluginProviderType(typeof(SemaphorePluginProvider))]
+class SemaphorePluginConfiguration : IPluginConfiguration  {...}
+```
