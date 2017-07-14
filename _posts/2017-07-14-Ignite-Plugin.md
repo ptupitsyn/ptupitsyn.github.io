@@ -39,3 +39,34 @@ Looks simple enough and quite useful; same API as built-in .NET `Semaphore`. Obv
 Let's start with Java side of things. We need a way to call `Ignite.semaphore()` method there and provide access to the resulting instance to the .NET platform.
 
 Create a Java project and reference Ignite 2.0 from Maven (detailed instructions can be found in [Building Multi-Platform Ignite Cluster](https://ptupitsyn.github.io/Ignite-Multi-Platform-Cluster/) post).
+
+Every plugin starts with `PluginConfiguration`. Our plugin does not need any configuration properties, but the class must exist, so just make a simple one:
+
+```java
+public class IgniteNetSemaphorePluginConfiguration implements PluginConfiguration {}
+```
+
+Then comes the entry point: `PluginProvider<PluginConfiguration>`. This interface has lots of methods, but most of them can be left empty 
+(`name` and `version` must not be null, so put something in there).
+We are interested only in `initExtensions` method, which allows us to provide a cross-platform interoperation entry point. This is done by registering `PlatformPluginExtension` implementation:
+
+```java
+public class IgniteNetSemaphorePluginProvider implements PluginProvider<IgniteNetSemaphorePluginConfiguration> {
+    public String name() {
+        return "DotNetSemaphore";
+    }
+
+    public String version() {
+        return "1.0";
+    }
+
+    public void initExtensions(PluginContext pluginContext, ExtensionRegistry extensionRegistry) 
+            throws IgniteCheckedException {
+        extensionRegistry.registerExtension(PlatformPluginExtension.class,
+                new IgniteNetSemaphorePluginExtension(pluginContext.grid()));
+    }
+
+...
+
+}
+```
