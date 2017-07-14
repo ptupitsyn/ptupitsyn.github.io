@@ -101,7 +101,7 @@ public long processInLongOutLong(int i, long l) throws IgniteCheckedException {
 }
 ```
 
-That's it, Java part is implemented! We just need to make our `IgniteNetSemaphorePluginProvider` class available to Java service loader by creating a `META-INF.services\org.apache.ignite.plugin.PluginProvider` file with a single line containing the class name. Build the project and let's move on to the .NET part.
+That's it, Java part is implemented! We just need to make our `IgniteNetSemaphorePluginProvider` class available to Java service loader by creating a `resources\META-INF.services\org.apache.ignite.plugin.PluginProvider` file with a single line containing the class name. Package the project with Maven and let's move on to the .NET part.
 
 
 # .NET Plugin
