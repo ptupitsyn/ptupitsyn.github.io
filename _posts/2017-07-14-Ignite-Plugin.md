@@ -90,4 +90,15 @@ public class IgniteNetPluginTarget implements PlatformTarget {
 }
 ```
 
-For each `ISemaphore` object in .NET there will be one `IgniteNetSemaphore`, which is also a `PlatformTarget`. And this object will handle `WaitOne` and `Release` methods and delegate them to underlying `IgniteSemaphore` object.
+For each `ISemaphore` object in .NET there will be one `IgniteNetSemaphore`, which is also a `PlatformTarget`. And this object will handle `WaitOne` and `Release` methods and delegate them to underlying `IgniteSemaphore` object. Since both of these methods are void and parameterless, the simplest `PlatformTarget` method will work:
+
+```java
+public long processInLongOutLong(int i, long l) throws IgniteCheckedException {
+    if (i == 0) semaphore.acquire();
+    else semaphore.release();
+    
+    return 0;
+}
+```
+
+That's it, Java part is implemented! We just need to make our `IgniteNetSemaphorePluginProvider` class available to Java service loader by creating a `META-INF.services\org.apache.ignite.plugin.PluginProvider` file with a single line containing the class name.
