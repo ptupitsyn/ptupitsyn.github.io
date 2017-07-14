@@ -37,3 +37,5 @@ Looks simple enough and quite useful; same API as built-in .NET `Semaphore`. Obv
 # Java Plugin
 
 Let's start with Java side of things. We need a way to call `Ignite.semaphore()` method there and provide access to the resulting instance to the .NET platform.
+
+Create a Java project and reference Ignite 2.0 from Maven (detailed instructions can be found in [Building Multi-Platform Ignite Cluster](https://ptupitsyn.github.io/Ignite-Multi-Platform-Cluster/) post).
