@@ -212,4 +212,4 @@ class Semaphore
 }
 ```
 
-We are done! Let's test our Semaphore 
+We are done! Quite a bit of a boilerplate code, but adding more logic to existing plugin is easy, just implement a pair of methods.
