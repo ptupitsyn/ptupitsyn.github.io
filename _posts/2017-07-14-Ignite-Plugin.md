@@ -142,3 +142,74 @@ For the `GetPlugin` method to work, `IgniteConfiguration.PluginConfigurations` p
 [PluginProviderType(typeof(SemaphorePluginProvider))]
 class SemaphorePluginConfiguration : IPluginConfiguration  {...}
 ```
+
+On node startup Ignite.NET iterates through plugin configurations, instantiates plugin providers, and calls `Start(IPluginContext<SemaphorePluginConfiguration> context)` method on them. `IIgnite.GetPlugin` calls are then delegated to `IPluginProvider.GetPlugin` of the provider with specified name.
+
+```cs
+class SemaphorePluginProvider : IPluginProvider<SemaphorePluginConfiguration>
+{
+    private SemaphorePlugin _plugin;
+
+    public T GetPlugin<T>() where T : class
+    {
+        return _plugin as T;
+    }
+
+    public void Start(IPluginContext<SemaphorePluginConfiguration> context)
+    {
+        _plugin = new SemaphorePlugin(context);
+    }
+
+    ...
+
+}
+```
+
+`IPluginContext` provides access to Ignite instance, Ignite and plugin configurations, and has `GetExtension` method, which delegates to `PlatformPluginExtension.createTarget()` in Java. This way we "establish connection" between the two platforms. `IPlatformTarget` in .NET gets linked to `PlatformTarget` in Java; they can call each other, and the lifetime of Java object is tied to lifetime of .NET object. Once .NET object is reclaimed by the garbage collector, finalizer releases the Java object reference, and it will also be garbage collected.
+
+Remaining implementation is simple - just call appropriate `IPlatformTarget` methods:
+
+```cs
+class SemaphorePlugin
+{
+    private readonly IPlatformTarget _target;  // Refers to IgniteNetPluginTarget in Java
+
+    public SemaphorePlugin(IPluginContext<SemaphorePluginConfiguration> context)
+    {
+        _target = context.GetExtension(100);
+    }
+
+    public Semaphore GetOrCreateSemaphore(string name, int count)
+    {
+        var semaphoreTarget = _target.InStreamOutObject(0, w =>
+        {
+            w.WriteString(name);
+            w.WriteInt(count);
+        });
+
+        return new Semaphore(semaphoreTarget);
+    }
+}
+
+class Semaphore
+{
+    private readonly IPlatformTarget _target;  // Refers to IgniteNetSemaphore in Java
+
+    public Semaphore(IPlatformTarget target)
+    {
+        _target = target;
+    }
+
+    public void WaitOne()
+    {
+        _target.InLongOutLong(0, 0);
+    }
+
+    public void Release()
+    {
+        _target.InLongOutLong(1, 0);
+    }
+}
+```
+
+We are done! Let's test our Semaphore 
