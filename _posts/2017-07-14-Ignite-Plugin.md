@@ -101,7 +101,27 @@ public long processInLongOutLong(int i, long l) throws IgniteCheckedException {
 }
 ```
 
-That's it, Java part is implemented! We just need to make our `IgniteNetSemaphorePluginProvider` class available to Java service loader by creating a `resources\META-INF.services\org.apache.ignite.plugin.PluginProvider` file with a single line containing the class name. Package the project with Maven and let's move on to the .NET part.
+That's it, Java part is implemented! We just need to make our `IgniteNetSemaphorePluginProvider` class available to Java service loader by creating a `resources\META-INF.services\org.apache.ignite.plugin.PluginProvider` file with a single line containing the class name. Package the project with Maven (`mvn package` in console, or use IDEA UI). There should be a `IgniteNetSemaphorePlugin-1.0-SNAPSHOT.jar` file in the `target` directory. We can move on to the .NET part now.
 
 
 # .NET Plugin
+
+First let's make sure our Java code gets picked up by Ignite. Create a console project, install Ignite NuGet package, and start Ignite with the path to the jar file that we just created:
+
+```cs
+var cfg = new IgniteConfiguration
+{
+    JvmClasspath = @"..\..\..\..\Java\target\IgniteNetSemaphorePlugin-1.0-SNAPSHOT.jar"
+};
+
+Ignition.Start(cfg);
+```
+
+Ignite node starts up and we should see our plugin name in the log:
+
+```
+[16:02:38] Configured plugins:
+[16:02:38]   ^-- DotNetSemaphore 1.0
+```
+
+Great, now 
