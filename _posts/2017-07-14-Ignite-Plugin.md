@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Implementing Ignite.NET Plugin: Distributed Semaphore
+title: Implementing Ignite.NET Plugin&#58; Distributed Semaphore
 ---
 
 [Ignite.NET 2.0](https://ptupitsyn.github.io/Whats-New-In-Ignite-Net-2.0/) introduced [plugin system](https://apacheignite-net.readme.io/docs/plugins). Plugins can be .NET-only or .NET + Java. Let's see how to implement the latter.
