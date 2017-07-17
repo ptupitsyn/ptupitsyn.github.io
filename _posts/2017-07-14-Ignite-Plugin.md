@@ -216,5 +216,10 @@ class Semaphore
 
 We are done! Quite a bit of a boilerplate code, but adding more logic to existing plugin is easy, just implement a pair of methods.
 
+# Testing
 
-TODO: Packaging and distribution (NuGet)
+TODO: MSTest?
+
+# Packaging (NuGet)
+
+TODO: how to include Jar file
