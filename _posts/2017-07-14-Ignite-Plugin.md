@@ -233,8 +233,3 @@ Console.ReadKey();
 ```
 
 Download full project from GitHub: [github.com/ptupitsyn/ignite-net-examples/tree/master/Plugin](https://github.com/ptupitsyn/ignite-net-examples/tree/master/Plugin).
-
-
-# Packaging (NuGet)
-
-TODO: how to include Jar file
