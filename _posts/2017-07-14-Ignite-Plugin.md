@@ -218,7 +218,22 @@ We are done! Quite a bit of a boilerplate code, but adding more logic to existin
 
 # Testing
 
-TODO: MSTest?
+To demonstrate distributed nature of our Semaphore, we can run multiple Ignite nodes where each of them calls `WaitOne()`. We'll see that only two nodes at a time are able to acquire the semaphore:
+
+```cs
+var ignite = Ignition.Start(cfg);
+var sem = ignite.GetOrCreateSemaphore("foo", 2);
+
+Console.WriteLine("Trying to acquire semaphore...");
+
+sem.WaitOne();
+
+Console.WriteLine("Semaphore acquired. Press any key to release.");
+Console.ReadKey();
+```
+
+Download full project from GitHub: [github.com/ptupitsyn/ignite-net-examples/tree/master/Plugin](https://github.com/ptupitsyn/ignite-net-examples/tree/master/Plugin).
+
 
 # Packaging (NuGet)
 
