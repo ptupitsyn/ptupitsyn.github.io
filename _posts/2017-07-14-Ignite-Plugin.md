@@ -214,7 +214,8 @@ class Semaphore
 }
 ```
 
-We are done! Quite a bit of a boilerplate code, but adding more logic to existing plugin is easy, just implement a pair of methods.
+We are done! Quite a bit of boilerplate code, but adding more logic to existing plugin is easy, just implement a pair of methods on both sides.
+Ignite uses [JNI](https://en.wikipedia.org/wiki/Java_Native_Interface) and unmanaged memory to exchange data between .NET and Java platforms within single process, which is simple and efficient.
 
 # Testing
 
