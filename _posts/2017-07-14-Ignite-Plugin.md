@@ -18,7 +18,7 @@ Good example of such an API is [IgniteSemaphore](https://apacheignite.readme.io/
 
 # Distributed Semaphore API
 
-Ignite Semaphore is very similar to `System.Threading.Semaphore` ([MSDN](https://msdn.microsoft.com/en-us/library/system.threading.semaphore.aspx)), but the effect is cluster-wide: limit the number of threads executing a giving piece of code *across all Ignite nodes*.
+Ignite Semaphore is very similar to `System.Threading.Semaphore` ([MSDN](https://msdn.microsoft.com/en-us/library/system.threading.semaphore.aspx)), but the effect is cluster-wide: limit the number of threads executing a given piece of code *across all Ignite nodes*.
 
 It should be used in C# code like this:
 
