@@ -66,9 +66,19 @@ var cache = ignite.GetCache<int, Deal>("deals").AsCacheQueryable();
 cache.Where(p => p.Value.Company == "Foo").RemoveAll();
 ```
 
-This is more efficient than loading relevant entries and removing them afterwards.
+This is more optimal than loading relevant entries and removing them afterwards.
 
-**Local collection joins** provide efficient alternative to `Contains` and other similar cases:
+**Local collection joins** provide efficient alternative to `Contains` and other similar cases. For example, search by multiple field values can be done like this:
 
 ```cs
+int[] companies = new[] { "Foo", "Bar", "Baz" };
+
+var entries = cache.Join(companies, entry => entry.Value.Company, name => name, (entry, name) => entry);
 ```
+
+Which generates a temporary table join:
+
+```sql
+select _T0._KEY, _T0._VAL from "deals".Deal as _T0 inner join table (F0 nvarchar = ?) _T1 on (_T1.F0 = _T0.COMPANY)
+```
+
