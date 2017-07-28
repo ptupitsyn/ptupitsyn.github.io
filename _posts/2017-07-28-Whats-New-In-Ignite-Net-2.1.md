@@ -54,3 +54,21 @@ wget https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -OutFile nuget.
 nuget install Apache.Ignite
 .\Apache.Ignite.*\lib\net40\Apache.Ignite.exe
 ```
+
+
+# LINQ Improvements
+
+**Conditional data removal** (SQL `DELETE FROM ... WHERE ...`) is now possible:
+
+```cs
+var cache = ignite.GetCache<int, Deal>("deals").AsCacheQueryable();
+
+cache.Where(p => p.Value.Company == "Foo").RemoveAll();
+```
+
+This is more efficient than loading relevant entries and removing them afterwards.
+
+**Local collection joins** provide efficient alternative to `Contains` and other similar cases:
+
+```cs
+```
