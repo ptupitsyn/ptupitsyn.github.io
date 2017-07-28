@@ -15,8 +15,22 @@ Ignite has been an in-memory system from the start: RAM is fast, disk is slow, w
 However, in most use cases we still want to persist data in some non-volatile storage, in case of full cluster restart, data center failures, and the like.
 Most common solution is an RDBMS serving as [cache store](https://apacheignite-net.readme.io/docs/persistent-store), which has a lot of downsides (poor performance, single point of failure, complexity of the overall solution).
 
-Ignite 2.1 solves all these problems with a single line of configuration:
+Ignite 2.1 solves all these problems with a single line of configuration, which enables efficient automatic persistence of all cached data on disk.
+The following code demonstrates how cache data survives cluster restart (just run it repeatedly):
 
 ```cs
-var cfg = new IgniteConfiguration { PersistentStoreConfiguration = new PersistentStoreConfiguration() };
+var cfg = new IgniteConfiguration 
+{ 
+    PersistentStoreConfiguration = new PersistentStoreConfiguration() 
+};
+using (var ignite = Ignition.Start(cfg))
+{
+    ignite.SetActive(true);  // Required with enabled persistence.
+    var cache = ignite.GetOrCreateCache<Guid, string>("myCache");
+    cache[Guid.NewGuid()] = "Hello, world!";
+    Console.WriteLine("\nCache size: " + cache.GetSize());
+}
 ```
+
+Have you ever seen a database that is so simple to use? I haven't.
+There is a single NuGet package behind this code, nothing else. And you can run SQL, LINQ and full-text queries over arbitrary data.
