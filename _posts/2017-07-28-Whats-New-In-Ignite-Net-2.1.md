@@ -93,3 +93,6 @@ As you can see, this query is parametrised with a single `?`, so varying number 
 
 # Conclusion
 ## TODO
+
+From small hoppy projects to huge enterprise deployments. Starts lightweight and grows.
+Swiss Army Knife: easy storage, caching, concurrency, interprocess/network communication, serialization, anything you want.
