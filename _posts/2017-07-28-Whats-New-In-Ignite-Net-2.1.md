@@ -42,6 +42,11 @@ Every Ignite node persists only a part of data which is primary or backup for th
 See more details in [documentation](https://apacheignite.readme.io/docs/distributed-persistent-store); working [example](https://github.com/apache/ignite/blob/master/modules/platforms/dotnet/examples/Apache.Ignite.Examples/Datagrid/StoreExample.cs) can be found in full [binary or source distribution](https://ignite.apache.org/download.cgi).
 
 
+# Automatic Remote Assembly Loading 
+
+## TODO!!
+
+
 # Standalone NuGet Deployment
 
 Ignite nodes can be started from code (`Ignition.Start()`) or with a standalone executable (`Apache.Ignite.exe`). However, standalone executable was only available as a part of [full binary distribution](https://ignite.apache.org/download.cgi).
@@ -58,6 +63,8 @@ nuget install Apache.Ignite
 
 # LINQ Improvements
 
+SQL DML (Data Modification Language) has been introduced in [Ignite 1.9](https://ptupitsyn.github.io/Whats-New-In-Ignite-Net-1-9/), and LINQ starts to catch up.
+
 **Conditional data removal** (SQL `DELETE FROM ... WHERE ...`) is now possible:
 
 ```cs
@@ -66,7 +73,7 @@ var cache = ignite.GetCache<int, Deal>("deals").AsCacheQueryable();
 cache.Where(p => p.Value.Company == "Foo").RemoveAll();
 ```
 
-This is more optimal than loading relevant entries and removing them afterwards.
+This is more optimal than loading relevant entries and removing them afterwards. Batch updates via `UpdateAll` are on the way in future versions.
 
 **Local collection joins** provide efficient alternative to `Contains` and other similar cases. For example, search by multiple field values can be done like this:
 
@@ -82,3 +89,7 @@ Which generates a temporary table join:
 select _T0._KEY, _T0._VAL from "deals".Deal as _T0 inner join table (F0 nvarchar = ?) _T1 on (_T1.F0 = _T0.COMPANY)
 ```
 
+As you can see, this query is parametrised with a single `?`, so varying number of elements in local array does not affect cached query plan.
+
+# Conclusion
+## TODO
