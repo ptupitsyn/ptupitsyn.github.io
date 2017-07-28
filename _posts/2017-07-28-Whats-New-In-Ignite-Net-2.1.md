@@ -40,3 +40,17 @@ By default everything is stored in Ignite work directory, which happens to be in
 Every Ignite node persists only a part of data which is primary or backup for that node, so storage space and IO load are split between all machines (in contrast with RDBMS cache store).
 
 See more details in [documentation](https://apacheignite.readme.io/docs/distributed-persistent-store); working [example](https://github.com/apache/ignite/blob/master/modules/platforms/dotnet/examples/Apache.Ignite.Examples/Datagrid/StoreExample.cs) can be found in full [binary or source distribution](https://ignite.apache.org/download.cgi).
+
+
+# Standalone NuGet Deployment
+
+Ignite nodes can be started from code (`Ignition.Start()`) or with a standalone executable (`Apache.Ignite.exe`). However, standalone executable was only available as a part of [full binary distribution](https://ignite.apache.org/download.cgi).
+
+2.1 fixes this discrepancy and includes standalone executable in [Apache.Ignite NuGet package](https://www.nuget.org/packages/Apache.Ignite/) so you can easily install and run Ignite with command line:
+
+```shell
+# Powershell
+wget https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -OutFile nuget.exe
+nuget install Apache.Ignite
+.\Apache.Ignite.*\lib\net40\Apache.Ignite.exe
+```
