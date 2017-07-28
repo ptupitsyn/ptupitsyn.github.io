@@ -34,3 +34,7 @@ using (var ignite = Ignition.Start(cfg))
 
 Have you ever seen a database that is so simple to use? I haven't.
 There is a single NuGet package behind this code, nothing else. And you can run SQL, LINQ and full-text queries over arbitrary data.
+
+By default everything is stored in Ignite work directory, which happens to be in system Temp folder, so you may want to change this (call `IIgnite.GetConfiguration().WorkDirectory` to see where is it on your machine).
+
+Every Ignite node persists only a part of data which is primary or backup for that node, so storage space and IO load are split between all machines (in contrast with RDBMS cache store).
