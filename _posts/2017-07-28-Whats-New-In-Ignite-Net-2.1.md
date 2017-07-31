@@ -44,7 +44,17 @@ See more details in [documentation](https://apacheignite.readme.io/docs/distribu
 
 # Automatic Remote Assembly Loading 
 
-## TODO!!
+Ignite Compute jobs involve executing user code on remote machines (for example, `ICompute.Broadcast` will execute provided action on every node in cluster).
+Before 2.1 we had to make sure that required assemblies (dll and exe files) are loaded on all cluster nodes. With nodes started from `Apache.Ignite.exe` we had to use `-assembly` switch manually.
+
+Ignite 2.1 automates this process: when compute job arrives on some node and Ignite fails to locate an assembly with required types locally, it will request that assembly from other nodes in cluster. This feature has to be enabled explicitly:
+
+```cs
+var cfg = new IgniteConfiguration
+{
+    PeerAssemblyLoadingMode = PeerAssemblyLoadingMode.CurrentAppDomain
+}
+```
 
 
 # Standalone NuGet Deployment
