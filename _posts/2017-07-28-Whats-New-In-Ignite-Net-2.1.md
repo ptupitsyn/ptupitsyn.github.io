@@ -56,6 +56,30 @@ var cfg = new IgniteConfiguration
 }
 ```
 
+Besides making the deployment simpler, this feature enables a whole set of new use cases where the cluster keeps running and client nodes perform computations:
+* Perform one-time computations (e.g. engineers use the cluster to speed up some work)
+* Test new and updated computations (quick turnaround)
+* Gather information from remote machines (e.g. some logs, system details)
+* Dynamically deploy [services](https://apacheignite-net.readme.io/docs/service-grid)
+
+Ignite uses assembly-qualified type names for compute jobs, which includes assembly version, so you can change existing compute job implementation and Ignite will pick it up. Assembly version autoincrement (`[assembly: AssemblyVersion("1.0.*")]`) can simplify the process.
+
+More details can be found in documentation: [apacheignite-net.readme.io/docs/zero-deployment](https://apacheignite-net.readme.io/docs/zero-deployment).
+
+## Assembly Loading & LINQPad
+
+LINQPad is great for testing things quickly (see [Using Apache Ignite.NET in LINQPad](https://ptupitsyn.github.io/Using-Apache-Ignite-Net-in-LINQPad/)), and automatic assembly loading works perfectly there.
+
+You can start a bunch of `Apache.Ignite.exe` processes, then play around with `ICompute` in LINQPad: it produces an assembly with unique name on each run, so you don't need to worry about versions. Try this:
+* Install Ignite.NET somewhere (see NuGet Deployemnt below) and modify `Apache.Ignite.exe.config`: `<igniteConfiguration peerAssemblyLoadingMode="CurrentAppDomain" />`
+* Run `Apache.Ignite.exe` a couple of times
+* Run LINQPad, install Ignite NuGet package
+* Switch to "C# Program" and paste the code:
+
+```cs
+
+```
+
 
 # Standalone NuGet Deployment
 
