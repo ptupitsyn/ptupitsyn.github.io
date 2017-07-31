@@ -77,8 +77,27 @@ You can start a bunch of `Apache.Ignite.exe` processes, then play around with `I
 * Switch to "C# Program" and paste the code:
 
 ```cs
+void Main()
+{
+	var cfg = new IgniteConfiguration 
+	{ 
+		PeerAssemblyLoadingMode = PeerAssemblyLoadingMode.CurrentAppDomain,
+		ClientMode = true
+	};
+	using (var ignite = Ignition.Start(cfg))
+	{
+		ignite.GetCompute().Broadcast(new MyAction());
+	}
+}
 
+class MyAction : IComputeAction
+{
+	public void Invoke() => Console.WriteLine("Hello, World!");
+}
 ```
+
+Run the program and observe "Hello, World!" output on all server nodes.
+Change the text and run again: new code is picked up by Ignite!
 
 
 # Standalone NuGet Deployment
