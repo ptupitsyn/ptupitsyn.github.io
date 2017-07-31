@@ -145,8 +145,8 @@ select _T0._KEY, _T0._VAL from "deals".Deal as _T0 inner join table (F0 nvarchar
 As you can see, this query is parametrised with a single `?`, so varying number of elements in local array does not affect cached query plan.
 
 # Conclusion
-## TODO
 
-From small hoppy projects to huge enterprise deployments. Starts lightweight and grows.
-Swiss Army Knife: easy storage, caching, concurrency, interprocess/network communication, serialization, anything you want.
-Embedded DB, SQL CE.
+Persistent storage is a feature that finally makes Ignite a complete, standalone solution.
+I have mentioned the word `database` a couple of times in this article, but Ignite is so much more. It is like a swiss army knife for your data: in-memory and on-disk storage, concurrency, transactions, computations, SQL and full-text queries, serialization, you name it.
+
+And the real beauty is how easy it is to use. No heavy installers, no complicated config files, just a single NuGet package and a single line of code to run. Ignite is used to store and process terabytes of data on hundreds of machines in enterprise clusters, but it also works perfectly for a small hobby project where you may need an embedded DB or some inter-process communication mechanism.
