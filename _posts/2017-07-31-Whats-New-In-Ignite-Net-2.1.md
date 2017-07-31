@@ -3,7 +3,7 @@ layout: post
 title: What's new in Apache Ignite.NET 2.1
 ---
 
-Apache Ignite 2.1 [has been released](https://blogs.apache.org/ignite/entry/apache-ignite-2-1-a) today, introducing Ignite Persistent Store!
+Apache Ignite 2.1 [has been released](https://blogs.apache.org/ignite/entry/apache-ignite-2-1-a) last week, introducing Ignite Persistent Store!
 Another huge step forward for the project: it becomes a complete database with unique feature set, check out the comparison table on [ignite.apache.org frontpage](https://ignite.apache.org/). As usual, we'll have a look at new features from .NET standpoint.
 
 ![Apache Ignite Persistent Store](../images/ignite-persistent-store.png)
