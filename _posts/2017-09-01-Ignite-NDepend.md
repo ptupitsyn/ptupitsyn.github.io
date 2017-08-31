@@ -33,10 +33,12 @@ Click on red `4` number to reveal a list of issues:
 
 ![NDepend Critical Issues](../images/NDepend/criticals.png)
 
-Hovering over the rule name shows a pop-up window with [detailed rule description](http://www.ndepend.com/default-rules/Q_Avoid_types_initialization_cycles.html) along with possible false positive scenarios.
+Hovering over the **"Avoid types initialization cycles"** rule name shows a pop-up window with [detailed rule description](http://www.ndepend.com/default-rules/Q_Avoid_types_initialization_cycles.html) along with possible false positive scenarios.
 
 Our case seems like a false positive, since [BinaryObjectBuilder](https://github.com/apache/ignite/blob/82e5f8a6553323e793c01c54e24dda6d47188ce6/modules/platforms/dotnet/Apache.Ignite.Core/Impl/Binary/BinaryObjectBuilder.cs) does not have a static constructor and does not use [BinarySystemHandlers](https://github.com/apache/ignite/blob/82e5f8a6553323e793c01c54e24dda6d47188ce6/modules/platforms/dotnet/Apache.Ignite.Core/Impl/Binary/BinarySystemHandlers.cs) in static field initializers.
 
 The only usage of `BinarySystemHandlers` is on [Line 127](https://github.com/apache/ignite/blob/82e5f8a6553323e793c01c54e24dda6d47188ce6/modules/platforms/dotnet/Apache.Ignite.Core/Impl/Binary/BinaryObjectBuilder.cs#L127), but this has nothing to do with type initialization.
 
-However, looking closer at how these three classes (`BinaryUtils`, `BinaryObjectBuilder`, `BinarySystemHandlers`) relate, reveals a real code quality issue: method `GetTypeId` does not really belong in `BinarySystemHandlers`, it operates only on some constants from `BinaryUtils`. So we could move `GetTypeId` to `BinaryUtils`, but that class is already ugly ("utility class anti-pattern"). Proper solution is to [extract type code handling logic to a separate class](https://issues.apache.org/jira/browse/IGNITE-6233).
+However, looking closer at how these three classes (`BinaryUtils`, `BinaryObjectBuilder`, `BinarySystemHandlers`) relate, reveals a real code quality issue: method `GetTypeId` does not really belong in `BinarySystemHandlers`, it operates only on some constants from `BinaryUtils`. So we could move `GetTypeId` to `BinaryUtils`, but that class is already ugly ("utility class anti-pattern"). Proper solution is to extract type code handling logic to a separate class: [IGNITE-6233](https://issues.apache.org/jira/browse/IGNITE-6233).
+
+**"Don't create threads explicitly"** issue is simpler, `new Thread(Run).Start()` should be replaced with a `ThreadPool` or `Task`: [IGNITE-6231](https://issues.apache.org/jira/browse/IGNITE-6231).
