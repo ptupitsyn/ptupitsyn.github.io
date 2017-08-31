@@ -13,4 +13,14 @@ Not so long ago [Patrick Smacchia](https://blog.ndepend.com/author/psmacchia/) r
 
 # Getting Started with NDepend
 
+We are going to work only with Apache.Ignite.Core project: it is the biggest, most important, and most complicated part of Ignite.NET.
+
+NDepend, like FxCop, operates on a built assembly (dll file), so we have to build the project in Visual Studio, 
+open up the assembly in `VisualNDepend.exe`, and hit F5 (Run Analysis). The process is surprisingly quick: 1 second on my machine,
+where ReSharper (command-line) and FxCop take several seconds.
+
+Upon analysis completion we are presented with some statistics and a summary of issues:
+
+![NDepend Dashboard](../images/NDepend/dashboard.png)
+
 # Exploring critical issues
