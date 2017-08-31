@@ -13,7 +13,7 @@ Not so long ago [Patrick Smacchia](https://blog.ndepend.com/author/psmacchia/) r
 
 # Getting Started with NDepend
 
-We are going to work only with Apache.Ignite.Core project: it is the biggest, most important, and most complicated part of Ignite.NET.
+We are going to work only with `Apache.Ignite.Core` project: it is the biggest, most important, and most complicated part of Ignite.NET.
 
 NDepend, like FxCop, operates on a built assembly (dll file), so we have to build the project in Visual Studio, 
 open up the assembly in `VisualNDepend.exe`, and hit F5 (Run Analysis). The process is surprisingly quick: 1 second on my machine,
@@ -27,3 +27,8 @@ Upon analysis completion we are presented with some statistics and a summary of 
 But every static analyzer produces false positives and irrelevant issues, so it's not time to worry, yet.
 
 # Exploring Critical Issues
+
+There are 4 critical issues and 7 critical rule violations, we are going to start with these.
+Click on red `4` number to reveal a list of issues:
+
+![NDepend Critical Issues](../images/NDepend/criticals.png)
