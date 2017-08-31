@@ -42,3 +42,8 @@ The only usage of `BinarySystemHandlers` is on [Line 127](https://github.com/apa
 However, looking closer at how these three classes (`BinaryUtils`, `BinaryObjectBuilder`, `BinarySystemHandlers`) relate, reveals a real code quality issue: method `GetTypeId` does not really belong in `BinarySystemHandlers`, it operates only on some constants from `BinaryUtils`. So we could move `GetTypeId` to `BinaryUtils`, but that class is already ugly ("utility class anti-pattern"). Proper solution is to extract type code handling logic to a separate class: [IGNITE-6233](https://issues.apache.org/jira/browse/IGNITE-6233). So even a false positive turned out to be quite useful.
 
 **"Don't create threads explicitly"** issue is simpler, `new Thread(Run).Start()` should be replaced with a `ThreadPool` or `Task`: [IGNITE-6231](https://issues.apache.org/jira/browse/IGNITE-6231). Exception handling is also missing in that thread, which can potentially bring down entire process.
+
+
+# Controversial Issues
+
+TODO: Internal methods in internal classes, see https://ericlippert.com/2014/09/15/internal-or-public/ 
