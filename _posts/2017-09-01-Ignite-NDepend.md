@@ -23,4 +23,7 @@ Upon analysis completion we are presented with some statistics and a summary of 
 
 ![NDepend Dashboard](../images/NDepend/dashboard.png)
 
-# Exploring critical issues
+2654 issues! Whoops! No blockers at least.
+But every static analyzer produces false positives and irrelevant issues, so it's not time to worry, yet.
+
+# Exploring Critical Issues
