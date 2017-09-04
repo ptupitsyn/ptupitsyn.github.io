@@ -1,0 +1,907 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class PlatformMemoryUtils
+   | Apache Ignite.NET </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class PlatformMemoryUtils
+   | Apache Ignite.NET ">
+    <meta name="generator" content="docfx 2.20.0.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo_ignite_32_32.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils">
+  
+  
+  <h1 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils" class="text-break">Class PlatformMemoryUtils
+  </h1>
+  <div class="markdown level0 summary"><p>Utility methods for platform memory management.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">PlatformMemoryUtils</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Apache.Ignite.Core.Impl.Memory.html">Apache.Ignite.Core.Impl.Memory</a></h6>
+  <h6><strong>Assembly</strong>: Apache.Ignite.Core.dll</h6>
+  <h5 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public static class PlatformMemoryUtils</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_AllocatePool_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.AllocatePool*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_AllocatePool" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.AllocatePool">AllocatePool()</h4>
+  <div class="markdown level1 summary"><p>Allocate pool memory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long AllocatePool()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>Pool pointer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_AllocatePooled_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.AllocatePooled*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_AllocatePooled_System_Int64_System_Int32_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.AllocatePooled(System.Int64,System.Int32)">AllocatePooled(Int64, Int32)</h4>
+  <div class="markdown level1 summary"><p>Allocate pooled memory chunk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long AllocatePooled(long poolPtr, int cap)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">poolPtr</span></td>
+        <td><p>Pool pointer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">cap</span></td>
+        <td><p>CalculateCapacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>Memory pointer or <code>0</code> in case there are no free memory chunks in the pool.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_AllocateUnpooled_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.AllocateUnpooled*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_AllocateUnpooled_System_Int32_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.AllocateUnpooled(System.Int32)">AllocateUnpooled(Int32)</h4>
+  <div class="markdown level1 summary"><p>Allocate unpooled memory chunk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long AllocateUnpooled(int cap)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">cap</span></td>
+        <td><p>Minimum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>New memory pointer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_CopyMemory_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.CopyMemory*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_CopyMemory_System_Byte__System_Byte__System_Int32_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.CopyMemory(System.Byte*,System.Byte*,System.Int32)">CopyMemory(Byte*, Byte*, Int32)</h4>
+  <div class="markdown level1 summary"><p>Unsafe memory copy routine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CopyMemory(byte *src, byte *dest, int len)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>*</td>
+        <td><span class="parametername">src</span></td>
+        <td><p>Source.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Byte</span>*</td>
+        <td><span class="parametername">dest</span></td>
+        <td><p>Destination.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">len</span></td>
+        <td><p>Length.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_CopyMemory_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.CopyMemory*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_CopyMemory_System_Void__System_Void__System_Int32_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.CopyMemory(System.Void*,System.Void*,System.Int32)">CopyMemory(Void*, Void*, Int32)</h4>
+  <div class="markdown level1 summary"><p>Unsafe memory copy routine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CopyMemory(void *src, void *dest, int len)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Void</span>*</td>
+        <td><span class="parametername">src</span></td>
+        <td><p>Source.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Void</span>*</td>
+        <td><span class="parametername">dest</span></td>
+        <td><p>Destination.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">len</span></td>
+        <td><p>Length.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_GetCapacity_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.GetCapacity*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_GetCapacity_System_Int64_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.GetCapacity(System.Int64)">GetCapacity(Int64)</h4>
+  <div class="markdown level1 summary"><p>Gets capacity for the given memory chunk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetCapacity(long memPtr)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">memPtr</span></td>
+        <td><p>Memory pointer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>CalculateCapacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_GetData_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.GetData*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_GetData_System_Int64_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.GetData(System.Int64)">GetData(Int64)</h4>
+  <div class="markdown level1 summary"><p>Gets data pointer for the given memory chunk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long GetData(long memPtr)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">memPtr</span></td>
+        <td><p>Memory pointer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>Data pointer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_GetFlags_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.GetFlags*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_GetFlags_System_Int64_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.GetFlags(System.Int64)">GetFlags(Int64)</h4>
+  <div class="markdown level1 summary"><p>Gets flags for the given memory chunk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetFlags(long memPtr)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">memPtr</span></td>
+        <td><p>Memory pointer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Flags.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_GetLength_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.GetLength*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_GetLength_System_Int64_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.GetLength(System.Int64)">GetLength(Int64)</h4>
+  <div class="markdown level1 summary"><p>Gets length for the given memory chunk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetLength(long memPtr)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">memPtr</span></td>
+        <td><p>Memory pointer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Length.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_IsAcquired_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.IsAcquired*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_IsAcquired_System_Int32_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.IsAcquired(System.Int32)">IsAcquired(Int32)</h4>
+  <div class="markdown level1 summary"><p>Check whether flags denote pooled and acquired memory chunk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsAcquired(int flags)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">flags</span></td>
+        <td><p>Flags.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>True</code> if acquired.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_IsAcquired_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.IsAcquired*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_IsAcquired_System_Int64_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.IsAcquired(System.Int64)">IsAcquired(Int64)</h4>
+  <div class="markdown level1 summary"><p>Check whether this memory chunk is pooled and acquired.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsAcquired(long memPtr)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">memPtr</span></td>
+        <td><p>Memory pointer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>True</code> if acquired.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_IsExternal_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.IsExternal*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_IsExternal_System_Int32_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.IsExternal(System.Int32)">IsExternal(Int32)</h4>
+  <div class="markdown level1 summary"><p>Check whether flags denote that this memory chunk is external.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsExternal(int flags)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">flags</span></td>
+        <td><p>Flags.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>True</code> if owned by Java.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_IsPooled_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.IsPooled*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_IsPooled_System_Int32_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.IsPooled(System.Int32)">IsPooled(Int32)</h4>
+  <div class="markdown level1 summary"><p>Check whether flags denote pooled memory chunk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsPooled(int flags)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">flags</span></td>
+        <td><p>Flags.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>True</code> if pooled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_ReallocatePooled_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.ReallocatePooled*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_ReallocatePooled_System_Int64_System_Int32_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.ReallocatePooled(System.Int64,System.Int32)">ReallocatePooled(Int64, Int32)</h4>
+  <div class="markdown level1 summary"><p>Reallocate pooled memory chunk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ReallocatePooled(long memPtr, int cap)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">memPtr</span></td>
+        <td><p>Memory pointer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">cap</span></td>
+        <td><p>Minimum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_ReallocateUnpooled_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.ReallocateUnpooled*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_ReallocateUnpooled_System_Int64_System_Int32_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.ReallocateUnpooled(System.Int64,System.Int32)">ReallocateUnpooled(Int64, Int32)</h4>
+  <div class="markdown level1 summary"><p>Reallocate unpooled memory chunk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ReallocateUnpooled(long memPtr, int cap)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">memPtr</span></td>
+        <td><p>Memory pointer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">cap</span></td>
+        <td><p>Minimum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_ReleasePool_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.ReleasePool*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_ReleasePool_System_Int64_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.ReleasePool(System.Int64)">ReleasePool(Int64)</h4>
+  <div class="markdown level1 summary"><p>Release pool memory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ReleasePool(long poolPtr)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">poolPtr</span></td>
+        <td><p>Pool pointer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_ReleasePooled_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.ReleasePooled*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_ReleasePooled_System_Int64_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.ReleasePooled(System.Int64)">ReleasePooled(Int64)</h4>
+  <div class="markdown level1 summary"><p>Release pooled memory chunk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ReleasePooled(long memPtr)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">memPtr</span></td>
+        <td><p>Memory pointer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_ReleaseUnpooled_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.ReleaseUnpooled*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_ReleaseUnpooled_System_Int64_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.ReleaseUnpooled(System.Int64)">ReleaseUnpooled(Int64)</h4>
+  <div class="markdown level1 summary"><p>Release unpooled memory chunk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ReleaseUnpooled(long memPtr)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">memPtr</span></td>
+        <td><p>Memory pointer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_SetFlags_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.SetFlags*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_SetFlags_System_Int64_System_Int32_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.SetFlags(System.Int64,System.Int32)">SetFlags(Int64, Int32)</h4>
+  <div class="markdown level1 summary"><p>Sets flags for the given memory chunk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetFlags(long memPtr, int flags)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">memPtr</span></td>
+        <td><p>Memory pointer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">flags</span></td>
+        <td><p>Flags.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_SetLength_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.SetLength*"></a>
+  <h4 id="Apache_Ignite_Core_Impl_Memory_PlatformMemoryUtils_SetLength_System_Int64_System_Int32_" data-uid="Apache.Ignite.Core.Impl.Memory.PlatformMemoryUtils.SetLength(System.Int64,System.Int32)">SetLength(Int64, Int32)</h4>
+  <div class="markdown level1 summary"><p>Sets length for the given memory chunk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetLength(long memPtr, int len)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">memPtr</span></td>
+        <td><p>Memory pointer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">len</span></td>
+        <td><p>Length.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            © 2015 - 2017 The Apache Software Foundation
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
