@@ -55,4 +55,16 @@ The most violated `High` rule. It tells us that low-level namespaces (such as `A
 
 Such decoupling can be achieved by introducing additional interfaces. In real world, however, introducing an interface just for the sake of decoupling within single assembly is not feasible. Most of the core Ignite functionality is quite tightly coupled and is not expected to exist separately.
 
-Good example of this is serialization engine: (TODO - link blog posts).
+Good example of this is [serialization engine](https://ptupitsyn.github.io/Ignite-Serialization-Performance/): it is inseparable from Ignite, because it exchanges type metadata with other nodes separately.
+
+This rule is still useful for baseline comparisons.
+
+## P/Invokes should be static and not be publicly visible (21 issues)
+
+`IgniteJniNativeMethods` class is `internal static`, so this looks like a false positive to me.
+
+## A field must not be assigned from outside its parent hierarchy types (17 issues)
+
+This is a very good rule, and [Ignite.NET coding guidelines](https://cwiki.apache.org/confluence/display/IGNITE/Ignite.NET+Development) go even further by disallowing non-public fields entirely.
+
+There are a couple of exceptions: `UnmanagedCallbackHandlers` is used solely for unmanaged interop; `BinaryReader.Frame` and `BinaryWriter.Frame` are private structs and are performance-sensitive.
