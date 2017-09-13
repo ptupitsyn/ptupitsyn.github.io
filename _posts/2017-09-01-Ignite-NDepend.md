@@ -26,12 +26,14 @@ Upon analysis completion we are presented with some statistics and a summary of 
 2654 issues! Whoops! No blockers at least.
 But every static analyzer produces false positives and irrelevant issues, so it's not time to worry, yet.
 
-# Exploring Critical Issues
+# Exploring Code Issues
 
 There are 4 critical issues and 7 critical rule violations, we are going to start with these.
 Click on red `4` number to reveal a list of issues:
 
 ![NDepend Critical Issues](../images/NDepend/criticals.png)
+
+## Avoid types initialization cycles
 
 Hovering over the **"Avoid types initialization cycles"** rule name shows a pop-up window with [detailed rule description](http://www.ndepend.com/default-rules/Q_Avoid_types_initialization_cycles.html) along with possible false positive scenarios.
 
@@ -41,9 +43,16 @@ The only usage of `BinarySystemHandlers` is on [Line 127](https://github.com/apa
 
 However, looking closer at how these three classes (`BinaryUtils`, `BinaryObjectBuilder`, `BinarySystemHandlers`) relate, reveals a real code quality issue: method `GetTypeId` does not really belong in `BinarySystemHandlers`, it operates only on some constants from `BinaryUtils`. So we could move `GetTypeId` to `BinaryUtils`, but that class is already ugly ("utility class anti-pattern"). Proper solution is to extract type code handling logic to a separate class: [IGNITE-6233](https://issues.apache.org/jira/browse/IGNITE-6233). So even a false positive turned out to be quite useful.
 
-**"Don't create threads explicitly"** issue is simpler, `new Thread(Run).Start()` should be replaced with a `ThreadPool` or `Task`: [IGNITE-6231](https://issues.apache.org/jira/browse/IGNITE-6231). Exception handling is also missing in that thread, which can potentially bring down entire process.
+## Don't create threads explicitly
 
+This issue is simpler, `new Thread(Run).Start()` should be replaced with a `ThreadPool` or `Task`: [IGNITE-6231](https://issues.apache.org/jira/browse/IGNITE-6231). Exception handling is also missing in that thread, which can potentially bring down entire process.
 
-# Controversial Issues
+Moving on to `High` issues.
 
-TODO: Internal methods in internal classes, see https://ericlippert.com/2014/09/15/internal-or-public/ 
+## Avoid namespaces mutually dependent (89 issues)
+
+The most violated `High` rule. It tells us that low-level namespaces (such as `Apache.Ignite.Core.Impl.Binary`) should not use higher-level namespaces (`Apache.Ignite.Core`). Following this rule provides a proper layered architecture where each namespace is kinda "thing in itself", which can be moved anywhere, extracted to external assembly, etc. This makes refactoring easier.
+
+Such decoupling can be achieved by introducing additional interfaces. In real world, however, introducing an interface just for the sake of decoupling within single assembly is not feasible. Most of the core Ignite functionality is quite tightly coupled and is not expected to exist separately.
+
+Good example of this is serialization engine: (TODO - link blog posts).
