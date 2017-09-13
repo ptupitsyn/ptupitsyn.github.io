@@ -77,3 +77,6 @@ Again, very good rules. All public structs must follow it. Found issues are rela
 
 [Open/closed principle](https://en.wikipedia.org/wiki/Open/closed_principle) in action. 2 public classes violate this rule: `TcpDiscoveryIpFinderBase` and `EvictionPolicyBase`. These classes are explicitly closed for modification from outside of the assembly, constructors are internal. Only predefined derivatives are supported by the API.
 
+## [Property getters should be immutable](https://www.ndepend.com/Default-Rules/Q_Property_Getters_should_be_immutable.html) (2 issues)
+
+Relates to [Choosing Between Properties and Methods](https://msdn.microsoft.com/en-us/library/ms229054.aspx) MSDN guidelines. Main exception here is lazy initialization (`TransactionsImpl.Current`). The other issue is `ClusterGroupImpl.TopologyVersion`, which performs expensive `RefreshNodes()` nodes operation and should really be a method: [IGNITE-6370](https://issues.apache.org/jira/browse/IGNITE-6370).
