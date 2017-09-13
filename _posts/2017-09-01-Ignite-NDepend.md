@@ -80,3 +80,9 @@ Again, very good rules. All public structs must follow it. Found issues are rela
 ## [Property getters should be immutable](https://www.ndepend.com/Default-Rules/Q_Property_Getters_should_be_immutable.html) (2 issues)
 
 Relates to [Choosing Between Properties and Methods](https://msdn.microsoft.com/en-us/library/ms229054.aspx) MSDN guidelines. Main exception here is lazy initialization (`TransactionsImpl.Current`). The other issue is `ClusterGroupImpl.TopologyVersion`, which performs expensive `RefreshNodes()` nodes operation and should really be a method: [IGNITE-6370](https://issues.apache.org/jira/browse/IGNITE-6370).
+
+# Conclusion
+
+We have explored a small part of issues found by NDepend, and already filed 3 tickets. The rule set is incredibly rich and covers many guidelines and best practices.
+
+TODO: other features, TeamCity integration, baseline analysis..
