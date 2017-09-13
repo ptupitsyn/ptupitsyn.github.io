@@ -33,7 +33,7 @@ Click on red `4` number to reveal a list of issues:
 
 ![NDepend Critical Issues](../images/NDepend/criticals.png)
 
-## Avoid types initialization cycles
+## [Avoid types initialization cycles](http://www.ndepend.com/default-rules/Q_Avoid_types_initialization_cycles.html) (3 issues)
 
 Hovering over the **"Avoid types initialization cycles"** rule name shows a pop-up window with [detailed rule description](http://www.ndepend.com/default-rules/Q_Avoid_types_initialization_cycles.html) along with possible false positive scenarios.
 
@@ -43,13 +43,13 @@ The only usage of `BinarySystemHandlers` is on [Line 127](https://github.com/apa
 
 However, looking closer at how these three classes (`BinaryUtils`, `BinaryObjectBuilder`, `BinarySystemHandlers`) relate, reveals a real code quality issue: method `GetTypeId` does not really belong in `BinarySystemHandlers`, it operates only on some constants from `BinaryUtils`. So we could move `GetTypeId` to `BinaryUtils`, but that class is already ugly ("utility class anti-pattern"). Proper solution is to extract type code handling logic to a separate class: [IGNITE-6233](https://issues.apache.org/jira/browse/IGNITE-6233). So even a false positive turned out to be quite useful.
 
-## Don't create threads explicitly
+## [Don't create threads explicitly](https://www.ndepend.com/default-rules/Q_Don't_create_threads_explicitly.html) (1 issue)
 
 This issue is simpler, `new Thread(Run).Start()` should be replaced with a `ThreadPool` or `Task`: [IGNITE-6231](https://issues.apache.org/jira/browse/IGNITE-6231). Exception handling is also missing in that thread, which can potentially bring down entire process.
 
 Moving on to `High` issues.
 
-## Avoid namespaces mutually dependent (89 issues)
+## [Avoid namespaces mutually dependent](https://www.ndepend.com/Default-Rules/Q_Avoid_namespaces_mutually_dependent.html) (89 issues)
 
 The most violated `High` rule. It tells us that low-level namespaces (such as `Apache.Ignite.Core.Impl.Binary`) should not use higher-level namespaces (`Apache.Ignite.Core`). Following this rule provides a proper layered architecture where each namespace is kinda "thing in itself", which can be moved anywhere, extracted to external assembly, etc. This makes refactoring easier.
 
@@ -59,12 +59,17 @@ Good example of this is [serialization engine](https://ptupitsyn.github.io/Ignit
 
 This rule is still useful for baseline comparisons.
 
-## P/Invokes should be static and not be publicly visible (21 issues)
+## [P/Invokes should be static and not be publicly visible](https://www.ndepend.com/default-rules/Q_P_Invokes_should_be_static_and_not_be_publicly_visible.html) (21 issues)
 
 `IgniteJniNativeMethods` class is `internal static`, so this looks like a false positive to me.
 
-## A field must not be assigned from outside its parent hierarchy types (17 issues)
+## [A field must not be assigned from outside its parent hierarchy types](https://www.ndepend.com/default-rules/Q_A_field_must_not_be_assigned_from_outside_its_parent_hierarchy_types.html) (17 issues)
 
 This is a very good rule, and [Ignite.NET coding guidelines](https://cwiki.apache.org/confluence/display/IGNITE/Ignite.NET+Development) go even further by disallowing non-public fields entirely.
 
 There are a couple of exceptions: `UnmanagedCallbackHandlers` is used solely for unmanaged interop; `BinaryReader.Frame` and `BinaryWriter.Frame` are private structs and are performance-sensitive.
+
+## [Override equals and operator equals on value types](https://www.ndepend.com/Default-Rules/Q_Override_equals_and_operator_equals_on_value_types.html) (15 issues)
+
+Again, very good rule. All public structs must follow it. Found issues are related to private structs, which have clearly defined use cases and are not used in comparisons and data structures.
+
