@@ -69,7 +69,11 @@ This is a very good rule, and [Ignite.NET coding guidelines](https://cwiki.apach
 
 There are a couple of exceptions: `UnmanagedCallbackHandlers` is used solely for unmanaged interop; `BinaryReader.Frame` and `BinaryWriter.Frame` are private structs and are performance-sensitive.
 
-## [Override equals and operator equals on value types](https://www.ndepend.com/Default-Rules/Q_Override_equals_and_operator_equals_on_value_types.html) (15 issues)
+## [Override equals and operator equals on value types](https://www.ndepend.com/Default-Rules/Q_Override_equals_and_operator_equals_on_value_types.html) (15 issues), [Structures should be immutable](https://www.ndepend.com/default-rules/Q_Structures_should_be_immutable.html) (7 issues)
 
-Again, very good rule. All public structs must follow it. Found issues are related to private structs, which have clearly defined use cases and are not used in comparisons and data structures.
+Again, very good rules. All public structs must follow it. Found issues are related to private structs, which have clearly defined use cases and are not used in comparisons and data structures.
+
+## [Base class should not use derivatives](https://www.ndepend.com/default-rules/Q_Base_class_should_not_use_derivatives.html) (3 issues)
+
+[Open/closed principle](https://en.wikipedia.org/wiki/Open/closed_principle) in action. 2 public classes violate this rule: `TcpDiscoveryIpFinderBase` and `EvictionPolicyBase`. These classes are explicitly closed for modification from outside of the assembly, constructors are internal. Only predefined derivatives are supported by the API.
 
