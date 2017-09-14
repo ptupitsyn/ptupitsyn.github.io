@@ -83,6 +83,6 @@ Relates to [Choosing Between Properties and Methods](https://msdn.microsoft.com/
 
 # Conclusion
 
-We have explored a small part of issues found by NDepend, and already filed 3 tickets. The rule set is incredibly rich and covers many guidelines and best practices.
+We have explored a small part of issues found by NDepend, and already filed 3 tickets. The rule set is incredibly rich and covers many guidelines and best practices. I can recommend the tool for project of any size.
 
-TODO: other features, TeamCity integration, baseline analysis..
+As for Ignite.NET, we have decided to [integrate NDepend](https://issues.apache.org/jira/browse/IGNITE-6382) with our CI pipeline: there is excellent [TeamCity support](https://www.ndepend.com/docs/teamcity-integration-ndepend).
