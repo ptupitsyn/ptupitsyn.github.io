@@ -66,9 +66,21 @@ Tested on Windows, Linux, and macOS:
 
 # Conclusion
 
-Even though Avalonia is still in alpha, it worked pretty well for me right away.
+Even though Avalonia is still in alpha, it worked pretty well for me right away,
+and with prior WPF experience I could easily achieve the desired result. Impressive!
 
+Alternatives?
+* Qt (a bit more complicated)
+* Java (lacks pointers)
+* Electron (oh god)
 
+UI in this demo is quite simple, but it uses a number of essential features:
+* Layout (Grid, StackPanel)
+* Bindings, MVVM
+* ItemsControl
+* WriteableBitmap
+
+This is already enough to build an UI of any complexity.
 
 ---
 * Source code: https://github.com/ptupitsyn/let-it-snow
