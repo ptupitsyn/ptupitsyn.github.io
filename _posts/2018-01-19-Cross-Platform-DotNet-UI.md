@@ -20,7 +20,16 @@ Turns out there is [Avalonia UI](https://github.com/AvaloniaUI/Avalonia) project
 * Supports .NET Core
 * Works on Windows, Linux, macOS, and even Android/iOS with Mono
 
-So I've decided to try it out. And to make things interesting, let's do an old-school DOS demoscene inspired falling snow effect! 
+So I've decided to try it out. And to make things interesting, let's do an old-school DOS demoscene inspired falling snow effect!
+
+# Getting Started
+
+First, install [Visual Studio Extension](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaforVisualStudio).
+Create a project with the installed project template. It is a bit outdated, so we'll have to change 
+`<TargetFrameworks>netcoreapp1.1;net461</TargetFrameworks>` to `<TargetFramework>netcoreapp2.0</TargetFramework>` in the csproj file.
+
+We are presented with regular WPF files: `App.xaml`, `MainWindow.xaml`, and their code-behind.
+XAML Designer did not work for me, but who uses it, anyway?  
 
 
 
