@@ -53,7 +53,16 @@ using (var buf = Bitmap.Lock())
     var ptr = (uint*) buf.Address;
     *ptr = 255;  // Change top-left pixel.
 }
-``` 
+```
+
+# How to Run?
+
+Tested on Windows, Linux, and macOS:
+* Install [.NET Core SDK](https://www.microsoft.com/net/download)
+* `git clone https://github.com/ptupitsyn/let-it-snow.git`
+* `cd let-it-snow/AvaloniaCoreSnow`
+* `dotnet run`
+
 
 # Conclusion
 
