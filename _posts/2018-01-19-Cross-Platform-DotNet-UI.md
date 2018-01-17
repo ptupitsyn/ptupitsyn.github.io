@@ -16,7 +16,7 @@ They are mostly trying to appeal to web developers, and this is understandable: 
 With Mono you could at least use Windows Forms, but Mono is old stuff.
 
 Turns out there is [Avalonia UI](https://github.com/AvaloniaUI/Avalonia) project, and it is pretty decent!
-* WPF-inspired, so existing XAML experience translates easily (though there are some [differencies](http://avaloniaui.net/tutorial/from-wpf.html))
+* WPF-inspired, so existing XAML experience translates easily (though there are some [differences](http://avaloniaui.net/tutorial/from-wpf.html))
 * Supports .NET Core
 * Works on Windows, Linux, macOS, and even Android/iOS with Mono
 
