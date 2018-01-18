@@ -85,3 +85,4 @@ This is already enough to build an UI of any complexity.
 ---
 * Source code: https://github.com/ptupitsyn/let-it-snow
 * This article in Russian: [Кроссплатформенная новогодняя демка на .NET Core и Avalonia](https://habrahabr.ru/post/345708/)
+* Reddit comments: https://www.reddit.com/r/programming/comments/7r1yz9/crossplatform_desktop_ui_with_net_core_and/
