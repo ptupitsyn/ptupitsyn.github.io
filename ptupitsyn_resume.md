@@ -6,8 +6,8 @@ permalink: /resume/
 
 .NET / C# engineer for 12 years. Expert in high performance back-end code.
 
-- **Primary skills:** .NET / C#, distributed systems
-- **Secondary skills:** WPF, Entity Framework, F#, Java, SQL, C++, PowerShell, ASP.NET
+- **Primary skills:** .NET / C#, high performance and low level code, distributed systems
+- **Secondary skills:** Java, F#, C++, PowerShell, ASP.NET Core, EF Core
 
 ## Professional Experience
 
@@ -64,6 +64,7 @@ Web-based Org Charts solution (C# / ASP.NET / SQL Server).
 ## Education
 
 Saint Petersburg State Polytechnical University, Master, 2003 - 2009
+
 
 ## Certifications
 
