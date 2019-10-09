@@ -42,7 +42,7 @@ The end result is the same - we handle cache update events in asynchronous, non-
 
 # QueryContinuousAsync extension method - implementation
 
-`await foreach` construct operates on `IAsyncEnumerable<T>`, which can be produced with `yield return` - we don't need to implement the interface in our code. So an obvious start for our extension method looks like this:
+`await foreach` construct operates on `IAsyncEnumerable<T>`, which can be produced with `yield return` - we don't need to implement the interface explicitly. So an obvious start for our extension method looks like this:
 
 ```cs
 public static async IAsyncEnumerable<ICacheEntry<TK, TV>> QueryContinuousAsync<TK, TV>(
