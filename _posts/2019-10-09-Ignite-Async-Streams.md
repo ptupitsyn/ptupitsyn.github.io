@@ -68,8 +68,7 @@ We need something like `BlockingCollection.TakeAsync`, or `AutoResetEvent.WaitOn
 ```cs
 public static class IgniteAsyncStreamExtensions
 {
-    public static async IAsyncEnumerable<ICacheEntry<TK, TV>> QueryContinuousAsync<TK, TV>(
-        this ICache<TK, TV> cache)
+    public static async IAsyncEnumerable<ICacheEntry<TK, TV>> QueryContinuousAsync<TK, TV>(this ICache<TK, TV> cache)
     {
         var queryListener = new AsyncContinuousQueryListener<TK, TV>();
         var continuousQuery = new ContinuousQuery<TK, TV>(queryListener);
@@ -90,8 +89,7 @@ public static class IgniteAsyncStreamExtensions
     {
         public readonly SemaphoreSlim HasData = new SemaphoreSlim(0, 1);
 
-        public readonly ConcurrentQueue<ICacheEntryEvent<TK, TV>> Events
-            = new ConcurrentQueue<ICacheEntryEvent<TK, TV>>();
+        public readonly ConcurrentQueue<ICacheEntryEvent<TK, TV>> Events = new ConcurrentQueue<ICacheEntryEvent<TK, TV>>();
 
         public void OnEvent(IEnumerable<ICacheEntryEvent<TK, TV>> events)
         {
@@ -104,3 +102,5 @@ public static class IgniteAsyncStreamExtensions
 }
 
 ```
+
+This works! Important thing to note is that Ignite `QueryContinuous` method returns `IDisposable`, which should be disposed in order to stop the continuous query. But our `QueryContinuousAsync` implementation contains an infinite loop within `using` statement - there is no `break`! Does it mean that continuous query will never stop filling the `Events` queue, wasting memory? Not at all! As we know, C# compiler transforms methods with `yield return` into 
