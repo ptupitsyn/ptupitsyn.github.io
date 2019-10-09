@@ -127,3 +127,9 @@ var results = await cache.QueryContinuousAsync()
     .Select(e => e.Value)
     .ToArrayAsync();
 ```
+
+# Conclusion
+
+`async/await` were added in C# 5.0 in 2012 (7 years ago!), but we could not combine `async` with `yield` and LINQ, which forced us to do unnecessary allocations of Lists and Arrays and do other non-ilegant things in our code. C# 8.0 finally fills this gap, and things look great.
+
+Full working project with the code above is on Gists: [IgniteAsyncStreams](https://gist.github.com/ptupitsyn/cb2fa9670aa2fcd0e20672376cd520a1).
