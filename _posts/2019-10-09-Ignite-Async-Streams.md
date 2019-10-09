@@ -20,8 +20,7 @@ void TestContinuousQuery()
     }
 }
 
-// ...
-private class Listener<TK, TV> : ICacheEntryEventListener<TK, TV>
+class Listener<TK, TV> : ICacheEntryEventListener<TK, TV>
 {
     public void OnEvent(IEnumerable<ICacheEntryEvent<TK, TV>> events)
     {
