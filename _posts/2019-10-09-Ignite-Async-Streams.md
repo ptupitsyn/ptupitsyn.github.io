@@ -51,8 +51,9 @@ public static async IAsyncEnumerable<ICacheEntry<TK, TV>> QueryContinuousAsync<T
 
     using (cache.QueryContinuous(continuousQuery))
     {
-        while (???)
+        while (true)
         {
+            cacheEntryEvent = await ???;
             yield return cacheEntryEvent;
         }
     }
@@ -60,4 +61,46 @@ public static async IAsyncEnumerable<ICacheEntry<TK, TV>> QueryContinuousAsync<T
 
 ```
 
-However, it is not clear 
+The problem is - what do we await here? Ignite invokes our `AsyncContinuousQueryListener` on every cache update, and we need to feed those updates to the loop above. This is a classic producer-consumer scenario, which is typically done with `BlockingCollection<T>` or [other blocking thread synchronization primitives](http://www.albahari.com/threading/part4.aspx#_Wait_Pulse_Producer_Consumer_Queue). The key word here is `blocking`, and we don't want to block our threads, that's the whole idea of `async`.
+
+We need something like `BlockingCollection.TakeAsync`, or `AutoResetEvent.WaitOneAsync`, neither of which exist, unfortunately. The problem is discussed in detail on StackOverflow: [Awaitable AutoResetEvent](https://stackoverflow.com/questions/32654509/awaitable-autoresetevent). It turns out, `SemaphoreSlim` has `WaitAsync` method, which fits the purpose, and the result is:
+
+```cs
+public static class IgniteAsyncStreamExtensions
+{
+    public static async IAsyncEnumerable<ICacheEntry<TK, TV>> QueryContinuousAsync<TK, TV>(
+        this ICache<TK, TV> cache)
+    {
+        var queryListener = new AsyncContinuousQueryListener<TK, TV>();
+        var continuousQuery = new ContinuousQuery<TK, TV>(queryListener);
+
+        using (cache.QueryContinuous(continuousQuery))
+        {
+            while (true)
+            {
+                while (queryListener.Events.TryDequeue(out var entryEvent))
+                    yield return entryEvent;
+
+                await queryListener.HasData.WaitAsync();
+            }
+        }
+    }
+
+    private class AsyncContinuousQueryListener<TK, TV> : ICacheEntryEventListener<TK, TV>
+    {
+        public readonly SemaphoreSlim HasData = new SemaphoreSlim(0, 1);
+
+        public readonly ConcurrentQueue<ICacheEntryEvent<TK, TV>> Events
+            = new ConcurrentQueue<ICacheEntryEvent<TK, TV>>();
+
+        public void OnEvent(IEnumerable<ICacheEntryEvent<TK, TV>> events)
+        {
+            foreach (var entryEvent in events)
+                Events.Enqueue(entryEvent);
+
+            HasData.Release();
+        }
+    }
+}
+
+```
