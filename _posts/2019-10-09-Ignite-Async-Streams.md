@@ -103,4 +103,27 @@ public static class IgniteAsyncStreamExtensions
 
 ```
 
-This works! Important thing to note is that Ignite `QueryContinuous` method returns `IDisposable`, which should be disposed in order to stop the continuous query. But our `QueryContinuousAsync` implementation contains an infinite loop within `using` statement - there is no `break`! Does it mean that continuous query will never stop filling the `Events` queue, wasting memory? Not at all! As we know, C# compiler transforms methods with `yield return` into 
+This works! Important thing to note is that Ignite `QueryContinuous` method returns `IDisposable`, which should be disposed in order to stop the continuous query. But our `QueryContinuousAsync` implementation contains an infinite loop within `using` statement - there is no `break`! Does it mean that continuous query will never stop filling the `Events` queue, wasting memory? Not at all! C# compiler transforms methods with `yield return` into `IAsyncStateMachine` implementation, there is no infinite loop in the resulting code. As soon as consuming `foreach` loop exists (with `break`), `Dispose` is called for any `using` blocks accordingly. 
+
+So the following code will print 1 value and stop the underlying Continuous Query:
+
+```cs
+await foreach (var entry in cache.QueryContinuousAsync())
+{
+    Console.WriteLine(entry.Value);
+    break;
+}
+```
+
+# Async LINQ
+
+`await foreach` is great, but who needs loops these days anyway, when we have LINQ? There are no built-in LINQ extension methods for `IAsyncEnumerable<T>`, we have to reference `System.Linq.Async` NuGet package (which comes from [Reactive Extensions](https://github.com/dotnet/reactive), by the way) - so we can do this:
+
+```cs
+var results = await cache.QueryContinuousAsync()
+    .Where(e => e.Key > 0)
+    .Skip(5)
+    .Take(10)
+    .Select(e => e.Value)
+    .ToArrayAsync();
+```
