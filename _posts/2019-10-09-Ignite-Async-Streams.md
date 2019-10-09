@@ -71,7 +71,8 @@ We need something like `BlockingCollection.TakeAsync`, or `AutoResetEvent.WaitOn
 ```cs
 public static class IgniteAsyncStreamExtensions
 {
-    public static async IAsyncEnumerable<ICacheEntry<TK, TV>> QueryContinuousAsync<TK, TV>(this ICache<TK, TV> cache)
+    public static async IAsyncEnumerable<ICacheEntry<TK, TV>> QueryContinuousAsync<TK, TV>(
+        this ICache<TK, TV> cache)
     {
         var queryListener = new AsyncContinuousQueryListener<TK, TV>();
         var continuousQuery = new ContinuousQuery<TK, TV>(queryListener);
@@ -92,7 +93,8 @@ public static class IgniteAsyncStreamExtensions
     {
         public readonly SemaphoreSlim HasData = new SemaphoreSlim(0, 1);
 
-        public readonly ConcurrentQueue<ICacheEntryEvent<TK, TV>> Events = new ConcurrentQueue<ICacheEntryEvent<TK, TV>>();
+        public readonly ConcurrentQueue<ICacheEntryEvent<TK, TV>> Events 
+            = new ConcurrentQueue<ICacheEntryEvent<TK, TV>>();
 
         public void OnEvent(IEnumerable<ICacheEntryEvent<TK, TV>> events)
         {
@@ -130,6 +132,8 @@ var results = await cache.QueryContinuousAsync()
     .Select(e => e.Value)
     .ToArrayAsync();
 ```
+
+A lot is achieved with this short expression. And what's more important - this code is very easy to read and understand.
 
 # Conclusion
 
