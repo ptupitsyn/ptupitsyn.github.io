@@ -65,7 +65,7 @@ public static async IAsyncEnumerable<ICacheEntry<TK, TV>> QueryContinuousAsync<T
 
 The problem is - what do we await here? Ignite invokes our `AsyncContinuousQueryListener` on every cache update, and we need to feed those updates to the loop above. This is a classic producer-consumer scenario, which is typically done with `BlockingCollection<T>` or [other blocking thread synchronization primitives](http://www.albahari.com/threading/part4.aspx#_Wait_Pulse_Producer_Consumer_Queue). The key word here is `blocking`, and we don't want to block our threads, that's the whole idea of `async`.
 
-We need something like `BlockingCollection.TakeAsync`, or `AutoResetEvent.WaitOneAsync`, neither of which exist, unfortunately. The problem is discussed in detail on StackOverflow: [Awaitable AutoResetEvent](https://stackoverflow.com/questions/32654509/awaitable-autoresetevent). It turns out, `SemaphoreSlim` has `WaitAsync` method, which fits the purpose, and the result is:
+We need something like `BlockingCollection.TakeAsync`, or `AutoResetEvent.WaitOneAsync`, neither of which exists, unfortunately. The problem is discussed in detail on StackOverflow: [Awaitable AutoResetEvent](https://stackoverflow.com/questions/32654509/awaitable-autoresetevent). It turns out, `SemaphoreSlim` has `WaitAsync` method, which fits the purpose, and the result is:
 
 ```cs
 public static class IgniteAsyncStreamExtensions
