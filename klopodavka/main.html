@@ -1,0 +1,20 @@
+${Body}
+
+<div id="notification-area">
+    <div>${Error}</div>
+</div>
+
+<template id="Home">
+    <div style="float: right">
+        <button onclick="${NewGame}" class="button">New Game</button>
+    </div>
+
+    <div>${GameInfo}</div>
+    
+    <p>${GameBoard}</p>
+</template>
+
+<template id="ErrorNotification">
+    <button class="delete ${HideClass}" onclick="${Hide}"></button>
+    ${Text}
+</template>

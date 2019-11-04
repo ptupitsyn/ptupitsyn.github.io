@@ -1,0 +1,44 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: auto;
+  width: 640px;
+}
+
+#notification-area {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#notification-area > div {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+tr {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+td {
+  border: 1px solid #dbdbdb;
+  padding: 0;
+  margin: 0;
+  width: 21px;
+  height: 21px;
+  background-color: #fafafa;
+  vertical-align: middle;
+  text-align: center;
+}
