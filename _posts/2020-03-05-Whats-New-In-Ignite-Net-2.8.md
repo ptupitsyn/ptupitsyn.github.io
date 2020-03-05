@@ -109,12 +109,30 @@ cache.AsCacheQueryable()
 ```
 
 
-**RegEx**
-
-TODO
-
-
 **Local Collection Join**
+
+A common use case for SQL/LINQ is to retrieve multiple entries by a set of IDs. Naive approach is `IN` (SQL) or `Contains` (LINQ):
+
+```cs
+TODO: Examples in SQL and LINQ
+
+```
+
+It has a few significant drawbacks: [Ignite SQL Performance Considerations](https://apacheignite.readme.io/docs/sql-performance-and-debugging#sql-performance-and-usability-considerations).
+
+The solution is to use temp tables. Ignite.NET now translates queries like this:
+
+```
+TODO
+```
+
+..to a temp table join in SQL:
+
+```
+```
+
+
+**RegEx**
 
 TODO
 
