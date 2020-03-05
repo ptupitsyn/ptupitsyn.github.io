@@ -3,7 +3,7 @@ layout: post
 title: What's new in Apache Ignite.NET 2.8
 ---
 
-Thin Client improvements, better cross-platform support, Docker image, and more!
+Thin Client improvements, better cross-platform support, and more!
 
 
 # Welcome Back
@@ -54,12 +54,17 @@ We have improved the way `.jar` files are handled within NuGet package. Post-bui
 Note that minimum system requirements are still the same: .NET 4.0 and Visual Studio 2010. We care about backwards compatibility within a major version (2.x), but you can expect a switch to .NET Standard 2.0 in upcoming Ignite 3.x.
 
 
----------------
+# LINQ Improvements
 
-TODO:
-- Recap of changes since 2.1
-- Explain Thin Client briefly
-- Partition Awareness and Failover
-- Explain cross-platform support along with .NET Core 3.x support (Linux, macOS, Mono), no more C++ layer and extra DLLs, no more powershell scrips, publish works, still supports .NET 4.0
-- LINQ: DML updates, RegEx, local collection join
-- Dynamic service proxies
+**DML Updates**
+
+
+**RegEx**
+
+
+**Local Collection Join**
+
+
+# Dynamic Service Proxies
+
+TODO
