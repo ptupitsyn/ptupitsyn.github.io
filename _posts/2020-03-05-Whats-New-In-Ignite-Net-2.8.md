@@ -56,9 +56,7 @@ We have improved the way `.jar` files are handled within NuGet package. Post-bui
 Note that minimum system requirements are still the same: .NET 4.0 and Visual Studio 2010. We care about backwards compatibility within a major version (2.x), but you can expect a switch to .NET Standard 2.0 in upcoming Ignite 3.x.
 
 
-# LINQ Improvements
-
-**Conditional and Batch Updates**
+# LINQ: Conditional and Batch Updates
 
 SQL `UPDATE .. WHERE ..` or `DELETE .. WHERE ..` are usually not possible with ORMs and LINQ. We end up fetching entries with `.Where()` and then updating them one by one, which is suboptimal (to say the least) and not elegant. 
 
@@ -90,7 +88,7 @@ cache.Query(new SqlFieldsQuery(
 
 Simple, concise, and effective: Ignite will send the query to all nodes and perform updates locally for every cache entry, avoiding any data movement between nodes. However, we don't want SQL in C#, we want LINQ, which is compiler-checked, composable, easier to write and read thanks to the IDE completion.
 
-Ignite 2.5 introduced DML updates and deletes via LINQ:
+Ignite 2.5 introduced DML updates via LINQ (in addition to deletes in Ignite 2.1):
 
 ```cs
 cache.AsCacheQueryable()
@@ -100,46 +98,11 @@ cache.AsCacheQueryable()
 
 This will be transformed to the same SQL query that we have above, combining efficiency and LINQ benefits.
 
-Batch delete is similar:
-
-```cs
-cache.AsCacheQueryable()
-	.Where(entry => entry.Value.IsDeactivated)
-	.RemoveAll();
-```
-
-
-**Local Collection Join**
-
-A common use case for SQL/LINQ is to retrieve multiple entries by a set of IDs. Naive approach is `IN` (SQL) or `Contains` (LINQ):
-
-```cs
-TODO: Examples in SQL and LINQ
-
-```
-
-It has a few significant drawbacks: [Ignite SQL Performance Considerations](https://apacheignite.readme.io/docs/sql-performance-and-debugging#sql-performance-and-usability-considerations).
-
-The solution is to use temp tables. Ignite.NET now translates queries like this:
-
-```
-TODO
-```
-
-..to a temp table join in SQL:
-
-```
-```
-
-
-**RegEx**
-
-TODO
-
 
 # Dynamic Service Proxies
 
 TODO
+
 
 # Wrap-up
 
