@@ -79,6 +79,33 @@ foreach (var entry in inactiveUsers)
 
 This code potentially loads thousands of matching entries to the local node, wasting memory and stressing the network. And this goes against Ignite colocated processing mantra: [send code to data, not data to code](https://ignite.apache.org/features/collocatedprocessing.html).
 
+The fix is to use SQL instead:
+
+```cs
+cache.Query(new SqlFieldsQuery(
+	"UPDATE person SET IsDeactivated = true WHERE LastActivityDate < ?", threshold));
+```
+
+Simple, concise, and effective: Ignite will send the query to all nodes and perform updates locally for every cache entry, avoiding any data movement between nodes. However, we don't want SQL in C#, we want LINQ, which is compiler-checked, composable, easier to write and read thanks to the IDE completion.
+
+Ignite 2.5 introduced DML updates and deletes via LINQ:
+
+```cs
+cache.AsCacheQueryable()
+	.Where(entry => entry.Value.LastActivityDate < threshold)
+	.UpdateAll(d => d.Set(person => person.IsDeactivated, true));
+```
+
+This will be transformed to the same SQL query that we have above, combining efficiency and LINQ benefits.
+
+Batch delete is similar:
+
+```cs
+cache.AsCacheQueryable()
+	.Where(entry => entry.Value.IsDeactivated)
+	.RemoveAll();
+```
+
 
 **RegEx**
 
