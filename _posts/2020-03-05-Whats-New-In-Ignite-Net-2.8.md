@@ -12,6 +12,16 @@ It has been a long time since the [last post in the series](https://ptupitsyn.gi
 
 # Thin Client and Partition Awareness
 
+From the very beginning, Ignite supports [Client and Server connection modes](https://apacheignite.readme.io/docs/clients-vs-servers). However, Client mode is still relatively "heavy", even though it does not store data and does not perform computations. Starting Ignite.NET client node requires embedded JVM startup, can take a second or more, and consumes a few megabytes of RAM.
+
+This may be undesirable in many use cases, such as short-lived apps, low-powered client machines, CLI tools, and so on. A lightweight thin client protocol was added in Ignite 2.4 to handle those use cases. Quick comparison:
+
+|               | Classic Client      | Thin Client |
+|---------------|---------------------|-------------|
+| Startup Time  | 1300 ms             | 15 ms       |
+| RAM usage     | 40 MB (.NET + Java) | 70 KB       |
+| Requires Java | Yes                 | No          |
+
 
 
 
