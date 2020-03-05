@@ -134,4 +134,4 @@ proxy.TryInvokeMember(new SimpleBinder(methodName), new object[0], out var resul
 
 # Wrap-up
 
-TODO: stability and maturity, roadmap?
+Thin Client protocol and it's implementations in various languages is one of the major directions for Apache Ignite community these days. Partition Awareness is a big milestone. The next one is automatic server node discovery, so we don't have to provide a list of endpoints manually. You can also expect Compute, Services, Transactions (already available in Java Thin), and other APIs to be added to thin clients in the upcoming versions.
