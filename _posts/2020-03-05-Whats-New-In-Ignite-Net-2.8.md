@@ -101,7 +101,35 @@ This will be transformed to the same SQL query that we have above, combining eff
 
 # Dynamic Service Proxies
 
-TODO
+`IServices.GetDynamicServiceProxy()` is a new API that returns a `dynamic` instance, so we don't have to create an interface beforehand to call arbitrary services. Instead of:
+
+```cs
+interface ISomeService
+{
+    int GetId(string data);
+}
+
+...
+ISomeService proxy = ignite.GetServices().GetServiceProxy<ISomeService>("someService");
+var id = proxy.GetId("foo");
+```
+
+We can say:
+
+```cs
+dynamic proxy = ignite.GetServices().GetDynamicServiceProxy("someService");
+var id = proxy.GetId("foo");
+```
+
+This can be useful in a number of scenarios like POCs, calling Java services, and so on.
+
+We can go even further and invoke service methods with a string name:
+
+```cs
+var methodName = "foo";
+var proxy = (DynamicObject) ignite.GetServices().GetDynamicServiceProxy("someService");
+proxy.TryInvokeMember(new SimpleBinder(methodName), new object[0], out var result);
+```
 
 
 # Wrap-up
