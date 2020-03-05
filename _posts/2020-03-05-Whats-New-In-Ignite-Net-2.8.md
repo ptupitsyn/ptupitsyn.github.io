@@ -109,10 +109,18 @@ cache.AsCacheQueryable()
 
 **RegEx**
 
+TODO
+
 
 **Local Collection Join**
+
+TODO
 
 
 # Dynamic Service Proxies
 
 TODO
+
+# Wrap-up
+
+TODO: stability and maturity, roadmap?
