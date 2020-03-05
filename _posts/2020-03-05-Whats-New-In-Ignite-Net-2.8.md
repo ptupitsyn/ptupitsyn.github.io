@@ -24,6 +24,8 @@ This may be undesirable in many use cases, such as short-lived apps, low-powered
 
 Ignite.NET thin client is started with `Ignition.StartClient()` call and provides a similar set of APIs. Root interfaces are separate (`IIgnite` -> `IIgniteClient`, `ICache` -> `ICacheClient`), but methods are named in the same way, and most of the code can be easily switched from one API to another and back.
 
+Thin client protocol is [open, extensible, and documented](https://cwiki.apache.org/confluence/display/IGNITE/IEP-9+Thin+Client+Protocol#IEP-9ThinClientProtocol-Handshake), which opens the way for clients in other languages, such as [Python, JavaScript, PHP](https://apacheignite.readme.io/docs/thin-clients).
+
 **Partition Awareness**
 
 Initial implementation of Thin Client used a single connection to a given server node to perform all operations. As we know, Ignite distributes cache entries evenly across cluster nodes. When Thin Client is connected to node A, but requested entry is on node B, an additional network request has to be made from A to B.
