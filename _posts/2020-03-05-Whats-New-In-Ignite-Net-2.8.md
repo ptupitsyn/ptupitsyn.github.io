@@ -28,9 +28,13 @@ Ignite.NET thin client is started with `Ignition.StartClient()` call and provide
 
 Initial implementation of Thin Client used a single connection to a given server node to perform all operations. As we know, Ignite distributes cache entries evenly across cluster nodes. When Thin Client is connected to node A, but requested entry is on node B, an additional network request has to be made from A to B.
 
-Ignite 2.8 introduces Thin Client Partition Awareness feature: thin clients can connect to all server nodes, determine primary node for the given key, and route requests directly to that node, avoiding extra network hops. This routing is very quick, it involves some basic math on the key hash code to determine target node according to known partition distribution.
+Ignite 2.8 introduces Thin Client Partition Awareness feature: thin clients can connect to all server nodes, determine primary node for the given key, and route requests directly to that node, avoiding extra network hops. This routing is very quick, it involves some basic math on the key hash code to determine target node according to known partition distribution. Benchmark of `cache.Get` performance with and without `IgniteClientConfiguration.EnablePartitionAwareness = true` setting:
 
-TODO: Benchmark results here
+|            Method |     Mean |    Error |   StdDev |
+|------------------ |---------:|---------:|---------:|
+|               Get | 90.73 us | 2.114 us | 5.892 us |
+| GetPartitionAware | 31.56 us | 0.618 us | 1.234 us |
+
 
 
 ---------------
