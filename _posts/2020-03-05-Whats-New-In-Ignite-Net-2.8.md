@@ -56,7 +56,28 @@ Note that minimum system requirements are still the same: .NET 4.0 and Visual St
 
 # LINQ Improvements
 
-**DML Updates**
+**Conditional and Batch Updates**
+
+SQL `UPDATE .. WHERE ..` or `DELETE .. WHERE ..` are usually not possible with ORMs and LINQ. We end up fetching entries with `.Where()` and then updating them one by one, which is suboptimal (to say the least) and not elegant. 
+
+Let's say we want to deactivate all users who did not use our website for more than a year:
+
+```cs
+ICacheClient<int, Person> cache = client.GetCache<int, Person>("person");
+
+var threshold = DateTime.UtcNow.AddYears(-1);
+
+IQueryable<ICacheEntry<int,Person>> inactiveUsers = cache.AsCacheQueryable()
+	.Where(entry => entry.Value.LastActivityDate < threshold);
+
+foreach (var entry in inactiveUsers)
+{
+	entry.Value.IsDeactivated = true;
+	cache[entry.Key] = entry.Value;
+}
+```
+
+This code potentially loads thousands of matching entries to the local node, wasting memory and stressing the network. And this goes against Ignite colocated processing mantra: [send code to data, not data to code](https://ignite.apache.org/features/collocatedprocessing.html).
 
 
 **RegEx**
