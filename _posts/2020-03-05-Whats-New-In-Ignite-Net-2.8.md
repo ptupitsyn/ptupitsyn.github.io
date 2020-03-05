@@ -10,6 +10,7 @@ Thin Client improvements, better cross-platform support, Docker image, and more!
 
 It has been a long time since the [last post in the series](https://ptupitsyn.github.io/Whats-New-In-Ignite-Net-2.1/), and a long time since the last major Ignite release. In this post I would like to catch up on all the improvements on .NET side of things.
 
+
 # Thin Client and Partition Awareness
 
 From the very beginning, Ignite supports [Client and Server connection modes](https://apacheignite.readme.io/docs/clients-vs-servers). However, Client mode is still relatively "heavy", even though it does not store data and does not perform computations. Starting Ignite.NET client node requires embedded JVM startup, can take a second or more, and consumes a few megabytes of RAM.
@@ -37,6 +38,14 @@ Ignite 2.8 introduces Thin Client Partition Awareness feature: thin clients can 
 |               Get | 90.73 us | 2.114 us | 5.892 us |
 | GetPartitionAware | 31.56 us | 0.618 us | 1.234 us |
 
+
+# Cross-Platform Support: .NET Core, Mono, Linux, macOS
+
+Ignite 2.4 brought .NET Core 2.x support, finally shedding Windows-specific C++ layer and switching to pure .NET implementation of the [JNI layer](https://en.wikipedia.org/wiki/Java_Native_Interface), allowing Ignite.NET apps to run on Linux and macOS.
+
+Ignite 2.8 adds official .NET Core 3.x support and can run on any OS supported by the framework, in any mode - Server, Client, Thin Client.
+
+We have improved the way `.jar` files are handled within NuGet package. Post-build scripts are replaced with [MSBuild .targets file](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-dot-targets-files?view=vs-2019), which is more reliable, cross-platform, and works as expected with `dotnet build` and `dotnet publish`: `.jar` files are copied to build and publish directories automatically, resulting in a self-contsined package.
 
 
 ---------------
