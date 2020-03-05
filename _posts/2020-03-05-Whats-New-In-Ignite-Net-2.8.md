@@ -60,7 +60,7 @@ Note that minimum system requirements are still the same: .NET 4.0 and Visual St
 
 SQL `UPDATE .. WHERE ..` or `DELETE .. WHERE ..` are usually not possible with ORMs and LINQ. We end up fetching entries with `.Where()` and then updating them one by one, which is suboptimal (to say the least) and not elegant. 
 
-Let's say we want to deactivate all users who did not use our website for more than a year:
+Let's say we want to deactivate all users who have not used our website for more than a year:
 
 ```cs
 ICacheClient<int, Person> cache = client.GetCache<int, Person>("person");
