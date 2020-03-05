@@ -38,6 +38,8 @@ Ignite 2.8 introduces Thin Client Partition Awareness feature: thin clients can 
 |               Get | 90.73 us | 2.114 us | 5.892 us |
 | GetPartitionAware | 31.56 us | 0.618 us | 1.234 us |
 
+Your mileage will wary depending on cluster topology, network speeds, and cache entry sizes, but the improvement is significant.
+
 **Failover**
 
 Multi-node thin client connection also means that we get failover behavior: if one or more server nodes fail, client switches to other connections automatically.
