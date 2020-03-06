@@ -17,7 +17,7 @@ From the very beginning, Ignite supports [Client and Server connection modes](ht
 
 This may be undesirable in many use cases, such as short-lived apps, low-powered client machines, CLI tools, and so on. A lightweight thin client protocol was added in Ignite 2.4 to handle those use cases. Quick comparison:
 
-|               | Classic Client      | Thin Client |
+|               | Thick Client        | Thin Client |
 |---------------|---------------------|-------------|
 | Startup Time  | 1300 ms             | 15 ms       |
 | RAM usage     | 40 MB (.NET + Java) | 70 KB       |
