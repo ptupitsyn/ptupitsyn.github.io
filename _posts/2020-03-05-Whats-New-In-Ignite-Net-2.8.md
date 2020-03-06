@@ -45,7 +45,7 @@ Your mileage will wary depending on cluster topology, network speeds, and cache 
 Multi-node thin client connection also means that we get failover behavior: if one or more server nodes fail, client switches to other connections automatically.
 
 
-# Cross-Platform Support: .NET Core, Mono, Linux, macOS
+# Cross-Platform Support: .NET Core, Linux, macOS
 
 Ignite 2.4 brought .NET Core 2.x support, finally shedding Windows-specific C++ layer and switching to pure .NET implementation of the [JNI layer](https://en.wikipedia.org/wiki/Java_Native_Interface), allowing Ignite.NET apps to run on Linux and macOS.
 
