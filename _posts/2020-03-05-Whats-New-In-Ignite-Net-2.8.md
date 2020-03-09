@@ -17,11 +17,13 @@ From the very beginning, Ignite supports [Client and Server connection modes](ht
 
 This may be undesirable in some use cases, such as short-lived apps, low-powered client machines, CLI tools, and so on. A lightweight thin client protocol was added in Ignite 2.4 to handle those use cases. Quick comparison:
 
+```
 |               | Thick Client        | Thin Client |
 |---------------|---------------------|-------------|
 | Startup Time  | 1300 ms             | 15 ms       |
 | RAM usage     | 40 MB (.NET + Java) | 70 KB       |
 | Requires Java | Yes                 | No          |
+```
 
 Ignite.NET thin client is started with `Ignition.StartClient()` call and provides a similar set of APIs. Root interfaces are separate (`IIgnite` -> `IIgniteClient`, `ICache` -> `ICacheClient`), but methods are named in the same way, and most of the code can be easily switched from one API to another and back.
 
@@ -33,10 +35,12 @@ Initial implementation of Thin Client used a single connection to a given server
 
 Ignite 2.8 introduces Thin Client Partition Awareness feature: thin clients can connect to all server nodes, determine primary node for the given key, and route requests directly to that node, avoiding extra network hops. This routing is very quick, it involves some basic math on the key hash code to determine target node according to known partition distribution. [Benchmark](https://github.com/ptupitsyn/IgniteNetBenchmarks/blob/master/IgniteThinClientBenchmark.cs) of `cache.Get` performance with and without `IgniteClientConfiguration.EnablePartitionAwareness = true` setting:
 
+```
 |            Method |     Mean |    Error |   StdDev |
 |------------------ |---------:|---------:|---------:|
 |               Get | 90.73 us | 2.114 us | 5.892 us |
 | GetPartitionAware | 31.56 us | 0.618 us | 1.234 us |
+```
 
 Your mileage will wary depending on cluster topology, network speeds, and cache entry sizes, but the improvement is significant.
 
