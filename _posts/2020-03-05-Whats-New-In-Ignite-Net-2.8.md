@@ -8,7 +8,7 @@ Thin Client improvements, better cross-platform support, and more!
 
 # Welcome Back
 
-It has been a long time since the [last post in the series](https://ptupitsyn.github.io/Whats-New-In-Ignite-Net-2.1/), and a long time since the last major Ignite release. In this post I would like to catch up on all the improvements on .NET side of things.
+It has been a long time since the [last post in the series](https://ptupitsyn.github.io/Whats-New-In-Ignite-Net-2.1/), and a long time since the last major [Ignite release](https://ignite.apache.org/download.cgi). In this post I would like to catch up on all the improvements on .NET side of things.
 
 
 # Thin Client and Partition Awareness
