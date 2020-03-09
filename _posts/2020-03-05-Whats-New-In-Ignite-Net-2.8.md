@@ -47,7 +47,7 @@ Multi-node thin client connection also means that we get failover behavior: if o
 
 # Cross-Platform Support: .NET Core, Linux, macOS
 
-Ignite 2.4 brought .NET Core 2.x support, finally shedding Windows-specific C++ layer and switching to pure .NET implementation of the [JNI layer](https://en.wikipedia.org/wiki/Java_Native_Interface), allowing Ignite.NET apps to run on Linux and macOS.
+Ignite 2.4 brought .NET Core 2.x support, finally shedding Windows-specific C++ parts and switching to pure .NET implementation of the [JNI layer](https://en.wikipedia.org/wiki/Java_Native_Interface), allowing Ignite.NET apps to run on Linux and macOS.
 
 Ignite 2.8 adds official .NET Core 3.x support and can run on any OS supported by the framework, in any mode - Server, Client, Thin Client.
 
