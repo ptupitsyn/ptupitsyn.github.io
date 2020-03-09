@@ -15,7 +15,7 @@ It has been a long time since the [last post in the series](https://ptupitsyn.gi
 
 From the very beginning, Ignite supports [Client and Server connection modes](https://apacheignite.readme.io/docs/clients-vs-servers). However, Client mode is still relatively "heavy", even though it does not store data and does not perform computations. Starting Ignite.NET client node requires embedded JVM startup, can take a second or more, and consumes a few megabytes of RAM.
 
-This may be undesirable in many use cases, such as short-lived apps, low-powered client machines, CLI tools, and so on. A lightweight thin client protocol was added in Ignite 2.4 to handle those use cases. Quick comparison:
+This may be undesirable in some use cases, such as short-lived apps, low-powered client machines, CLI tools, and so on. A lightweight thin client protocol was added in Ignite 2.4 to handle those use cases. Quick comparison:
 
 |               | Thick Client        | Thin Client |
 |---------------|---------------------|-------------|
@@ -25,7 +25,7 @@ This may be undesirable in many use cases, such as short-lived apps, low-powered
 
 Ignite.NET thin client is started with `Ignition.StartClient()` call and provides a similar set of APIs. Root interfaces are separate (`IIgnite` -> `IIgniteClient`, `ICache` -> `ICacheClient`), but methods are named in the same way, and most of the code can be easily switched from one API to another and back.
 
-Thin client protocol is [open, extensible, and documented](https://cwiki.apache.org/confluence/display/IGNITE/IEP-9+Thin+Client+Protocol#IEP-9ThinClientProtocol-Handshake), which opens the way for clients in other languages, such as [Python, JavaScript, PHP](https://apacheignite.readme.io/docs/thin-clients).
+Thin client protocol is [open, extensible, and documented](https://cwiki.apache.org/confluence/display/IGNITE/IEP-9+Thin+Client+Protocol#IEP-9ThinClientProtocol-Handshake), which paves the way for clients in other languages, such as [Python, JavaScript, PHP](https://apacheignite.readme.io/docs/thin-clients).
 
 **Partition Awareness**
 
