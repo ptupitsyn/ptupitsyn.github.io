@@ -88,7 +88,7 @@ cache.Query(new SqlFieldsQuery(
 
 Simple, concise, and effective: Ignite will send the query to all nodes and perform updates locally for every cache entry, avoiding any data movement between nodes. However, we don't want SQL in C#, we want LINQ, which is compiler-checked, composable, easier to write and read thanks to the IDE completion.
 
-Ignite 2.5 introduced DML updates via LINQ (in addition to deletes in Ignite 2.1):
+Ignite 2.5 introduced DML updates via LINQ (in addition to [deletes in Ignite 2.1](https://ptupitsyn.github.io/Whats-New-In-Ignite-Net-2.1/)):
 
 ```cs
 cache.AsCacheQueryable()
