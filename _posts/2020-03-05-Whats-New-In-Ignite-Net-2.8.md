@@ -55,7 +55,7 @@ Ignite 2.4 brought .NET Core 2.x support, finally shedding Windows-specific C++ 
 
 Ignite 2.8 adds official .NET Core 3.x support and can run on any OS supported by the framework, in any mode - Server, Client, Thin Client.
 
-We have improved the way `.jar` files are handled within NuGet package. Post-build scripts are replaced with [MSBuild .targets file](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-dot-targets-files?view=vs-2019), which is more reliable, cross-platform, and works as expected with `dotnet build` and `dotnet publish`: `.jar` files are copied to build and publish directories automatically, resulting in a self-contained package.
+We have improved the way `.jar` files are handled within [NuGet package](https://www.nuget.org/packages/Apache.Ignite/). Post-build scripts are replaced with [MSBuild .targets file](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-dot-targets-files?view=vs-2019), which is more reliable, cross-platform, and works as expected with `dotnet build` and `dotnet publish`: `.jar` files are copied to build and publish directories automatically, resulting in a self-contained package.
 
 Note that minimum system requirements are still the same: .NET 4.0 and Visual Studio 2010. We care about backwards compatibility within a major version (2.x), but you can expect a switch to .NET Standard 2.0 in upcoming Ignite 3.x.
 
