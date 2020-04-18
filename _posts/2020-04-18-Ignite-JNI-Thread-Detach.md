@@ -3,9 +3,33 @@ layout: post
 title: Fixing JNI Thread Leak in Ignite.NET
 ---
 
-TODO: Intro
+[Ignite.NET](https://ignite.apache.org) runs in-process JVM (in thick mode) and interacts with it using [JNI](https://en.wikipedia.org/wiki/Java_Native_Interface). Since version 2.4, when Ignite.NET became cross-platform, we had a stealthy and mysterious bug: JVM thread count kept growing, consuming memory, even though actual OS thread count for the process was low.
 
 
-# TODO
+# The Reproducer
+
+We've got a reproducer from one of our users, and it boiled down to this:
+
+```cs
+var ignite = Ignition.Start(nodeConfig);
+
+var cache = ignite.GetOrCreateCache<int, int>("Test");
+cache[1] = 1;
+
+while (true)
+{
+	var thread = new Thread(_ => cache.Get(1));
+	thread.Start();
+	thread.Join();
+}
+```
+
+When you run this on Ignite.NET version 2.4 .. 2.7.6, the following happens:
+
+
+
+# JNI and Threads
 
 TODO: Measure the cost to call Attach/Detach
+
+# Searching for the Fix
