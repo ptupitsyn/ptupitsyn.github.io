@@ -58,7 +58,7 @@ Already see where this is going?
 Ignite starts the JVM once, and almost all APIs are thread-safe. You can (and should) use one Ignite instance from many threads. So, under the covers, Ignite calls `AttachCurrentThread` whenever a Java call is involved. But we don't call `DetachCurrentThread` right away, for performance reasons.
 
 
-Attach/Detach call pair takes aroung **50μs** (microseconds) on my machine. This may not seem like much, but it is actually very significant. One of our standard `ICache.Get` benchmarks shows **160K op/s** without `DetachCurrentThread`, and only **16K op/s** with `DetachCurrentThread` - 10 times slower.
+Attach/Detach call pair takes around **50μs** (microseconds) on my machine. This may not seem like much, but it is actually very significant. One of our standard `ICache.Get` benchmarks shows **160K op/s** without `DetachCurrentThread`, and only **16K op/s** with `DetachCurrentThread` - 10 times slower.
 
 So Ignite does not call `DetachCurrentThread` right away. We do it only on thread exit. I mean, *we thought we do*. Before 2.4, Ignite .NET reused some code from Ignite C++: all the JNI stuff was encapsulated there. It was Windows-only, and we handled `DLL_THREAD_DETACH` in [DllMain](https://docs.microsoft.com/en-us/windows/win32/dlls/dllmain) to call `DetachCurrentThread` in JNI - an obvious solution.
 
