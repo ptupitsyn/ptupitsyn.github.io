@@ -26,6 +26,11 @@ while (true)
 
 When you run this on Ignite.NET version 2.4 .. 2.7.6, the following happens:
 
+![ignite logo](../images/jni-thread-leak.png)
+
+[VisualVm](https://visualvm.github.io/) is on top, showing 65279 Java threads. [top](https://linux.die.net/man/1/top) fragment is at the bottom, showing 85 OS threads (rightmost `nTH` column).
+
+Modern Java (this has been run on OpenJDK 8+) uses native threads, there is no green thread magic here. So what is going on? How is that possible?
 
 
 # JNI and Threads
