@@ -80,3 +80,5 @@ This looked like a dead end to me for some time, but `ThreadLocal` turned out to
 
 * **POSIX (Linux/macOS)**: [pthread_key_create](https://linux.die.net/man/3/pthread_key_create) creates a thread local slot and takes a destructor pointer. The destructor is called on current thread at thread exit.
 * **Windows**: [FlsAlloc](https://docs.microsoft.com/en-us/windows/win32/api/fibersapi/nf-fibersapi-flsalloc) creates a *fiber* local storage and takes a destructor pointer. The destructor is called on current thread at thread exit (and on fiber deletion, which is not relevant to us).
+
+Both APIs are very similar. `destructor` has a signature of `void (*destructor)(void*)`. It is called only when a non-null value is stored in the corresponding storage, and that value is passed as the argument.
