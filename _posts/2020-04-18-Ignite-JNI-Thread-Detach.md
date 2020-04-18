@@ -43,7 +43,7 @@ Note that manual thread management is a rarity in modern .NET, most people use `
 
 # JNI and Threads
 
-As mentioned above, Ignite.NET interacts with in-process JVM via JNI. The process [looks like this](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/invocation.html):
+As mentioned above, Ignite.NET interacts with in-process JVM via JNI. The basic procedure [looks like this](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/invocation.html):
 
 ```cs
 JNI_CreateJavaVM();
