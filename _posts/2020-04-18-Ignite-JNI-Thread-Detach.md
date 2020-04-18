@@ -26,15 +26,19 @@ while (true)
 
 When you run this on Ignite.NET version 2.4 .. 2.7.6, the following happens:
 
-![ignite logo](../images/jni-thread-leak.png)
+![VisualVm](../images/jni-thread-leak.png)
 
-[VisualVm](https://visualvm.github.io/) is on top, showing `65279` Java threads. [Linux top](https://linux.die.net/man/1/top) fragment is at the bottom, showing `85` OS threads (rightmost `nTH` column).
+[VisualVm](https://visualvm.github.io/) shows `65279` Java threads. 
+
+![top](../images/jni-thread-leak-2.png)
+
+[Top](https://linux.die.net/man/1/top) shows `85` OS threads.
 
 Memory consumption is not that bad here, but creating new threads becomes slower and slower: here we see 65K threads created in 11 minutes, while after the bugfix the same program can start/stop 65K threads in 30 seconds.
 
 Java uses native threads, there is no green thread magic here. So what is going on? How is that possible?
 
-Note that manual thread management is a rarity in modern .NET, most people use `ThreadPool` directly or via `Task` APIs, which makes this bug hardly noticeable - threads rarely start and stop. So this issue took a while to surface.
+Note that manual thread management is a rarity in modern .NET, most people use `ThreadPool` directly or via `Task` APIs, which makes this bug stealthy - threads rarely start and stop. So this issue took a while to surface.
 
 
 # JNI and Threads
