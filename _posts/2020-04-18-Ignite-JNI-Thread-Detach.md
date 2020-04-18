@@ -32,7 +32,7 @@ When you run this on Ignite.NET version 2.4 .. 2.7.6, the following happens:
 
 Memory consumption is not that bad here, but creating new threads becomes slower and slower: here we see 65K threads created in 11 minutes, while after the bugfix the same program can start/stop 65K threads in 30 seconds.
 
-Modern Java (this has been run on OpenJDK 8+) uses native threads, there is no green thread magic here. So what is going on? How is that possible?
+Java uses native threads, there is no green thread magic here. So what is going on? How is that possible?
 
 Note that manual thread management is a rarity in modern .NET, most people use `ThreadPool` directly or via `Task` APIs, which makes this bug hardly noticeable - threads rarely start and stop. So this issue took a while to surface.
 
