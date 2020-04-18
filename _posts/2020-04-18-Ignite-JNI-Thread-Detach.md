@@ -30,12 +30,37 @@ When you run this on Ignite.NET version 2.4 .. 2.7.6, the following happens:
 
 [VisualVm](https://visualvm.github.io/) is on top, showing 65279 Java threads. [Linux top](https://linux.die.net/man/1/top) fragment is at the bottom, showing 85 OS threads (rightmost `nTH` column).
 
+Memory consumption is not that bad here, but creating new threads becomes slower and slower: here we see 65K threads created in 11 minutes, while after the bugfix the same program can start/stop 65K threads in 30 seconds.
+
 Modern Java (this has been run on OpenJDK 8+) uses native threads, there is no green thread magic here. So what is going on? How is that possible?
+
+Note that manual thread management is a rarity in modern .NET, most people use `ThreadPool` directly or via `Task` APIs, which makes this bug hardly noticeable - threads rarely start and stop. So this took a while to surface.
 
 
 # JNI and Threads
 
-TODO: Measure the cost to call Attach/Detach
-GetBenchmark: 160K op/s (6 us per call); with attach/detach on every call - 16K op/s (60 us per call) => attach+detach takes 50us.
+As mentioned above, Ignite.NET interacts with in-process JVM via JNI. The process [looks like this](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/invocation.html):
+
+```cs
+JNI_CreateJavaVM();
+// Call Java methods
+DestroyJavaVM();
+```
+
+However, this only works in one thread, quote:
+
+```
+The JNI interface pointer (JNIEnv) is valid only in the current thread. Should another thread need to access the Java VM, it must first call AttachCurrentThread() to attach itself to the VM and obtain a JNI interface pointer. Once attached to the VM, a native thread works just like an ordinary Java thread running inside a native method. The native thread remains attached to the VM until it calls DetachCurrentThread() to detach itself.
+```
+
+Already see where this is going?
+
+Ignite starts the JVM once, and almost all APIs are thread-safe. You can (and should) use one Ignite instance from many threads. So, under the covers, Ignite calls `AttachCurrentThread` whenever a Java call is involved. But we don't call `DetachCurrentThread` right away, for performance reasons.
+
+
+Attach/Detach call pair takes aroung **50μs** (microseconds) on my machine. This may not seem like much, but it is actually very significant. One of our standard `ICache.Get` benchmarks shows **160K op/s** without `Detach`, and only **16K op/s** with `Detach` - 10 times slower.
+
+So Ignite does not call `DetachCurrentThread` right away. We do it only on thread exit.
+
 
 # Searching for the Fix
