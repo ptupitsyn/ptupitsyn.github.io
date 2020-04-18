@@ -114,7 +114,7 @@ void AttachCurrentThread(IntPtr _jvm)
 	JNI_AttachCurrentThread(_jvm);
 
 	// Store JVM pointer in thread local storage for current thread,
-	// so it is passed the destructor (JNI_DetachCurrentThread) on exit.
+	// so it is passed to the destructor (JNI_DetachCurrentThread) on exit.
 	pthread_setspecific(_tlsIndex, _jvm);
 }
 
