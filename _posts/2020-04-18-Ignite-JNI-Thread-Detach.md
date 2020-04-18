@@ -83,7 +83,7 @@ This looked like a dead end to me for some time, but `ThreadLocal` turned out to
 
 Both APIs are very similar. `destructor` has a signature of `void (*destructor)(void*)`. It is called only when a non-null value is stored in the corresponding storage, and that value is passed as the only argument.
 
-This is perfect for us, just look at the signature: `jint DetachCurrentThread(JavaVM *vm)`. We can store `JavaVM` pointer in the thread local storage, and pass `DetachCurrentThread` function pointer as a destructor directly, on any OS! The whole solution looks like this:
+This is perfect for us, just look at the signature: `jint DetachCurrentThread(JavaVM *vm)`. We can store `JavaVM` pointer in the thread local storage, and pass `DetachCurrentThread` function pointer as a destructor directly, on any OS! The whole solution looks like this for Linux:
 
 ```cs
 [DllImport("libcoreclr.so")]
@@ -93,7 +93,6 @@ public static extern int pthread_key_create(IntPtr key, IntPtr destructor);
 public static extern int pthread_setspecific(int key, IntPtr value);
 
 IntPtr _jvm;
-
 int _tlsIndex;
 
 void CreateJvm() 
@@ -116,3 +115,5 @@ void AttachCurrentThread(IntPtr _jvm)
 }
 
 ```
+
+`DllImport`s are different on macOS and Windows, but the logic is very similar. Actual Ignite code is in [UnmanagedThread.cs](https://github.com/apache/ignite/blob/master/modules/platforms/dotnet/Apache.Ignite.Core/Impl/Unmanaged/UnmanagedThread.cs) and [Jvm.cs](https://github.com/apache/ignite/blob/master/modules/platforms/dotnet/Apache.Ignite.Core/Impl/Unmanaged/Jni/Jvm.cs).
