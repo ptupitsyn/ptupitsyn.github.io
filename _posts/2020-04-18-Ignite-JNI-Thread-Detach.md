@@ -66,3 +66,12 @@ This was forgotten during the migration to cross-platform, C#-only Ignite .NET 2
 
 
 # Searching for the Fix
+
+We've got rid of C++ layer in Ignite 2.4, and replaced it with direct P/Invoke calls to JNI APIs. It was great - breaking the shackles and becoming free from C++, Visual Studio, and Windows. The build became much simpler and faster. No more embedded DLLs. But with the DLL we have lost the `DLL_THREAD_DETACH`. And what about Linux and macOS - there is no such thing there? 
+
+To summarize, our task is: **call `DetachCurrentThread` when a thread is about to exit**.
+
+* Ignite APIs are called from user threads. We have no control here - no way to *insert our call at the end*.
+* There is no build-in way in .NET to get a thread exit callback.
+* We could create a class with a [finalizer](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/destructors), call `Detach` from there, and put an instance of that class to a [ThreadLocal<T>](https://docs.microsoft.com/en-us/dotnet/api/system.threading.threadlocal-1?view=netframework-4.8): when a thread exits, GC will collect this instance  (maybe, sooner or later - there is no guarantee), and call our finalizer. The problem is - it is too late. `DetachCurrentThread` can not be called for a different thread, only for the current one. And our thread has already exited.
+* We could provide an Ignite API for the users to call
