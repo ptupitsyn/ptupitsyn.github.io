@@ -132,6 +132,6 @@ void AttachCurrentThread(IntPtr _jvm)
 
 Situations where you need a *thread exit callback* seem to be quite rare, at least in C# / .NET world. I've found only [one  StackOverflow question](https://stackoverflow.com/questions/1163992/calling-a-method-when-thread-terminates/58226361#58226361) about this, and it is asked for a wrong reason anyway.
 
-Interestingly enough, another distributed .NET database had a similar need: [RavenDB](https://ravendb.net/). See this blog post by their CEO, Oren Eini: [The design and implementation of a better ThreadLocal<T>](https://ayende.com/blog/189793-A/the-design-and-implementation-of-a-better-threadlocal-t) - I've left a comment there as well.
+Interestingly enough, another distributed .NET database had a similar need: [RavenDB](https://ravendb.net/). See this blog post by their CEO, Oren Eini: [The design and implementation of a better ThreadLocal](https://ayende.com/blog/189793-A/the-design-and-implementation-of-a-better-threadlocal-t) - I've left a comment there as well.
 
 Since the problem of thread exit callback is quite generic and not specific to Ignite and JNI, I've created a NuGet package that encapsulates the solution: [UnmanagedThreadUtils](https://www.nuget.org/packages/UnmanagedThreadUtils/).
