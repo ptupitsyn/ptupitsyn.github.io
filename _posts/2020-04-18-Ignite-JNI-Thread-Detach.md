@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Fixing JNI Thread Leak in Ignite.NET
+title: Fixing JNI Thread Leak in Ignite.NET, or How to Get a Thread Exit Callback in C#
 ---
 
 [Ignite.NET](https://ignite.apache.org) runs in-process JVM (in thick mode) and interacts with it using [JNI](https://en.wikipedia.org/wiki/Java_Native_Interface). Since version 2.4, when Ignite.NET became cross-platform, we had a stealthy and mysterious bug: JVM thread count kept growing, consuming memory, even though actual OS thread count for the process was low.
