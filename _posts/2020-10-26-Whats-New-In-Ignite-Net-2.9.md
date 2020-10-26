@@ -13,6 +13,7 @@ Let's have a look at .NET-specific features and improvements.
 * TODO: Compelling benchmarks
 * TODO: Usage scenarios (see GG docs - there were some?)
 * TODO: Explain like auto-synchronized ConcurrentDictionary
+* TODO: Explain with ReferenceEquals, and the dangers of it 
 
 
 # Call .NET Services From Java: Full Circle of Services
