@@ -31,17 +31,15 @@ and avoids any overhead mentioned above. It is as fast as `ConcurrentDictionary`
 Some of the characteristics are:
 
 * The cache is populated eagerly. For every local (primary, backup, or near) cache entry on the given node, an up-to-date platform cache entry exists at all times. Therefore, read operations for those entries are guaranteed to hit the platform cache - performance is predictable.
-* As a consequence of the above, cache writes can become slower. 
-* The same instance is returned repeatedly (`ReferenceEquals(cache[1], cache[1]) == true`). Any modifications to the returned objects should be avoided: Ignite can discard them at any moment.
+* As a consequence of the above, cache writes can become slower.  
+* The same instance is returned repeatedly (`ReferenceEquals(cache.Get(key), cache.Get(key)) == true`). Any modifications to the returned objects should be avoided: Ignite can discard them at any moment.
 
-This feature may be not trivial to understand, but provides a huge performance improvement when used correctly. Potential scenarios are:
+### Recommended Use Cases
 
-* 1
-* 2
-
-* TODO: List included APIs (incl ScanQuery)
-* TODO: Explain like auto-synchronized ConcurrentDictionary
-* TODO: Explain with ReferenceEquals, and the dangers of it 
+* TODO: Rarely updated data
+* TODO: Near caches on client nodes
+* TODO: Scan queries
+* TODO: Colocated computations (incl Scan Queries)
 
 
 # Call .NET Services From Java: Full Circle of Services
