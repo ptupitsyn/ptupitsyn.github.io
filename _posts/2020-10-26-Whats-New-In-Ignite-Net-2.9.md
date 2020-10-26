@@ -9,6 +9,8 @@ Let's have a look at .NET-specific features and improvements.
 
 # Platform Cache: It's All About Performance
 
+
+
 ```
 |               Method |        Mean | Ratio | Allocated |
 |--------------------- |------------:|------:|----------:|
@@ -16,11 +18,27 @@ Let's have a look at .NET-specific features and improvements.
 | CacheGetWithPlatform |    43.09 ns |  1.00 |      32 B |
 ```
 
-TODO: Start with a benchmark
+**70 times faster**, not bad? The code is on GitHub: [PlatformCacheBenchmark.cs](https://github.com/ptupitsyn/IgniteNetBenchmarks/blob/bab8535a4a22e7e863a9929f590bbb9a80140fcf/PlatformCacheBenchmark.cs).
+
+ *Disclaimer: your mileage may wary depending on data types, cache entry sizes, and other factors.*
+
+Now onto the details. Normally, Ignite keeps cache data is serialized form in memory regions or on disk, see [Memory Architecture](https://ignite.apache.org/docs/latest/memory-architecture).
+Therefore, even local read operations involve a JNI call, a copy from the memory region to the .NET memory, and a deserialization call.
+
+[Platform Cache](https://ignite.apache.org/docs/latest/net-specific/net-platform-cache) is an additional layer of caching in the .NET memory which stores cache entries in deserialized form,
+and avoids any overhead mentioned above. It is as fast as `ConcurrentDictionary`.
+
+Some of the characteristics are:
+
+* The cache is populated eagerly. For every primary, backup, or near cache entry that is present on the given node, a platform cache entry exists at all times.
+* 2
+
+This feature may be not trivial to understand, but provides a huge performance improvement when used correctly. Potential scenarios are:
+
+* 1
+* 2
 
 * TODO: List included APIs (incl ScanQuery)
-* TODO: Compelling benchmarks
-* TODO: Usage scenarios (see GG docs - there were some?)
 * TODO: Explain like auto-synchronized ConcurrentDictionary
 * TODO: Explain with ReferenceEquals, and the dangers of it 
 
