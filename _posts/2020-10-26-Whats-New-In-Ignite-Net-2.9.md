@@ -9,10 +9,33 @@ Let's have a look at .NET-specific features and improvements.
 
 # Platform Cache: It's All About Performance
 
+* TODO: List included APIs (incl ScanQuery)
+* TODO: Compelling benchmarks
+* TODO: Usage scenarios (see GG docs - there were some?)
+* TODO: Explain like auto-synchronized ConcurrentDictionary
+
+
+# Call .NET Services From Java: Full Circle of Services
+
+
+
 
 # IgniteLock: Cache.Lock Replacement
 
 TODO: Cache.Lock should be marked Obsolete 
+
+
+# Thin Client Automatic Server Discovery
+
+# Thin Client Compute
+
+
+# Other Improvements
+
+* SqlFieldsQuery as ContinuousQuery.InitialQuery 
+* FieldsQueryCursor metadata
+* AffinityCall/AffinityRun with partition - mention this in Platform Cache section instead?
+* Thin client cluster APIs - mention in server discovery?
 
 
 # Wrap-up
