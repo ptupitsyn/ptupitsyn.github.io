@@ -31,7 +31,7 @@ and avoids any overhead mentioned above. It is as fast as `ConcurrentDictionary`
 Some of the characteristics are:
 
 * The cache is populated eagerly. For every primary, backup, or near cache entry that is present on the given node, a platform cache entry exists at all times.
-* 2
+* The same instance is returned repeatedly (`ReferenceEquals(cache[1], cache[1]) == true`). Any modifications to the returned objects should be avoided: Ignite can discard them at any moment.
 
 This feature may be not trivial to understand, but provides a huge performance improvement when used correctly. Potential scenarios are:
 
