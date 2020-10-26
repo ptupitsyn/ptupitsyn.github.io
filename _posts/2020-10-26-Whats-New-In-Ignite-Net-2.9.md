@@ -17,6 +17,10 @@ Let's have a look at .NET-specific features and improvements.
 
 # Call .NET Services From Java: Full Circle of Services
 
+Effectively, .NET services are now first-class citizens and can be called from anywhere: thick and thin clients, Java or .NET.
+And, potentially, from other thin clients, like Python or Rust - the protocol supports that (TODO: Links to other clients).
+
+TODO: This works from Java Thin as well!
 
 
 
@@ -29,6 +33,7 @@ TODO: Cache.Lock should be marked Obsolete
 
 # Thin Client Compute
 
+TODO: Java and .NET services!
 
 # Other Improvements
 
