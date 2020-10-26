@@ -9,6 +9,15 @@ Let's have a look at .NET-specific features and improvements.
 
 # Platform Cache: It's All About Performance
 
+```
+|               Method |        Mean | Ratio | Allocated |
+|--------------------- |------------:|------:|----------:|
+|             CacheGet | 3,015.56 ns | 69.98 |    4176 B |
+| CacheGetWithPlatform |    43.09 ns |  1.00 |      32 B |
+```
+
+TODO: Start with a benchmark
+
 * TODO: List included APIs (incl ScanQuery)
 * TODO: Compelling benchmarks
 * TODO: Usage scenarios (see GG docs - there were some?)
