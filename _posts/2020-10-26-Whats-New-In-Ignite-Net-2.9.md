@@ -104,7 +104,7 @@ public class Main {
         ClientConfiguration cfg = new ClientConfiguration().setAddresses("127.0.0.1:10800");
         IgniteClient client = Ignition.startClient(cfg);
         MyService service = client.services().serviceProxy("MyService", MyService.class);
-        System.out.println(service.GetGreeting("Java " + System.getProperty("java.version")));
+        System.out.println(service.greeting("Java " + System.getProperty("java.version")));
     }
 
     public interface MyService {
