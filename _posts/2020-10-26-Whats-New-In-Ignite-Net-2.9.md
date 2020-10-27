@@ -22,7 +22,7 @@ Now onto the details: Ignite keeps cache data in serialized form in memory regio
 Therefore, even local read operations involve a JNI call, a copy from the memory region to the .NET memory, and a deserialization call.
 
 [Platform Cache](https://ignite.apache.org/docs/latest/net-specific/net-platform-cache) is an additional layer of caching in the .NET memory which stores cache entries in deserialized form,
-and avoids any overhead mentioned above. It is as fast as `ConcurrentDictionary`.
+and avoids any overhead mentioned above. It is as fast as `ConcurrentDictionary`. Note how allocated memo
 
 Naturally, there are tradeoffs: memory usage is increased, and cache write performance is affected. This feature is best suited for read-only or rarely changing data. 
 Platform Cache can be used on client and server nodes, see [documentation](https://ignite.apache.org/docs/latest/net-specific/net-platform-cache) for more details.
@@ -30,7 +30,15 @@ Platform Cache can be used on client and server nodes, see [documentation](https
 
 ### Scan Query with Platform Cache
 
-TODO: Benchmark
+[Scan Queries](https://ignite.apache.org/docs/latest/key-value-api/using-scan-queries) with filter also benefit from Platform Cache when it is enabled on server nodes:
+only keys are passed to the .NET filter, reducing deserialization overhead. The effect is more noticeable with large values (~3KB per value in this case):
+
+```
+|                     Method |     Mean | Ratio | Allocated |
+|--------------------------- |---------:|------:|----------:|
+|             CacheQueryScan | 39.97 ms |  2.37 | 151.78 MB |
+| CacheQueryScanWithPlatform | 16.85 ms |  1.00 |   2.52 MB |
+```
 
 
 # Call .NET Services From Java: Full Circle of Services
