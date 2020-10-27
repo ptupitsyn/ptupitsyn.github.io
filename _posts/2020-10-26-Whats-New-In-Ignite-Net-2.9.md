@@ -24,7 +24,8 @@ Now onto the details: Ignite keeps cache data in serialized form in memory regio
 Therefore, even local read operations involve a JNI call, a copy from the memory region to the .NET memory, and a deserialization call.
 
 [Platform Cache](https://ignite.apache.org/docs/latest/net-specific/net-platform-cache) is an additional layer of caching in the .NET memory which stores cache entries in deserialized form,
-and avoids any overhead mentioned above. It is as fast as `ConcurrentDictionary`. Note how allocated memo
+and avoids any overhead mentioned above. It is as fast as `ConcurrentDictionary`.
+Additionally, allocations are greatly reduced (note `Allocated` column in all benchmark results on this page), so the GC has less work to do, increasing the performance further.
 
 Naturally, there are tradeoffs: memory usage is increased, and cache write performance is affected. This feature is best suited for read-only or rarely changing data. 
 Platform Cache can be used on client and server nodes, see [documentation](https://ignite.apache.org/docs/latest/net-specific/net-platform-cache) for more details.
@@ -55,7 +56,7 @@ an efficient approach to this task: when both `Local` and `Partition` properties
 2. Inside the `IComputeFunc` use `new ScanQuery<K, V> { Local = true, Partition = p }`
 3. Iterate over the `IQueryCursor`, filter the data and perform computations as needed
 
-This way every node iterates over local deserialized data, memory allocation and serialization costs and are minimized.
+This way every node iterates over local deserialized data, memory allocation and serialization costs are minimized.
 See the [benchmark code](https://github.com/ptupitsyn/IgniteNetBenchmarks/tree/master/PlatformCacheComputeBenchmark.cs) for a complete example. 
 
 ```
