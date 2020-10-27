@@ -160,9 +160,23 @@ Furthermore, thin client will receive topology updates in the background and con
 See [documentation](https://ignite.apache.org/docs/latest/thin-clients/dotnet-thin-client#discovery) for more details.  
 
 
-# Thin Client Compute
+# Thin Client Compute and Cluster APIs
 
-TODO: Java and .NET services!
+Basic Compute functionality has been added: thin clients can execute an already deployed Java task by class name, on the entire cluster or using a subset of nodes:
+
+```cs
+IIgniteClient client = Ignition.StartClient(cfg);
+
+// Compute on the entire cluster 
+IComputeClient compute = client.GetCompute();
+
+// Compute on nodes with a specific attribute
+compute = client.GetCluster()
+    .ForAttribute("some-attr", "foo")
+    .GetCompute();
+
+compute.ExecuteJavaTask<string>("org.foo.bar.MyComputeTask", "arg");
+```
 
 # Other Improvements
 
