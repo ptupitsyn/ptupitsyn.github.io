@@ -45,9 +45,20 @@ only keys are passed to the .NET filter, reducing deserialization overhead. The 
 
 ### Map-Reduce With AffinityCall and ScanQuery
 
-Platform Cache also supports a more specific use case: local Scan Query with `Partition`. This enables more efficient map-reduce computations. 
+Let's say we want to iterate over the entire data set and perform some computations and aggregations.
+In many cases SQL is the best way to do this, but not everything can be expressed in SQL.
+
+A combination of Platform Cache, Scan Query and [Colocated Computations](https://ignite.apache.org/docs/latest/distributed-computing/collocated-computations) enables
+an efficient approach to this task:
+
 
 TODO: Benchmark, code sample
+```
+|                 Method |      Mean | Ratio | Allocated |
+|----------------------- |----------:|------:|----------:|
+|             ComputeSum | 125.36 ms |  2.68 |   74.9 MB |
+| ComputeSumWithPlatform |  46.75 ms |  1.00 |   6.15 MB |
+```
 
 
 # Call .NET Services From Java: Full Circle of Services
