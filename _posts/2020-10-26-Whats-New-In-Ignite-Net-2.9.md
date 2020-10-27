@@ -121,7 +121,44 @@ Note how we use `@PlatformServiceMethod` to avoid Java naming guidelines violati
 without this annotation, we would have to change the method name to match C# code exactly.
 
 
-# Thin Client Automatic Server Discovery
+# Thin Client Automatic Server Discovery with Partition Awareness
+
+Previously, we had to provide every server node address in `IgniteClientConfiguration.Endpoints` so that [Partition Awareness](https://ignite.apache.org/docs/latest/thin-clients/dotnet-thin-client#partition_awareness)
+works correctly and routes cache requests to a correct server node.
+
+This is no longer required: when `IgniteClientConfiguration.EnablePartitionAwareness` is `true`, Ignite.NET thin client will discover all server nodes automatically - providing a single starting address is enough.
+
+The following code demonstrates the process:
+
+```cs
+var cfg = new IgniteClientConfiguration
+{
+    Endpoints = new[] {"127.0.0.1:10800"},
+    EnablePartitionAwareness = true
+};
+
+var client = Ignition.StartClient(cfg);
+
+// Perform any operation and sleep to let the client discover
+// server nodes asynchronously.
+client.GetCacheNames();
+Thread.Sleep(1000);
+
+foreach (IClientConnection connection in client.GetConnections())
+    Console.WriteLine(connection.RemoteEndPoint);
+```
+
+If we start 3 server nodes locally, the output will be the following:
+
+```text
+127.0.0.1:10800
+[::1]:10801
+[::1]:10802
+```
+
+Furthermore, thin client will receive topology updates in the background and connect to new cluster nodes automatically as the cluster grows.
+See [documentation](https://ignite.apache.org/docs/latest/thin-clients/dotnet-thin-client#discovery) for more details.  
+
 
 # Thin Client Compute
 
