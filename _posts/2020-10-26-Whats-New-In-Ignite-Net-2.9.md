@@ -49,7 +49,9 @@ Let's say we want to iterate over the entire data set and perform some computati
 In many cases SQL is the best way to do this, but not everything can be expressed in SQL.
 
 A combination of Platform Cache, Scan Query and [Colocated Computations](https://ignite.apache.org/docs/latest/distributed-computing/collocated-computations) enables
-an efficient approach to this task:
+an efficient approach to this task: when both `Local` and `Partition` properties are set on the `ScanQuery`, the results are served directly from Platform Cache, avoiding any network or JNI calls.
+
+1. fff
 
 
 TODO: Benchmark, code sample
