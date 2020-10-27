@@ -124,7 +124,7 @@ without this annotation, we would have to change the method name to match C# cod
 # Thin Client Automatic Server Discovery with Partition Awareness
 
 Previously, we had to provide every server node address in `IgniteClientConfiguration.Endpoints` so that [Partition Awareness](https://ignite.apache.org/docs/latest/thin-clients/dotnet-thin-client#partition_awareness)
-works correctly and routes cache requests to a correct server node.
+works properly and routes cache requests to a correct server node.
 
 This is no longer required: when `IgniteClientConfiguration.EnablePartitionAwareness` is `true`, Ignite.NET thin client will discover all server nodes automatically - providing a single starting address is enough.
 
