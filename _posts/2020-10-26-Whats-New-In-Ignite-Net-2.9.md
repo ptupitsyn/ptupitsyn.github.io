@@ -20,19 +20,13 @@ Let's have a look at .NET-specific features and improvements.
 
 **70 times faster**, not bad? The code is on GitHub: [PlatformCacheBenchmark.cs](https://github.com/ptupitsyn/IgniteNetBenchmarks/blob/bab8535a4a22e7e863a9929f590bbb9a80140fcf/PlatformCacheBenchmark.cs).
 
- *Disclaimer: your mileage may wary depending on data types, cache entry sizes, and other factors.*
-
-Now onto the details. Normally, Ignite keeps cache data is serialized form in memory regions or on disk, see [Memory Architecture](https://ignite.apache.org/docs/latest/memory-architecture).
+Now onto the details. Normally, Ignite keeps cache data in serialized form in memory regions or on disk (see [Memory Architecture](https://ignite.apache.org/docs/latest/memory-architecture)).
 Therefore, even local read operations involve a JNI call, a copy from the memory region to the .NET memory, and a deserialization call.
 
 [Platform Cache](https://ignite.apache.org/docs/latest/net-specific/net-platform-cache) is an additional layer of caching in the .NET memory which stores cache entries in deserialized form,
 and avoids any overhead mentioned above. It is as fast as `ConcurrentDictionary`.
 
-Some of the characteristics are:
-
-* The cache is populated eagerly. For every local (primary, backup, or near) cache entry on the given node, an up-to-date platform cache entry exists at all times. Therefore, read operations for those entries are guaranteed to hit the platform cache - performance is predictable.
-* As a consequence of the above, cache writes can become slower.  
-* The same instance is returned repeatedly (`ReferenceEquals(cache.Get(key), cache.Get(key)) == true`). Any modifications to the returned objects should be avoided: Ignite can discard them at any moment.
+Naturally, there are tradeoffs: memory usage is increased, and cache write performance is affected. This feature is best suited for read-only or rarely changing data. 
 
 ### Recommended Use Cases
 
@@ -40,6 +34,8 @@ Some of the characteristics are:
 * TODO: Near caches on client nodes
 * TODO: Scan queries
 * TODO: Colocated computations (incl Scan Queries)
+
+Platform Cache can be used on client and server nodes, see [documentation](https://ignite.apache.org/docs/latest/net-specific/net-platform-cache) for more details.
 
 
 # Call .NET Services From Java: Full Circle of Services
