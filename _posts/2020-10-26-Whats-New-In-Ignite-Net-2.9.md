@@ -51,10 +51,12 @@ In many cases SQL is the best way to do this, but not everything can be expresse
 A combination of Platform Cache, Scan Query and [Colocated Computations](https://ignite.apache.org/docs/latest/distributed-computing/collocated-computations) enables
 an efficient approach to this task: when both `Local` and `Partition` properties are set on the `ScanQuery`, the results are served directly from Platform Cache, avoiding any network or JNI calls.
 
-1. fff
+1. For every partition number, perform `ICompute.AffinityCall` - this ensures that partitions stay in place while we iterate over them
+2. Inside the `IComputeFunc` use `new ScanQuery<K, V> { Local = true, Partition = p }`
+3. Iterate over the `IQueryCursor`, filter the data and perform computations as needed
 
+This way every node iterates over local deserialized data, memory allocation and serialization costs and are minimized:
 
-TODO: Benchmark, code sample
 ```
 |                 Method |      Mean | Ratio | Allocated |
 |----------------------- |----------:|------:|----------:|
