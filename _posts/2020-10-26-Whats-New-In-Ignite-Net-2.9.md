@@ -33,7 +33,7 @@ Platform Cache can be used on client and server nodes, see [documentation](https
 
 ### Scan Queries
 
-[Scan Queries](https://ignite.apache.org/docs/latest/key-value-api/using-scan-queries) with filter also benefit from Platform Cache when it is enabled on server nodes:
+[Scan Queries](https://ignite.apache.org/docs/latest/key-value-api/using-scan-queries) with filter also benefit from Platform Cache on server nodes:
 only keys are passed to the .NET filter, reducing deserialization overhead. The effect is more noticeable with large values (~3KB per value in this case):
 
 ```
