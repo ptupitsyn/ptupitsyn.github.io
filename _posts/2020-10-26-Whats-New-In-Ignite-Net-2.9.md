@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What's new in Apache Ignite.NET 2.8
+title: What's new in Apache Ignite.NET 2.9
 ---
 
 [Apache Ignite](https://ignite.apache.org/) 2.9 [has been released](http://apache-ignite-users.70518.x6.nabble.com/ANNOUNCE-Apache-Ignite-2-9-0-Released-td34311.html) a few days ago.
@@ -188,6 +188,8 @@ compute.ExecuteJavaTask<string>("org.foo.bar.MyComputeTask", "arg");
 
 # Wrap-up
 
-TODO:
-* Full release notes: https://ignite.apache.org/releases/2.9.0/release_notes.html
-* New docs: https://ignite.apache.org/docs/latest/
+Please see [release notes](https://ignite.apache.org/releases/2.9.0/release_notes.html) for a full list of new features, fixes, and improvements.
+
+And we have new documentation: [ignite.apache.org/docs](https://ignite.apache.org/docs/)!
+
+More .NET thin client features are coming in Ignite 2.10: Services, Transactions, Continuous Queries. Stay tuned! 
