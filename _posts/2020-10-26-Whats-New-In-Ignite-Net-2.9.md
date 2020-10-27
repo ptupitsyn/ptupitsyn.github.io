@@ -9,7 +9,7 @@ Let's have a look at .NET-specific features and improvements.
 
 # Platform Cache: It's All About Performance
 
-TODO: Picture with JVM heap/offheap, .NET heap, etc
+![caching diagram](../images/platform-cache.svg)
 
 ```
 |               Method |        Mean | Ratio | Allocated |
