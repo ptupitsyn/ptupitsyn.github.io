@@ -190,6 +190,8 @@ compute.ExecuteJavaTask<string>("org.foo.bar.MyComputeTask", "arg");
 
 Please see [release notes](https://ignite.apache.org/releases/2.9.0/release_notes.html) for a full list of new features, fixes, and improvements.
 
-And we have new documentation: [ignite.apache.org/docs](https://ignite.apache.org/docs/)!
+We have new documentation: [ignite.apache.org/docs](https://ignite.apache.org/docs/)!
+
+Check this awesome video from [Denis Magda](https://twitter.com/denismagda): [Why Would You Upgrade to Apache Ignite 2.9: Top-3 Changes](https://www.youtube.com/watch?v=ewwjq8SIk-s)
 
 More .NET thin client features are coming in Ignite 2.10: Services, Transactions, Continuous Queries. Stay tuned! 
