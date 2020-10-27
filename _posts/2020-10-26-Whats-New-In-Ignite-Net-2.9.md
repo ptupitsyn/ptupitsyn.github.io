@@ -178,13 +178,12 @@ compute = client.GetCluster()
 compute.ExecuteJavaTask<string>("org.foo.bar.MyComputeTask", "arg");
 ```
 
+
 # Other Improvements
 
-* SqlFieldsQuery as ContinuousQuery.InitialQuery 
-* FieldsQueryCursor metadata
-* AffinityCall/AffinityRun with partition - mention this in Platform Cache section instead?
-* Thin client cluster APIs - mention in server discovery?
-* IgniteLock: Cache.Lock Replacement
+* `SqlFieldsQuery` can be used as `initialQuery` in `ICache.QueryContinuous` 
+* `IFieldsQueryCursor.Fields` property added to provide field types along with names
+* `IIgnite.GetOrCreateLock()` added as a future replacement for `ICache.Lock()`
 
 
 # Wrap-up
