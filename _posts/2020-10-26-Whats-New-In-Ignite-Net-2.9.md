@@ -9,8 +9,6 @@ Let's have a look at .NET-specific features and improvements.
 
 # Platform Cache: It's All About Performance
 
-
-
 ```
 |               Method |        Mean | Ratio | Allocated |
 |--------------------- |------------:|------:|----------:|
@@ -20,22 +18,19 @@ Let's have a look at .NET-specific features and improvements.
 
 **70 times faster**, not bad? The code is on GitHub: [PlatformCacheBenchmark.cs](https://github.com/ptupitsyn/IgniteNetBenchmarks/blob/bab8535a4a22e7e863a9929f590bbb9a80140fcf/PlatformCacheBenchmark.cs).
 
-Now onto the details. Normally, Ignite keeps cache data in serialized form in memory regions or on disk (see [Memory Architecture](https://ignite.apache.org/docs/latest/memory-architecture)).
+Now onto the details: Ignite keeps cache data in serialized form in memory regions or on disk (see [Memory Architecture](https://ignite.apache.org/docs/latest/memory-architecture)).
 Therefore, even local read operations involve a JNI call, a copy from the memory region to the .NET memory, and a deserialization call.
 
 [Platform Cache](https://ignite.apache.org/docs/latest/net-specific/net-platform-cache) is an additional layer of caching in the .NET memory which stores cache entries in deserialized form,
 and avoids any overhead mentioned above. It is as fast as `ConcurrentDictionary`.
 
 Naturally, there are tradeoffs: memory usage is increased, and cache write performance is affected. This feature is best suited for read-only or rarely changing data. 
-
-### Recommended Use Cases
-
-* TODO: Rarely updated data
-* TODO: Near caches on client nodes
-* TODO: Scan queries
-* TODO: Colocated computations (incl Scan Queries)
-
 Platform Cache can be used on client and server nodes, see [documentation](https://ignite.apache.org/docs/latest/net-specific/net-platform-cache) for more details.
+
+
+### Scan Query with Platform Cache
+
+TODO: Benchmark
 
 
 # Call .NET Services From Java: Full Circle of Services
