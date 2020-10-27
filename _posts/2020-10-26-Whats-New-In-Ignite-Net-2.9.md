@@ -68,10 +68,11 @@ See the [benchmark code](https://github.com/ptupitsyn/IgniteNetBenchmarks/tree/m
 
 # Call .NET Services From Java: Full Circle of Services
 
-Effectively, .NET services are now first-class citizens and can be called from anywhere: thick and thin clients, Java or .NET.
-And, potentially, from other thin clients, like Python or Rust - the protocol supports that (TODO: Links to other clients).
+.NET [services](https://ignite.apache.org/docs/latest/services/services) are now first-class citizens and can be called from anywhere: servers, thick and thin clients, Java or .NET.
+And, in future, from other thin clients, like [Python](https://ignite.apache.org/docs/latest/thin-clients/python-thin-client) or 
+[Javascript](https://ignite.apache.org/docs/latest/thin-clients/nodejs-thin-client) - the client protocol supports that.
 
-TODO: This works from Java Thin as well!
+Java thin client is the first thin client to support Service API (.NET thin services are coming in 2.10), so this would be the best demo!  
 
 
 
