@@ -9,6 +9,8 @@ Let's have a look at .NET-specific features and improvements.
 
 # Platform Cache: It's All About Performance
 
+TODO: Picture with JVM heap/offheap, .NET heap, etc
+
 ```
 |               Method |        Mean | Ratio | Allocated |
 |--------------------- |------------:|------:|----------:|
@@ -28,7 +30,7 @@ Naturally, there are tradeoffs: memory usage is increased, and cache write perfo
 Platform Cache can be used on client and server nodes, see [documentation](https://ignite.apache.org/docs/latest/net-specific/net-platform-cache) for more details.
 
 
-### Scan Query with Platform Cache
+### Scan Queries
 
 [Scan Queries](https://ignite.apache.org/docs/latest/key-value-api/using-scan-queries) with filter also benefit from Platform Cache when it is enabled on server nodes:
 only keys are passed to the .NET filter, reducing deserialization overhead. The effect is more noticeable with large values (~3KB per value in this case):
@@ -39,6 +41,13 @@ only keys are passed to the .NET filter, reducing deserialization overhead. The 
 |             CacheQueryScan | 39.97 ms |  2.37 | 151.78 MB |
 | CacheQueryScanWithPlatform | 16.85 ms |  1.00 |   2.52 MB |
 ```
+
+
+### Map-Reduce With AffinityCall and ScanQuery
+
+Platform Cache also supports a more specific use case: local Scan Query with `Partition`. This enables more efficient map-reduce computations. 
+
+TODO: Benchmark, code sample
 
 
 # Call .NET Services From Java: Full Circle of Services
