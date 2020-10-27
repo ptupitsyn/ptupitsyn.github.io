@@ -114,6 +114,7 @@ public class Main {
 }
 ```
 
+I think this is as simple as it gets.
 The output is something like `Hello Java 1.8.0_265 from .NET Core 3.1.9!`, depending on your setup.
 
 Note how we use `@PlatformServiceMethod` to avoid Java naming guidelines violation:
