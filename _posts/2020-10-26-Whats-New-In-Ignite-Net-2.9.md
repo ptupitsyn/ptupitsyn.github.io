@@ -18,7 +18,7 @@ TODO: Picture with JVM heap/offheap, .NET heap, etc
 | CacheGetWithPlatform |    43.09 ns |  1.00 |      32 B |
 ```
 
-**70 times faster**, not bad? The code is on GitHub: [PlatformCacheBenchmark.cs](https://github.com/ptupitsyn/IgniteNetBenchmarks/blob/bab8535a4a22e7e863a9929f590bbb9a80140fcf/PlatformCacheBenchmark.cs).
+**70 times faster**, not bad? The code is on GitHub: [PlatformCacheBenchmark.cs](https://github.com/ptupitsyn/IgniteNetBenchmarks/tree/master/PlatformCacheBenchmark.cs).
 
 Now onto the details: Ignite keeps cache data in serialized form in memory regions or on disk (see [Memory Architecture](https://ignite.apache.org/docs/latest/memory-architecture)).
 Therefore, even local read operations involve a JNI call, a copy from the memory region to the .NET memory, and a deserialization call.
@@ -55,13 +55,14 @@ an efficient approach to this task: when both `Local` and `Partition` properties
 2. Inside the `IComputeFunc` use `new ScanQuery<K, V> { Local = true, Partition = p }`
 3. Iterate over the `IQueryCursor`, filter the data and perform computations as needed
 
-This way every node iterates over local deserialized data, memory allocation and serialization costs and are minimized:
+This way every node iterates over local deserialized data, memory allocation and serialization costs and are minimized.
+See the [benchmark code](https://github.com/ptupitsyn/IgniteNetBenchmarks/tree/master/PlatformCacheComputeBenchmark.cs) for a complete example. 
 
 ```
-|                 Method |      Mean | Ratio | Allocated |
-|----------------------- |----------:|------:|----------:|
-|             ComputeSum | 125.36 ms |  2.68 |   74.9 MB |
-| ComputeSumWithPlatform |  46.75 ms |  1.00 |   6.15 MB |
+|                 Method |     Mean | Ratio | Allocated |
+|----------------------- |---------:|------:|----------:|
+|             ComputeSum | 63.79 ms |  6.01 |   74.9 MB |
+| ComputeSumWithPlatform | 10.59 ms |  1.00 |   6.15 MB |
 ```
 
 
