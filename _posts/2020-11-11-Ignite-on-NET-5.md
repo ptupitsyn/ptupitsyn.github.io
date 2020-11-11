@@ -3,7 +3,11 @@ layout: post
 title: Apache Ignite on .NET 5
 ---
 
-.NET 5 is out! Does it work with Apache Ignite?
+Exploring .NET 5 with Apache Ignite
+
+# Ignite + .NET 5
+
+Official .NET 5 support will be announced in Ignite 2.10, but preliminary testing shows that everything works as expected on Windows and Linux.
 
 # Top-level statements
 
