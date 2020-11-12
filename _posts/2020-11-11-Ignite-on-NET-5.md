@@ -62,13 +62,52 @@ And Ignite considers them equal, too: value from cache can be retrieved correctl
 Note how another C# 9 feature, [target-typed new](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9#fit-and-finish-features), is used here to create keys and values.
 
 
-# Single-file publish
+# Single-file applications
 
-`dotnet publish -c Release --self-contained true -r linux-x64 -p:PublishSingleFile=true`
+[Single-file deployment](https://docs.microsoft.com/en-us/dotnet/core/deploying/single-file) was improved in .NET 5.
+Before that, .NET Core host used to create a temporary directory and extract all application files there - it was not really a single-file app, but a self-extracting app. Ignite works fine in that old mode.
 
+New mode, however, is a true single-file app where everything is loaded directly, without temp files. And, unfortunately, this is where Ignite fails on Linux.
+If we publish a simple Ignite app like this `dotnet publish -c Release --self-contained true -r linux-x64 -p:PublishSingleFile=true` and run it, we get an error:
 
+```
+Unhandled exception. System.DllNotFoundException: Unable to load shared library 'libcoreclr.so' or one of its dependencies. In order to help diagnose loading problems, consider setting the LD_DEBUG environment variable: liblibcoreclr.so: cannot open shared object file: No such file or directory
+   at Apache.Ignite.Core.Impl.Unmanaged.Jni.DllLoader.NativeMethodsCore.dlopen(String filename, Int32 flags)
+   at Apache.Ignite.Core.Impl.Unmanaged.Jni.DllLoader.Load(String dllPath)
+   at Apache.Ignite.Core.Impl.Unmanaged.Jni.JvmDll.LoadDll(String filePath, String simpleName)
+   at Apache.Ignite.Core.Impl.Unmanaged.Jni.JvmDll.Load(String configJvmDllPath, ILogger log)
+   at Apache.Ignite.Core.Ignition.Start(IgniteConfiguration cfg)
+   at Apache.Ignite.Core.Ignition.Start()
+   at <Program>$.<Main>$(String[] args)
+```
 
---------
-TODO: Records serialization and hash code details
-TODO: Top-level program
-TODO: Target-typed new for cache ops
+`libcoreclr.so` is used for a couple of unmanaged calls: `dlopen` (to load the JVM) and `pthread_key_create` ([to clean up JNI threads](https://ptupitsyn.github.io/Ignite-JNI-Thread-Detach/)).
+
+This can be worked around by redirecting unmanaged calls to `libdl.so` by running the following code before `Ignition.Start` call:
+
+```cs
+bool libdlLoaded = false;
+
+AssemblyLoadContext.Default.ResolvingUnmanagedDll += (assembly, lib) =>
+{
+    if (assembly == typeof(Ignition).Assembly)
+    {
+        if (lib == "libcoreclr.so")
+        {
+            if (!libdlLoaded)
+            {
+                libdlLoaded = true;
+                return NativeLibrary.Load("libdl.so");
+            }
+
+            return NativeLibrary.Load("libpthread.so");
+        }
+    }
+
+    return IntPtr.Zero;
+};
+```
+
+# Performance
+
+TODO: Do we have any bench that is better with .NET 5?
