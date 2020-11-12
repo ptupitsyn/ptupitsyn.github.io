@@ -110,4 +110,14 @@ AssemblyLoadContext.Default.ResolvingUnmanagedDll += (assembly, lib) =>
 
 # Performance
 
-TODO: Do we have any bench that is better with .NET 5?
+
+
+```
+|                 Method |           Job |       Runtime |      Mean |     Error |    StdDev | Ratio | RatioSD |      Gen 0 |     Gen 1 |    Gen 2 | Allocated |
+|----------------------- |-------------- |-------------- |----------:|----------:|----------:|------:|--------:|-----------:|----------:|---------:|----------:|
+|             ComputeSum | .NET Core 3.1 | .NET Core 3.1 | 63.803 ms | 1.1911 ms | 1.2232 ms |  6.01 |    0.11 | 13000.0000 | 4125.0000 | 250.0000 |   74.9 MB |
+| ComputeSumWithPlatform | .NET Core 3.1 | .NET Core 3.1 | 10.603 ms | 0.0822 ms | 0.0769 ms |  1.00 |    0.00 |  1031.2500 |   31.2500 |        - |   6.15 MB |
+|                        |               |               |           |           |           |       |         |            |           |          |           |
+|             ComputeSum | .NET Core 5.0 | .NET Core 5.0 | 57.941 ms | 1.1496 ms | 1.8564 ms |  6.74 |    0.18 | 13000.0000 | 4000.0000 | 222.2222 |   74.9 MB |
+| ComputeSumWithPlatform | .NET Core 5.0 | .NET Core 5.0 |  8.612 ms | 0.0165 ms | 0.0146 ms |  1.00 |    0.00 |  1015.6250 |   31.2500 |        - |   6.15 MB |
+```
