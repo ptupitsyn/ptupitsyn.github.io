@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Apache Ignite on .NET 5
+header-img: "https://raw.githubusercontent.com/ptupitsyn/ptupitsyn.github.io/master/images/ignite_logo.png"
 ---
 
 .NET 5 was released on November 10. Preliminary testing shows that Ignite.NET works as expected with the new SDK and all tests pass, except single-file deployment on Linux (see below).

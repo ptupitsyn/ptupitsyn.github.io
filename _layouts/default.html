@@ -12,7 +12,11 @@
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
-    <meta property="og:image" content="https://raw.githubusercontent.com/ptupitsyn/ptupitsyn.github.io/master/images/my_photo2.jpg" />
+    {% if page.header-img %}
+      <meta property="og:image" content="{{ page.header-img }}" />
+    {% else %}
+      <meta property="og:image" content="https://raw.githubusercontent.com/ptupitsyn/ptupitsyn.github.io/master/images/my_photo2.jpg" />
+    {% endif %}
     <meta property="og:site_name" content="GitHub Pages" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}" />
