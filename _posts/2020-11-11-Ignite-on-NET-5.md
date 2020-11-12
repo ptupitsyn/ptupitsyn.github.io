@@ -52,12 +52,10 @@ public sealed record EmployeeKey(int CompanyId, string Id);
 ```
 
 Records are [reference types](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/reference-types).
-Here, `key1` and `key2` two different instances of the same class, so `ReferenceEquals` returns `false`, but `==` and `Equals` return `true`,
-because all property values are equal.
+Here, `key1` and `key2` are two different instances of the same class, so `ReferenceEquals` returns `false`, but `==` and `Equals` return `true`,
+because all property values are equal. And Ignite considers them equal, too: value can be retrieved correctly by key.
 
-And Ignite considers them equal, too: value from cache can be retrieved correctly. Ignite uses it's own mechanism to determine equality, which is also value-based.
-
-Note how another C# 9 feature, [target-typed new](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9#fit-and-finish-features), is used here to create keys and values.
+Note how another C# 9 feature, [target-typed new](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9#fit-and-finish-features), is used here to create keys and values in a more concise way.
 
 
 # Single-file applications
@@ -81,7 +79,7 @@ Unhandled exception. System.DllNotFoundException: Unable to load shared library 
 
 `libcoreclr.so` is used for a couple of unmanaged calls: `dlopen` (to load the JVM) and `pthread_key_create` ([to clean up JNI threads](https://ptupitsyn.github.io/Ignite-JNI-Thread-Detach/)).
 
-This can be worked around by redirecting unmanaged calls to `libdl.so` by running the following code before `Ignition.Start` call:
+This can be worked around by redirecting unmanaged calls to `libdl.so` with the following code before `Ignition.Start` call:
 
 ```cs
 bool libdlLoaded = false;
