@@ -3,7 +3,7 @@ layout: post
 title: Apache Ignite on .NET 5
 ---
 
-Notes on .NET 5 and Apache Ignite
+Notes on .NET 5 release and Apache Ignite
 
 # Ignite + .NET 5
 
