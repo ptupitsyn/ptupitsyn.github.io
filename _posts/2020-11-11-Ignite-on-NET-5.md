@@ -110,14 +110,13 @@ AssemblyLoadContext.Default.ResolvingUnmanagedDll += (assembly, lib) =>
 
 # Performance
 
+.NET 5 brings [a long list of internal performance improvements](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-5/), so existing code becomes faster for free.
 
+You can expect performance improvements in .NET-specific Ignite features, such as Platform Cache (see more details in the [Ignite 2.9 post](https://ptupitsyn.github.io/Whats-New-In-Ignite-Net-2.9/)):  
 
 ```
-|                 Method |           Job |       Runtime |      Mean |     Error |    StdDev | Ratio | RatioSD |      Gen 0 |     Gen 1 |    Gen 2 | Allocated |
-|----------------------- |-------------- |-------------- |----------:|----------:|----------:|------:|--------:|-----------:|----------:|---------:|----------:|
-|             ComputeSum | .NET Core 3.1 | .NET Core 3.1 | 63.803 ms | 1.1911 ms | 1.2232 ms |  6.01 |    0.11 | 13000.0000 | 4125.0000 | 250.0000 |   74.9 MB |
-| ComputeSumWithPlatform | .NET Core 3.1 | .NET Core 3.1 | 10.603 ms | 0.0822 ms | 0.0769 ms |  1.00 |    0.00 |  1031.2500 |   31.2500 |        - |   6.15 MB |
-|                        |               |               |           |           |           |       |         |            |           |          |           |
-|             ComputeSum | .NET Core 5.0 | .NET Core 5.0 | 57.941 ms | 1.1496 ms | 1.8564 ms |  6.74 |    0.18 | 13000.0000 | 4000.0000 | 222.2222 |   74.9 MB |
-| ComputeSumWithPlatform | .NET Core 5.0 | .NET Core 5.0 |  8.612 ms | 0.0165 ms | 0.0146 ms |  1.00 |    0.00 |  1015.6250 |   31.2500 |        - |   6.15 MB |
+|                 Method |       Runtime |      Mean | Ratio |
+|----------------------- |-------------- |----------:|------:|
+| ComputeSumWithPlatform | .NET Core 3.1 | 10.603 ms |  1.00 |
+| ComputeSumWithPlatform | .NET Core 5.0 |  8.612 ms |  0.81 |
 ```
