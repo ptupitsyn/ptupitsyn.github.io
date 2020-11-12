@@ -3,12 +3,8 @@ layout: post
 title: Apache Ignite on .NET 5
 ---
 
-Notes on .NET 5 release and Apache Ignite
-
-# Ignite + .NET 5
-
-.NET 5 was released on November 10. Preliminary testing shows that Ignite.NET works as expected with the new SDK and all tests pass.
-We'll announce official support for .NET 5 in Ignite 2.10. 
+.NET 5 was released on November 10. Preliminary testing shows that Ignite.NET works as expected with the new SDK and all tests pass, except single-file deployment on Linux (see below).
+Official support for .NET 5 is coming in Ignite 2.10. 
 
 # Top-level statements
 
