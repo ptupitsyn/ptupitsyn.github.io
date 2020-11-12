@@ -28,7 +28,7 @@ This is nice for examples and tutorials, though I'm a bit skeptical about huge a
 C# 9 [Record Types](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9#record-types) are perfect for working with data in Ignite.
 Records are immutable, provide value equality, copy constructor, friendly string representation, and they are easy to declare. 
 
-Value equality is particularly handy, because Ignite uses value equality for cache keys,
+Value equality is particularly handy, because Ignite compares cache keys based on field values,
 so with records the comparison behavior is consistent across Ignite operations and regular C# code:
 
 ```cs
