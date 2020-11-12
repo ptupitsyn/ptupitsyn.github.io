@@ -59,9 +59,16 @@ because all property values are equal.
 
 And Ignite considers them equal, too: value from cache can be retrieved correctly. Ignite uses it's own mechanism to determine equality, which is also value-based.
 
+Note how another C# 9 feature, [target-typed new](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9#fit-and-finish-features), is used here to create keys and values.
 
----------
 
+# Single-file publish
+
+
+
+
+
+--------
 TODO: Records serialization and hash code details
 TODO: Top-level program
 TODO: Target-typed new for cache ops
