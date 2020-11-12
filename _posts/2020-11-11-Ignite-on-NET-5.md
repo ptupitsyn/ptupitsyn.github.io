@@ -64,7 +64,7 @@ Note how another C# 9 feature, [target-typed new](https://docs.microsoft.com/en-
 
 # Single-file publish
 
-
+`dotnet publish -c Release --self-contained true -r linux-x64 -p:PublishSingleFile=true`
 
 
 
