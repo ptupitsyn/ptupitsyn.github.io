@@ -104,6 +104,16 @@ AssemblyLoadContext.Default.ResolvingUnmanagedDll += (assembly, lib) =>
 };
 ```
 
+Alternative fix:
+
+```cs
+NativeLibrary.SetDllImportResolver(
+    typeof(Ignition).Assembly,
+    (libraryName, _, _) => libraryName == "libcoreclr.so"
+        ? (IntPtr) (-1)
+        : IntPtr.Zero);
+```
+
 # Performance
 
 .NET 5 brings [a long list of internal performance improvements](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-5/), so existing code becomes faster for free.
