@@ -6,15 +6,21 @@ title: What's new in Apache Ignite.NET 2.10
 [Apache Ignite](https://ignite.apache.org/) 2.10 has been released. Let's see what's new on .NET side of things.  
 
 
-# Feat 1: blabla
+# Thin Client Services
+
+
+# Thin Client Transactions
+
+
+# ContinuousQuery.IncludeExpired
 
 
 
 # Other Improvements
 
-* TODO 1 
-* TODO 2
-* TODO 2
+* `CacheConfiguration.NodeFilter`
+* `SqlFieldsQuery.Partitions` and `SqlFieldsQuery.UpdateBatchSize` 
+* `RendezvousAffinityFunction.BackupFilter`
 
 
 # Wrap-up
