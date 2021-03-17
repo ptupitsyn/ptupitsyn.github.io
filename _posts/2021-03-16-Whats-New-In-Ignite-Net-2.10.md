@@ -71,6 +71,36 @@ Notice that:
 
 # Thin Client Transactions
 
+Transactions are now supported in the thin client, both explicit and ambient:
+
+```cs
+var client = Ignition.StartClient(new IgniteClientConfiguration("127.0.0.1"));
+
+var cache = client.GetOrCreateCache<int, int>(new CacheClientConfiguration
+{
+    Name = "tx",
+    AtomicityMode = CacheAtomicityMode.Transactional
+});
+
+// Ambient.
+using (var ts = new TransactionScope())
+{
+    cache[1] = 1;
+    cache[2] = 2;
+    ts.Complete();
+}
+
+// Explicit.
+using (var tx = client.GetTransactions().TxStart())
+{
+    cache[1] = 11;
+    cache[2] = 22;
+    tx.Commit();
+}
+```
+
+Make sure to set `CacheAtomicityMode.Transactional` - default is `Atomic`, where transactions are ignored.
+
 
 # ContinuousQuery.IncludeExpired
 
