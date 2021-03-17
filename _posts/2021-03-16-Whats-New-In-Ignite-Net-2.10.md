@@ -8,7 +8,8 @@ title: What's new in Apache Ignite.NET 2.10
 
 # Thin Client Services
 
-Thin client can now invoke Ignite Services. The service can be implemented in any language and should be deployed from server or thick client.
+.NET thin client can now invoke Ignite Services.
+The service can be implemented in any language and should be deployed from server or thick client.
 
 ### Deploy .NET Service
 
@@ -65,8 +66,8 @@ public interface IGreetingService
 
 Notice that:
 * Invocation does not share any code with the implementation.
-* Java and .NET services are invoked the same - client side does not need to know about implementation details, 
-  and we can even rewrite the service in a different language without the clients noticing.    
+* Java and .NET services are invoked the same way - client side does not need to know about implementation details, 
+  and we can even rewrite the service in a different language without the clients noticing.
 
 # Thin Client Transactions
 
