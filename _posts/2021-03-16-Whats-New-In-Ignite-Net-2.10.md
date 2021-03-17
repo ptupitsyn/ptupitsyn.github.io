@@ -14,7 +14,7 @@ Thin client can now invoke Ignite Services. The service can be implemented in an
 
 ```cs
 var ignite = Ignition.Start();
-ignite.GetServices().DeployClusterSingleton("Greeting.NET", new GreetingService());
+ignite.GetServices().DeployClusterSingleton("Greeting", new GreetingService());
 
 ...
 
@@ -31,7 +31,7 @@ class GreetingService : IService
 
 ```java
 Ignite ignite = Ignition.start();
-ignite.services().deployClusterSingleton("Greeting.Java", new GreetingService());
+ignite.services().deployClusterSingleton("Greeting", new GreetingService());
 
 ...
 
@@ -48,6 +48,25 @@ class GreetingService implements Service
 
 ### Invoke from .NET Thin Client
 
+```cs
+var client = Ignition.StartClient(new IgniteClientConfiguration("127.0.0.1"));
+
+var result = client.GetServices()
+    .GetServiceProxy<IGreetingService>("Greeting")
+    .GetGreeting("John");
+
+Console.WriteLine(result);
+
+public interface IGreetingService
+{
+    string GetGreeting(string name);
+}
+```
+
+Notice that:
+* Invocation does not share any code with the implementation.
+* Java and .NET services are invoked the same - client side does not need to know about implementation details, 
+  and we can even rewrite the service in a different language without the clients noticing.    
 
 # Thin Client Transactions
 
