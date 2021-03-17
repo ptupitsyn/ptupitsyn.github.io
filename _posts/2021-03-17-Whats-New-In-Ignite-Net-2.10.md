@@ -11,7 +11,9 @@ title: What's new in Apache Ignite.NET 2.10
 .NET thin client can now invoke Ignite Services.
 The service can be implemented in any language and should be deployed from server or thick client.
 
-### Deploy .NET Service
+### Deploy Service
+
+In .NET:
 
 ```cs
 var ignite = Ignition.Start();
@@ -27,8 +29,8 @@ class GreetingService : IService
 }
 ``` 
 
+or in Java:
 
-### Deploy Java Service
 
 ```java
 Ignite ignite = Ignition.start();
@@ -47,7 +49,7 @@ class GreetingService implements Service
 ```
 
 
-### Invoke from .NET Thin Client
+### Invoke Service from .NET Thin Client
 
 ```cs
 var client = Ignition.StartClient(new IgniteClientConfiguration("127.0.0.1"));
