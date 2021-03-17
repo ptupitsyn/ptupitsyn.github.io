@@ -104,7 +104,39 @@ Make sure to set `CacheAtomicityMode.Transactional` - default is `Atomic`, where
 
 # ContinuousQuery.IncludeExpired
 
+Continuous queries can include Expired events now. It has to be explicitly enabled:
 
+```cs
+cache.QueryContinuous(new ContinuousQueryClient<int, int>
+{
+    Listener = new Listener(),
+    IncludeExpired = true
+});
+
+cache.WithExpiryPolicy(new ExpiryPolicy(TimeSpan.FromSeconds(1), null, null)).Put(10, 20);
+Thread.Sleep(2000);
+
+...
+
+public class Listener : ICacheEntryEventListener<int, int>
+{
+    public void OnEvent(IEnumerable<ICacheEntryEvent<int, int>> evts)
+    {
+        foreach (var e in evts)
+        {
+            Console.WriteLine($"{e.EventType}: {e.Key}");
+        }
+    }
+}
+```
+
+And the output is:
+```
+Created: 10
+Expired: 10
+```
+
+This flag is available in both APIs - thin and thick.
 
 # Other Improvements
 
