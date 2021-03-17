@@ -146,9 +146,36 @@ By default, cache data is distributed across all cluster nodes, according to the
 `CacheConfiguration.NodeFilter` can restrict the node set for a given cache based on a node attribute.
 
 ```cs
-TODO
+var node1 = Ignition.Start(new IgniteConfiguration
+{
+    IgniteInstanceName = "1",
+    UserAttributes = new Dictionary<string, object> {{"role", "storage"}}
+});
+
+var node2 = Ignition.Start(new IgniteConfiguration
+{
+    IgniteInstanceName = "2",
+    UserAttributes = new Dictionary<string, object> {{"role", "processing"}}
+});
+
+var cache = node2.GetOrCreateCache<int, int>(new CacheConfiguration
+{
+    Name = "c",
+    NodeFilter = new AttributeNodeFilter("role", "storage")
+});
+
+var aff = node1.GetAffinity(cache.Name);
+Console.WriteLine("Node1: " + aff.GetPrimaryPartitions(node1.GetCluster().GetLocalNode()).Length);
+Console.WriteLine("Node2: " + aff.GetPrimaryPartitions(node2.GetCluster().GetLocalNode()).Length);
 ```
 
+Note that the cache is still accessible from any node - only the data distribution is affected, which is demonstrated in the last 2 lines.
+The output is:
+
+```
+Node1: 1024
+Node2: 0
+```
 
 This can be useful when different node groups have different responsibilities.
 For example, we have a service deployed to a subset of nodes, and we want the data for that service to be located on the same subset of nodes.
