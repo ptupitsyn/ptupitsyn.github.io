@@ -179,6 +179,12 @@ Node1: 1024
 Node2: 0
 ```
 
+Without the filter the output would be something like this:
+```
+Node1: 522
+Node2: 502
+```
+
 This can be useful when different node groups have different responsibilities.
 For example, we have a service deployed to a subset of nodes, and we want the data for that service to be located on the same subset of nodes.
 
