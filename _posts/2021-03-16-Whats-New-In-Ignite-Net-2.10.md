@@ -138,11 +138,20 @@ Expired: 10
 
 This flag is available in both APIs - thin and thick.
 
-# Other Improvements
 
-* `CacheConfiguration.NodeFilter`
-* `SqlFieldsQuery.Partitions` and `SqlFieldsQuery.UpdateBatchSize` 
-* `RendezvousAffinityFunction.BackupFilter`
+# CacheConfiguration.NodeFilter
+
+By default, cache data is distributed across all cluster nodes, according to the [affinity function](https://ignite.apache.org/docs/latest/data-modeling/data-partitioning).
+
+`CacheConfiguration.NodeFilter` can restrict the node set for a given cache based on a node attribute.
+
+```cs
+TODO
+```
+
+
+This can be useful when different node groups have different responsibilities.
+For example, we have a service deployed to a subset of nodes, and we want the data for that service to be located on the same subset of nodes.
 
 
 # Wrap-up
