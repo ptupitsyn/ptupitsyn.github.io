@@ -12,8 +12,38 @@ Thin client can now invoke Ignite Services. The service can be implemented in an
 
 ### Deploy .NET Service
 
+```cs
+var ignite = Ignition.Start();
+ignite.GetServices().DeployClusterSingleton("Greeting.NET", new GreetingService());
+
+...
+
+class GreetingService : IService
+{
+    // Empty Init/Execute/Cancel implementations omitted
+    public string GetGreeting(string name) => 
+        $"Hello {name} from {RuntimeInformation.FrameworkDescription}!";
+}
+``` 
+
 
 ### Deploy Java Service
+
+```java
+Ignite ignite = Ignition.start();
+ignite.services().deployClusterSingleton("Greeting.Java", new GreetingService());
+
+...
+
+class GreetingService implements Service
+{
+    // Empty init/execute/cancel implementations omitted
+    @PlatformServiceMethod("GetGreeting")
+    public String getGreeting(String name) {
+        return "Hello " + name + " from Java!";
+    }
+}
+```
 
 
 ### Invoke from .NET Thin Client
