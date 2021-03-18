@@ -191,4 +191,5 @@ For example, we have a service deployed to a subset of nodes, and we want the da
 
 # Wrap-up
  
-Please see [release notes](https://ignite.apache.org/releases/2.10.0/release_notes.html) for a full list of new features, fixes, and improvements.
+* [Ignite blog](https://blogs.apache.org/ignite/entry/apache-ignite-2-10-thin)
+* [Release notes](https://ignite.apache.org/releases/2.10.0/release_notes.html) 
