@@ -101,3 +101,9 @@ To make this solution complete, I would add the following features:
 * Optionally pass cache configuration to the constructor: we can tweak backups, or even make our queue persistent to disk. 
 * Implement interfaces: `IEnumerable`, `ICollection`, `IProducerConsumerCollection`
 * Implement `TakeAsync` to avoid blocking consumer threads while preserving the same loop logic: `while (true) Process(awaite queue.TakeAsync());`
+
+Other distributed data structures can be also implemented on top of the cache API. And they are, in fact, implemented this way in the thick API:
+
+* [IgniteQueue](https://github.com/apache/ignite/blob/master/modules/core/src/main/java/org/apache/ignite/internal/processors/datastructures/GridAtomicCacheQueueImpl.java)
+* [AtomicLong](https://github.com/apache/ignite/blob/master/modules/core/src/main/java/org/apache/ignite/internal/processors/datastructures/GridCacheAtomicLongImpl.java)
+* [AtomicSequence](https://github.com/apache/ignite/blob/master/modules/core/src/main/java/org/apache/ignite/internal/processors/datastructures/GridCacheAtomicSequenceImpl.java) 
