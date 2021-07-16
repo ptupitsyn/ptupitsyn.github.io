@@ -90,6 +90,8 @@ void ICacheEntryEventListener<int, T>.OnEvent(IEnumerable<ICacheEntryEvent<int, 
 }
 ```
 
+Continuous queries are available in .NET thin client starting with [Ignite 2.10](https://ptupitsyn.github.io/Whats-New-In-Ignite-Net-2.10/) and in Java thin client starting with Ignite 2.11 (release in progress at the time of writing). 
+
 # Closing
 
 Minimal implementation with tests is available on GitHub: [github.com/ptupitsyn/ignite-net-examples/tree/master/ThinClientQueue](https://github.com/ptupitsyn/ignite-net-examples/tree/master/ThinClientQueue).
