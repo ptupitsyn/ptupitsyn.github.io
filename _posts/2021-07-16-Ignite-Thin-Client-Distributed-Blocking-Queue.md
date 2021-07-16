@@ -90,6 +90,8 @@ void ICacheEntryEventListener<int, T>.OnEvent(IEnumerable<ICacheEntryEvent<int, 
 }
 ```
 
+Note that Continuous Query is created only once per queue instance (thanks to the `lock`), and only when necessary (queue is empty and we have to wait).
+
 Continuous queries are available in .NET thin client starting with [Ignite 2.10](https://ptupitsyn.github.io/Whats-New-In-Ignite-Net-2.10/) and in Java thin client starting with Ignite 2.11 (release in progress at the time of writing). 
 
 # Closing
