@@ -19,7 +19,7 @@ while (true)
 Requirements:
 * Any number of producers and consumers in the cluster.
 * Every item is processed once and only once.
-* `Take` blocks if there are no items available, and unblocks immediately when item arrives.
+* `Take` blocks if there are no items available, and unblocks immediately when an item arrives.
 
 
 # Atomic Cache Operations and Non-Blocking Synchronization
@@ -58,7 +58,7 @@ Other clients will continue looping and trying to get the next item, if any.
 # Blocking Take and Continuous Query
 
 `TryDequeue` above is non-blocking and will return `false` if the queue is empty, which is useful in some situations.
-But for our producer-consumer scenario we need a `Take` method which will block until an item is available.
+But for our producer-consumer scenario, we need a `Take` method that will block until an item is available.
 We could use a polling approach with repeated `TryTake` calls in a loop, probably with some delay in between, but this is inefficient - we'll burn CPU cycles and waste network bandwidth for client requests.
 
 Instead, we can use `ContinuousQuery` to get a notification when new items are added to the cache:
