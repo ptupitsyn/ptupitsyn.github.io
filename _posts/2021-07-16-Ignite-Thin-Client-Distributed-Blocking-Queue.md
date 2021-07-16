@@ -54,6 +54,9 @@ public bool TryDequeue(out T result)
 If multiple consumers compete for an item and call `Replace` in parallel, only one call will succeed, and only one client will process an item with the given ID.
 Other clients will continue looping and trying to get the next item, if any.
 
+Note that the code above is simplified for clarity and has a race condition between `Replace` and `GetAndRemove`: other threads or nodes can perform Dequeue + Enqueue, resulting in incorrect item being returned.
+Actual implementation adds `Guid` to the mix to ensure correctness. 
+
 
 # Blocking Take and Continuous Query
 
