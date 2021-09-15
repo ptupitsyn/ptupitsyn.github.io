@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Recording of my talk "Reducing network overhead in distributed .NET applications: An efficient approach to data handling" at DotNext Piter 2021 is available
+title: Recording of my talk "Reducing network overhead in distributed applications: An efficient approach to data handling" at DotNext Piter 2021 is available
 ---
 
 I was honored to speak at [DotNext](https://dotnext-piter.ru/) conference this year, and the recording is now available. 
