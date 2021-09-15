@@ -5,6 +5,8 @@ title: Reducing network overhead in distributed applications&#58; An efficient a
 
 I was honored to speak at [DotNext](https://dotnext-piter.ru/) conference this year, and the recording is now available. 
 
+![DotNext](../images/dotnext_thumb.jpg)
+
 > Modern apps consist of many subsystems: databases, caches, event brokers. The single user request can involve multiple internal network calls. We will talk about data locality, reducing network overhead, improving performance and scalability. Benchmarks, demos, live coding, and practical examples await.
 
 * Recording (🇬🇧 slides, 🇷🇺 voice): [youtube.com/watch?v=2KVLNSIyPF0](https://www.youtube.com/watch?v=2KVLNSIyPF0)
