@@ -7,7 +7,7 @@ title: What's new in Apache Ignite.NET 2.11
 On .NET side there are new examples, thin client DataStreamer, .NET 5 support, and more.
 
 # Data Streamer in Thin Client
-TODO
+TODO: See IEP https://cwiki.apache.org/confluence/display/IGNITE/IEP-68%3A+Thin+Client+Data+Streamer
 
 # Data Streamer API Improvements
 TODO
