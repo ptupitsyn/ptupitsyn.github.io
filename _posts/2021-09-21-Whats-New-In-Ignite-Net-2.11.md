@@ -3,6 +3,28 @@ layout: post
 title: What's new in Apache Ignite.NET 2.11
 ---
 
+[Apache Ignite](https://ignite.apache.org/) 2.11 [has been released](https://blogs.apache.org/ignite/entry/apache-ignite-2-11-stabilization).
+On .NET side there are new examples, thin client DataStreamer, .NET 5 support, and more.
+
+# Data Streamer in Thin Client
+TODO
+
+# Data Streamer API Improvements
+TODO
+
+# .NET 5 Support
+TODO
+
+# Reworked Examples
+TODO
+
+# Conclusion
+
+TODO: Links
+
+
+
+
 
 TODO:
 * Link to release notes, blog post
