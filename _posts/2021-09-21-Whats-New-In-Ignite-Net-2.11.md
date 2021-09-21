@@ -9,6 +9,7 @@ TODO:
   * https://github.com/apache/ignite/blob/master/RELEASE_NOTES.txt
   * https://blogs.apache.org/ignite/entry/apache-ignite-2-11-stabilization  
 * New examples 
+  * https://www.nuget.org/packages/Apache.Ignite.Examples/
 * Thin client streamer
 * DataStreamer API improv
 * .NET 5 support
