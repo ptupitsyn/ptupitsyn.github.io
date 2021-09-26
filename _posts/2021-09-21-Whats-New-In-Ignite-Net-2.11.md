@@ -60,7 +60,8 @@ As a result, there would be a self-contained `ignite-single-file-test` executabl
 This approach simplifies deployments, including modern containerized environments.
 
 # Reworked Examples
-TODO
+
+TODO: List all ways to get them and run them (download binaries, download source, use nuget)
 
 # Conclusion
 
