@@ -48,6 +48,13 @@ Current batch task is not needed in most use cases, so `AddData` calls can be si
 
 [.NET 5](https://dotnet.microsoft.com/download/dotnet/5.0) is now officially supported, including [single-file application](https://docs.microsoft.com/en-us/dotnet/core/deploying/single-file) scenarios.
 
+Here is how to create and pack an Ignite.NET server application into a single executable file, including all the required jar files:
+* `mkdir ignite-single-file-test && cd ignite-single-file-test`
+* `dotnet new console`
+* `dotnet add package Apache.Ignite`
+* Add `Apache.Ignite.Core.Ignition.Start();` line to the `Main` method
+* `dotnet publish --runtime linux-x64 /p:PublishSingleFile=true /p:IncludeAllContentForSelfExtract=true --self-contained true`
+
 # Reworked Examples
 TODO
 
