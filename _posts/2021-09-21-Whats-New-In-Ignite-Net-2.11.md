@@ -45,7 +45,8 @@ Current batch task is not needed in most use cases, so `AddData` calls can be si
 
 
 # .NET 5 Support
-TODO
+
+[.NET 5](https://dotnet.microsoft.com/download/dotnet/5.0) is now officially supported, including [single-file application](https://docs.microsoft.com/en-us/dotnet/core/deploying/single-file) scenarios.
 
 # Reworked Examples
 TODO
