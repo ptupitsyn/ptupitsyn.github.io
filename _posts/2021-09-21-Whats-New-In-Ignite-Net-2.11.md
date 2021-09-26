@@ -10,11 +10,28 @@ On .NET side there are new examples, thin client DataStreamer, .NET 5 support, a
 
 Data Streamer API - the most efficient way to load large amounts of data into Ignite - is now available in the .NET thin client. 
 
-Thin streamer automatically buffers the data and groups it into batches for better performance and sends it in parallel to multiple nodes (similarly to the existing "thick" streamer).
-If a server node fails, corresponding operations are retried transparently: at-least-once delivery is guaranteed.
+* Thin streamer automatically buffers the data and groups it into batches and sends it in parallel to multiple nodes.
+* If a server node fails, corresponding operations are retried transparently: at-least-once delivery is guaranteed.
 
+```cs
+IIgniteClient client = GetClient();
+using (IDataStreamerClient<int, int> streamer = client.GetDataStreamer<int, int>("my-cache"))
+{
+    streamer.Add(1, 1);
+    streamer.Add(2, 2);    
 
-TODO: See IEP https://cwiki.apache.org/confluence/display/IGNITE/IEP-68%3A+Thin+Client+Data+Streamer
+    await streamer.FlushAsync();
+}
+```
+
+Performance is comparable to the existing thick API:
+
+|            Method |     Mean |   Error | Allocated |
+|------------------ |---------:|--------:|----------:|
+|  StreamThinClient | 106.5 ms | 3.25 ms |  17.14 MB |
+| StreamThickClient | 109.7 ms | 2.19 ms |  13.61 MB |
+
+(150000 entries, Core i7-9700K, Ubuntu 20.04, .NET 5.0.5).
 
 # Data Streamer API Improvements
 TODO
