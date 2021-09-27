@@ -72,6 +72,6 @@ See [README](https://github.com/apache/ignite/blob/master/modules/platforms/dotn
 
 # Links
 
-* Main blog post: https://blogs.apache.org/ignite/entry/apache-ignite-2-11-stabilization 
-* Full release notes: https://github.com/apache/ignite/blob/master/RELEASE_NOTES.txt
-* Download: https://ignite.apache.org/download.cgi
+* Main blog post: [https://blogs.apache.org/ignite/entry/apache-ignite-2-11-stabilization](https://blogs.apache.org/ignite/entry/apache-ignite-2-11-stabilization) 
+* Full release notes: [https://github.com/apache/ignite/blob/master/RELEASE_NOTES.txt](https://github.com/apache/ignite/blob/master/RELEASE_NOTES.txt)
+* Download: [https://ignite.apache.org/download](https://ignite.apache.org/download.cgi)
