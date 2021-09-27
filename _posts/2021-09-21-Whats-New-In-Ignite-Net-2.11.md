@@ -26,10 +26,12 @@ using (IDataStreamerClient<int, int> streamer = client.GetDataStreamer<int, int>
 
 Performance is comparable to the existing thick API:
 
+```
 |            Method |     Mean |   Error | Allocated |
 |------------------ |---------:|--------:|----------:|
 |  StreamThinClient | 106.5 ms | 3.25 ms |  17.14 MB |
 | StreamThickClient | 109.7 ms | 2.19 ms |  13.61 MB |
+```
 
 [(150000 entries, Core i7-9700K, Ubuntu 20.04, .NET 5.0.5).](https://github.com/apache/ignite/blob/850f9bf788de593762184f33420656a890660e2a/modules/platforms/dotnet/Apache.Ignite.BenchmarkDotNet/ThinClient/ThinClientDataStreamerBenchmark.cs)
 
