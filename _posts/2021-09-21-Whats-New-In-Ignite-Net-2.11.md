@@ -68,22 +68,8 @@ Examples were reworked from .NET Framework to .NET Core:
 
 See [README](https://github.com/apache/ignite/blob/master/modules/platforms/dotnet/examples/README.md) for more details.
 
-# Conclusion
+# Links
 
-TODO: Links
-
-
-
-
-
-TODO:
-* Link to release notes, blog post
-  * https://github.com/apache/ignite/blob/master/RELEASE_NOTES.txt
-  * https://blogs.apache.org/ignite/entry/apache-ignite-2-11-stabilization  
-* New examples 
-  * https://www.nuget.org/packages/Apache.Ignite.Examples/
-  * Usage documented https://github.com/apache/ignite/tree/master/modules/platforms/dotnet/examples
-* Thin client streamer
-* DataStreamer API improv
-* .NET 5 support
-* 
+* Main blog post: https://blogs.apache.org/ignite/entry/apache-ignite-2-11-stabilization 
+* Full release notes: https://github.com/apache/ignite/blob/master/RELEASE_NOTES.txt
+* Download: https://ignite.apache.org/download.cgi
