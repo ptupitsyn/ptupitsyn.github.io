@@ -55,9 +55,9 @@ Here is how to create and pack an Ignite.NET server application into a single ex
 * Add `Apache.Ignite.Core.Ignition.Start();` line to the `Main` method
 * `dotnet publish --runtime linux-x64 /p:PublishSingleFile=true /p:IncludeAllContentForSelfExtract=true --self-contained true --output pub` (make sure to fix `runtime` if you are not on Linux, e.g. `win-x64`)
 
-As a result, there would be a self-contained `ignite-single-file-test` executable file in the `pub` directory which can be copied to any machine and executed there. The only requirement is a compatible JDK.
+As a result, there would be a self-contained `ignite-single-file-test` executable file in the `pub` directory which can be copied to any machine and executed there. The only requirement is a compatible JDK. This approach simplifies deployments, including modern containerized environments.
 
-This approach simplifies deployments, including modern containerized environments.
+See [Ignite on .NET 5](2020-11-11-Ignite-on-NET-5.md) post for more info on other .NET 5 features. 
 
 # Reworked Examples
 
