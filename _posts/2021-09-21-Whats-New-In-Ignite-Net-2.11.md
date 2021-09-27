@@ -61,7 +61,12 @@ See [Ignite on .NET 5](2020-11-11-Ignite-on-NET-5.md) post for more info on othe
 
 # Reworked Examples
 
-TODO: List all ways to get them and run them (download binaries, download source, use nuget)
+Examples were reworked from .NET Framework to .NET Core:
+* Run on any OS.
+* Can be run from command line or any IDE (Visual Studio, VS Code, Rider).
+* Can be easily installed from NuGet as a `dotnet new` template.
+
+See [README](https://github.com/apache/ignite/blob/master/modules/platforms/dotnet/examples/README.md) for more details.
 
 # Conclusion
 
