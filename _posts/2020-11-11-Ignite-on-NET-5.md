@@ -63,7 +63,7 @@ Note how another C# 9 feature, [target-typed new](https://docs.microsoft.com/en-
 [Single-file deployment](https://docs.microsoft.com/en-us/dotnet/core/deploying/single-file) was improved in .NET 5.
 Before that, .NET Core host used to create a temporary directory and extract all application files there - it was not really a single-file app, but a self-extracting app. Ignite works fine in that old mode.
 
-New mode, however, is a true single-file app where everything is loaded directly, without temp files. And, unfortunately, this is where Ignite fails on Linux.
+New mode, however, is a true single-file app where everything is loaded directly, without temp files. And, unfortunately, this is where Ignite fails on Linux (**fixed in [Ignite 2.11](https://ptupitsyn.github.io/Whats-New-In-Ignite-Net-2.11/)**).
 If we publish a simple Ignite app like this `dotnet publish -c Release --self-contained true -r linux-x64 -p:PublishSingleFile=true` and run it, we get an error:
 
 ```
