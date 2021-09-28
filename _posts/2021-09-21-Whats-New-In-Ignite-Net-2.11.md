@@ -59,7 +59,7 @@ Here is how to create and pack an Ignite.NET server application into a single ex
 
 As a result, there is a self-contained `ignite-single-file-test` executable file in the `pub` directory which can be copied to any machine and executed there. The only requirement is a compatible JDK. This approach simplifies deployments, including modern containerized environments.
 
-See [Ignite on .NET 5](2020-11-11-Ignite-on-NET-5.md) post for more info on other .NET 5 features. 
+See [Ignite on .NET 5](https://ptupitsyn.github.io/Ignite-on-NET-5/) post for more info on other .NET 5 features. 
 
 # Reworked Examples
 
