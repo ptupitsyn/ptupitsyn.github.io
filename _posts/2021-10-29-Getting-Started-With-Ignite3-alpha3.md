@@ -37,4 +37,25 @@ Ignite CLI tool is the new way to start, stop, and manage server nodes.
 * Unzip to a folder and open your favorite terminal there.
 * Run `./ignite init` to install the artifacts.
 
-NOTE: in case something
+**NOTE:** in case something goes wrong and you'd like to start from scratch:
+* Delete `.ignitecfg` from your home directory.
+* Delete binaries folder and unzip the binaries to a new one.
+
+
+# Start a Server Node
+
+All commands here and below should be run in the binaries directory.
+
+* Run `./ignite node start --config=examples/config/ignite-config.json my-first-node`
+* Confirm the node is started and running: `./ignite node list`
+
+
+# Populate Sample Data
+
+We are going to use built-in Java examples to initialize a test Ignite table, because `CreateTable` API is not yet available in thin clients.
+
+* `cd examples`
+* `mvn compile exec:java -Dexec.mainClass="org.apache.ignite.example.table.KeyValueViewExample"`
+
+
+# Create .NET Project
