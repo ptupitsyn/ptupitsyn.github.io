@@ -55,6 +55,7 @@ The server is now running in the background.
 
 We are going to use built-in Java examples to initialize a test Ignite table, because `CreateTable` API is not yet available in thin clients.
 
+* Comment out the last line with `dropTable` in `examples/src/main/java/org/apache/ignite/example/table/KeyValueViewExample.java`
 * `cd examples`
 * `mvn compile exec:java -Dexec.mainClass="org.apache.ignite.example.table.KeyValueViewExample"`
 
