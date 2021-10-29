@@ -49,6 +49,7 @@ All commands here and below should be run in the binaries directory.
 * Run `./ignite node start --config=examples/config/ignite-config.json my-first-node`
 * Confirm the node is started and running: `./ignite node list`
 
+The server is now running in the background.
 
 # Populate Sample Data
 
@@ -57,9 +58,35 @@ We are going to use built-in Java examples to initialize a test Ignite table, be
 * `cd examples`
 * `mvn compile exec:java -Dexec.mainClass="org.apache.ignite.example.table.KeyValueViewExample"`
 
+As a result, we'll have a table named `PUBLIC.accounts` on the server.
 
 # Create .NET Project
 
 * `dotnet new console -o IgniteDotNetExample`
 * `cd IgniteDotNetExample`
 * `dotnet add package Apache.Ignite --version 3.0.0-alpha3`
+
+
+# Connect .NET Client
+
+Replace `Program.cs` contents with the following:
+
+```cs
+using System;
+using Apache.Ignite;
+using Apache.Ignite.Log;
+using Apache.Ignite.Table;
+
+var cfg = new IgniteClientConfiguration("127.0.0.1:10800")
+{
+    Logger = new ConsoleLogger { MinLevel = LogLevel.Trace }
+};
+
+using var client = await IgniteClient.StartAsync(cfg);
+```
+
+Run the program with `dotnet run` or in your IDE, it should print something like
+
+```
+Socket connection established: [::ffff:127.0.0.1]:60622 -> [::ffff:127.0.0.1]:10800
+```
