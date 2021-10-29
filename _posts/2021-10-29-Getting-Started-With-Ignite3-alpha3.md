@@ -147,7 +147,9 @@ If you are familiar with Ignite 2.x, we can draw some parallels:
 * `IBinaryObject` -> `IgniteTuple`
 
 
+# Stop the Cluster
 
+* `./ignite node stop my-first-node`
 
 # Conclusion
 
