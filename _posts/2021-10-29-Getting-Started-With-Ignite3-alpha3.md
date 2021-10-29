@@ -13,9 +13,9 @@ Let's see how to get started with .NET thin client.
 3.0 is the next major Ignite version. It aims to provide improved developer experience with better architecture, APIs, and tooling.
 
 Check documentation and blogs for more details:
-* https://ignite.apache.org/docs/3.0.0-alpha/index
-* https://www.gridgain.com/resources/blog/ignite-3-alpha-sneak-peek-future-apache-ignite
-* https://www.gridgain.com/resources/blog/apache-ignite-3-alpha-3-apache-calcite-raft-and-lsm-tree
+* [ignite.apache.org/docs/3.0.0-alpha](https://ignite.apache.org/docs/3.0.0-alpha/index)
+* [Ignite 3 Alpha: A Sneak Peek into the Future of Apache Ignite](https://www.gridgain.com/resources/blog/ignite-3-alpha-sneak-peek-future-apache-ignite)
+* [Apache Ignite 3, Alpha 3: Apache Calcite, RAFT, and LSM-Tree](https://www.gridgain.com/resources/blog/apache-ignite-3-alpha-3-apache-calcite-raft-and-lsm-tree)
 
 Note that 3.0 is still in alpha state, it is developed in parallel with Ignite 2.x, which will continue to evolve for years to come.  
 
