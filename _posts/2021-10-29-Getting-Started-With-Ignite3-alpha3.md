@@ -152,8 +152,3 @@ If you are familiar with Ignite 2.x, we can draw some parallels:
 # Stop the Cluster
 
 * `./ignite node stop my-first-node`
-
-
-# Conclusion
-
-Ignite 3.0 alpha 3 is... TODO
