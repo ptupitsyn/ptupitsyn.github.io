@@ -111,13 +111,42 @@ ITable table = await client.Tables.GetTableAsync("PUBLIC.accounts");
 Console.WriteLine("Table exists: " + (table != null));
 ```
 
-Insert data:
+Insert row:
 
 ```cs
+var row = new IgniteTuple
+{
+    ["accountNumber"] = 101,
+    ["balance"] = (double)300,
+    ["firstName"] = "First",
+    ["lastName"] = "Last"
+};
 
+await table.UpsertAsync(row);
 ```
 
-TODO: Table API (`ITable`) is similar to Cache API in Ignite 2.x and provi
+Get row by key:
+
+```cs
+var key = new IgniteTuple
+{
+    ["accountNumber"] = 101
+};
+
+IIgniteTuple val = await table.GetAsync(key);
+Console.WriteLine(val);
+```
+
+...which should print:
+```
+IgniteTuple [accountNumber=101, balance=300, firstName=First, lastName=Last]
+```
+
+If you are familiar with Ignite 2.x, we can draw some parallels:
+* `ICache` -> `ITable`
+* `IBinaryObject` -> `IgniteTuple`
+
+
 
 
 # Conclusion
