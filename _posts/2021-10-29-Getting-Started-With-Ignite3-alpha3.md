@@ -51,6 +51,7 @@ All commands here and below should be run in the binaries directory.
 
 The server is now running in the background.
 
+
 # Populate Sample Data
 
 We are going to use built-in Java examples to initialize a test Ignite table, because `CreateTable` API is not yet available in thin clients.
@@ -60,6 +61,7 @@ We are going to use built-in Java examples to initialize a test Ignite table, be
 * `mvn compile exec:java -Dexec.mainClass="org.apache.ignite.example.table.KeyValueViewExample"`
 
 As a result, we'll have a table named `PUBLIC.accounts` on the server.
+
 
 # Create .NET Project
 
@@ -151,6 +153,7 @@ If you are familiar with Ignite 2.x, we can draw some parallels:
 
 * `./ignite node stop my-first-node`
 
+
 # Conclusion
 
-TODO
+Ignite 3.0 alpha 3 is... TODO
