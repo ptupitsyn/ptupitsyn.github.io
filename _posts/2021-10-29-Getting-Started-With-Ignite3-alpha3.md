@@ -13,9 +13,6 @@ Let's see how to get started with .NET thin client.
 3.0 is the next major Ignite version. It aims to provide improved developer experience with better architecture, APIs, and tooling.
 
 Check documentation and blogs for more details:
-* [ignite.apache.org/docs/3.0.0-alpha](https://ignite.apache.org/docs/3.0.0-alpha/index)
-* [Ignite 3 Alpha: A Sneak Peek into the Future of Apache Ignite](https://www.gridgain.com/resources/blog/ignite-3-alpha-sneak-peek-future-apache-ignite)
-* [Apache Ignite 3, Alpha 3: Apache Calcite, RAFT, and LSM-Tree](https://www.gridgain.com/resources/blog/apache-ignite-3-alpha-3-apache-calcite-raft-and-lsm-tree)
 
 Note that 3.0 is still in alpha state, it is developed in parallel with Ignite 2.x, which will continue to evolve for years to come.  
 
@@ -152,3 +149,20 @@ If you are familiar with Ignite 2.x, we can draw some parallels:
 # Stop the Cluster
 
 * `./ignite node stop my-first-node`
+
+
+# Conclusion
+
+Ignite 3 is an exciting new development and offers improvements in all areas:
+
+* Schema-first approach
+* Raft-based replication (industry-standard consensus protocol)
+* Calcite-based SQL engine (extended SQL capabilities, improved performance)
+* MessagePack-based thin client protocol (faster, more compact)
+
+Have a look at documentation and other blogs for more details on those points:
+
+* [Ignite 3.0 Documentation](https://ignite.apache.org/docs/3.0.0-alpha/index)
+* [Ignite 3 Alpha: A Sneak Peek into the Future of Apache Ignite](https://www.gridgain.com/resources/blog/ignite-3-alpha-sneak-peek-future-apache-ignite)
+* [Just Released: Apache Ignite 3, Alpha 2](https://www.gridgain.com/resources/blog/just-released-apache-ignite-3-alpha-2)
+* [Apache Ignite 3, Alpha 3: Apache Calcite, RAFT, and LSM-Tree](https://www.gridgain.com/resources/blog/apache-ignite-3-alpha-3-apache-calcite-raft-and-lsm-tree)
