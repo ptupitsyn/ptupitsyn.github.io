@@ -10,9 +10,7 @@ Let's see how to get started with .NET thin client.
 
 # What is Ignite 3
 
-3.0 is the next major Ignite version. It aims to provide improved developer experience with better architecture, APIs, and tooling.
-
-Check documentation and blogs for more details:
+3.0 is the next major Ignite version. It aims to provide improved developer experience with better architecture, APIs, and tooling. Check documentation and blogs linked below in "Conclusion" section for more details.
 
 Note that 3.0 is still in alpha state, it is developed in parallel with Ignite 2.x, which will continue to evolve for years to come.  
 
