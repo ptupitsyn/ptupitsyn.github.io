@@ -59,3 +59,7 @@ We are going to use built-in Java examples to initialize a test Ignite table, be
 
 
 # Create .NET Project
+
+* `dotnet new console -o IgniteDotNetExample`
+* `cd IgniteDotNetExample`
+* `dotnet add package Apache.Ignite --version 3.0.0-alpha3`
