@@ -82,7 +82,7 @@ var cfg = new IgniteClientConfiguration("127.0.0.1:10800")
     Logger = new ConsoleLogger { MinLevel = LogLevel.Trace }
 };
 
-using var client = await IgniteClient.StartAsync(cfg);
+using IIgnite client = await IgniteClient.StartAsync(cfg);
 ```
 
 Run the program with `dotnet run` or in your IDE, it should print something like
@@ -90,3 +90,35 @@ Run the program with `dotnet run` or in your IDE, it should print something like
 ```
 Socket connection established: [::ffff:127.0.0.1]:60622 -> [::ffff:127.0.0.1]:10800
 ```
+
+
+# Try Table API
+
+Print all table names:
+
+```cs
+IList<ITable> tables = await client.Tables.GetTablesAsync();
+
+foreach (var t in tables)
+    Console.WriteLine(t.Name);
+```
+
+Get table by name:
+
+```cs
+ITable table = await client.Tables.GetTableAsync("PUBLIC.accounts");
+Console.WriteLine("Table exists: " + (table != null));
+```
+
+Insert data:
+
+```cs
+
+```
+
+TODO: Table API (`ITable`) is similar to Cache API in Ignite 2.x and provi
+
+
+# Conclusion
+
+TODO
