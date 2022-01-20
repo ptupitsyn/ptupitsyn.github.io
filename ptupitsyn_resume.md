@@ -20,7 +20,7 @@ Implemented .NET support in GridGain / Apache Ignite Distributed Database and Co
 - Integration with Java via C++ and JNI
 - High-performance compact binary data exchange protocol
 - Cross-platform (Windows / Linux / macOS) support
-- Thin client protocol (Java on server, .NET on client)
+- Thin client protocol (Java on server, .NET on client) with partition awareness and cluster discovery
 - ASP.NET Output Cache Provider
 - ASP.NET Session State Cache Provider
 - Entity Framework 2nd Level Cache Provider
@@ -35,11 +35,24 @@ Apache Ignite is open-source, see my GitHub profile https://github.com/ptupitsyn
 Tech stack: .NET Core 3.1, Java 11
 
 
+**[CodeWetrust](https://www.codewetrust.com), 2020 - Current**
+**Director of Engineering**
+
+Leading a team of 3 to 5 developers, implemented a due diligence and source code evaluation solution:
+- Cross-platform web/desktop application (Windows, macOS, Windows)
+- SaaS offering (AWS-based)
+- Dockerized plugins
+- Set up the project from scratch - project structure, architecture, coding guidelines, CI/CD pipelines
+- Managed user requirements, planning, code reviews, mentoring
+
+Tech stack: .NET 6, Docker, AWS, React, Typescript
+
+
 **[Aurea](https://www.aurea.com/) / [Crossover](https://crossover.com/), 2018 - 2019**  
 **Chief Software Architect**
 
 Leading a team of 4 to 6 developers, designed and implemented custom code analysis solution:
-- Set up the project from scratch - project structure, architecture coding guidelines, CI/CD pipelines
+- Set up the project from scratch - project structure, architecture, coding guidelines, CI/CD pipelines
 - Interviewed and hired team members
 - Managed user requirements, sprint planning, code reviews, mentoring
 
