@@ -10,11 +10,11 @@ permalink: /resume/
 - **Secondary skills:** Java, F#, Rust, TypeScript, ASP.NET Core, EF Core, Docker, Kubernetes, AWS
 
 ## Online Presence
-* Blog: https://ptupitsyn.github.io/
-* Linkedin: https://www.linkedin.com/in/ptupitsin/
-* GitHub: https://github.com/ptupitsyn
-* StackOverflow: https://stackoverflow.com/users/305020/pavel-tupitsyn
-* DotNext talk (RU: "Боремся с сетевым оверхедом в распределённых системах"): https://www.youtube.com/watch?v=2KVLNSIyPF0
+* Blog: [ptupitsyn.github.io](https://ptupitsyn.github.io/)
+* Linkedin: [linkedin.com/in/ptupitsin](https://www.linkedin.com/in/ptupitsin/)
+* GitHub: [github.com/ptupitsyn](https://github.com/ptupitsyn)
+* StackOverflow: [stackoverflow.com/users/305020/pavel-tupitsyn](https://stackoverflow.com/users/305020/pavel-tupitsyn)
+* DotNext talk (RU: "Боремся с сетевым оверхедом в распределённых системах"): [youtube.com/watch?v=2KVLNSIyPF0](https://www.youtube.com/watch?v=2KVLNSIyPF0)
 
 ## Professional Experience
 
