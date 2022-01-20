@@ -45,7 +45,7 @@ Tech stack: .NET Core 3.1, Java 11
 ---
 
 
-**[CodeWetrust](https://www.codewetrust.com), 2020 - Current**
+**[CodeWetrust](https://www.codewetrust.com), 2020 - Current**  
 **Director of Engineering**
 
 Leading a team of 3 to 5 developers, implemented a due diligence and source code evaluation solution:
