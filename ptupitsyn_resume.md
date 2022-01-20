@@ -42,6 +42,9 @@ Apache Ignite is open-source, see my GitHub profile https://github.com/ptupitsyn
 Tech stack: .NET Core 3.1, Java 11
 
 
+---
+
+
 **[CodeWetrust](https://www.codewetrust.com), 2020 - Current**
 **Director of Engineering**
 
@@ -55,6 +58,9 @@ Leading a team of 3 to 5 developers, implemented a due diligence and source code
 Tech stack: .NET 6, Docker, AWS, React, Typescript
 
 
+---
+
+
 **[Aurea](https://www.aurea.com/) / [Crossover](https://crossover.com/), 2018 - 2019**  
 **Chief Software Architect**
 
@@ -64,6 +70,9 @@ Leading a team of 4 to 6 developers, designed and implemented custom code analys
 - Managed user requirements, sprint planning, code reviews, mentoring
 
 Tech stack: ASP.NET Core 2.1, Angular 8, Go, PostgreSQL, ElasticSearch, Amazon EKS (Kubernetes), microservices.
+
+
+---
 
 
 **[Sperasoft](https://sperasoft.ru/), 2011 - 2015**  
@@ -78,10 +87,16 @@ Game pipeline tools development for EA Sports and EA Sims games:
 Tech stack: .NET, C#, WPF, C++, ASP.NET.
 
 
+---
+
+
 **[Arcadia](http://www.softwarecountry.com/), 2009 - 2011**  
 **Senior .NET Engineer, [Johnson & Johnson](https://www.jnj.com/) Pharmaceutical Software**
 
 Desktop and web-based tools for pharmaceutical industry (C# / WPF / Silverlight / ASP.NET / Entity Framework / Oracle).
+
+
+---
 
 
 **[SoftDev](http://www.softdev.com/), 2005 - 2009**  
