@@ -28,10 +28,11 @@ Implemented .NET support in GridGain / Apache Ignite Distributed Database and Co
 - Async support in the API
 - Benchmarking, profiling, low-level and high-level performance optimizations
 - Unsafe and unmanaged code
-- Created and maintained documentation: https://apacheignite-net.readme.io/docs
-- Code reviews, community support, CI management
+- Code reviews, documentation, community support, CI management, public speaking.
 
 Apache Ignite is open-source, see my GitHub profile https://github.com/ptupitsyn.
+
+Tech stack: .NET Core 3.1, Java 11
 
 
 **[Aurea](https://www.aurea.com/) / [Crossover](https://crossover.com/), 2018 - 2019**  
@@ -42,17 +43,19 @@ Leading a team of 4 to 6 developers, designed and implemented custom code analys
 - Interviewed and hired team members
 - Managed user requirements, sprint planning, code reviews, mentoring
 
-Tech stack: ASP.NET Core 2.1, Angular 8, Go, PostgreSQL, ElasticSearch, Amazon EKS (Kubernetes), microservices
+Tech stack: ASP.NET Core 2.1, Angular 8, Go, PostgreSQL, ElasticSearch, Amazon EKS (Kubernetes), microservices.
 
 
 **[Sperasoft](https://sperasoft.ru/), 2011 - 2015**  
 **Lead .NET Engineer, [EA Sports](https://www.easports.com/) Tools, [EA Sims](https://www.ea.com/games/the-sims) Tools**
 
-Game pipeline tools development for EA Sports and EA Sims games (C# / WPF / C++ / ASP.NET).
+Game pipeline tools development for EA Sports and EA Sims games:
 - Worked as part of distributed team (Russia and US), leading 3 local engineers
 - Consistent ahead-of-time feature delivery
 - Developed major system features: system-wide SQL-like search engine, tabbed UI, logging system, a number of reusable controls
 - Major performance improvements (data storage format, data preloading, UI virtualization)
+
+Tech stack: .NET, C#, WPF, C++, ASP.NET.
 
 
 **[Arcadia](http://www.softwarecountry.com/), 2009 - 2011**  
