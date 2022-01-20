@@ -9,6 +9,13 @@ permalink: /resume/
 - **Primary skills:** .NET / C#, high performance and low level code, distributed systems
 - **Secondary skills:** Java, F#, Rust, TypeScript, ASP.NET Core, EF Core, Docker, Kubernetes, AWS
 
+## Online Presence
+* Blog: https://ptupitsyn.github.io/
+* Linkedin: https://www.linkedin.com/in/ptupitsin/
+* GitHub: https://github.com/ptupitsyn
+* StackOverflow: https://stackoverflow.com/users/305020/pavel-tupitsyn
+* DotNext talk (RU: "Боремся с сетевым оверхедом в распределённых системах"): https://www.youtube.com/watch?v=2KVLNSIyPF0
+
 ## Professional Experience
 
 **[GridGain Systems](https://www.gridgain.com/), 2015 - Current**  
