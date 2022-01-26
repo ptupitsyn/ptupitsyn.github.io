@@ -49,7 +49,7 @@ Tech stack: .NET Core 3.1, Java 11
 **Director of Engineering**
 
 Leading a team of 3 to 5 developers, implemented a due diligence and source code evaluation solution:
-- Cross-platform web/desktop application (Windows, macOS, Windows)
+- Cross-platform web/desktop application (Linux, macOS, Windows)
 - SaaS offering (AWS-based)
 - Dockerized plugins
 - Set up the project from scratch - project structure, architecture, coding guidelines, CI/CD pipelines
