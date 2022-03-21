@@ -22,6 +22,7 @@ permalink: /resume/
 **Lead .NET Engineer, [GridGain](https://www.gridgain.com/) / [Apache Ignite](https://ignite.apache.org/)**
 
 Implemented .NET support in GridGain / Apache Ignite Distributed Database and Computing Platform:
+
 * Distributed cache, computations, SQL
 * Custom LINQ provider for distributed queries
 * Integration with Java via C++ and JNI
@@ -49,6 +50,7 @@ Tech stack: .NET Core 3.1, Java 11
 **Director of Engineering**
 
 Leading a team of 3 to 5 developers, implemented a due diligence and source code evaluation solution:
+
 * Cross-platform web/desktop application (Linux, macOS, Windows)
 * SaaS offering (AWS-based)
 * Dockerized plugins
@@ -65,6 +67,7 @@ Tech stack: .NET 6, Docker, AWS, React, Typescript
 **Chief Software Architect**
 
 Leading a team of 4 to 6 developers, designed and implemented custom code analysis solution:
+
 * Set up the project from scratch - project structure, architecture, coding guidelines, CI/CD pipelines
 * Interviewed and hired team members
 * Managed user requirements, sprint planning, code reviews, mentoring
@@ -79,6 +82,7 @@ Tech stack: ASP.NET Core 2.1, Angular 8, Go, PostgreSQL, ElasticSearch, Amazon E
 **Lead .NET Engineer, [EA Sports](https://www.easports.com/) Tools, [EA Sims](https://www.ea.com/games/the-sims) Tools**
 
 Game pipeline tools development for EA Sports and EA Sims games:
+
 * Worked as part of distributed team (Russia and US), leading 3 local engineers
 * Consistent ahead-of-time feature delivery
 * Developed major system features: system-wide SQL-like search engine, tabbed UI, logging system, a number of reusable controls
