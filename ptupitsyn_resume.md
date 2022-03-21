@@ -14,7 +14,7 @@ permalink: /resume/
 * Linkedin: [linkedin.com/in/ptupitsin](https://www.linkedin.com/in/ptupitsin/)
 * GitHub: [github.com/ptupitsyn](https://github.com/ptupitsyn)
 * StackOverflow: [stackoverflow.com/users/305020/pavel-tupitsyn](https://stackoverflow.com/users/305020/pavel-tupitsyn)
-* DotNext talk (RU: "Боремся с сетевым оверхедом в распределённых системах"): [youtube.com/watch?v=2KVLNSIyPF0](https://www.youtube.com/watch?v=2KVLNSIyPF0)
+* DotNext talk "Reducing network overhead in distributed .NET applications: An efficient approach to data handling": [youtube.com/watch?v=2KVLNSIyPF0](https://www.youtube.com/watch?v=2KVLNSIyPF0)
 
 ## Professional Experience
 
