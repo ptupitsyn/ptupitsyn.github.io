@@ -4,7 +4,9 @@ title: Lead .NET Engineer
 permalink: /resume/
 ---
 
-.NET / C# engineer for 17 years. Expert in high performance back-end code.
+# Pavel Tupitsyn
+
+**Lead .NET engineer. Expert in high performance back-end code.**
 
 * **Primary skills:** .NET / C#, high performance and low level code, distributed systems
 * **Secondary skills:** Java, F#, Rust, TypeScript, ASP.NET Core, EF Core, Docker, Kubernetes, AWS
