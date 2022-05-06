@@ -8,6 +8,10 @@ TODO: Mention Calcite.
 TODO: Mention 2.12 - bugfixes only.
 
 # TODO
+* Added GetServiceDescriptors to Thin Client Services.
+* Added ThinClientConfiguration.SendServerExceptionStackTraceToClient.
+* Added IClientRetryPolicy interface to control retry behavior when an operation fails due to a connection issue.
+* Added periodic heartbeat messages to improve connection reliability.
 
 
 # Links
