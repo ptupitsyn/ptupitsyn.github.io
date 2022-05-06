@@ -12,11 +12,15 @@ Calcite-based SQL engine is the highlight of the release, but we are here to tal
 
 TODO
 
-# Thin Client Service Descriptors
+[IEP-82 Thin Client Retry Policy](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=195727946)
+
+# Thin Client Keep-alive (Heartbeats)
 
 TODO
 
-# Thin Client Keep-alive (Heartbeats)
+[IEP-83 Thin Client Keepalive](https://cwiki.apache.org/confluence/display/IGNITE/IEP-83+Thin+Client+Keepalive)
+
+# Thin Client Service Descriptors
 
 TODO
 
