@@ -101,7 +101,15 @@ More details:
 
 # Thin Client Service Descriptors
 
-TODO
+Services API is available in .NET thin client since [Ignite 2.10](https://ptupitsyn.github.io/Whats-New-In-Ignite-Net-2.10/), but `GetServiceDescriptors` method was missing.
+It is now available:
+
+```csharp
+foreach (var desc in client.GetServices().GetServiceDescriptors())
+{
+    Console.WriteLine($"Service '{desc.Name}' is written in {desc.PlatformType}.");
+}
+```
 
 # SendServerExceptionStackTraceToClient
 
