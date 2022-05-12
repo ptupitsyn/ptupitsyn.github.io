@@ -88,10 +88,16 @@ class MyRetryPolicy : IClientRetryPolicy
 * While it is waiting for input, stop the server and start it again. Connection loss won't be detected immediately, because heartbeats are not enabled in this example.
 * Press a key in the program console. Operation failure will be logged, then connection will be restored and the API call will be successfully retried.
 
+We've used a custom `IClientRetryPolicy` implementation here to see how it works. Predefined implementations are available: [ClientRetryReadPolicy](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Client.ClientRetryReadPolicy.html),
+[ClientRetryAllPolicy](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Client.ClientRetryAllPolicy.html).
 
-[IEP-82 Thin Client Retry Policy](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=195727946)
+**WARNING:** keep in mind that non-idempotent operations are not safe to retry. For example, an SQL query that increments a value might end up being executed twice because connection has failed during the response phase.
+`ClientRetryReadPolicy` only retries read operations and is safe to use.
 
-TODO: Notes about idempotency
+More details:
+
+* [IEP-82 Thin Client Retry Policy](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=195727946)
+* [IgniteClientConfiguration.RetryPolicy](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Client.IgniteClientConfiguration.html#Apache_Ignite_Core_Client_IgniteClientConfiguration_RetryPolicy)
 
 # Thin Client Service Descriptors
 
