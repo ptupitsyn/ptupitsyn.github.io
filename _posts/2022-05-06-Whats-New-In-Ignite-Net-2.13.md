@@ -113,7 +113,30 @@ foreach (var desc in client.GetServices().GetServiceDescriptors())
 
 # SendServerExceptionStackTraceToClient
 
-TODO
+When [Compute](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Client.Compute.IComputeClient.html) or [Service](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Client.Services.IServicesClient.html)
+call fails due to a server-side exception, only the message is sent back to the client. We may have to dig through the server logs to understand the root cause of the issue. 
+
+To improve diagnostics experience during development, server-side exception stack traces can be optionally sent to the client:
+
+```csharp
+var serverCfg = new IgniteConfiguration
+{
+    ClientConnectorConfiguration = new ClientConnectorConfiguration
+    {
+        ThinClientConfiguration = new ThinClientConfiguration
+        {
+            SendServerExceptionStackTraceToClient = true
+        }
+    }
+};
+
+using var server = Ignition.Start(serverCfg);
+using var client = Ignition.StartClient(new IgniteClientConfiguration("127.0.0.1"));
+
+client.GetServices().GetServiceProxy<IService>("foo-bar");
+```
+
+This option is disabled by default for security reasons: [stack traces contain information that can potentially aid an attacker](https://cwe.mitre.org/data/definitions/497.html).
 
 
 # Links
