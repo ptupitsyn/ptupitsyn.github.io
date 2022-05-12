@@ -4,7 +4,7 @@ title: What's new in Apache Ignite.NET 2.13
 ---
 
 [Apache Ignite](https://ignite.apache.org/) 2.13 [has been released](https://blogs.apache.org/ignite/entry/apache-ignite-2-13-0).
-Calcite-based SQL engine is the highlight of the release, but we are here to talk about .NET side of things, where thin client got some more improvements: retry policy, heartbeat messages, and more. 
+Calcite-based SQL engine is the highlight of the release, but we are here to talk about .NET side of things, where thin client got some more improvements: retry policy, heartbeat messages, and more.
 
 (There was no blog post about Ignite [2.12](https://blogs.apache.org/ignite/entry/apache-ignite-2-12-0) because it was focused on bugfixes).
 
@@ -12,7 +12,7 @@ Calcite-based SQL engine is the highlight of the release, but we are here to tal
 
 Periodic heartbeat messages were introduced to improve thin client connection robustness, especially in long-living scenarios.
 
-Those messages are sent in background when the client is idle (defined by `HeartbeatInterval` config property), so that connection loss can be detected early.
+Those messages are sent in the background when the client is idle (defined by `HeartbeatInterval` config property) so that connection loss can be detected early.
 
 We can use the following code to demonstrate:
 
@@ -86,12 +86,12 @@ class MyRetryPolicy : IClientRetryPolicy
 * Start Ignite server in Docker with `docker run -p 10800:10800 apacheignite/ignite`.
 * Run the code above.
 * While it is waiting for input, stop the server and start it again. Connection loss won't be detected immediately, because heartbeats are not enabled in this example.
-* Press a key in the program console. Operation failure will be logged, then connection will be restored and the API call will be successfully retried.
+* Press a key in the program console. Operation failure will be logged, then the connection will be restored and the API call will be successfully retried.
 
 We've used a custom `IClientRetryPolicy` implementation here to see how it works. Predefined implementations are available: [ClientRetryReadPolicy](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Client.ClientRetryReadPolicy.html),
 [ClientRetryAllPolicy](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Client.ClientRetryAllPolicy.html).
 
-**WARNING:** keep in mind that non-idempotent operations are not safe to retry. For example, an SQL query that increments a value might end up being executed twice because connection has failed during the response phase.
+**WARNING:** keep in mind that non-idempotent operations are not safe to retry. For example, an SQL query that increments a value might end up being executed twice because a connection has failed during the response phase.
 `ClientRetryReadPolicy` only retries read operations and is safe to use.
 
 More details:
@@ -114,9 +114,9 @@ foreach (var desc in client.GetServices().GetServiceDescriptors())
 # SendServerExceptionStackTraceToClient
 
 When [Compute](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Client.Compute.IComputeClient.html) or [Service](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Client.Services.IServicesClient.html)
-call fails due to a server-side exception, only the message is sent back to the client. We may have to dig through the server logs to understand the root cause of the issue. 
+call fails due to a server-side exception, only the message is sent back to the client. We may have to dig through the server logs to understand the root cause of the issue.
 
-To improve diagnostics experience during development, server-side exception stack traces can be optionally sent to the client:
+To improve the diagnostics experience during development, server-side exception stack traces can be optionally sent to the client:
 
 ```csharp
 var serverCfg = new IgniteConfiguration
@@ -141,6 +141,6 @@ This option is disabled by default for security reasons: [stack traces contain i
 
 # Links
 
-* Main blog post: [https://blogs.apache.org/ignite/entry/apache-ignite-2-13-0](https://blogs.apache.org/ignite/entry/apache-ignite-2-13-0) 
+* Main blog post: [https://blogs.apache.org/ignite/entry/apache-ignite-2-13-0](https://blogs.apache.org/ignite/entry/apache-ignite-2-13-0)
 * Full release notes: [https://github.com/apache/ignite/blob/master/RELEASE_NOTES.txt](https://github.com/apache/ignite/blob/master/RELEASE_NOTES.txt)
 * Download: [https://ignite.apache.org/download](https://ignite.apache.org/download.cgi)
