@@ -44,7 +44,14 @@ while (true)
 
 This behavior should be enabled explicitly with `EnableHeartbeats` property.
 
-[IEP-83 Thin Client Keepalive](https://cwiki.apache.org/confluence/display/IGNITE/IEP-83+Thin+Client+Keepalive)
+In addition, this works together with server-side idle timeouts defined with [ClientConnectorConfiguration.IdleTimeout](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Configuration.ClientConnectorConfiguration.html#Apache_Ignite_Core_Configuration_ClientConnectorConfiguration_IdleTimeout).
+When idle timeout is configured on the server, heartbeat interval will be adjusted automatically to `IdleTimeout / 3` so that idle clients are not disconnected by the server.
+
+More details:
+
+* [IEP-83 Thin Client Keepalive](https://cwiki.apache.org/confluence/display/IGNITE/IEP-83+Thin+Client+Keepalive)
+* [IgniteClientConfiguration.EnableHeartbeats](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Client.IgniteClientConfiguration.html#Apache_Ignite_Core_Client_IgniteClientConfiguration_EnableHeartbeats)
+* [IgniteClientConfiguration.HeartbeatInterval](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Client.IgniteClientConfiguration.html#Apache_Ignite_Core_Client_IgniteClientConfiguration_HeartbeatInterval)
 
 # Thin Client Retry Policy
 
