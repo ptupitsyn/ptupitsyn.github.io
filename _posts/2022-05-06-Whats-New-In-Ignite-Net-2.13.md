@@ -24,9 +24,7 @@ var cfg = new IgniteClientConfiguration("127.0.0.1")
     Logger = new ConsoleLogger { MinLevel = LogLevel.Debug }
 };
 
-var client = Ignition.StartClient(cfg);
-
-Console.WriteLine("Client connected.");
+using var client = Ignition.StartClient(cfg);
 
 while (true)
 {
@@ -40,7 +38,7 @@ while (true)
 * Start Ignite server in Docker with `docker run -p 10800:10800 apacheignite/ignite`.
 * Run the code above.
 * While it is waiting for input, stop the server and start it again. Connection loss should be detected and logged.
-* Press a key in the program console. Connection will be restored and API call will succeed.
+* Press a key in the program console. Connection will be restored and the API call will succeed.
 
 This behavior should be enabled explicitly with `EnableHeartbeats` property.
 
@@ -55,9 +53,45 @@ More details:
 
 # Thin Client Retry Policy
 
-TODO
+To improve thin client reliability even further, automatic operation retries can be enabled with `RetryPolicy` setting.
+If an API call fails due to connection loss, it will be retried transparently.
+
+```cs
+var cfg = new IgniteClientConfiguration("127.0.0.1")
+{
+    Logger = new ConsoleLogger { MinLevel = LogLevel.Debug },
+    RetryPolicy = new MyRetryPolicy()
+};
+
+using var client = Ignition.StartClient(cfg);
+
+while (true)
+{
+    Console.WriteLine("Press any key to perform a request...");
+    Console.ReadKey();
+
+    Console.WriteLine("Cluster node: " + client.GetCluster().GetNode());
+}
+
+class MyRetryPolicy : IClientRetryPolicy
+{
+    public bool ShouldRetry(IClientRetryPolicyContext context)
+    {
+        Console.WriteLine($"Operation {context.Operation} has failed with error '{context.Exception.Message}'.");
+        return true;
+    }
+}
+```
+
+* Start Ignite server in Docker with `docker run -p 10800:10800 apacheignite/ignite`.
+* Run the code above.
+* While it is waiting for input, stop the server and start it again. Connection loss won't be detected immediately, because heartbeats are not enabled in this example.
+* Press a key in the program console. Operation failure will be logged, then connection will be restored and the API call will be successfully retried.
+
 
 [IEP-82 Thin Client Retry Policy](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=195727946)
+
+TODO: Notes about idempotency
 
 # Thin Client Service Descriptors
 
