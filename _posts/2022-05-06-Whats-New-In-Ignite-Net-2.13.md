@@ -6,7 +6,7 @@ title: What's new in Apache Ignite.NET 2.13
 [Apache Ignite](https://ignite.apache.org/) 2.13 [has been released](https://blogs.apache.org/ignite/entry/apache-ignite-2-13-0).
 Calcite-based SQL engine is the highlight of the release, but we are here to talk about .NET side of things, where thin client got some more improvements: retry policy, heartbeat messages, and more.
 
-(There was no blog post about Ignite [2.12](https://blogs.apache.org/ignite/entry/apache-ignite-2-12-0) because it was focused on bugfixes).
+(There was no blog post about Ignite.NET [2.12](https://blogs.apache.org/ignite/entry/apache-ignite-2-12-0) because it was mostly focused on bugfixes).
 
 # Thin Client Keep-Alive (Heartbeats)
 
