@@ -1,0 +1,728 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface ISnapshot
+   | GridGain.NET </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface ISnapshot
+   | GridGain.NET ">
+    <meta name="generator" content="docfx 2.59.1.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo_gg_40x50.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="GridGain.Core.PersistentStore.ISnapshot">
+  
+  
+  <h1 id="GridGain_Core_PersistentStore_ISnapshot" data-uid="GridGain.Core.PersistentStore.ISnapshot" class="text-break">Interface ISnapshot
+  </h1>
+  <div class="markdown level0 summary"><p>Snapshots API.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GridGain.Core.PersistentStore.html">GridGain.Core.PersistentStore</a></h6>
+  <h6><strong>Assembly</strong>: GridGain.Core.dll</h6>
+  <h5 id="GridGain_Core_PersistentStore_ISnapshot_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ISnapshot</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="GridGain_Core_PersistentStore_ISnapshot_CancelSnapshotOperationAsync_" data-uid="GridGain.Core.PersistentStore.ISnapshot.CancelSnapshotOperationAsync*"></a>
+  <h4 id="GridGain_Core_PersistentStore_ISnapshot_CancelSnapshotOperationAsync_Apache_Ignite_Core_Common_IgniteGuid_System_String_" data-uid="GridGain.Core.PersistentStore.ISnapshot.CancelSnapshotOperationAsync(Apache.Ignite.Core.Common.IgniteGuid,System.String)">CancelSnapshotOperationAsync(IgniteGuid, String)</h4>
+  <div class="markdown level1 summary"><p>Cancels the snapshot operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; CancelSnapshotOperationAsync(IgniteGuid operationId, string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Apache.Ignite.Core.Common.IgniteGuid.html">IgniteGuid</a></td>
+        <td><span class="parametername">operationId</span></td>
+        <td><p>The operation identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>Optional message (see <a class="xref" href="GridGain.Core.PersistentStore.ISnapshotOperation.html#GridGain_Core_PersistentStore_ISnapshotOperation_Message">Message</a>).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><p>Task for the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_PersistentStore_ISnapshot_CheckSnapshotAsync_" data-uid="GridGain.Core.PersistentStore.ISnapshot.CheckSnapshotAsync*"></a>
+  <h4 id="GridGain_Core_PersistentStore_ISnapshot_CheckSnapshotAsync_System_Int64_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_String_" data-uid="GridGain.Core.PersistentStore.ISnapshot.CheckSnapshotAsync(System.Int64,System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.String)">CheckSnapshotAsync(Int64, IEnumerable&lt;String&gt;, Boolean, String)</h4>
+  <div class="markdown level1 summary"><p>Checks the snapshot for issues.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISnapshotTask&lt;ICollection&lt;ISnapshotIssue&gt;&gt; CheckSnapshotAsync(long snapshotId, IEnumerable&lt;string&gt; optionalSearchPaths, bool skipCrc, string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">snapshotId</span></td>
+        <td><p>The snapshot identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">optionalSearchPaths</span></td>
+        <td><p>The optional search paths.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">skipCrc</span></td>
+        <td><p>Whether to skip CRC check.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>Optional message (see <a class="xref" href="GridGain.Core.PersistentStore.ISnapshotOperation.html#GridGain_Core_PersistentStore_ISnapshotOperation_Message">Message</a>).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.PersistentStore.ISnapshotTask-1.html">ISnapshotTask</a>&lt;<span class="xref">System.Collections.Generic.ICollection</span>&lt;<a class="xref" href="GridGain.Core.PersistentStore.ISnapshotIssue.html">ISnapshotIssue</a>&gt;&gt;</td>
+        <td><p>Task for the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_PersistentStore_ISnapshot_CreateFullSnapshotAsync_" data-uid="GridGain.Core.PersistentStore.ISnapshot.CreateFullSnapshotAsync*"></a>
+  <h4 id="GridGain_Core_PersistentStore_ISnapshot_CreateFullSnapshotAsync_System_Collections_Generic_IEnumerable_System_String__System_String_" data-uid="GridGain.Core.PersistentStore.ISnapshot.CreateFullSnapshotAsync(System.Collections.Generic.IEnumerable{System.String},System.String)">CreateFullSnapshotAsync(IEnumerable&lt;String&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Initiates full snapshot creation. All updates completed before this call returns are guaranteed to be
+included to the created snapshot.There are no guarantees regarding the updates completed after this
+method returns but before resulting <span class="xref">System.Threading.Tasks.Task</span> completes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISnapshotTask&lt;bool&gt; CreateFullSnapshotAsync(IEnumerable&lt;string&gt; cacheNames, string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">cacheNames</span></td>
+        <td><p>Names of caches to be included in the snapshot.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>Optional message (see <a class="xref" href="GridGain.Core.PersistentStore.ISnapshotOperation.html#GridGain_Core_PersistentStore_ISnapshotOperation_Message">Message</a>).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.PersistentStore.ISnapshotTask-1.html">ISnapshotTask</a>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><p>Task for async operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_PersistentStore_ISnapshot_CreateSnapshotAsync_" data-uid="GridGain.Core.PersistentStore.ISnapshot.CreateSnapshotAsync*"></a>
+  <h4 id="GridGain_Core_PersistentStore_ISnapshot_CreateSnapshotAsync_System_Collections_Generic_IEnumerable_System_String__System_String_" data-uid="GridGain.Core.PersistentStore.ISnapshot.CreateSnapshotAsync(System.Collections.Generic.IEnumerable{System.String},System.String)">CreateSnapshotAsync(IEnumerable&lt;String&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Initiates incremental snapshot creation, when possible; otherwise full snapshot. 
+All updates completed before this call returns are guaranteed to be
+included to the created snapshot.There are no guarantees regarding the updates completed after this
+method returns but before resulting <span class="xref">System.Threading.Tasks.Task</span> completes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISnapshotTask&lt;bool&gt; CreateSnapshotAsync(IEnumerable&lt;string&gt; cacheNames, string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">cacheNames</span></td>
+        <td><p>Names of caches to be included in the snapshot.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>Optional message (see <a class="xref" href="GridGain.Core.PersistentStore.ISnapshotOperation.html#GridGain_Core_PersistentStore_ISnapshotOperation_Message">Message</a>).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.PersistentStore.ISnapshotTask-1.html">ISnapshotTask</a>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><p>Task for async operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_PersistentStore_ISnapshot_DeleteSnapshotAsync_" data-uid="GridGain.Core.PersistentStore.ISnapshot.DeleteSnapshotAsync*"></a>
+  <h4 id="GridGain_Core_PersistentStore_ISnapshot_DeleteSnapshotAsync_System_Int64_System_String_" data-uid="GridGain.Core.PersistentStore.ISnapshot.DeleteSnapshotAsync(System.Int64,System.String)">DeleteSnapshotAsync(Int64, String)</h4>
+  <div class="markdown level1 summary"><p>Deletes the snapshot. Will fail if there are dependent snapshots.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISnapshotTask DeleteSnapshotAsync(long snapshotId, string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">snapshotId</span></td>
+        <td><p>The snapshot identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>Optional message (see <a class="xref" href="GridGain.Core.PersistentStore.ISnapshotOperation.html#GridGain_Core_PersistentStore_ISnapshotOperation_Message">Message</a>).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.PersistentStore.ISnapshotTask.html">ISnapshotTask</a></td>
+        <td><p>Task for the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_PersistentStore_ISnapshot_ForceDeleteSnapshotAsync_" data-uid="GridGain.Core.PersistentStore.ISnapshot.ForceDeleteSnapshotAsync*"></a>
+  <h4 id="GridGain_Core_PersistentStore_ISnapshot_ForceDeleteSnapshotAsync_System_Int64_System_String_" data-uid="GridGain.Core.PersistentStore.ISnapshot.ForceDeleteSnapshotAsync(System.Int64,System.String)">ForceDeleteSnapshotAsync(Int64, String)</h4>
+  <div class="markdown level1 summary"><p>Deletes the snapshot and all dependent snapshots.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISnapshotTask ForceDeleteSnapshotAsync(long snapshotId, string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">snapshotId</span></td>
+        <td><p>The snapshot identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>Optional message (see <a class="xref" href="GridGain.Core.PersistentStore.ISnapshotOperation.html#GridGain_Core_PersistentStore_ISnapshotOperation_Message">Message</a>).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.PersistentStore.ISnapshotTask.html">ISnapshotTask</a></td>
+        <td><p>Task for the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_PersistentStore_ISnapshot_ForceMoveSnapshotAsync_" data-uid="GridGain.Core.PersistentStore.ISnapshot.ForceMoveSnapshotAsync*"></a>
+  <h4 id="GridGain_Core_PersistentStore_ISnapshot_ForceMoveSnapshotAsync_System_Int64_System_String_System_String_" data-uid="GridGain.Core.PersistentStore.ISnapshot.ForceMoveSnapshotAsync(System.Int64,System.String,System.String)">ForceMoveSnapshotAsync(Int64, String, String)</h4>
+  <div class="markdown level1 summary"><p>Moves the snapshot to the specified path and removes locally, including all dependent snapshots.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISnapshotTask ForceMoveSnapshotAsync(long snapshotId, string destinationPath, string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">snapshotId</span></td>
+        <td><p>The snapshot identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">destinationPath</span></td>
+        <td><p>The destination path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>Optional message (see <a class="xref" href="GridGain.Core.PersistentStore.ISnapshotOperation.html#GridGain_Core_PersistentStore_ISnapshotOperation_Message">Message</a>).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.PersistentStore.ISnapshotTask.html">ISnapshotTask</a></td>
+        <td><p>Task for the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_PersistentStore_ISnapshot_GetCurrentSnapshotStatus_" data-uid="GridGain.Core.PersistentStore.ISnapshot.GetCurrentSnapshotStatus*"></a>
+  <h4 id="GridGain_Core_PersistentStore_ISnapshot_GetCurrentSnapshotStatus" data-uid="GridGain.Core.PersistentStore.ISnapshot.GetCurrentSnapshotStatus">GetCurrentSnapshotStatus()</h4>
+  <div class="markdown level1 summary"><p>Gets the current snapshot operation status.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISnapshotStatus GetCurrentSnapshotStatus()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.PersistentStore.ISnapshotStatus.html">ISnapshotStatus</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_PersistentStore_ISnapshot_GetSnapshot_" data-uid="GridGain.Core.PersistentStore.ISnapshot.GetSnapshot*"></a>
+  <h4 id="GridGain_Core_PersistentStore_ISnapshot_GetSnapshot_System_Int64_System_Collections_Generic_IEnumerable_System_String__" data-uid="GridGain.Core.PersistentStore.ISnapshot.GetSnapshot(System.Int64,System.Collections.Generic.IEnumerable{System.String})">GetSnapshot(Int64, IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets the snapshot by id.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISnapshotInfo GetSnapshot(long snapshotId, IEnumerable&lt;string&gt; optionalSearchPaths)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">snapshotId</span></td>
+        <td><p>The snapshot identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">optionalSearchPaths</span></td>
+        <td><p>The optional search paths.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.PersistentStore.ISnapshotInfo.html">ISnapshotInfo</a></td>
+        <td><p>Snapshot information.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_PersistentStore_ISnapshot_GetSnapshots_" data-uid="GridGain.Core.PersistentStore.ISnapshot.GetSnapshots*"></a>
+  <h4 id="GridGain_Core_PersistentStore_ISnapshot_GetSnapshots_System_Collections_Generic_IEnumerable_System_String__" data-uid="GridGain.Core.PersistentStore.ISnapshot.GetSnapshots(System.Collections.Generic.IEnumerable{System.String})">GetSnapshots(IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets all previously created snapshots.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ICollection&lt;ISnapshotInfo&gt; GetSnapshots(IEnumerable&lt;string&gt; optionalSearchPaths)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">optionalSearchPaths</span></td>
+        <td><p>The optional search paths.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<a class="xref" href="GridGain.Core.PersistentStore.ISnapshotInfo.html">ISnapshotInfo</a>&gt;</td>
+        <td><p>Snapshot information.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_PersistentStore_ISnapshot_MoveSnapshotAsync_" data-uid="GridGain.Core.PersistentStore.ISnapshot.MoveSnapshotAsync*"></a>
+  <h4 id="GridGain_Core_PersistentStore_ISnapshot_MoveSnapshotAsync_System_Int64_System_String_System_String_" data-uid="GridGain.Core.PersistentStore.ISnapshot.MoveSnapshotAsync(System.Int64,System.String,System.String)">MoveSnapshotAsync(Int64, String, String)</h4>
+  <div class="markdown level1 summary"><p>Moves the snapshot to the specified path and removes locally.
+Fails if there are dependent snapshots, use <a class="xref" href="GridGain.Core.PersistentStore.ISnapshot.html#GridGain_Core_PersistentStore_ISnapshot_ForceMoveSnapshotAsync_System_Int64_System_String_System_String_">ForceMoveSnapshotAsync(Int64, String, String)</a> instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISnapshotTask MoveSnapshotAsync(long snapshotId, string destinationPath, string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">snapshotId</span></td>
+        <td><p>The snapshot identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">destinationPath</span></td>
+        <td><p>The destination path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>Optional message (see <a class="xref" href="GridGain.Core.PersistentStore.ISnapshotOperation.html#GridGain_Core_PersistentStore_ISnapshotOperation_Message">Message</a>).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.PersistentStore.ISnapshotTask.html">ISnapshotTask</a></td>
+        <td><p>Task for the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_PersistentStore_ISnapshot_RestoreSnapshotAsync_" data-uid="GridGain.Core.PersistentStore.ISnapshot.RestoreSnapshotAsync*"></a>
+  <h4 id="GridGain_Core_PersistentStore_ISnapshot_RestoreSnapshotAsync_System_Int64_System_Collections_Generic_IEnumerable_System_String__System_Collections_Generic_IEnumerable_System_String__System_String_" data-uid="GridGain.Core.PersistentStore.ISnapshot.RestoreSnapshotAsync(System.Int64,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.String)">RestoreSnapshotAsync(Int64, IEnumerable&lt;String&gt;, IEnumerable&lt;String&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Restores the snapshot by id.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISnapshotTask RestoreSnapshotAsync(long snapshotId, IEnumerable&lt;string&gt; optionalSearchPaths, IEnumerable&lt;string&gt; cacheNames, string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">snapshotId</span></td>
+        <td><p>The snapshot identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">optionalSearchPaths</span></td>
+        <td><p>The optional search paths.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">cacheNames</span></td>
+        <td><p>The cache names.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>Optional message (see <a class="xref" href="GridGain.Core.PersistentStore.ISnapshotOperation.html#GridGain_Core_PersistentStore_ISnapshotOperation_Message">Message</a>).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.PersistentStore.ISnapshotTask.html">ISnapshotTask</a></td>
+        <td><p>Task for the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            © 2022 GridGain Systems, Inc. and Contributors
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

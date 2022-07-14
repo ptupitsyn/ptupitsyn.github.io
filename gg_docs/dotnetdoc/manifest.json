@@ -1,0 +1,5020 @@
+{
+  "homepages": [],
+  "source_base_path": "/home/pavel/w/ggprivate/modules/platforms/dotnet/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.AspNet.IgniteOutputCacheProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.AspNet.IgniteOutputCacheProvider.html",
+          "hash": "M8ti5MYBJL1wjM4OtPcIo42Id3vmD2g+s87DvVq3zGY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.AspNet.IgniteSessionStateStoreProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.AspNet.IgniteSessionStateStoreProvider.html",
+          "hash": "603yu/2B0Am3bXahcmRBn0TE28OGaeSExzyZmqa0GZw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.AspNet.IgniteWebUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.AspNet.IgniteWebUtils.html",
+          "hash": "GxPA9USY2i9+6T5Ueezrhz4wKRna8UGyr3HvyDoRPlc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.AspNet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.AspNet.html",
+          "hash": "xHIuzyztFAKVAay4pq7RvayoFwHE8qobiMxVOXhDyaA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.BinaryBasicNameMapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.BinaryBasicNameMapper.html",
+          "hash": "ooTQomsL4oDKGpaZ+fGWt9LfhFv5iQ9NunjpIUygxrg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.BinaryConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.BinaryConfiguration.html",
+          "hash": "TDGl7gW7iA4hvBfQAJ/BQLZC4c7uvDrtR0YSQ+9qc3g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.BinaryObjectException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.BinaryObjectException.html",
+          "hash": "0ww+9tJXJCgc98DVb0UIhMrxCNLWTImLx/M8oYLB2nU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.BinaryReflectiveSerializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.BinaryReflectiveSerializer.html",
+          "hash": "ObZbTUq9+HzKKkcHp8v1JG5ElUeVjxugHzlJ4ArIjdk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.BinaryTypeConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.BinaryTypeConfiguration.html",
+          "hash": "DaCJGoFF1PPNI/CAaXDUbdA3AVRD4pnJWEfHzkcQYrc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.BinaryTypeNames.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.BinaryTypeNames.html",
+          "hash": "hN1S3zjRRV4pDitQkl6F0fK0EpNDwWdv6JPH4vnHNiw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.IBinarizable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.IBinarizable.html",
+          "hash": "94jWQ93AHS/W0RXkXhhYJhZgRwaqEUk+Esb8259i1wI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.IBinary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.IBinary.html",
+          "hash": "S2u3/UYe3BiYGPjHxQDBvtxtZtwTAC/gl9Xv8+9VEPc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.IBinaryIdMapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.IBinaryIdMapper.html",
+          "hash": "uKWH3mXg1nPdcA9K1/N8hx6I1MazNpafg24DCr6yn4E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.IBinaryNameMapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.IBinaryNameMapper.html",
+          "hash": "cuMv98vFGFwUUdkb3iBVB8ecdogSCVuNdf5XwjWIxzo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.IBinaryObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.IBinaryObject.html",
+          "hash": "UxY6nSdVnDAxFOq4e8LFcBrYLAKED0C7qBPDcEOv7xI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.IBinaryObjectBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.IBinaryObjectBuilder.html",
+          "hash": "SHl40/lZKXfmwjf6sg0b8PjO25BVB2RcWTN1K9gNkmE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.IBinaryRawReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.IBinaryRawReader.html",
+          "hash": "PyYxdasN3ihCJcqeEOKyowyBPV4CCkbzRRHubVmPEWw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.IBinaryRawWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.IBinaryRawWriter.html",
+          "hash": "98Vx1zjYQFR8Jf1Rv5WFoE7MONq2haEby+SCUIdtokQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.IBinaryReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.IBinaryReader.html",
+          "hash": "Dmxq0PFOFDKFHh+rUS0/tVYLnM6ovSQgT9tug7oRaZQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.IBinarySerializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.IBinarySerializer.html",
+          "hash": "rJ0DIo9Jg/ppLwUCFB1PlpJABfzX/c0FMPSwXFiSq1M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.IBinaryType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.IBinaryType.html",
+          "hash": "Ql24He1P6m7GsgQXDPeUI2RSCB6jx+oxWDAE3rpbe6Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.IBinaryWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.IBinaryWriter.html",
+          "hash": "V4MKFd1sXPxpJUTQO5spJJF0T14xSChHtxb2E579OVA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.ITimestampConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.ITimestampConverter.html",
+          "hash": "KYwv+j7unHwZHgynhpHQLGckaiNXVYhzN+LYVYzFZl8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.TimestampAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.TimestampAttribute.html",
+          "hash": "CZAugafenRiQMG6DBCDCq6pJCrHdGgsFAE/wonUXFco="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Binary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Binary.html",
+          "hash": "nrJD2LzngGUGnTlH+YsQj48Sl/Ox6QhpMCOFt9qoEJ8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Affinity.AffinityFunctionBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Affinity.AffinityFunctionBase.html",
+          "hash": "nacY8/xIApjHUsEmYCKW/lpg+MD6WnlNoJx94dVf36k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Affinity.AffinityFunctionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Affinity.AffinityFunctionContext.html",
+          "hash": "ZeTB+AdNByqj55wJqRWvHQFWrT4FWLYsx2g4hkF9gBk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Affinity.AffinityKey.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Affinity.AffinityKey.html",
+          "hash": "l11ZhWEnYi20I2SALN/ti48QqyTZtMBZI5Ln4huVM5E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Affinity.AffinityKeyMappedAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Affinity.AffinityKeyMappedAttribute.html",
+          "hash": "ga5bm7a9mTt8WnF8Wl099V4dFXuYocz/mPmoe879wxM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Affinity.AffinityTopologyVersion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Affinity.AffinityTopologyVersion.html",
+          "hash": "UNxVvR7F5gNkj8/aIx+EJKDAWODx9RsCMqEYJH07ZJw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Affinity.IAffinityBackupFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Affinity.IAffinityBackupFilter.html",
+          "hash": "ziiWTUmkF0il0lBl4h6bsFjYkORaasFxhF81bZ81iEQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Affinity.IAffinityFunction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Affinity.IAffinityFunction.html",
+          "hash": "8PNQrQ2PKzOQBhavlTe08xOnH5rK6NMr/6dG5urL3TU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Affinity.Rendezvous.ClusterNodeAttributeAffinityBackupFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Affinity.Rendezvous.ClusterNodeAttributeAffinityBackupFilter.html",
+          "hash": "Wes9TPBjXKY8HzhY7edritZ+RHvESxa5pjRUT+OxO3M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Affinity.Rendezvous.RendezvousAffinityFunction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Affinity.Rendezvous.RendezvousAffinityFunction.html",
+          "hash": "8CoZ2lhleoay1J0Z3UiKPP69mzsxYqSbho2a8+Bg5lw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Affinity.Rendezvous.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Affinity.Rendezvous.html",
+          "hash": "ApSUArU+bvORAL1avoiuaZMpJJ1bgoUJeuE/eDgdKg0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Affinity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Affinity.html",
+          "hash": "+DHqN0nZ3p45/2im6KzWFXqJ1Fpj5QTcYyNC7X389+w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.CacheEntryProcessorException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.CacheEntryProcessorException.html",
+          "hash": "g/DwY//PJUNzSCq8SyE4POVDDodMbD7Ze444ciCDLDY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.CacheException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.CacheException.html",
+          "hash": "qS7z0wcH5JhIG4VVHTItk153iiQBD88mP8nrrgc6lJc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.CachePartialUpdateException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.CachePartialUpdateException.html",
+          "hash": "jvNBG7ERijQq8ejsW2PeYtEmqi3h9ctV1gSoKWGOd7k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.CachePeekMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.CachePeekMode.html",
+          "hash": "KQRuqeMcFfkucyN/pkfC5bh6/vUqKsIotQP5A2q6VUw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.CacheResult-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.CacheResult-1.html",
+          "hash": "lVcowWQfHXN83pnT2Qfw/yjI3O/2htybhy2PkMQcsqE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.CacheAtomicityMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.CacheAtomicityMode.html",
+          "hash": "2narQw/YlOxI5zZ6VXcyb4mgFJ+tyr+lV3hwgvpqGg8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.CacheConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.CacheConfiguration.html",
+          "hash": "ndGDXdn8t8IhbnRyPoY5W0ZlpPTfDcTqOgMsgsWIB5Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.CacheKeyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.CacheKeyConfiguration.html",
+          "hash": "askPsq1YEF+VaxdEjyFgcqXmXDtEYx0if7yvkcgre0s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.CacheMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.CacheMode.html",
+          "hash": "JmSZm41Lu2vKGU2f+jLa1EquOToUJKyNW7dhhElcdrY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.CacheRebalanceMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.CacheRebalanceMode.html",
+          "hash": "cBpXA3f8S8QEL4n582nOyZLy0SujOWn2l5YKj7QhEPE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.CacheWriteSynchronizationMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.CacheWriteSynchronizationMode.html",
+          "hash": "w9YMbIpUiYiPB5smnT11/Yp/uIFHP2Jp7+hgYhHE0iQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.DataPageEvictionMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.DataPageEvictionMode.html",
+          "hash": "VxjQVkBx9gb/Hi4VvrEtTD+urf93PRTKiAY7hsrgVNM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.MemoryConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.MemoryConfiguration.html",
+          "hash": "qsIB08sjq6mzdWc3BZN1U0E8YZa1TjScuS/rrilL3Xw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.MemoryPolicyConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.MemoryPolicyConfiguration.html",
+          "hash": "CfU7zCr8D28wF0tlKXxMav+F6VQZQ2j51EdSjQk1ZYE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.NearCacheConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.NearCacheConfiguration.html",
+          "hash": "FuSVntFkttu6TepcxaK5iZnfBi8NP8sSCQ1GZ6MLMhE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.PartitionLossPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.PartitionLossPolicy.html",
+          "hash": "1MYuP1xwSUDT67DfMXfchTmuPVmyNHy9kD6tC8ktRQw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.PlatformCacheConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.PlatformCacheConfiguration.html",
+          "hash": "/mnflRi/lMm/tPbhP0UVe902txR2V2mOyQIGMfd+m6I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.QueryAlias.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.QueryAlias.html",
+          "hash": "19fn36oxiWLJscab4R1dDx7L5Zr50ajCLVqkbb6nlyQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.QueryEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.QueryEntity.html",
+          "hash": "iO0c+NJ7t1ObpbxHGPLchVQPoFkq6gSS15XfmMCuSl8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.QueryField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.QueryField.html",
+          "hash": "/XEC+hovJz+J/CGHMC5JlmnKBnH30nzCAG7FYqFMRHA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.QueryIndex.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.QueryIndex.html",
+          "hash": "nmVm3g0NSDzAkvM7hAtDNSSEOsYnWz1lDRtXmSEvXxI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.QueryIndexField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.QueryIndexField.html",
+          "hash": "8xI4uzhGpH6xc8TAcKt0cXKEvosC2mln9adaAFGfHq0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.QueryIndexType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.QueryIndexType.html",
+          "hash": "MFWef8uKVGYDLifPD+YbUrtbUoix7ADpjjhTJyzv22o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.QuerySqlFieldAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.QuerySqlFieldAttribute.html",
+          "hash": "HXWzbrHj474YbZgEyVs0YzM51SECG/VWbuEuzNdfJaU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.QueryTextFieldAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.QueryTextFieldAttribute.html",
+          "hash": "8trN1sAK9paTTMpb5BOHMhi7MBlF32cWEIyVQc6TkFQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Configuration.html",
+          "hash": "GvFwPn3dr+g5WrmKAa9/Ib67G1sihigKPpeGMbjhEoA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Event.CacheEntryEventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Event.CacheEntryEventType.html",
+          "hash": "b6j1jiO0Wo2mMxeV2/y1UF4xGnUqi96vHT99ebkpCcc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Event.ICacheEntryEvent-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Event.ICacheEntryEvent-2.html",
+          "hash": "gJ/5qZHGwZs11l9mSMVTH6l0WdpO+X+smPR3R++JjQk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Event.ICacheEntryEventFilter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Event.ICacheEntryEventFilter-2.html",
+          "hash": "7gGi/3/YudH9iWTrQ8BY9XmoXz9wwmCfPvQtEd8uDTc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Event.ICacheEntryEventListener-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Event.ICacheEntryEventListener-2.html",
+          "hash": "ptOEFU8HCSp6kr/do2hQJYsQC/aF+SSd4tTMxF1tOnM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Event.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Event.html",
+          "hash": "Ua0+RghuOe14d3o97jYrQ5kdlug71AuHTbOoospmV/8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Eviction.EvictionPolicyBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Eviction.EvictionPolicyBase.html",
+          "hash": "Z+Bc+E5F1aOUyVxIH1ix2DR0QQmkb0FA+P3uYlQj6qI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Eviction.FifoEvictionPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Eviction.FifoEvictionPolicy.html",
+          "hash": "q2s8WQe9IsgF/EnmbJQEfaFHVVxqzDWFPqPGaiz27i0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Eviction.IEvictionPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Eviction.IEvictionPolicy.html",
+          "hash": "KNJX/F0do6p4UsG3YIwUgg9B+GmNJqyQTU/zE/qUTmA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Eviction.LruEvictionPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Eviction.LruEvictionPolicy.html",
+          "hash": "9jycOHT1qqsvm87BA2hd1xG/imaQFTXuHUJ4/kiPTBE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Eviction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Eviction.html",
+          "hash": "e5k4RSIbIEolYXm9fKQnU8TkOnGoEMDqTmLedoA5LE8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Expiry.ExpiryPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Expiry.ExpiryPolicy.html",
+          "hash": "HGbAYhkFohO2jdQZdH6VqUL0myJLaLOo15TFvoA5ULk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Expiry.IExpiryPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Expiry.IExpiryPolicy.html",
+          "hash": "/3UCTh86T38TXucCsesgJExHbP0If0FdrTB649rBKMI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Expiry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Expiry.html",
+          "hash": "U9XM9q1jtRrpSgDrfv3Q3uSuy5jI9JqR2etnTa3xCIs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.ICache-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.ICache-2.html",
+          "hash": "q+RBW7TDgXWaLoKCGQvIM6+dZupIBiB5q+IeTC6mfdE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.ICacheAffinity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.ICacheAffinity.html",
+          "hash": "wr+wYh1crXVSQW6yYVVHkbQyn2HDCPbw0QtsQTy6G6Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.ICacheEntry-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.ICacheEntry-2.html",
+          "hash": "DGwCS/zCmVtWBlVb4bcL6QKk0ZIU8k0EMuO+rOeB3jI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.ICacheEntryFilter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.ICacheEntryFilter-2.html",
+          "hash": "L7O6gzwKI6GIvCM9bHDFk3WHDExi9Qe0lNNHDm0cyyc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.ICacheEntryProcessor-4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.ICacheEntryProcessor-4.html",
+          "hash": "E0QJJ7psdQdQpbmxkZqc3zhvfp74Y/OW/575ivzeRg8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.ICacheEntryProcessorResult-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.ICacheEntryProcessorResult-2.html",
+          "hash": "5PdUUIgUuYlSrj1d4IjLL6P3jcC+fiv13wgE7cVjLmY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.ICacheLock.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.ICacheLock.html",
+          "hash": "prObeS49pqv4NLn6/n3F+LB+b9+E281MjX5+xeGWJqA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.ICacheMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.ICacheMetrics.html",
+          "hash": "19yPi35y/qSlo26A+60gZs9FsGakFBLzrDxU2nyqMwg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.IMemoryMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.IMemoryMetrics.html",
+          "hash": "RZajcpHqFhHA8mWr6/+MXnsi0DhYQ+INUC51pPiswjo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.IMutableCacheEntry-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.IMutableCacheEntry-2.html",
+          "hash": "6fErgReOGc4rPHmYwlcDpI619W7sVeJ18mbzrn+LlEc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.IQueryMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.IQueryMetrics.html",
+          "hash": "lV5F4ki61fGv/iuqLRhlbf4hly0ckrIToXPGZMuFf1Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Query.Continuous.ContinuousQuery-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Query.Continuous.ContinuousQuery-2.html",
+          "hash": "uW3byF7IDCU4XxH+ywEZ+mXAXYtUkCB6qa7+vorw7jw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Query.Continuous.ContinuousQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Query.Continuous.ContinuousQuery.html",
+          "hash": "4DPzARXvLh9Ct6HdxzwZ/+CMSPKoaEWAqO1vZjMWmpc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Query.Continuous.ContinuousQueryExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Query.Continuous.ContinuousQueryExtensions.html",
+          "hash": "4PnVEspj6+KxyMBOlV9km01ggU8J6+26Be6zIIAWM3A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Query.Continuous.IContinuousQueryHandle-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Query.Continuous.IContinuousQueryHandle-1.html",
+          "hash": "ZE0NBjk7+ht0PScXwmg3o/SvRt1/BaaQl4IFG1s53zY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Query.Continuous.IContinuousQueryHandle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Query.Continuous.IContinuousQueryHandle.html",
+          "hash": "C/0CyPsDS1DJBvAeToiavPNObjpAJvSse4X8QgeqIc0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Query.Continuous.IContinuousQueryHandleFields.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Query.Continuous.IContinuousQueryHandleFields.html",
+          "hash": "2gDs5Z5Oqv++1cSPJB2I0spMFfzUmGYpRtif8VOcY0Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Query.Continuous.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Query.Continuous.html",
+          "hash": "kW431qFwwiy44uzOfhVOMeS5U1nBL8weOmpRSNYSqUs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Query.IFieldsQueryCursor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Query.IFieldsQueryCursor.html",
+          "hash": "CiT4rMe+G0uOLR1MMSk0pgpiuks97G8r/9SiQkB40pM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Query.IQueryCursor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Query.IQueryCursor-1.html",
+          "hash": "jq2WBmodcps0Mxi2R+RShE81yrbJnfgrjFIvS99EyCI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Query.IQueryCursorField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Query.IQueryCursorField.html",
+          "hash": "WzLx9W/q7VFSbcx7ukQksiLSHdSUOBgs1MDTyLA4pdg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Query.QueryBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Query.QueryBase.html",
+          "hash": "vCWp2SzkIBZuh+O4FzxVeHkizomrDo3voGK5LS3XhGc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Query.ScanQuery-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Query.ScanQuery-2.html",
+          "hash": "vBfe+piVDK1INInchMphxP0BPnupV9Dtj/OWdjDi5nQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Query.SqlFieldsQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Query.SqlFieldsQuery.html",
+          "hash": "IxF2ugfHQT0vzAtcOSW6zHUfmcbXX2Nl695HFv8gpJI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Query.SqlQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Query.SqlQuery.html",
+          "hash": "NGlshn2JzzroIX+g3nXpQP8Tz1Pp/P1ix2sHWs1HaXI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Query.TextQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Query.TextQuery.html",
+          "hash": "c+Qxm08jHG6fAU3issCDFlz9Bb0V5wpIFujC1OretSk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Query.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Query.html",
+          "hash": "I6lGVNM1vOmsmvqXPd4YEpQ1sl+XNM8hMdxX0QxaQCA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Store.CacheParallelLoadStoreAdapter-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Store.CacheParallelLoadStoreAdapter-3.html",
+          "hash": "b5jIGkJ3Q4GBRucRRwpfS4zdzognsjB/ulwtKg/FRCU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Store.CacheStoreAdapter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Store.CacheStoreAdapter-2.html",
+          "hash": "STbNOJ2VBVEZdOVxTIIRFfQzBJd9uYIjKJWo7ib9Re8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Store.CacheStoreException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Store.CacheStoreException.html",
+          "hash": "BOt68HdELj0JQWxK3waastTj1rzBGQxaSh/eyln8MIw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Store.ICacheStore-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Store.ICacheStore-2.html",
+          "hash": "j6vvO+6fH6ezshnmUMv0CuDCx4Fge6KG6nvt1m38jSA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Store.ICacheStore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Store.ICacheStore.html",
+          "hash": "hnSGA4H+jjF1BJZE4OaIlQGQasMrVZi/OAJG8XxajzE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Store.ICacheStoreSession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Store.ICacheStoreSession.html",
+          "hash": "TaD9+P9Tg0mRMJLt85wDELsd5840tS7gj9meUwctfZQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.Store.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.Store.html",
+          "hash": "AyMxwHxrnjCPMNbjkcL5J/ltgUyw6KmutXT6A7lDKJw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cache.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cache.html",
+          "hash": "BdOAGSzJIlebWO22gf1D+0JOS/aKXV4gHpSQi6KWcQo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Cache.CacheClientConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Cache.CacheClientConfiguration.html",
+          "hash": "7/VKWJHFxRm+OHZiWYzB3EWZRp8BTY0qX3j1slHUwq0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Cache.ICacheClient-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Cache.ICacheClient-2.html",
+          "hash": "MmLce82EHhWeG72jxDTFEwiV3x2EIKHi1Gk4IPFnCiQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Cache.Query.Continuous.ContinuousQueryClient-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Cache.Query.Continuous.ContinuousQueryClient-2.html",
+          "hash": "+j5sORzCPhWO8kdeGi/zIzKNdLCQJ53mSglyAO+/LGc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Cache.Query.Continuous.ContinuousQueryClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Cache.Query.Continuous.ContinuousQueryClient.html",
+          "hash": "WOnAf2nAVxS+VSrlj/NiLbsSc6Qar/bYrb/fZa5cSxc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Cache.Query.Continuous.ContinuousQueryClientDisconnectedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Cache.Query.Continuous.ContinuousQueryClientDisconnectedEventArgs.html",
+          "hash": "SeQ0vuA5DBaVV/ODnmW7ccCEvK2TCvkXUhYCBe5HzxE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Cache.Query.Continuous.IContinuousQueryHandleClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Cache.Query.Continuous.IContinuousQueryHandleClient.html",
+          "hash": "pbB6KmvWF647lOMP+QHSNknBJubUJK21EBfneLvw41k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Cache.Query.Continuous.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Cache.Query.Continuous.html",
+          "hash": "16n0M8TuPRpMLblDBPLYCwySzwOcbT4bPOYNKdGqN68="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Cache.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Cache.html",
+          "hash": "P6lUHWnScYlBj4+FrR/SpgjeoSG20nFFTtUvdsunt8Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.ClientOperationType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.ClientOperationType.html",
+          "hash": "fW4Cd2c/G4+k+E5BLZLYildI+GzfYWtdYPo2NFb2qzg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.ClientRetryAllPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.ClientRetryAllPolicy.html",
+          "hash": "CjvCqWrSEU6uRQlrQB7F+2bd5xOg4uG19raAGFWwkps="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.ClientRetryReadPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.ClientRetryReadPolicy.html",
+          "hash": "MtAjkDvdSnff+L5XEoLWyZbxnnuSToVCkdX3HMBm5EU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.ClientStatusCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.ClientStatusCode.html",
+          "hash": "WxVPzLNv4z/KOPD5dmDQoZoxbZHxOLkjC0CckLePhMY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Compute.IComputeClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Compute.IComputeClient.html",
+          "hash": "Q2mYOZ5XDSAOYnoi+kNu8T5fqq6rhQmTKokV3xHg9aI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Compute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Compute.html",
+          "hash": "Q9SVw616GAEfhuRIzbe8rdbzdeq5m5w6uDznawA5G7I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.DataStructures.AtomicClientConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.DataStructures.AtomicClientConfiguration.html",
+          "hash": "SLTldjwc/5+0oA7tcPqDNL5/HneXRASzvFQA6FGSezI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.DataStructures.IAtomicLongClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.DataStructures.IAtomicLongClient.html",
+          "hash": "d3lZmWc/g4aVPIFy2LjF3ic+wmiGeYn7HaPyqlmk64w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.DataStructures.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.DataStructures.html",
+          "hash": "AqgG2DZQYYbsnnH7ZMffk+kGCgk2XgQ/VjsShejLnB4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Datastream.DataStreamerClientOptions-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Datastream.DataStreamerClientOptions-2.html",
+          "hash": "8UX4MsOF9qxUvshhmRZRPBhJDQ/jgRchqEFjBGD0/CM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Datastream.DataStreamerClientOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Datastream.DataStreamerClientOptions.html",
+          "hash": "1AFhXWQ0aSgQDQpxoDZdHkcuHRrv0lDIsMqWkCtj3z4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Datastream.IDataStreamerClient-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Datastream.IDataStreamerClient-2.html",
+          "hash": "KTAJvR4cSDmjVZCA7m5Cp3h6+KjMJbQ1uCyB7OOxGFk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Datastream.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Datastream.html",
+          "hash": "wIZQnm+rvigbyG66PKkkHZrjtWuAXGDHGBRM90tu3sg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.IClientCluster.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.IClientCluster.html",
+          "hash": "k8l3Ltz7zgZ4KeEeaBN5PtuFuOqHHRfuwuSG8ISPHXQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.IClientClusterGroup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.IClientClusterGroup.html",
+          "hash": "2NNcj5+WVddhHDcsk96COqsYsEjKQHZOa8zw0PQWG+M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.IClientClusterNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.IClientClusterNode.html",
+          "hash": "Dxy9M7ThfaLIffQnaCPmHUHn9LM6hb6diYWpMnkx9Fg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.IClientConnection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.IClientConnection.html",
+          "hash": "a0YAtq1JAoaBWbW2lHprr0PWXSeejOF7K33RmBR4wOc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.IClientRetryPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.IClientRetryPolicy.html",
+          "hash": "4sR+MHmlwesGFHDI4RLeMV6rwzwNrfaAohCD6HaQ2Y4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.IClientRetryPolicyContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.IClientRetryPolicyContext.html",
+          "hash": "UijC035DVWFQ08SQLow+kKvf5zAKrlEYTwKyTZAZx/4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.IIgniteClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.IIgniteClient.html",
+          "hash": "Qt3jGwNnED+gFz718gffQQd+yhbe9FnbycFdtpAt+gw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.ISslStreamFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.ISslStreamFactory.html",
+          "hash": "a5rhpi8QZPSBN/ziEw7FOvJsaNTPQXjPmds4+5VBVg4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.IgniteClientConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.IgniteClientConfiguration.html",
+          "hash": "GmdZbC4D+i3b6jOxpworBjzjUpclZnFLeXcLMUU1Gec="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.IgniteClientConfigurationSection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.IgniteClientConfigurationSection.html",
+          "hash": "zXJcPyYWnvwkMeSIFrIDOYwN4tCoJLQPHe89m+15/iw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.IgniteClientException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.IgniteClientException.html",
+          "hash": "ZFOu5vZIXrBn2A4kiphVjlopda/oIwlXQ270Id6XNaM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Services.IClientServiceDescriptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Services.IClientServiceDescriptor.html",
+          "hash": "IjJovdMPu/ydUmolo7cX+BW6KPd1PuqQYq84cSDWITc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Services.IServicesClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Services.IServicesClient.html",
+          "hash": "DOrW7GoS9J7rX5CV75E67ICvGx51jGtly3ZkbsS26H8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Services.html",
+          "hash": "uaKiZ2t7ys0Ny+HOpXOlP5IrqcFQkvLFDLWWzD2K+HE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.SslStreamFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.SslStreamFactory.html",
+          "hash": "d8qhjOKAIIISaXW1LN2Dq4wDrExs1FbwPfztNhgecWQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Transactions.ITransactionClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Transactions.ITransactionClient.html",
+          "hash": "SI2VbA6w43Yq6NSnOq3WF5kdyRnfKu3Zi4l8Tfe3VA0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Transactions.ITransactionsClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Transactions.ITransactionsClient.html",
+          "hash": "W4XSjHKzdvEEp/vgUzuWUbQrs1GEbVDRrbJ8hfsZc8Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Transactions.TransactionClientConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Transactions.TransactionClientConfiguration.html",
+          "hash": "Mdwmx9OSFHcf7uDymc30PaBvzQZXF9UX5BO2EGUTcpM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.Transactions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.Transactions.html",
+          "hash": "j6/bkhzkpiz0GKh7XDwaIP8uLebKMIpJriyjPtDn4og="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Client.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Client.html",
+          "hash": "nyJeu4Fxr8z5JwQ5iFx/hNcr4tZt/gIjo0JHdQQgu24="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cluster.AttributeNodeFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cluster.AttributeNodeFilter.html",
+          "hash": "+TMU7m9j7GGddvu6ZIR1BYnpBlPzVfmDWMrvAWi/oJ0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cluster.ClusterGroupEmptyException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cluster.ClusterGroupEmptyException.html",
+          "hash": "lFteMiw4LNfEYdnmtvgwxgI7kyItqlFiGJ9izZdKcs8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cluster.ClusterTopologyException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cluster.ClusterTopologyException.html",
+          "hash": "1xxJFmYkBmTL0A5eLwaLN+aEPYZ8q2NlOHYIxcBDGVs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cluster.IBaselineNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cluster.IBaselineNode.html",
+          "hash": "gWDgTh5DVq3jF1S8oNO7laDGknjd9OTRjCTY5mZIIOA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cluster.ICluster.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cluster.ICluster.html",
+          "hash": "ZdF26CYvZdvoUQGAY8xDQOLlQZkMxk8s0V6xIKU1+E0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cluster.IClusterGroup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cluster.IClusterGroup.html",
+          "hash": "LsVu9jyhLremOFUYaicIxe9lP1NBDhmc5XY75PMGpE0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cluster.IClusterMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cluster.IClusterMetrics.html",
+          "hash": "49is63WIgu+GaNdAOqjRvZXdg2JVBBV0/xDvpdxNR6E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cluster.IClusterNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cluster.IClusterNode.html",
+          "hash": "OPuXWL0LOZTpYD5RIhwolas/EdwbQu8/XLveJNjrpNE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cluster.IClusterNodeFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cluster.IClusterNodeFilter.html",
+          "hash": "IkSlTqy4xEPXMKc43ePdYzs630TgpHIT2ycEj2+EWk8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Cluster.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Cluster.html",
+          "hash": "LUiO552cEUKrCARQXEGes69o61VVb/cs53ph46yRtmk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Common.ClientDisconnectedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Common.ClientDisconnectedException.html",
+          "hash": "R5epr9+b7E4xydNkVC9h4beH7I/v3bLpSQswZruo5Ts="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Common.ExceptionFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Common.ExceptionFactory.html",
+          "hash": "cP6TZy8KAj8Re3Rz4lYpY5BpfJmrJNhl9MrlLFr4410="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Common.IFactory-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Common.IFactory-1.html",
+          "hash": "rP9XS+1UQLzrmtVqnAx9RH/mQT5qmdgyXX1mDIHvSnk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Common.IgniteException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Common.IgniteException.html",
+          "hash": "UQ8Fw8UidvzCvL/+5drjXW39emVCjqAPo3fnPQ/fma4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Common.IgniteExperimentalAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Common.IgniteExperimentalAttribute.html",
+          "hash": "jOhTIr4UzLJmQs8j2/bwjNpH4AJxl9lJDGUlGsLu6q0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Common.IgniteFutureCancelledException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Common.IgniteFutureCancelledException.html",
+          "hash": "IogHFadHW+DqLO8aPWa1a4x7tu1TQIEfkUdPNrnjNcY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Common.IgniteGuid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Common.IgniteGuid.html",
+          "hash": "gLYei1zByOXj7ATSmrzBw5KLIILP4SpL9r8+kQtV5m0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Common.IgniteIllegalStateException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Common.IgniteIllegalStateException.html",
+          "hash": "BdEMoSsK/7smJpdvPqjnl212rKUbE9mW7FSPnm1q1pw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Common.IgniteProductVersion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Common.IgniteProductVersion.html",
+          "hash": "3a5b+jnMytqmKAXX3xES9SJEdxL+Jbqeqg2IQXPdkSg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Common.JavaException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Common.JavaException.html",
+          "hash": "VizgKgsXlGalDtNPjaP3MjcpbgB+pdAUs4jlkbpycWg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Common.html",
+          "hash": "U6F6Gij9UmkRCff6hGgehRydCuqpbb/chlHJmkHOUu4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Communication.ICommunicationSpi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Communication.ICommunicationSpi.html",
+          "hash": "GU+RtwG4ena1NrHvQehP0eqaaY9LeeW3yPnp2Eh28RA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Communication.Tcp.TcpCommunicationSpi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Communication.Tcp.TcpCommunicationSpi.html",
+          "hash": "I3g0T3l+7I0VZztBuhN21f6it+g17cKe6ricKzyVkqg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Communication.Tcp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Communication.Tcp.html",
+          "hash": "iG4t9okSidlb1oDE2+98K+qojA5wPGWdwoU/fMB8Jyk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Communication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Communication.html",
+          "hash": "KMCrruT2TOGjYMsdyww0W8OZVj+sX/3fsQXhM03ih9Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.ComputeExecutionRejectedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.ComputeExecutionRejectedException.html",
+          "hash": "8w8Y0tpbpZU80xwKkUL0gMWdgjk50O3iyAN8TZRfbXs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.ComputeJobAdapter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.ComputeJobAdapter-1.html",
+          "hash": "0PB8Z0ho74g1kjrqkg9B3qdKHkJxSQBXMw2mnBd+ris="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.ComputeJobFailoverException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.ComputeJobFailoverException.html",
+          "hash": "B5GDVun1lcjOLSAd5wQlJH+RULYGxlFVdo6yn0B41LU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.ComputeJobResultPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.ComputeJobResultPolicy.html",
+          "hash": "8E2DT0QCOFdeaimRIUtXhmjkNM4vDPpgy370w/KX6fg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.ComputeTaskAdapter-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.ComputeTaskAdapter-3.html",
+          "hash": "DU+vWOvgVHbWaAqIfZgusWpIx0EDSzBTJ3Y8Eeudpts="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.ComputeTaskCancelledException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.ComputeTaskCancelledException.html",
+          "hash": "AKx1rXxU1oDGmi0sgn1X72aRdAmaK3qgZ6DDmr3HZKU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.ComputeTaskNoResultCacheAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.ComputeTaskNoResultCacheAttribute.html",
+          "hash": "dwHURDTUxBiSHCaEiUh/lK9uGaxdZsAQDIAdb/KHrP0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.ComputeTaskSplitAdapter-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.ComputeTaskSplitAdapter-3.html",
+          "hash": "kiCQYz7nK6rvPghCfkmf8zgxuty+9yEW9rihr9CwFtU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.ComputeTaskTimeoutException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.ComputeTaskTimeoutException.html",
+          "hash": "5SvFXf13V3TwI6Kk3o+mSEqCHFRZRhaosbJCIKu5vC0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.ComputeUserUndeclaredException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.ComputeUserUndeclaredException.html",
+          "hash": "HX/6Qg9PtM+ta1O6nZZ8OYkjpWMZIGkkzHYbp15qVdU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.ICompute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.ICompute.html",
+          "hash": "U8IrZA5VN8ALoFZiywyEvDAIcBtLgbczrLQD+ua9gvY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.IComputeAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.IComputeAction.html",
+          "hash": "QIi78CWRr7/GEGrs+wKqZKHIGlC6Pi4Xi1QGFWkuKwc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.IComputeFunc-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.IComputeFunc-1.html",
+          "hash": "bFNXTQZDKsDmTgxQjTbLC0F0kGDOiqprEVD2B74mlxs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.IComputeFunc-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.IComputeFunc-2.html",
+          "hash": "ul+qVdsOs3r+qK9pBSsSZzj9Lnimtnuuq8B/p/XnchI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.IComputeJob-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.IComputeJob-1.html",
+          "hash": "o3ClqZ6cuV4/tWuqLspm6JNeEGgAvvpFS1LTByGm9Ik="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.IComputeJobResult-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.IComputeJobResult-1.html",
+          "hash": "Fp/G114l/0JZzJQeHB9K/5aKRFkDWYyXbuisM8NxLuw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.IComputeReducer-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.IComputeReducer-2.html",
+          "hash": "U/TEkyJ/L2SZ4WSbiDLwvNOJJ+MrrmxcMV+Q/bP+rOc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.IComputeTask-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.IComputeTask-2.html",
+          "hash": "aDcPLcWQ1TJNiuXYrpG57TsGeV+Mb36Yun2WXAqoF6I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.IComputeTask-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.IComputeTask-3.html",
+          "hash": "N/nWAF8KIyekPWF5YoS79tu8VwrsszTJ/OePciLvGgc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Compute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Compute.html",
+          "hash": "nRYRnKR8RMIe/dLMsM0cuHtRFLteuJMfZ+9ZYdE3cKU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Configuration.AsyncContinuationExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Configuration.AsyncContinuationExecutor.html",
+          "hash": "AUqRrsnP2xerQlk/9pKCpe6K8M7qzXIBA/Rgybwj3WY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Configuration.CheckpointWriteOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Configuration.CheckpointWriteOrder.html",
+          "hash": "9JkOX+J0fRFpbFtwOLi8l5HGzb+3n/vOTFNhIdrlxLc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Configuration.ClientConnectorConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Configuration.ClientConnectorConfiguration.html",
+          "hash": "weuZr08i2sxXEz2v9kKr9EIaVgJJNsTasvAO06vZyOg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Configuration.DataPageEvictionMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Configuration.DataPageEvictionMode.html",
+          "hash": "axYrfkTzmXqo+nz5gPNjaHBJHa4LKVRTX65//c9cDgY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Configuration.DataRegionConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Configuration.DataRegionConfiguration.html",
+          "hash": "9Uk9W5hWmW0S/I6c6XZ0RoMp697csWnyBezJC2smXDY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Configuration.DataStorageConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Configuration.DataStorageConfiguration.html",
+          "hash": "TkCsRMZikfQY97Q94dhWnCA2evk78HZMUtBJF5M0tUc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Configuration.DiskPageCompression.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Configuration.DiskPageCompression.html",
+          "hash": "CcVgp9MY6H3RZj5CpUzkpCQgfwZKeq2ZzEMEiO7uhpU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Configuration.ExecutorConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Configuration.ExecutorConfiguration.html",
+          "hash": "tAzTGIM5Jlog9qeeEZfY+GgbICH4tFi0QgHUJzGZzWo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Configuration.LockConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Configuration.LockConfiguration.html",
+          "hash": "CkZWnuSrvSA5ovu2JBb9PV2mrY4IS0nMq6PxdgcRxg4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Configuration.SqlConnectorConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Configuration.SqlConnectorConfiguration.html",
+          "hash": "MHQJXXdcRIbMHygt+wetrFNQjyIHXP7G9IRPQoj83Ek="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Configuration.ThinClientConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Configuration.ThinClientConfiguration.html",
+          "hash": "UcsLpkW0biBjkJI0A9m8HN7cRLgzWQjnAHcwAEGGx0o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Configuration.WalMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Configuration.WalMode.html",
+          "hash": "eeJbQrzWOvEgEc3SSfTGhItEWFlOwQFcEUD47nFlMwA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Configuration.html",
+          "hash": "wfjCCStNkG8Kx64vqqJpYN4DXt0Lw5Gin7R6MQ2hOEY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.DataStructures.Configuration.AtomicConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.DataStructures.Configuration.AtomicConfiguration.html",
+          "hash": "Wkkm/ha949WFDbcFLOVZsX5hOTFsnczl4t1tW5Tx9CY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.DataStructures.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.DataStructures.Configuration.html",
+          "hash": "7r/GgDtOoiKXH0KGaCzsac0ppoGt0fuSrXO+IuhMf/w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.DataStructures.IAtomicLong.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.DataStructures.IAtomicLong.html",
+          "hash": "3Nf034JJg+NmeUomdQ5wFJoVir6w85itKkv6I27NwtE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.DataStructures.IAtomicReference-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.DataStructures.IAtomicReference-1.html",
+          "hash": "3Sj6bdwDdWp/JI5zmZOah65wvOBHbrz65bBpnGJxnlU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.DataStructures.IAtomicSequence.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.DataStructures.IAtomicSequence.html",
+          "hash": "JZa0Cgnaxbu3KT1MqA0htxCOooMbA4t/j9ROOoNaUHk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.DataStructures.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.DataStructures.html",
+          "hash": "L3BWqqHtyV4ANq/PHwVd8yPM5l9sjOzxhihOnTiRJXw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Datastream.DataStreamerDefaults.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Datastream.DataStreamerDefaults.html",
+          "hash": "vYJNGhvVysoVIslRyw4R4WvhAEzWJHu5gUJDZH2eoEM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Datastream.IDataStreamer-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Datastream.IDataStreamer-2.html",
+          "hash": "8frhGcNSG9mEwBbMvGxnzRYs5xe9CWkmRonmMF8Ebd0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Datastream.IStreamReceiver-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Datastream.IStreamReceiver-2.html",
+          "hash": "gZHNOEkLynfC4Xvo3b/KVLxohCY0eqSdfieITeXq/Ck="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Datastream.StreamTransformer-4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Datastream.StreamTransformer-4.html",
+          "hash": "0lnWZlV4YmNWzeJuYxwrals/mh/b+E86UhlziR3wAzw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Datastream.StreamVisitor-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Datastream.StreamVisitor-2.html",
+          "hash": "tFtsolhrLdf04msMFEijU7RyI+Dv9V5+tzEg9A/Oako="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Datastream.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Datastream.html",
+          "hash": "tN2ixwBjWmx20hFuYT4nClSEwnodTjcCHuqn0tx/5JM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Deployment.PeerAssemblyLoadingMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Deployment.PeerAssemblyLoadingMode.html",
+          "hash": "9oOITVAGm7gL0miCqrw+tEOjdqjW0Zj8HYajfxT47bg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Deployment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Deployment.html",
+          "hash": "M6At5ZytEmqTJZjaZhF/npkBDIoxmG9xHLHZJ1DmAV8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Discovery.IDiscoverySpi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Discovery.IDiscoverySpi.html",
+          "hash": "SOWb8UvkMBo5StRaW23eTUGJsShqGiXJXLVx94wM+bs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Discovery.Tcp.ITcpDiscoveryIpFinder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Discovery.Tcp.ITcpDiscoveryIpFinder.html",
+          "hash": "m4vJ9L8SyannkXyIkCgw4QMQ5ew+aM1LER79N+qRC7o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Discovery.Tcp.Multicast.TcpDiscoveryMulticastIpFinder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Discovery.Tcp.Multicast.TcpDiscoveryMulticastIpFinder.html",
+          "hash": "IXN8LwjRt+UXXV4at/P/vEdRgF5frNw//P66nrm15ms="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Discovery.Tcp.Multicast.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Discovery.Tcp.Multicast.html",
+          "hash": "WRG0urjRLrYU6QTCRvCCS1lXqnAMqITr/3nBTMXYOjY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Discovery.Tcp.Static.TcpDiscoveryStaticIpFinder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Discovery.Tcp.Static.TcpDiscoveryStaticIpFinder.html",
+          "hash": "iD51V9Dg4pE1JWlJ4v1O3QA1S4PGKUtitK/j8KILx+8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Discovery.Tcp.Static.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Discovery.Tcp.Static.html",
+          "hash": "ETDBKx5NEHG4lnhAANSrLvbBof6iRk7ME5P1GqHypsY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Discovery.Tcp.TcpDiscoveryIpFinderBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Discovery.Tcp.TcpDiscoveryIpFinderBase.html",
+          "hash": "uxy6zSTc1hVPG6WPo2lNZfmtzewCt6YLQojbMBXWf8g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Discovery.Tcp.TcpDiscoverySpi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Discovery.Tcp.TcpDiscoverySpi.html",
+          "hash": "tUCMo6B2tGKEPNECjRHQtI5xeaST7CI7TTf5mXIDMRE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Discovery.Tcp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Discovery.Tcp.html",
+          "hash": "Uz83WKx22eu24QgT/hAjwCJ3TOHOVxY7OW+Y21unkc8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Discovery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Discovery.html",
+          "hash": "ThewIFSQ4H94cA31bQDho0G+/AZ+zyIT/Xf86WdMabo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Encryption.IEncryptionSpi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Encryption.IEncryptionSpi.html",
+          "hash": "TBwhiGjg5ZdR+OmbUJAKdfxpcI8aE21msjlAmlHnJps="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Encryption.Keystore.KeystoreEncryptionSpi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Encryption.Keystore.KeystoreEncryptionSpi.html",
+          "hash": "vnF3aXr/IJlW3RmcKLStk8iqj/C6iM/mlP1ZqdTb4l4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Encryption.Keystore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Encryption.Keystore.html",
+          "hash": "v5pMzjDuRop2ZFmDXUxC8AUb8Yp+CRHdJREXMJ+2ws4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Encryption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Encryption.html",
+          "hash": "ASGVFfZbIf87gSIMAXZ7i7SEAyqqbi8Y+OYUrhzPe6E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.CacheEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.CacheEvent.html",
+          "hash": "4IhedBJEKhc1ePwEwidRi+0KhILSUq7gTBy1Zc4pHBc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.CacheQueryExecutedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.CacheQueryExecutedEvent.html",
+          "hash": "gtIz34Eo0yvmC/vkIuA7RWnnvQDgfpyD8dTupXPtHMU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.CacheQueryReadEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.CacheQueryReadEvent.html",
+          "hash": "yTYkr/JJqHSokt1PLFw4QjKunlXhzihLA++OqlExDWA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.CacheRebalancingEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.CacheRebalancingEvent.html",
+          "hash": "uV/o+SArMKjSbm3YPb/YHKRU+SoYtXedMYXOjS1zhuk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.CheckpointEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.CheckpointEvent.html",
+          "hash": "vYCEHTY6ipTZqj8hWPlePeu83KPC8Ya9DAuR+vueib8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.DiscoveryEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.DiscoveryEvent.html",
+          "hash": "sTI/D7nTE/dyXFMufu0MRtoanJ4ArfKqzKmEB/VIT0M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.EventBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.EventBase.html",
+          "hash": "9Cq/2POAPLrpAaDI+0RxRhiD1prMkXH1LloeHR801nI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.EventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.EventType.html",
+          "hash": "aMaGexCRWcX4aNn8gm579Xl/Mvuu1ZLN+F01X6LYqxM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.IEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.IEvent.html",
+          "hash": "ZrT53vBuim05fg69DWP0NxglPxHjjPjo1TgK2rHua8A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.IEventFilter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.IEventFilter-1.html",
+          "hash": "h0M59yaiqOqXb/r75M3TqzBSOhih++Hhp1J6ad1tzB8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.IEventListener-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.IEventListener-1.html",
+          "hash": "5uGnD7EIMHnGty91RFNweILWlSDzvgMsxhP9blGrrI0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.IEventStorageSpi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.IEventStorageSpi.html",
+          "hash": "FOslEtIWAebriFsro63UV29FMFLqbkpqsuu8Bm4+qVw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.IEvents.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.IEvents.html",
+          "hash": "CWdPAHzSzSOn41mazsiBMiY3O8/T3pdeH3NgYiPRcVE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.JobEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.JobEvent.html",
+          "hash": "nIorsdbn8DvAr8ySEFNk7EVwbQ8GVA7i64Q3+KeiG40="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.LocalEventListener-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.LocalEventListener-1.html",
+          "hash": "pYSOk8oMPovpdmjRhiyB6BO2cdryc8eo62yXJPTlVM8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.LocalEventListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.LocalEventListener.html",
+          "hash": "6plsUjqNeOVS+senQLmt+gy14WNiB2TPZAwbylQEjgA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.MemoryEventStorageSpi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.MemoryEventStorageSpi.html",
+          "hash": "+zdw/6x5+qYvvaICeOVpXjtdPYWFPLLJx90uR09Ulmw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.NoopEventStorageSpi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.NoopEventStorageSpi.html",
+          "hash": "ifx8HLDO+VnNFqVSEsgxuorcY7puKQy+ZmH9HMw8vyk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.TaskEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.TaskEvent.html",
+          "hash": "emcdMzbHJJy56OzxPmcHvwUI9OWT8yuM4nlz7htz4gE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Events.html",
+          "hash": "c/kngrq3gcehleh+Tg3B52JTPBX+Y/de0PQrW3W3o0k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Failure.IFailureHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Failure.IFailureHandler.html",
+          "hash": "3ZHMXPxeCe0EVLjidmfUSzCZGkLlyTaeDT6A9ki4J5k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Failure.NoOpFailureHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Failure.NoOpFailureHandler.html",
+          "hash": "ZSPNWaELXvq7GuSRcoQ1MZkvlW85u+xGP75+kTqIfTE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Failure.StopNodeFailureHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Failure.StopNodeFailureHandler.html",
+          "hash": "ZwnUpUAn0XJcXO1cNcmyXqr4YfLGNyOi/nXnf/tNl4Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Failure.StopNodeOrHaltFailureHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Failure.StopNodeOrHaltFailureHandler.html",
+          "hash": "6wER92ByGiIudJV5+k7LB8SRuuEBcjJhz5X6ui86GL8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Failure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Failure.html",
+          "hash": "HQYVUL8j7/ZLyFYdf3y90krZ1RxPXluJWVeo0tIXisU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.IDataRegionMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.IDataRegionMetrics.html",
+          "hash": "j8ODC2uNaPlHns0RMrt7ufCtYNp0Nn+vhk09tEozSA4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.IDataStorageMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.IDataStorageMetrics.html",
+          "hash": "ET1OQUh0LJkwHYA5dd0NQKtsQF95sZ3inJMi3VcT/8E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.IIgnite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.IIgnite.html",
+          "hash": "ozlhzJB8VWtS1yz42MK6Yh3es6CR3GcdINNzHkTX0s0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.IIgniteLock.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.IIgniteLock.html",
+          "hash": "5hALQthT184PiqMXerqxrKI9AiPx99+A5/q3GOiVheg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.IgniteConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.IgniteConfiguration.html",
+          "hash": "ejUz16DTDdt1cctrs1YTixFkgfDeBbPvk+ydjrXUVQ4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.IgniteConfigurationSection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.IgniteConfigurationSection.html",
+          "hash": "xOmTHVyfyd9DAQjpQokreFxzHYPV8pJE9+kx3GTdZqY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Ignition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Ignition.html",
+          "hash": "jmGeAYdS/yzN0IYxa7rVXZF9F5fR5aBC1wuRlt6P8uc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Interop.IPlatformTarget.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Interop.IPlatformTarget.html",
+          "hash": "MGSYpdMcwwlRPBPSmU14+gAmdUjan8kzihz1IowIez4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Interop.JavaObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Interop.JavaObject.html",
+          "hash": "sqX5jx57MyGnaZe19S/qJoqR4BDMlxiE7lkWyBcwTVc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Interop.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Interop.html",
+          "hash": "7Mkjl9I6TU/fMRTi2+33bIHR9pbviPHA2L0viQcbcfk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Lifecycle.ClientReconnectEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Lifecycle.ClientReconnectEventArgs.html",
+          "hash": "4NGgfl0OmffJxADAD70V3BuqeH1hhLMEp/QPrnMWuYs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Lifecycle.ILifecycleHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Lifecycle.ILifecycleHandler.html",
+          "hash": "n64lb+rKBjBXnNacpPtq2WMvbHLnjrFnR2TPdv21WcM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Lifecycle.LifecycleEventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Lifecycle.LifecycleEventType.html",
+          "hash": "tjFEvhRnAUe0fEtN2kFyGBkuRdTs35UPySFwxWDQmgE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Lifecycle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Lifecycle.html",
+          "hash": "KsJrLvokRWRc8Y+hFtMuIIsdI8/ic0iPeJ6ToHv6oT4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Log.CategoryLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Log.CategoryLogger.html",
+          "hash": "xMfGWWgd5WC9HWnnYbW6ei0nN3rbYUipTw5Bm6CyNAc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Log.ConsoleLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Log.ConsoleLogger.html",
+          "hash": "NfX1JyHtNe1N+ylZZjARBE9RuKzfjS+cmMUXijRYLFU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Log.IDateTimeProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Log.IDateTimeProvider.html",
+          "hash": "WzFcpg/drYm50kXYnfvBOdotOT/nW6ZMev5nstwiq1M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Log.ILogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Log.ILogger.html",
+          "hash": "BnsxO9QMNom7XMYHp6e4yr10Xa4bHlTb8kDVoDwy0G0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Log.LocalDateTimeProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Log.LocalDateTimeProvider.html",
+          "hash": "F+E/IK+HokzHJX0e1F7dbmfX0hO6kfFbLZfW+6vojmw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Log.LogLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Log.LogLevel.html",
+          "hash": "4mr1ExkkuUcr+gnpYaYClV/OlAqAUEq25US+n9MhH4E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Log.LoggerExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Log.LoggerExtensions.html",
+          "hash": "F8WVYFo00ZyhL+fe8PsfCETISfvlFLM6vqoBzFzJSQk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Log.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Log.html",
+          "hash": "ZViLvZCtuy/B5kMhU1aC1OcVRoL2pBlEL9qgWEU5Zhg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Messaging.IMessageListener-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Messaging.IMessageListener-1.html",
+          "hash": "lfQ8Zog38F/IkiFQiHrgsmuYSVUO6x/fXo+kMtwsHDg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Messaging.IMessaging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Messaging.IMessaging.html",
+          "hash": "q4lc/d9tdS2Lg7Bk6ueBPO38bLWGp6SQnguo4+lnxoo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Messaging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Messaging.html",
+          "hash": "QSMxMKrwYSLECtGYiOjrPVO2003q+SaermbvtQo0HOg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.PersistentStore.CheckpointWriteOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.PersistentStore.CheckpointWriteOrder.html",
+          "hash": "aSRKgYBP+okC2IRe4T4O7AsBb9T/SR8gf7Ah7SxQjBw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.PersistentStore.IPersistentStoreMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.PersistentStore.IPersistentStoreMetrics.html",
+          "hash": "lS2P5nAqxLZ0tbZQA6ukvFLRFlRfj20Ts09NuB0gD40="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.PersistentStore.PersistentStoreConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.PersistentStore.PersistentStoreConfiguration.html",
+          "hash": "UUf83iQLiBHfQoUtVfsuskSNO+TG+24C0oXpamRYYrE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.PersistentStore.WalMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.PersistentStore.WalMode.html",
+          "hash": "k0sILUMRuwdlRvJbUU13ET+xJxrSShnDiGjGATslEj8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.PersistentStore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.PersistentStore.html",
+          "hash": "L99FI7p953nfWfexEBJzdKwKit5IoDnMAEOlORcksFo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Platform.PlatformType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Platform.PlatformType.html",
+          "hash": "8Is/UyYNzbfcSaI6wcHCqhfg1++gKo7mK2Yxd00+bfw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Platform.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Platform.html",
+          "hash": "ck27jSLcAfesaxSaza3yh0mh4grzhyVLyS5tC8MEON4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Plugin.Cache.ICachePluginConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Plugin.Cache.ICachePluginConfiguration.html",
+          "hash": "coOq5588guQKjwBbXV2AGulbtIpG8cVTIqP9LphQrCI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Plugin.Cache.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Plugin.Cache.html",
+          "hash": "E2bAQh/H3kVH8oZ/cOQFhoqPRXF3lWS9WDN8+7tV/BY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Plugin.IPluginConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Plugin.IPluginConfiguration.html",
+          "hash": "+oFDoysNBejrXLz1fMmUq2h7K0rZkP9HMKSByZR2Gx0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Plugin.IPluginContext-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Plugin.IPluginContext-1.html",
+          "hash": "1L65H9sB09KbXUcKPcgrXiNMipQQB1YG9XZ0PmT+dqo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Plugin.IPluginProvider-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Plugin.IPluginProvider-1.html",
+          "hash": "NWqUAGum8zQ/GXR5GYZ273Q2OzFgogOr+HZtwGQ5YN4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Plugin.PluginCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Plugin.PluginCallback.html",
+          "hash": "8E/TLyF6p3wnw8UNFiWr8xaw17P6sZ4Y0aoq1s9GGsc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Plugin.PluginNotFoundException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Plugin.PluginNotFoundException.html",
+          "hash": "bK8GWGBQMprKxE46/pC6ZvO4XCCRtuBWrOSOXFkF0XQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Plugin.PluginProviderTypeAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Plugin.PluginProviderTypeAttribute.html",
+          "hash": "rNrh1aFbhUhkk7fK68m9Z64wHjQ7CYZ9CXRwsxkspoc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Plugin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Plugin.html",
+          "hash": "CMSU+LJDeMwL5rOleKBSeK8yAm8sMjnS/OfyG1ImkP0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Resource.InstanceResourceAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Resource.InstanceResourceAttribute.html",
+          "hash": "xJxEjMSSeSCm9kMbM0lPB5aK/TYvcc4Xgue3HjOQsto="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Resource.StoreSessionResourceAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Resource.StoreSessionResourceAttribute.html",
+          "hash": "++SyPHrAb3vcaIGWUiYoOeqcXPDpkW4D2eGaUPKnmk0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Resource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Resource.html",
+          "hash": "f1WwoRNlW/NWVk7NsSsU9aV0ObOEvJBYD/1+/tyDIH0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Services.IService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Services.IService.html",
+          "hash": "eRO+NBfoHNBIXb9nv00pVg3yg/b6qRjE4gwRAKv2oME="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Services.IServiceContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Services.IServiceContext.html",
+          "hash": "Y24h9FDbWlQmKm+44m1pGUlfm+nFEJa9sU/kPQpeyFg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Services.IServiceDescriptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Services.IServiceDescriptor.html",
+          "hash": "ONYhhQKAuyC96NZm8K2bfkbk3XFIRTWveYuPLNg/sZ8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Services.IServices.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Services.IServices.html",
+          "hash": "zWB9fdMrkrUeKaUjcVPHZChbuNHGnoQsfpYGeN2TYC0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Services.ServiceConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Services.ServiceConfiguration.html",
+          "hash": "aVZEiyPzgi/awRzgyfjrGSgk2wZ+9h1IljsnQFCrQFE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Services.ServiceDeploymentException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Services.ServiceDeploymentException.html",
+          "hash": "s0tN5k0rwQMuVocjqXY0zfIqoaH9y0luk3cNaejs0DE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Services.ServiceInvocationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Services.ServiceInvocationException.html",
+          "hash": "H7T5lMZ+erdTqYytzICK9UzdHyZJgwRT/qhNT3q27F0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Services.html",
+          "hash": "rbiKlQoOPs4Wep+LhVbXLT+u58RK3adI3WNoFeXcCIE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Ssl.ISslContextFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Ssl.ISslContextFactory.html",
+          "hash": "FmcrVyUHY9WvbU9XdIYNyGjDIPSnSkmBOReZcncsXaM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Ssl.SslContextFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Ssl.SslContextFactory.html",
+          "hash": "XgWuE6/QynRJ60R8bAuRgOp39d9dcleEzQH8exZIRbY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Ssl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Ssl.html",
+          "hash": "zqeeF96TwpEtslkBEQZ9UulhaKyUS7rzoyD7MNkyW8c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Transactions.ITransaction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Transactions.ITransaction.html",
+          "hash": "gI3YOfSsrAhqNSb7TKI6tnlCKkeRQU1f264+yO0cY8g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Transactions.ITransactionCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Transactions.ITransactionCollection.html",
+          "hash": "h/nQ1UBpiE/nDX16cJZbkJ6xe8iy7EZ6CFZA7RO2r/g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Transactions.ITransactionMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Transactions.ITransactionMetrics.html",
+          "hash": "DuTT0OkG4z0HAnT44vnvhMwYG8KtOFY+jg2xLV6phkI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Transactions.ITransactions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Transactions.ITransactions.html",
+          "hash": "RkPIgENXdWboDie6vIahJq6RtzDYOcRwXuIF7at/aa4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Transactions.TransactionConcurrency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Transactions.TransactionConcurrency.html",
+          "hash": "Mg6dbTTZ8GAOQ89FzJ3ccoSFHo89neA6N5TxwqqIBUs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Transactions.TransactionConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Transactions.TransactionConfiguration.html",
+          "hash": "v8plnY9MRVzTXu8/mvzEvvvLqp4bhT5albKE+61mkGQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Transactions.TransactionDeadlockException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Transactions.TransactionDeadlockException.html",
+          "hash": "dQeAGkUeymdXXKzqH8vfwIUNGJp9BmbpE3vBNeNkqJM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Transactions.TransactionHeuristicException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Transactions.TransactionHeuristicException.html",
+          "hash": "xW/pFvx3H7+6flbnrs9Dzk3yDLfXMYo0VJe0TlWoL4U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Transactions.TransactionIsolation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Transactions.TransactionIsolation.html",
+          "hash": "bHqakQDhqCGp75a8+Nl/AM488iH5LBemL6icFA9CeEw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Transactions.TransactionOptimisticException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Transactions.TransactionOptimisticException.html",
+          "hash": "aQScIRDNSOYnElVlwY53+r/AeHQ3indxWrldgEi8BBk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Transactions.TransactionRollbackException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Transactions.TransactionRollbackException.html",
+          "hash": "8pVkTDuxzMWKkv6HeF4vulKVzqPXo9+9CQCVLZ7Cl9k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Transactions.TransactionState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Transactions.TransactionState.html",
+          "hash": "O4SXyt9a4/zLT9u/aZLyiexU0T+DuXdxrqOCoYpuOCk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Transactions.TransactionTimeoutException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Transactions.TransactionTimeoutException.html",
+          "hash": "FRQ5hVWBW5P+CswtNu/oqXDtScp0WX4zv0gQnPqtjsY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.Transactions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.Transactions.html",
+          "hash": "XZZsQcBD1nDuDNMy3papv/OM27dDPw6/xuU/wCeY3GM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Core.html",
+          "hash": "WnN4SF8Qf8WfpSDi1mDgSWWsKVH4d1iMZ5qUaleh0+4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.EntityFramework.DbCachingMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.EntityFramework.DbCachingMode.html",
+          "hash": "uVrM9cWBiWjKQqpfiZeRVmbokoryaaDwZ5vOr0woBzw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.EntityFramework.DbCachingPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.EntityFramework.DbCachingPolicy.html",
+          "hash": "DUP0+GprJeGho+P7fdRjU/xPKKVVXi9YYO/ZsxXMs00="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.EntityFramework.DbQueryInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.EntityFramework.DbQueryInfo.html",
+          "hash": "8KuGhj5W6i+iSeXvoHhalgR7k86VGPYcXbcdxb74tzM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.EntityFramework.IDbCachingPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.EntityFramework.IDbCachingPolicy.html",
+          "hash": "G/F42lKccXWx/wHLeWCEJ/uQVvUSlyCwBFC89PvfuXA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.EntityFramework.IgniteDbConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.EntityFramework.IgniteDbConfiguration.html",
+          "hash": "Z5k8NtleM+uNiJMZz7XiMC5tPC07Fd+WAcFxGto6R5s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.EntityFramework.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.EntityFramework.html",
+          "hash": "QQQQpv1lW8p2N04r/H3HVgSiKzbnvQ9bGOwGx3Qo6B4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Linq.CacheClientLinqExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Linq.CacheClientLinqExtensions.html",
+          "hash": "MfAFQ9jRK1s0tXqt0d6sOTYuIGpd7RqhFG8dOF4nPrU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Linq.CacheLinqExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Linq.CacheLinqExtensions.html",
+          "hash": "RqDzgQ0fdc581DWDsOyBJXJpvTf9dj9PH+GfEWtHCYM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Linq.CompiledQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Linq.CompiledQuery.html",
+          "hash": "KeN03JyaVcyQKH65e5uCTfT3KL9eKIJ+1zSQgRyz4CI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Linq.CompiledQueryFunc-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Linq.CompiledQueryFunc-1.html",
+          "hash": "Exxiv+25/vnLWKMgK10GXeMA3tYL3OMIjKQvLsVOiOM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Linq.ICacheQueryable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Linq.ICacheQueryable.html",
+          "hash": "pgNHOwrg9O9xQ1BIDFtoAvMEkyxE04OokVJyxQEGDw0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Linq.IUpdateDescriptor-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Linq.IUpdateDescriptor-2.html",
+          "hash": "Yf+2oqrojVGYTYhWLUd02Q9p/mqyah1Z1hdEoMjO2cY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Linq.QueryOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Linq.QueryOptions.html",
+          "hash": "TkUHy9GdcGh4q6f6RNXNAGOc9fj3mFEQvhm/R5ZNfOc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Linq.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Linq.html",
+          "hash": "QeCX4g7AiODPyFqv8LpirX0i9GLgni9LjTRWZFI8DGc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Log4Net.IgniteLog4NetLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Log4Net.IgniteLog4NetLogger.html",
+          "hash": "zqm9Sdzi3LX/Bt8aO5/q1yex5tXsT9CHobyPDJoGepY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.Log4Net.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.Log4Net.html",
+          "hash": "hBjc+megvpvpGo6ot9q2xlQdoeALFWH52DWk3WyUxWY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.NLog.IgniteNLogLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.NLog.IgniteNLogLogger.html",
+          "hash": "BG/uKgGHAFb+UahzvQOkmcgRXinoXWyIisedx9/wLhY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Apache.Ignite.NLog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Apache.Ignite.NLog.html",
+          "hash": "yIl5dlkuYu9RgNHDv9RjqFAVaPBXDikTUczGcoOz3Fk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Cache.GridGainCachePluginConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Cache.GridGainCachePluginConfiguration.html",
+          "hash": "lCOYpX5AQRKPbKwWII/VEADikZRQJtNI6dwtvQB84zo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Cache.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Cache.html",
+          "hash": "+KFiKSuF1Ohf1eav7zmS3FPTFgqMXz5xIJ2+Y2F09wY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.CacheConflictMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.CacheConflictMode.html",
+          "hash": "BL7seeeji+6Qxu5RYEERA2RiQj8q3VBETpr3gWl0Q7Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.CacheDrPauseReason.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.CacheDrPauseReason.html",
+          "hash": "qWzLQ2hDsx7mARdtxAYhgJEwndziwk4CqNcHYtmwxuA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.CacheDrSenderConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.CacheDrSenderConfiguration.html",
+          "hash": "kVIs9hrqp4zUWi6COzjWpkys/FnMj/049HWKFZuQOaA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.DrReceiverConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.DrReceiverConfiguration.html",
+          "hash": "mxGNAxPCMLzbWAWCcSYy/EhME3TacqKBAO8SpWYHys8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.DrReceiverLoadBalancingMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.DrReceiverLoadBalancingMode.html",
+          "hash": "Y0OqsRONO1ib6/9fvAJ+oj5ne8MBjrZct8Lh9J0Bh38="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.DrSenderConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.DrSenderConfiguration.html",
+          "hash": "wGikbME2W/BX8wDUWzFT1oV+b0CnBRh/VyBgLdMDK/A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.DrSenderConnectionConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.DrSenderConnectionConfiguration.html",
+          "hash": "N+B2GNNbuvd5JE7lH/sp0SnMaOF68ug1ey677hl9DeQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.DrSenderLoadBalancingMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.DrSenderLoadBalancingMode.html",
+          "hash": "M9enR+eDsz61wHFZfG52/4ygiUt6g/mpn+yOCD0t7S4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.ICacheDrEntry-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.ICacheDrEntry-2.html",
+          "hash": "YeldzKme9r2FrOZ4upKutyBVujA5JIRLn5aHUB1md7A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.ICacheDrEntryFilter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.ICacheDrEntryFilter-2.html",
+          "hash": "ZnbkBAJI/q8b1VGjDzJcjPEqoVN9ePkXTbxjQwwgO98="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.ICacheDrEntryFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.ICacheDrEntryFilter.html",
+          "hash": "9pcBYZQYtSbxb2bDCsxf/RPMw29q9ed0kPXBZGOvdXI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.ICacheDrReceiverMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.ICacheDrReceiverMetrics.html",
+          "hash": "3qKa9Yf1Hihdz7m0RmYoRymbfH0UTkB8Ji8zp4+A9h8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.ICacheDrSenderMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.ICacheDrSenderMetrics.html",
+          "hash": "LttQCi58nQ390m8ZN4b940Za0Rg0Y5PtWa3ooAZITBY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.ICacheDrStateTransfer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.ICacheDrStateTransfer.html",
+          "hash": "q1uFtofl5b3TCHDEhU7jgaaxIjYuSULCupMVn7MI0bU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.ICacheDrStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.ICacheDrStatus.html",
+          "hash": "ZT2LtjXJ14wZAuVlzXIy9+CIibilLFL5eRrScHpZpiI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.IDataCenterReplication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.IDataCenterReplication.html",
+          "hash": "+dVYMB8iwv8X0o9JGAIFJe34b5mO7D8KH93k75Z8Hr0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.IDrReceiverInMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.IDrReceiverInMetrics.html",
+          "hash": "wu8I6tBfEWOPirCAcFZv8//1EPq6yjOzaWUoKLUEXXA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.html",
+          "hash": "lQUKSpxk5VGeL1XN6xR0z1zLDi5PWqqbh30iiIZylTk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.IDrSenderInMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.IDrSenderInMetrics.html",
+          "hash": "AidM7C+t4/i5u5jZqzfDJKqVfgPx0PLk4oC4vNdUGE4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.IDrSenderOutMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.IDrSenderOutMetrics.html",
+          "hash": "Mr/35ysUX+aZmKSmHjH+VbLW8LBu6FWtwOeTRgvZBJo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.DataCenterReplication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.DataCenterReplication.html",
+          "hash": "ltA/AHwJxvVeU6JKQ3bFsdsvUZdxBBiirluYP9ype5A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.GridGainPluginConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.GridGainPluginConfiguration.html",
+          "hash": "+PXcwln5tdFopp0jfnkLbkI+pii/2mApXwfabaC4sgo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.IGridGain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.IGridGain.html",
+          "hash": "PAmwXm1nU4Rfi/LmkrxYd5McgzlmWeXGHOIV2IXygN4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.IgniteExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.IgniteExtensions.html",
+          "hash": "NW7D+K2cYM5DqS4rb7qhdFWaBz/JGv4iRHjytSqbB4s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.PersistentStore.ISnapshot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.PersistentStore.ISnapshot.html",
+          "hash": "J2rdbD+hhIPHG9WlCKB7TX2Br+en2ebVIqbdR8nRCD4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.PersistentStore.ISnapshotInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.PersistentStore.ISnapshotInfo.html",
+          "hash": "2JaSrxUKRhxFgKYL+jjz5pmA4e66veY2gohOooTmBQg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.PersistentStore.ISnapshotIssue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.PersistentStore.ISnapshotIssue.html",
+          "hash": "UBnrm/68QJrZRUpyHjFe4BGLO1tlhVAMsbhCR0i2pTM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.PersistentStore.ISnapshotOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.PersistentStore.ISnapshotOperation.html",
+          "hash": "40ONOVIQfgibYTwKWxcOrPcS8QAZIC0/1c5BwhUBf2Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.PersistentStore.ISnapshotStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.PersistentStore.ISnapshotStatus.html",
+          "hash": "7D8dLesKXNts+47MWkoQzAcHguif171xK1fuTJXbBW0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.PersistentStore.ISnapshotTask-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.PersistentStore.ISnapshotTask-1.html",
+          "hash": "pZ/UvSpslXFHk6UBzkkKk3+EaPcfCgE7G/3ygr8vWuU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.PersistentStore.ISnapshotTask.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.PersistentStore.ISnapshotTask.html",
+          "hash": "mhmto4v3bxtsuSaGrg3jNB1Sl9u5VTIbLmcAcUOtaxQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.PersistentStore.SnapshotConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.PersistentStore.SnapshotConfiguration.html",
+          "hash": "ZgBbl0hP5bbGIM37pa2cEuSrrdWwl01GJknAuCAjqJk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.PersistentStore.SnapshotOperationType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.PersistentStore.SnapshotOperationType.html",
+          "hash": "8LV8fQK482mCL46C1z++LcRD6FmGERwy47U9sZyMiUE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.PersistentStore.SnapshotsCatalogConnectorConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.PersistentStore.SnapshotsCatalogConnectorConfiguration.html",
+          "hash": "+8y6mkyzp/mBbjIkOYO3og686Ad82MZrkk5mdWOog+E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.PersistentStore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.PersistentStore.html",
+          "hash": "HMzqqjK+xyqqfR/fcUFqdlpo1aYn5n5qkKQhNKWViHo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Product.IProduct.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Product.IProduct.html",
+          "hash": "xj1x/W9SDB57cDHqNen4moqM4cZfaEltVDT9GQ0HaUY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Product.IProductLicense.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Product.IProductLicense.html",
+          "hash": "o497V2BbnyQJVKUW70A3SZQ0COjeSNDgplvIjeNCD9I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Product.ProductLicenseException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Product.ProductLicenseException.html",
+          "hash": "178BmwCrovBGXMBEukEvzdpXuEHmKAF9oSK9UhrU910="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Product.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Product.html",
+          "hash": "WP7SO/N1JKArtTnRjNIlgsD45Mtclm47NhgptjTJs68="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Security.AuthenticationAclBasicProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Security.AuthenticationAclBasicProvider.html",
+          "hash": "wjQOMWovkSi1t1oLoj+3d5krcbITOCn+GT2C3RazJ3w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Security.IAuthenticationAclProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Security.IAuthenticationAclProvider.html",
+          "hash": "F8VM8yATe8IOoWvJPEZ8NNCWrtpFttqhMn1pXRYiYRg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Security.IAuthenticator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Security.IAuthenticator.html",
+          "hash": "+RC8tsp7aG/GzQsxmWZnNqyav+7XtArg2bheglF9Bkc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Security.ISecurity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Security.ISecurity.html",
+          "hash": "2BSeHJpHAele9jl/N2Je+BPFIz8JwwDPOK97UaEtXJY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Security.ISecurityCredentialsProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Security.ISecurityCredentialsProvider.html",
+          "hash": "g14dyZOf7wC65GlIlbV4+tRXrJc3kjU8IX/0w/PjORM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Security.ISecurityPermissionSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Security.ISecurityPermissionSet.html",
+          "hash": "1b8qWNV1iXRNsZ/zrpZUeaqsA3FoiJ3iDgirqWopN/Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Security.ISecuritySubject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Security.ISecuritySubject.html",
+          "hash": "HcXNvwBmnKF0Bc6SdnRnveb/SkWLvHqhBTszENDV7gQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Security.PasscodeAuthenticator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Security.PasscodeAuthenticator.html",
+          "hash": "/XWa7fGvSrGNLPPjLbvSX3pGuZRaqvRm7CEbC7UEy1s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Security.SecurityCredentials.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Security.SecurityCredentials.html",
+          "hash": "+AR9iF4UJX32M2QX+XuLA8QqeGFMkx9XwSHwoAHZU+s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Security.SecurityCredentialsBasicProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Security.SecurityCredentialsBasicProvider.html",
+          "hash": "XMVgaugNKNECIcdyuFVsEdqiibAL9Ozc5ols3gfBwZ0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Security.SecurityPermission.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Security.SecurityPermission.html",
+          "hash": "XqMZAqUWhCwWzhv+p3lluJQPAwB6aInGc+lXJdTjp40="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Security.SecurityPermissionSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Security.SecurityPermissionSet.html",
+          "hash": "tm0iND2FuNJ4jpck60av1D7rg+iPTKBP+7J0gombPMk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Security.SecuritySubjectType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Security.SecuritySubjectType.html",
+          "hash": "QLVux0MzzHg3fUXtCE57GtSOb7yc24Z4SP6i+6hoWRM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.Security.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.Security.html",
+          "hash": "pxWGJpRCDSuybZCyMU9reTsFsLDwIiG3lfcHr6dXMQE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GridGain.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GridGain.Core.html",
+          "hash": "cAg94i3pBkNfXgn9RA6XWLbDeOqOvFcGW5nS1/Hq8KM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "BbpskyL7rPoSgHCDCo+xSfLqNEbX5WwYjAcpRdzTXk0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "xybhC1XpTooYESQWfChk69O4wv/5AOHyJjjoKuLJY88="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon.ico"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo_gg_40x50.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo_gg_40x50.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "z9pzOhGOxywKlJ4RJjazkxcsERznAlwEzqwOyczYi3I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "ImFEbFqV65oopjZ/wtDDkoFOptvlXXPTFoe0QFSFRbY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 2,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 406,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -1,0 +1,957 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IDataCenterReplication
+   | GridGain.NET </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IDataCenterReplication
+   | GridGain.NET ">
+    <meta name="generator" content="docfx 2.59.1.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo_gg_40x50.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication">
+  
+  
+  <h1 id="GridGain_Core_DataCenterReplication_IDataCenterReplication" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication" class="text-break">Interface IDataCenterReplication
+  </h1>
+  <div class="markdown level0 summary"><p>Data Center Replication (DR) interface.
+<p>
+DR is a process of transferring updates from a cache located in one topology to a cache located 
+in another topology. Usual use case for DR is synchronizing cache state between several geographically 
+remote topologies through WAN.
+<p>
+DR operates on the following terms:
+<strong>Data center</strong> - particular GridGain topology with unique ID;
+<strong>Sender cache</strong> - cache from which data is being replicated;
+<strong>Receiver cache</strong> - cache which applies updates from remote data center;
+<strong>Sender hub</strong> - node which accumulates updates from sender data nodes and sends that to 
+receiver hub in remote data center;
+<strong>receiver hub</strong> - node which receives updates from remote data center sender hub 
+and applies them to receiver data nodes.
+<p>
+Cache is considered as sender in case it has DrSenderConfiguration, and it is considered 
+as receiver cache in case DrReceiverEnabled is true.
+<p>
+Node is considered as sender hub in case it has DrSenderConfiguration, and it is considered 
+as receiver hub in case it has DrReceiverConfiguration.
+<p>
+Particular cache can be both sender and receiver at the same time. Particular node can be both sender 
+and receiver hub and host sender/receiver caches at the same time.
+<p>
+This API provides ability to manage DR process on sender cache node as well as get metrics for sender cache,
+receiver cache, sender hub and receiver hub.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GridGain.Core.DataCenterReplication.html">GridGain.Core.DataCenterReplication</a></h6>
+  <h6><strong>Assembly</strong>: GridGain.Core.dll</h6>
+  <h5 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IDataCenterReplication</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetReceiverAggregatedInMetrics_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetReceiverAggregatedInMetrics*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetReceiverAggregatedInMetrics" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetReceiverAggregatedInMetrics">GetReceiverAggregatedInMetrics()</h4>
+  <div class="markdown level1 summary"><p>Gets receiver hub incoming data metrics aggregated across all remote data centers and cache names.
+<p>
+In case node is not receiver hub then <span class="xref">System.InvalidOperationException</span> will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDrReceiverInMetrics GetReceiverAggregatedInMetrics()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.DataCenterReplication.IDrReceiverInMetrics.html">IDrReceiverInMetrics</a></td>
+        <td><p>Receiver hub incoming data metrics.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetReceiverAggregatedInMetrics_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetReceiverAggregatedInMetrics*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetReceiverAggregatedInMetrics_System_Byte_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetReceiverAggregatedInMetrics(System.Byte)">GetReceiverAggregatedInMetrics(Byte)</h4>
+  <div class="markdown level1 summary"><p>Gets receiver hub incoming data metrics aggregated across all cache names for the given remote data center.
+<p>
+In case node is not receiver hub then <span class="xref">System.InvalidOperationException</span> will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDrReceiverInMetrics GetReceiverAggregatedInMetrics(byte srcDataCenterId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span></td>
+        <td><span class="parametername">srcDataCenterId</span></td>
+        <td><p>Remote data center ID.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.DataCenterReplication.IDrReceiverInMetrics.html">IDrReceiverInMetrics</a></td>
+        <td><p>Receiver hub incoming data metrics.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetReceiverAggregatedInMetrics_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetReceiverAggregatedInMetrics*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetReceiverAggregatedInMetrics_System_String_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetReceiverAggregatedInMetrics(System.String)">GetReceiverAggregatedInMetrics(String)</h4>
+  <div class="markdown level1 summary"><p>Gets receiver hub incoming data metrics aggregated across all remote data centers for the given cache name.
+<p>
+In case node is not receiver hub then <span class="xref">System.InvalidOperationException</span> will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDrReceiverInMetrics GetReceiverAggregatedInMetrics(string cacheName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">cacheName</span></td>
+        <td><p>Cache name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.DataCenterReplication.IDrReceiverInMetrics.html">IDrReceiverInMetrics</a></td>
+        <td><p>Receiver hub incoming data metrics.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetReceiverAggregatedOutMetrics_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetReceiverAggregatedOutMetrics*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetReceiverAggregatedOutMetrics" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetReceiverAggregatedOutMetrics">GetReceiverAggregatedOutMetrics()</h4>
+  <div class="markdown level1 summary"><p>Gets receiver hub outgoing data metrics aggregated across all receiver caches.
+<p>
+In case node is not receiver hub then <span class="xref">System.InvalidOperationException</span> will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDrReceiverOutMetrics GetReceiverAggregatedOutMetrics()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.html">IDrReceiverOutMetrics</a></td>
+        <td><p>Receiver hub outgoing data metrics.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetReceiverCacheMetrics_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetReceiverCacheMetrics*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetReceiverCacheMetrics_System_String_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetReceiverCacheMetrics(System.String)">GetReceiverCacheMetrics(String)</h4>
+  <div class="markdown level1 summary"><p>Gets receiver cache metrics.
+<p>
+In case node doesn&apos;t have cache with the given name then <span class="xref">System.ArgumentException</span> will be thrown,
+and if this cache is not receiver cache then <span class="xref">System.InvalidOperationException</span> will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ICacheDrReceiverMetrics GetReceiverCacheMetrics(string cacheName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">cacheName</span></td>
+        <td><p>Cache name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.DataCenterReplication.ICacheDrReceiverMetrics.html">ICacheDrReceiverMetrics</a></td>
+        <td><p>Receiver cache metrics.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetReceiverInMetrics_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetReceiverInMetrics*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetReceiverInMetrics_System_Byte_System_String_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetReceiverInMetrics(System.Byte,System.String)">GetReceiverInMetrics(Byte, String)</h4>
+  <div class="markdown level1 summary"><p>Gets receiver hub incoming data metrics for the given remote data center and cache name.
+<p>
+In case node is not receiver hub then <span class="xref">System.InvalidOperationException</span> will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDrReceiverInMetrics GetReceiverInMetrics(byte srcDataCenterId, string cacheName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span></td>
+        <td><span class="parametername">srcDataCenterId</span></td>
+        <td><p>Remote data center ID.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">cacheName</span></td>
+        <td><p>Cache name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.DataCenterReplication.IDrReceiverInMetrics.html">IDrReceiverInMetrics</a></td>
+        <td><p>Receiver hub incoming data metrics.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetReceiverOutMetrics_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetReceiverOutMetrics*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetReceiverOutMetrics_System_String_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetReceiverOutMetrics(System.String)">GetReceiverOutMetrics(String)</h4>
+  <div class="markdown level1 summary"><p>Gets receiver hub outgoing data metrics for the given cache name.
+<p>
+In case node is not receiver hub then <span class="xref">System.InvalidOperationException</span> will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDrReceiverOutMetrics GetReceiverOutMetrics(string cacheName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">cacheName</span></td>
+        <td><p>Cache name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.html">IDrReceiverOutMetrics</a></td>
+        <td><p>Receiver hub outgoing data metrics.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetSenderAggregatedInMetrics_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetSenderAggregatedInMetrics*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetSenderAggregatedInMetrics" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetSenderAggregatedInMetrics">GetSenderAggregatedInMetrics()</h4>
+  <div class="markdown level1 summary"><p>Gets sender hub incoming data metrics aggregated across all caches.
+<p>
+In case node is not sender hub then <span class="xref">System.InvalidOperationException</span> will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDrSenderInMetrics GetSenderAggregatedInMetrics()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.DataCenterReplication.IDrSenderInMetrics.html">IDrSenderInMetrics</a></td>
+        <td><p>Sender hub incoming data metrics.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetSenderAggregatedOutMetrics_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetSenderAggregatedOutMetrics*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetSenderAggregatedOutMetrics" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetSenderAggregatedOutMetrics">GetSenderAggregatedOutMetrics()</h4>
+  <div class="markdown level1 summary"><p>Gets sender hub outgoing data metrics aggregated across all remote data centers and cache names.
+<p>
+In case node is not sender hub then <span class="xref">System.InvalidOperationException</span> will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDrSenderOutMetrics GetSenderAggregatedOutMetrics()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.DataCenterReplication.IDrSenderOutMetrics.html">IDrSenderOutMetrics</a></td>
+        <td><p>Sender hub outgoing data metrics.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetSenderAggregatedOutMetrics_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetSenderAggregatedOutMetrics*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetSenderAggregatedOutMetrics_System_Byte_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetSenderAggregatedOutMetrics(System.Byte)">GetSenderAggregatedOutMetrics(Byte)</h4>
+  <div class="markdown level1 summary"><p>Gets sender hub outgoing data metrics aggregated across all cache names for the given remote data center ID.
+<p>
+In case node is not sender hub then <span class="xref">System.InvalidOperationException</span> will be thrown.
+If this sender hub does not work with the given data center <span class="xref">System.ArgumentException</span> will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDrSenderOutMetrics GetSenderAggregatedOutMetrics(byte destDataCenterId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span></td>
+        <td><span class="parametername">destDataCenterId</span></td>
+        <td><p>Remote data center ID.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.DataCenterReplication.IDrSenderOutMetrics.html">IDrSenderOutMetrics</a></td>
+        <td><p>Sender hub incoming data metrics.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetSenderAggregatedOutMetrics_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetSenderAggregatedOutMetrics*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetSenderAggregatedOutMetrics_System_String_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetSenderAggregatedOutMetrics(System.String)">GetSenderAggregatedOutMetrics(String)</h4>
+  <div class="markdown level1 summary"><p>Gets sender hub outgoing data metrics aggregated across all remote data centers for the given cache name.
+<p>
+In case node is not sender hub then <span class="xref">System.InvalidOperationException</span> will be thrown.
+If this sender hub does not work with the given cache <span class="xref">System.ArgumentException</span> will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDrSenderOutMetrics GetSenderAggregatedOutMetrics(string cacheName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">cacheName</span></td>
+        <td><p>Cache name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.DataCenterReplication.IDrSenderOutMetrics.html">IDrSenderOutMetrics</a></td>
+        <td><p>Sender hub incoming data metrics.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetSenderCacheMetrics_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetSenderCacheMetrics*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetSenderCacheMetrics_System_String_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetSenderCacheMetrics(System.String)">GetSenderCacheMetrics(String)</h4>
+  <div class="markdown level1 summary"><p>Gets sender cache metrics.
+<p>
+In case node doesn&apos;t have cache with the given name then <span class="xref">System.ArgumentException</span> will be thrown,
+and if this cache is not sender cache then <span class="xref">System.InvalidOperationException</span> will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ICacheDrSenderMetrics GetSenderCacheMetrics(string cacheName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">cacheName</span></td>
+        <td><p>Cache name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.DataCenterReplication.ICacheDrSenderMetrics.html">ICacheDrSenderMetrics</a></td>
+        <td><p>Sender cache metrics.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetSenderCacheStatus_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetSenderCacheStatus*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetSenderCacheStatus_System_String_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetSenderCacheStatus(System.String)">GetSenderCacheStatus(String)</h4>
+  <div class="markdown level1 summary"><p>Gets data center replication status for particular sender cache.
+<p>
+In case node doesn&apos;t have cache with the given name then <span class="xref">System.ArgumentException</span> will be thrown,
+and if this cache is not sender cache or grid is stopping then <span class="xref">System.InvalidOperationException</span>
+will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ICacheDrStatus GetSenderCacheStatus(string cacheName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">cacheName</span></td>
+        <td><p>Cache name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.DataCenterReplication.ICacheDrStatus.html">ICacheDrStatus</a></td>
+        <td><p>Data center replication status.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetSenderInMetrics_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetSenderInMetrics*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetSenderInMetrics_System_String_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetSenderInMetrics(System.String)">GetSenderInMetrics(String)</h4>
+  <div class="markdown level1 summary"><p>Gets sender hub incoming data metrics for specified sender cache.
+<p>
+In case node is not sender hub then <span class="xref">System.InvalidOperationException</span> will be thrown.
+If this sender hub does not work with the given cache <span class="xref">System.ArgumentException</span> will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDrSenderInMetrics GetSenderInMetrics(string cacheName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">cacheName</span></td>
+        <td><p>Cache name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.DataCenterReplication.IDrSenderInMetrics.html">IDrSenderInMetrics</a></td>
+        <td><p>Sender hub incoming data metrics.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetSenderOutMetrics_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetSenderOutMetrics*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetSenderOutMetrics_System_Byte_System_String_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetSenderOutMetrics(System.Byte,System.String)">GetSenderOutMetrics(Byte, String)</h4>
+  <div class="markdown level1 summary"><p>Gets sender hub outgoing data metrics for the given remote data center ID and cache name.
+<p>
+In case node is not sender hub then <span class="xref">System.InvalidOperationException</span> will be thrown.
+If this sender hub does not work with the given data center or cache <span class="xref">System.ArgumentException</span>
+will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDrSenderOutMetrics GetSenderOutMetrics(byte destDataCenterId, string cacheName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span></td>
+        <td><span class="parametername">destDataCenterId</span></td>
+        <td><p>Remote data center ID.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">cacheName</span></td>
+        <td><p>Cache name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GridGain.Core.DataCenterReplication.IDrSenderOutMetrics.html">IDrSenderOutMetrics</a></td>
+        <td><p>Sender hub incoming data metrics.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetStateTransfers_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetStateTransfers*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_GetStateTransfers_System_String_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.GetStateTransfers(System.String)">GetStateTransfers(String)</h4>
+  <div class="markdown level1 summary"><p>List all currently active state transfer for the given sender cache.
+<p>
+In case node doesn&apos;t have cache with the given name then <span class="xref">System.ArgumentException</span> will be thrown,
+and if this cache is not sender cache or grid is stopping then <span class="xref">System.InvalidOperationException</span>
+will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ICollection&lt;ICacheDrStateTransfer&gt; GetStateTransfers(string cacheName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">cacheName</span></td>
+        <td><p>Cache name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<a class="xref" href="GridGain.Core.DataCenterReplication.ICacheDrStateTransfer.html">ICacheDrStateTransfer</a>&gt;</td>
+        <td><p>All currently active state transfers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_Pause_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.Pause*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_Pause_System_String_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.Pause(System.String)">Pause(String)</h4>
+  <div class="markdown level1 summary"><p>Pauses data center replication for particular sender cache. 
+<p> 
+In case node doesn&apos;t have cache with the given name then <span class="xref">System.ArgumentException</span> will be thrown,
+and if this cache is not sender cache or grid is stopping then <span class="xref">System.InvalidOperationException</span>
+will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Pause(string cacheName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">cacheName</span></td>
+        <td><p>Cache name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_ResetMetrics_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.ResetMetrics*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_ResetMetrics" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.ResetMetrics">ResetMetrics()</h4>
+  <div class="markdown level1 summary"><p>Reset all sender hub and receiver hub metrics on this node. In case this node is neither sender hub, nor 
+receiver hub, the method is no-op. </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ResetMetrics()</code></pre>
+  </div>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_Resume_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.Resume*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_Resume_System_String_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.Resume(System.String)">Resume(String)</h4>
+  <div class="markdown level1 summary"><p>Resumes data center replication for particular sender cache. 
+<p> 
+In case node doesn&apos;t have cache with the given name then <span class="xref">System.ArgumentException</span> will be thrown,
+and if this cache is not sender cache or grid is stopping then <span class="xref">System.InvalidOperationException</span>
+will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Resume(string cacheName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">cacheName</span></td>
+        <td><p>Cache name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDataCenterReplication_StartStateTransferAsync_" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.StartStateTransferAsync*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDataCenterReplication_StartStateTransferAsync_System_String_System_Byte___" data-uid="GridGain.Core.DataCenterReplication.IDataCenterReplication.StartStateTransferAsync(System.String,System.Byte[])">StartStateTransferAsync(String, Byte[])</h4>
+  <div class="markdown level1 summary"><p>Starts full state transfer for the given sender cache.
+<p>
+In case node doesn&apos;t have cache with the given name or this cache is not sender cache,
+an exception will be thrown.
+<p> Only one state transfer for particular cache and data center is allowed at a time.
+In case another state transfer for the given cache and data center had been already in progress when
+this method was called, then no new state transfer for this (cache name, data center) pair
+will be initiated and returned task will &quot;join&quot; existing state transfer.
+<p>
+In case node doesn&apos;t have cache with the given name then <span class="xref">System.ArgumentException</span> will be thrown,
+and if this cache is not sender cache or grid is stopping then <span class="xref">System.InvalidOperationException</span>
+will be thrown.  </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task StartStateTransferAsync(string cacheName, params byte[] dataCenterIds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">cacheName</span></td>
+        <td><p>Sender cache name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">dataCenterIds</span></td>
+        <td><p>Remote data center IDs for which full state transfer was requested.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>Task that will be completed when all required data is transferred from sender caches to sender hubs.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            © 2022 GridGain Systems, Inc. and Contributors
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

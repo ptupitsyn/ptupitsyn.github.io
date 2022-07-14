@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IDrReceiverOutMetrics
+   | GridGain.NET </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IDrReceiverOutMetrics
+   | GridGain.NET ">
+    <meta name="generator" content="docfx 2.59.1.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo_gg_40x50.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics">
+  
+  
+  <h1 id="GridGain_Core_DataCenterReplication_IDrReceiverOutMetrics" data-uid="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics" class="text-break">Interface IDrReceiverOutMetrics
+  </h1>
+  <div class="markdown level0 summary"><p>Data center replication receiver hub metrics for outgoing data, i.e. data transferred from receiver hub to 
+receiver caches.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GridGain.Core.DataCenterReplication.html">GridGain.Core.DataCenterReplication</a></h6>
+  <h6><strong>Assembly</strong>: GridGain.Core.dll</h6>
+  <h5 id="GridGain_Core_DataCenterReplication_IDrReceiverOutMetrics_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IDrReceiverOutMetrics</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="GridGain_Core_DataCenterReplication_IDrReceiverOutMetrics_AverageBatchAckTime_" data-uid="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.AverageBatchAckTime*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDrReceiverOutMetrics_AverageBatchAckTime" data-uid="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.AverageBatchAckTime">AverageBatchAckTime</h4>
+  <div class="markdown level1 summary"><p>Gets average time in milliseconds between sending batch to receiver cache nodes and successfully storing it. </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">double AverageBatchAckTime { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>Average time in milliseconds between sending batch to receiver cache nodes and successfully storing it. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDrReceiverOutMetrics_BatchesAcknowledged_" data-uid="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.BatchesAcknowledged*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDrReceiverOutMetrics_BatchesAcknowledged" data-uid="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.BatchesAcknowledged">BatchesAcknowledged</h4>
+  <div class="markdown level1 summary"><p>Gets amount of batches stored in receiver caches. </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int BatchesAcknowledged { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Amount of batches stored in receiver caches. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDrReceiverOutMetrics_BatchesSent_" data-uid="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.BatchesSent*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDrReceiverOutMetrics_BatchesSent" data-uid="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.BatchesSent">BatchesSent</h4>
+  <div class="markdown level1 summary"><p>Gets amount of batches waiting to be stored in receiver caches. </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int BatchesSent { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Amount of batches waiting to be stored in receiver caches. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDrReceiverOutMetrics_BytesAcknowledged_" data-uid="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.BytesAcknowledged*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDrReceiverOutMetrics_BytesAcknowledged" data-uid="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.BytesAcknowledged">BytesAcknowledged</h4>
+  <div class="markdown level1 summary"><p>Gets amount of bytes stored in receiver caches. </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">long BytesAcknowledged { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>Amount of bytes stored in receiver caches. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDrReceiverOutMetrics_BytesSent_" data-uid="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.BytesSent*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDrReceiverOutMetrics_BytesSent" data-uid="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.BytesSent">BytesSent</h4>
+  <div class="markdown level1 summary"><p>Gets amount of bytes waiting to be stored. </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">long BytesSent { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>Amount of bytes waiting to be stored. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDrReceiverOutMetrics_EntriesAcknowledged_" data-uid="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.EntriesAcknowledged*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDrReceiverOutMetrics_EntriesAcknowledged" data-uid="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.EntriesAcknowledged">EntriesAcknowledged</h4>
+  <div class="markdown level1 summary"><p>Gets amount of cache entries stored in receiver caches. </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">long EntriesAcknowledged { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>Amount of cache entries stored in receiver caches. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="GridGain_Core_DataCenterReplication_IDrReceiverOutMetrics_EntriesSent_" data-uid="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.EntriesSent*"></a>
+  <h4 id="GridGain_Core_DataCenterReplication_IDrReceiverOutMetrics_EntriesSent" data-uid="GridGain.Core.DataCenterReplication.IDrReceiverOutMetrics.EntriesSent">EntriesSent</h4>
+  <div class="markdown level1 summary"><p>Gets amount of entries waiting to be stored in receiver caches. </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">long EntriesSent { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>Amount of entries waiting to be stored in receiver caches. </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            © 2022 GridGain Systems, Inc. and Contributors
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
