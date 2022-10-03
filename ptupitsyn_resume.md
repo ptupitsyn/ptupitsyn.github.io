@@ -17,6 +17,7 @@ permalink: /resume/
 * GitHub: [github.com/ptupitsyn](https://github.com/ptupitsyn)
 * StackOverflow: [stackoverflow.com/users/305020/pavel-tupitsyn](https://stackoverflow.com/users/305020/pavel-tupitsyn)
 * DotNext talk "Reducing network overhead in distributed .NET applications: An efficient approach to data handling": [youtube.com/watch?v=2KVLNSIyPF0](https://www.youtube.com/watch?v=2KVLNSIyPF0)
+* DotNext talk "Implementing High Performance Database Driver": [youtube.com/watch?v=V-rwvPQZnUM](https://www.youtube.com/watch?v=V-rwvPQZnUM)
 
 ## Professional Experience
 
