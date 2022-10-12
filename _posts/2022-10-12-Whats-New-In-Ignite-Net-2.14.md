@@ -8,7 +8,12 @@ title: What's new in Apache Ignite.NET 2.14
 
 # Service Interceptors (Middleware)
 
-TODO: Thin AND thick client or not?
+[Ignite Services API](https://ignite.apache.org/features/service-apis.html) provides a powerful mechanism for implementing distributed service-oriented applications.
+Those applications typically need to deal with a number of [cross-cutting concerns](https://en.wikipedia.org/wiki/Cross-cutting_concern), such as logging, monitoring, authentication/authorization, validation, and so on.
+
+ 
+
+TODO: Cross-cutting concerns
 
 More details:
 
