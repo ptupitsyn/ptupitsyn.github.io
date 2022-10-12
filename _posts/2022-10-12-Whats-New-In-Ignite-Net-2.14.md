@@ -4,7 +4,7 @@ title: What's new in Apache Ignite.NET 2.14
 ---
 
 [Apache Ignite](https://ignite.apache.org/) 2.14 [has been released](https://lists.apache.org/thread/s4l32s59no8lx689y921o47xdtg8g3n3).
-.NET updates include Service Interceptors and AtomicLong.
+.NET updates include Service Interceptors and Thin Client Data Structures.
 
 # Service Interceptors (Middleware)
 
@@ -53,7 +53,9 @@ More details:
 * [ServiceConfiguration.Interceptors](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Services.ServiceConfiguration.html#Apache_Ignite_Core_Services_ServiceConfiguration_Interceptors)
 * [IServiceCallInterceptor](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Services.IServiceCallInterceptor.html)
 
-# AtomicLong in Thin Client 
+# Distributed Data Structures in Thin Client
+
+TODO: AtomicLong, IgniteSet
 
 More details:
 
