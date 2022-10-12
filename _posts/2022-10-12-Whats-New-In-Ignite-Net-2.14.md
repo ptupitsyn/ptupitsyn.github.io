@@ -53,9 +53,29 @@ More details:
 * [ServiceConfiguration.Interceptors](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Services.ServiceConfiguration.html#Apache_Ignite_Core_Services_ServiceConfiguration_Interceptors)
 * [IServiceCallInterceptor](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Services.IServiceCallInterceptor.html)
 
+
 # Distributed Data Structures in Thin Client
 
-TODO: AtomicLong, IgniteSet
+Data structures are coming to thin clients! Java and .NET clients now have access to AtomicLong and IgniteSet.
+
+## AtomicLong
+
+Cluster-wide thread-safe number. Can be used as an ID generator, counter, and so on. All nodes see the same value and can perform updates atomically.
+
+```csharp
+var atomicLong = Client.GetAtomicLong(name: "my-id", initialValue: 1, create: true);
+
+Assert.AreEqual(2, atomicLong.Increment());
+Assert.AreEqual(2, atomicLong.Read());
+
+Assert.AreEqual(1, atomicLong.Decrement());
+Assert.AreEqual(1, atomicLong.Read());
+
+Assert.AreEqual(101, atomicLong.Add(100));
+Assert.AreEqual(101, atomicLong.Read());
+```
+
+## IgniteSet
 
 More details:
 
