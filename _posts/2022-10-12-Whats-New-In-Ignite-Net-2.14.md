@@ -73,7 +73,15 @@ Assert.AreEqual(1, atomicLong.Read());
 
 Assert.AreEqual(101, atomicLong.Add(100));
 Assert.AreEqual(101, atomicLong.Read());
+
+Assert.AreEqual(101, atomicLong.CompareExchange(3, 2));
+Assert.AreEqual(101, atomicLong.Read());
+
+Assert.AreEqual(101, atomicLong.CompareExchange(4, 101));
+Assert.AreEqual(4, atomicLong.Read());
 ```
+
+`CompareExchange` in Ignite atomic long has the same semantics as [Interlocked.CompareExchange](https://learn.microsoft.com/en-us/dotnet/api/System.Threading.Interlocked.CompareExchange?view=net-6.0) in the .NET library. 
 
 ## IgniteSet
 
