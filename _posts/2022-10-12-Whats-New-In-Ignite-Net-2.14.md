@@ -63,7 +63,8 @@ Data structures are coming to thin clients! Java and .NET clients now have acces
 Cluster-wide thread-safe number. Can be used as an ID generator, counter, and so on. All nodes see the same value and can perform updates atomically.
 
 ```csharp
-var atomicLong = Client.GetAtomicLong(name: "my-id", initialValue: 1, create: true);
+IAtomicLongClient atomicLong = Client.GetAtomicLong(
+    name: "my-id", initialValue: 1, create: true);
 
 Assert.AreEqual(2, atomicLong.Increment());
 Assert.AreEqual(2, atomicLong.Read());
@@ -85,13 +86,29 @@ Assert.AreEqual(4, atomicLong.Read());
 
 ## IgniteSet
 
+Similar to [HashSet&lt;T&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.hashset-1?view=netstandard-2.0), but distributed and visible to all cluster nodes. 
+Implements [ISet&lt;T&gt;](https://learn.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ISet-1?view=netstandard-2.0).
+
+```csharp
+IIgniteSetClient<int> set = Client.GetIgniteSet<int>(
+    name: "my-set", new CollectionClientConfiguration());
+
+set.Add(1);
+set.Add(2);
+set.Remove(1);
+
+Assert.IsTrue(set.Contains(2));
+Assert.IsFalse(set.Contains(1));
+```
+
 More details:
 
-* TODO: IEP, APIs
-* 
+* [IAtomicLongClient](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Client.DataStructures.IAtomicLongClient.html)
+* [IIgniteSetClient&lt;T&gt;](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Client.DataStructures.IIgniteSetClient-1.html)
 
 
 # Links
 
 * Full release notes: [https://github.com/apache/ignite/blob/master/RELEASE_NOTES.txt](https://github.com/apache/ignite/blob/master/RELEASE_NOTES.txt)
 * Download: [https://ignite.apache.org/download](https://ignite.apache.org/download.cgi)
+* NuGet: [https://www.nuget.org/packages/Apache.Ignite/2.14.0](https://www.nuget.org/packages/Apache.Ignite/2.14.0)
