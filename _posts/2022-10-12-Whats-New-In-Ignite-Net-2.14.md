@@ -45,19 +45,20 @@ class MyInterceptor : IServiceCallInterceptor
 }
 ```
 
- 
-
-TODO: Cross-cutting concerns
+You can have as many interceptors as you like. Simply add them to [ServiceConfiguration.Interceptors](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Services.ServiceConfiguration.html#Apache_Ignite_Core_Services_ServiceConfiguration_Interceptors). 
 
 More details:
 
-* TODO: IEP, APIs
+* [IEP-79: Middleware for Ignite services](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=191334119)
+* [ServiceConfiguration.Interceptors](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Services.ServiceConfiguration.html#Apache_Ignite_Core_Services_ServiceConfiguration_Interceptors)
+* [IServiceCallInterceptor](https://ignite.apache.org/releases/latest/dotnetdoc/api/Apache.Ignite.Core.Services.IServiceCallInterceptor.html)
 
 # AtomicLong in Thin Client 
 
 More details:
 
 * TODO: IEP, APIs
+* 
 
 
 # Links
