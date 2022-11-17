@@ -32,7 +32,7 @@ Implementing thin client protocol from scratch is not easy, and JNI is very hard
 This brings us to .NET. Ignite.NET client is fully featured and well optimized. 
 With AOT we should be able to build a native library that exposes any APIs we need and call them from Rust.
 
-# Building Native .NET Library
+# Build Native .NET Library
 
 1. Create a classlib project: `dotnet new classlib`
 2. Install Ignite: `dotnet add package Apache.Ignite --version 2.15.0-alpha202211` (we have to use a pre-release version because of a small [bugfix](https://github.com/apache/ignite/commit/6ad8d4085b48f0bd667f478df7a1b91e521c97c3) that enables AOT and is not yet released)
@@ -68,7 +68,7 @@ Then verify exported symbols with `nm -gD libignite.so`, which shows something l
 ...
 ```
 
-# Calling .NET Library from Rust
+# Call .NET Library from Rust
 
 Nothing special here, just make sure that the library file has a proper ["soname"](https://en.wikipedia.org/wiki/Soname) with `lib` prefix (`libignite.so` in our case).
 
@@ -108,6 +108,10 @@ Result from cache: 43
 ```
 
 We can notice that the resulting app is quite fast, `time ./ignite-client-test` shows `real	0m0,047s` on my machine, and this combines app startup, cluster connection, and data exchange.
+
+# Try It
+
+TODO: Script in repo root
 
 # Conclusion
 
