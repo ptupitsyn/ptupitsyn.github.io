@@ -27,10 +27,11 @@ If I want to use Ignite from Rust, where we don't have a native client, I have a
 
 REST and C++ clients are [somewhat limited](https://cwiki.apache.org/confluence/display/IGNITE/Thin+clients+features) and don't provide features like 
 [Data Streamer](https://ignite.apache.org/docs/latest/data-streaming), [Continuous Queries](https://ignite.apache.org/docs/latest/key-value-api/continuous-queries) and others.
-
 Implementing thin client protocol from scratch is not easy, and JNI is very hard to work with.
 
-This brings us to .NET.
+This brings us to .NET. Ignite.NET client is fully featured and well optimized. 
+With AOT we should be able to build a native library that exposes any APIs we need and call into it from Rust.
+
 
 
 
