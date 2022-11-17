@@ -37,7 +37,24 @@ With AOT we should be able to build a native library that exposes any APIs we ne
 1. Create a classlib project: `dotnet new classlib`
 2. Install Ignite: `dotnet add package Apache.Ignite --version 2.15.0-alpha202211` (we have to use a pre-release version because of a small [bugfix](https://github.com/apache/ignite/commit/6ad8d4085b48f0bd667f478df7a1b91e521c97c3) that enables AOT and is not yet released)
 3. Enable AOT: add `<PublishAot>true</PublishAot>` to the csproj 
+4. Expose Ignite APIs with [UnmanagedCallersOnly attribute](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.unmanagedcallersonlyattribute?view=net-6.0):
+```csharp
+public static class Exports
+{
+    [UnmanagedCallersOnly(EntryPoint = "CachePut")]
+    public static void CachePut(int key, int val) => Cache.Put(key, val);
 
+    [UnmanagedCallersOnly(EntryPoint = "CacheGet")]
+    public static int CacheGet(int key) => Cache.Get(key);
+
+    private static ICacheClient<int, int> Cache => Client.Value.GetOrCreateCache<int, int>("c");
+}
+```
+
+Now we can publish it and produce a self-contained native `.so` file (I'm using Linux here):
+```
+dotnet publish --configuration Release --runtime linux-x64 --output publish
+```
 
 
 TODO:
