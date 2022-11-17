@@ -115,6 +115,7 @@ TODO: Script in repo root
 
 # Conclusion
 
-The example above is simplistic, of course - in a real-world scenario we would have to deal with complex data types, shared memory, resource lifetimes, and so on.
+I think this is impressive! There is not much code, it is simple, and it performs well.  
+The example is simplistic, of course - in a real-world scenario we would have to deal with complex data types, shared memory, resource lifetimes, and so on.
 
-However, by reusing Ignite.NET client, we avoid dealing with much bigger complexity of communicating with the cluster of multiple nodes with failover, partition awareness, cluster discovery, async network request handling and multiplexing.
+However, by reusing Ignite.NET client, we avoid dealing with a much higher complexity of communicating with a cluster of multiple nodes with failover, partition awareness, cluster discovery, async network request handling, multiplexing, and much more.
