@@ -23,8 +23,14 @@ If I want to use Ignite from Rust, where we don't have a native client, I have a
 * [REST API](https://ignite.apache.org/docs/latest/restapi)
 * Interop with [C++ client](https://ignite.apache.org/docs/latest/quick-start/cpp) 
 * [Thin client protocol](https://cwiki.apache.org/confluence/display/IGNITE/IEP-9+Thin+Client+Protocol)
+* [JNI](https://en.wikipedia.org/wiki/Java_Native_Interface)
 
+REST and C++ clients are [somewhat limited](https://cwiki.apache.org/confluence/display/IGNITE/Thin+clients+features) and don't provide features like 
+[Data Streamer](https://ignite.apache.org/docs/latest/data-streaming), [Continuous Queries](https://ignite.apache.org/docs/latest/key-value-api/continuous-queries) and others.
 
+Implementing thin client protocol from scratch is not easy, and JNI is very hard to work with.
+
+This brings us to .NET.
 
 
 
