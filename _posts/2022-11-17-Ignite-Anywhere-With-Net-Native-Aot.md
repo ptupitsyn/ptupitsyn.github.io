@@ -110,3 +110,7 @@ Result from cache: 43
 We can notice that the resulting app is quite fast, `time ./ignite-client-test` shows `real	0m0,047s` on my machine, and this combines app startup, cluster connection, and data exchange.
 
 # Conclusion
+
+The example above is simplistic, of course - in a real-world scenario we would have to deal with complex data types, shared memory, resource lifetimes, and so on.
+
+However, by reusing Ignite.NET client, we avoid dealing with much bigger complexity of communicating with the cluster of multiple nodes with failover, partition awareness, cluster discovery, async network request handling and multiplexing.
