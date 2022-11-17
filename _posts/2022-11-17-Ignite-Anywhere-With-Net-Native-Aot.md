@@ -51,11 +51,22 @@ public static class Exports
 }
 ```
 
+(full source code is available on GitHub: https://github.com/ptupitsyn/ignite-net-rust-interop/tree/main/dotnet/libignite)
+
 Now we can publish it and produce a self-contained native `.so` file (I'm using Linux here):
 ```
 dotnet publish --configuration Release --runtime linux-x64 --output publish
 ```
 
+Then verify exported symbols with `nm -gD libignite.so`, which shows something like this:
+```
+...
+                 U bsearch
+0000000000971350 T CacheGet
+0000000000971300 T CachePut
+                 U calloc
+...
+```
 
 TODO:
 * C++ client can be used too, but it has a lot less features (link comparison page).
