@@ -68,6 +68,19 @@ Then verify exported symbols with `nm -gD libignite.so`, which shows something l
 ...
 ```
 
+# Calling .NET Library from Rust
+
+Nothing special here, just make sure that the library file has `lib` prefix (`libignite.so` in our case), Rust seems to require it for some reason.
+
+1. Create a project: `cargo init`
+2. Add `build.rs` to link the library:
+```rust
+fn main() {
+    println!("cargo:rustc-link-search=native=../../dotnet/libignite/publish");
+    println!("cargo:rustc-link-lib=ignite");
+}
+```
+
 TODO:
 * C++ client can be used too, but it has a lot less features (link comparison page).
 * Put code in a repo with instructions and requirements.
