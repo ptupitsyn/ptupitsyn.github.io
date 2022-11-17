@@ -68,6 +68,10 @@ Then verify exported symbols with `nm -gD libignite.so`, which shows something l
 ...
 ```
 
+Publish command produces a few warnings along the lines of `IL3053: Assembly 'System.Linq.Expressions' produced AOT analysis warnings`. 
+This is because AOT has some [limitations](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/#limitations-of-native-aot-deployment) - you can't use runtime codegen, for example. Ignite uses reflection and runtime code generation for object mapping (converting data to and from user types). 
+But if we don't use object mapping and operate only on primitives and `IBinaryObject`, there won't be any issues.
+
 # Call .NET Library from Rust
 
 Nothing special here, just make sure that the library file has a proper ["soname"](https://en.wikipedia.org/wiki/Soname) with `lib` prefix (`libignite.so` in our case).
