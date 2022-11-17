@@ -17,7 +17,12 @@ The primary motivation is performance - quick startup, reduced memory usage. Dep
 But it can also [produce native libraries](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/#build-native-libraries) - `.dll` for Windows, `.so` for Linux, `.dylib` for macOS.
 And those libraries are also self-contained, you just copy one file anywhere and use it.
 
-Today I want to try this with Rust on Linux. 
+# Ignite and Rust
+
+If I want to use Ignite from Rust, where we don't have a native client, I have a few options:
+* [REST API](https://ignite.apache.org/docs/latest/restapi)
+* Interop with [C++ client](https://ignite.apache.org/docs/latest/quick-start/cpp) 
+* [Thin client protocol](https://cwiki.apache.org/confluence/display/IGNITE/IEP-9+Thin+Client+Protocol)
 
 
 
