@@ -51,7 +51,7 @@ public static class Exports
 }
 ```
 
-(full source code is available on GitHub: https://github.com/ptupitsyn/ignite-net-rust-interop/tree/main/dotnet/libignite)
+(full source code is available on GitHub: [github.com/ptupitsyn/ignite-net-rust-interop/tree/main/dotnet/libignite](https://github.com/ptupitsyn/ignite-net-rust-interop/tree/main/dotnet/libignite))
 
 Now we can publish it and produce a self-contained native `.so` file (I'm using Linux here):
 ```
@@ -100,7 +100,7 @@ let res = CacheGet(key);
 println!("Result from cache: {}", res);
 ```
 
-(full source code is at https://github.com/ptupitsyn/ignite-net-rust-interop/tree/main/rust/ignite-client-test)
+(full source code is at [github.com/ptupitsyn/ignite-net-rust-interop/tree/main/rust/ignite-client-test](https://github.com/ptupitsyn/ignite-net-rust-interop/tree/main/rust/ignite-client-test))
 
 That's it! Now start an Ignite server node with `docker run -p 10800:10800 apacheignite/ignite`, and run the app, the output is:
 ```
@@ -115,11 +115,14 @@ We can notice that the resulting app is quite fast, `time ./ignite-client-test` 
 
 # Try It
 
-TODO: Script in repo root
+* Clone the [repo](https://github.com/ptupitsyn/ignite-net-rust-interop): `git clone https://github.com/ptupitsyn/ignite-net-rust-interop`
+* Start an Ignite server node: `docker run -p 10800:10800 apacheignite/ignite`
+* Run `build-and-run.sh` script
 
 # Conclusion
 
-I think this is impressive! There is not much code, it is simple, and it performs well.  
+Impressive, isn't it? There is not much code, it is simple, and it performs well.
+
 The example is simplistic, of course - in a real-world scenario we would have to deal with complex data types, shared memory, resource lifetimes, and so on.
 
 However, by reusing Ignite.NET client, we avoid dealing with a much higher complexity of communicating with a cluster of multiple nodes with failover, partition awareness, cluster discovery, async network request handling, multiplexing, and much more.
