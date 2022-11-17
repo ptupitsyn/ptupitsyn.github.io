@@ -14,10 +14,16 @@ title: Use Ignite in Rust (or any language) with .NET Native AOT
 
 The primary motivation is performance - quick startup, reduced memory usage. Deployment is simpler, too.
 
-TODO Library
+But it can also [produce native libraries](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/#build-native-libraries) - `.dll` for Windows, `.so` for Linux, `.dylib` for macOS.
+And those libraries are also self-contained, you just copy one file anywhere and use it.
+
+Today I want to try this with Rust on Linux. 
+
+
 
 
 
 TODO:
 * C++ client can be used too, but it has a lot less features (link comparison page).
 * Put code in a repo with instructions and requirements.
+* Build and run with Docker to prove there are no dependencies?
