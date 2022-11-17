@@ -96,7 +96,17 @@ let res = CacheGet(key);
 println!("Result from cache: {}", res);
 ```
 
-TODO:
-* C++ client can be used too, but it has a lot less features (link comparison page).
-* Put code in a repo with instructions and requirements.
-* Build and run with Docker to prove there are no dependencies?
+(full source code is at https://github.com/ptupitsyn/ignite-net-rust-interop/tree/main/rust/ignite-client-test)
+
+That's it! Now start an Ignite server node with `docker run -p 10800:10800 apacheignite/ignite`, and run the app, the output is:
+```
+[20:45:51] [Debug] [ClientSocket] Socket connection attempt: 127.0.0.1:10800
+[20:45:51] [Debug] [ClientSocket] Socket connection established: 127.0.0.1:57860 -> 127.0.0.1:10800
+[20:45:51] [Debug] [ClientSocket] Handshake completed on 127.0.0.1:10800, protocol version = 1.7.0
+[20:45:51] [Debug] [ClientFailoverSocket] Server binary configuration retrieved: BinaryConfigurationClientInternal [CompactFooter=True, NameMapperMode=BasicFull]
+Result from cache: 43
+```
+
+We can notice that the resulting app is quite fast, `time ./ignite-client-test` shows `real	0m0,047s` on my machine, and this combines app startup, cluster connection, and data exchange.
+
+# Conclusion
