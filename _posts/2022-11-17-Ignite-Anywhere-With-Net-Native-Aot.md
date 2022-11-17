@@ -30,8 +30,13 @@ REST and C++ clients are [somewhat limited](https://cwiki.apache.org/confluence/
 Implementing thin client protocol from scratch is not easy, and JNI is very hard to work with.
 
 This brings us to .NET. Ignite.NET client is fully featured and well optimized. 
-With AOT we should be able to build a native library that exposes any APIs we need and call into it from Rust.
+With AOT we should be able to build a native library that exposes any APIs we need and call them from Rust.
 
+# Building Native .NET Library
+
+1. Create a classlib project: `dotnet new classlib`
+2. Install Ignite: `dotnet add package Apache.Ignite --version 2.15.0-alpha202211` (we have to use a pre-release version because of a small [bugfix](https://github.com/apache/ignite/commit/6ad8d4085b48f0bd667f478df7a1b91e521c97c3) that enables AOT and is not yet released)
+3. Enable AOT: add `<PublishAot>true</PublishAot>` to the csproj 
 
 
 
