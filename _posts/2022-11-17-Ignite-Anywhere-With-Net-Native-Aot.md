@@ -3,7 +3,7 @@ layout: post
 title: Use Ignite in Rust (or any language) with .NET Native AOT
 ---
 
-.NET 7 introduces AOT, which allows easy interop with any language on any OS. To demonstrate the possibilities, let's bring some Ignite APIs to Rust!
+.NET 7 introduces AOT (finally!), which allows easy interop with any language on any OS. To demonstrate the possibilities, let's bring some Ignite APIs to Rust!
 
 # Native AOT in .NET
 
