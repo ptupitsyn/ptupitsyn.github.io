@@ -92,6 +92,7 @@ extern {
 }
 ```
 4. Use them (requires unsafe block):
+
 ```rust
 let key = 42;
 CachePut(key, key + 1);
