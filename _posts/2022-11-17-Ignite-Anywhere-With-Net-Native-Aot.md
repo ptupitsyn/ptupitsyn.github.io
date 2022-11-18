@@ -3,7 +3,7 @@ layout: post
 title: Use Ignite in Rust with .NET Native AOT
 ---
 
-.NET 7 introduces AOT (finally!), which allows easy interop with any language on any OS. To demonstrate the possibilities, let's bring some Ignite APIs to Rust!
+.NET 7 introduces AOT (finally!), which allows easy interop with any language on any OS. To demonstrate the possibilities, let's bring some [Ignite](https://ignite.apache.org/) APIs to Rust!
 
 # Native AOT in .NET
 
@@ -19,7 +19,7 @@ And those libraries are also self-contained, you just copy one file anywhere and
 
 # Ignite and Rust
 
-If I want to use Ignite from Rust, where we don't have a native client, I have a few options:
+If I want to use [Ignite](https://ignite.apache.org/) from Rust, where we don't have a native client, I have a few options:
 * [REST API](https://ignite.apache.org/docs/latest/restapi)
 * Interop with [C++ client](https://ignite.apache.org/docs/latest/quick-start/cpp) 
 * [Thin client protocol](https://cwiki.apache.org/confluence/display/IGNITE/IEP-9+Thin+Client+Protocol)
