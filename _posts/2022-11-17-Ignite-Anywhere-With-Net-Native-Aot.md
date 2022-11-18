@@ -104,6 +104,7 @@ println!("Result from cache: {}", res);
 (full source code is at [github.com/ptupitsyn/ignite-net-rust-interop/tree/main/rust/ignite-client-test](https://github.com/ptupitsyn/ignite-net-rust-interop/tree/main/rust/ignite-client-test))
 
 That's it! Now start an Ignite server node with `docker run -p 10800:10800 apacheignite/ignite`, and run the app, the output is:
+
 ```
 [20:45:51] [Debug] [ClientSocket] Socket connection attempt: 127.0.0.1:10800
 [20:45:51] [Debug] [ClientSocket] Socket connection established: 127.0.0.1:57860 -> 127.0.0.1:10800
