@@ -126,3 +126,5 @@ Impressive, isn't it? There is not much code, it is simple, and it performs well
 The example is simplistic, of course - in a real-world scenario we would have to deal with complex data types, shared memory, resource lifetimes, and so on.
 
 However, by reusing Ignite.NET client, we avoid dealing with a much higher complexity of communicating with a cluster of multiple nodes with failover, partition awareness, cluster discovery, async network request handling, multiplexing, and much more.
+
+I find AOT really exciting, along with the overall focus on performance in recent .NET releases.  
