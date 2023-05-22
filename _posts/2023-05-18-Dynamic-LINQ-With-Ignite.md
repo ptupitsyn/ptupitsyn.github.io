@@ -11,7 +11,7 @@ This can get challenging with LINQ-based frameworks such as EF Core and Ignite.N
 
 # Use Case Example
 
-Let's say we have to build a Web API for searching cars with:
+Let's say we are tasked with building a Web API like this:
 
 ```
 GET /cars?make=Ford&model=Mustang&searchMode=Any
@@ -118,12 +118,28 @@ void AppendArg(object? value, [CallerArgumentExpression(nameof(value))] string? 
 Interestingly, [Dynamic LINQ](https://dynamic-linq.net/overview) works with any `IQueryable`, including Ignite.NET's `ICacheQueryable`. 
 What it does is it parses the string expression and builds an `Expression` tree, which is then passed to the LINQ provider to build the SQL query.
 
-We achieved the same result with much less code, which is easier to read and maintain.
+We achieved the same result with much less code, which is easier to read and maintain. But is it the right approach?
 
-# TBD
+# Performance
+
+TBD
+
+
+NOTE: an older post on this blog, [LINQ vs SQL in Ignite.NET: Performance](https://ptupitsyn.github.io/LINQ-vs-SQL-in-Ignite/), 
+demonstrates that LINQ can be on par with raw SQL, but this requires using compiled queries, which is not possible when dynamic queries are involved.
+
+# Why not use SQL directly?
 
 Does it work? - yes
 * Is it a good idea? - not sure
 * If an abstraction gets in the way, drop down one level and just build the SQL yourself
 
 * Benchmark? Link to old LINQ vs SQL benchmark, which used compiled queries, but here we can't use compiled!
+
+
+# Conclusion
+
+This post is inspired by questions coming from Ignite users and GridGain customers. 
+Everyone loves LINQ for its ease of use and strong typing, but sometimes it gets in the way.
+
+And when an abstraction gets in the way, it is generally a good idea to drop down one level - in this case, use SQL directly.
