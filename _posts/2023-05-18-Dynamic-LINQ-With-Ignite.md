@@ -20,7 +20,7 @@ GET /cars?make=Ford&model=Mustang&searchMode=Any
 I'm going to use [Apache Ignite.NET](https://ignite.apache.org) as an example, but the same approach can be used with [EF Core](https://learn.microsoft.com/en-us/ef/core/).
 
 The search mode can be `Any` or `All`, and it defines whether we should use `OR` or `AND` in the query. How do we build the query?
-Let's start with retrieving IQueryable from Ignite cache:
+Let's start with retrieving `IQueryable` from Ignite cache:
 
 ```csharp
 public List<Car> GetCars(string? make, string? model, int? year, SearchMode searchMode, string[]? columns = null)
@@ -126,7 +126,7 @@ We achieved the same result with much less code, which is easier to read and mai
 
 # Why Not Use SQL Directly?
 
-With Dynamic LINQ library, we are building strings, which are then parsed into `Expression` trees, which are then converted to SQL.
+With Dynamic LINQ library, we are building strings, which are then parsed into `Expression` trees, which are then converted to back to string (SQL).
 
 ```
 string -> Expression -> string
@@ -167,6 +167,9 @@ void AppendArg(object? value, [CallerArgumentExpression(nameof(value))] string? 
 
 T Val<T>(IList<object> row, string name) => cols.IndexOf(name) is var y and >= 0 ? (T)row[y] : default!;
 ```
+
+The usual caveats apply: no compile-time or IDE checks, and extra care is required to avoid SQL injections.
+But we've got rid of 2 layers of abstraction.
 
 # Performance
 
