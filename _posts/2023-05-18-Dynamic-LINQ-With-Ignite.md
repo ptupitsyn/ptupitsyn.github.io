@@ -9,6 +9,7 @@ TBD: Better title, more catchy? "Dynamic LINQ performance with Ignite.NET and Sy
 can be necessary for some use cases, such as UI-based filtering. 
 This can get challenging with LINQ-based frameworks such as EF Core and Ignite.NET.
 
+
 # Use Case Example
 
 Let's say we are tasked with building a Web API like this:
@@ -87,6 +88,7 @@ IQueryable<Car> FilterAny()
 }
 ```
 
+
 # Simplification with System.Linq.Dynamic.Core
 
 [Dynamic LINQ (System.Linq.Dynamic.Core)](https://github.com/zzzprojects/System.Linq.Dynamic.Core) 
@@ -123,6 +125,7 @@ no specific integration is required. What it does is it parses the string expres
 which is then passed to the LINQ provider to build the SQL query.
 
 We achieved the same result with much less code, which is easier to read and maintain. But is it the right approach?
+
 
 # Why Not Use SQL Directly?
 
@@ -171,6 +174,19 @@ T Val<T>(IList<object> row, string name) => cols.IndexOf(name) is var y and >= 0
 This is still less code than the first LINQ version, and much more flexible. 
 However, the usual caveats apply: no compile-time or IDE checks, and extra care is required to avoid SQL injections.
 
+
+## Avoiding SQL Injections
+
+One big advantage of LINQ is that it is pretty much impossible to make a mistake that would lead to SQL injection. 
+The provider is responsible for query parametrization, we never pass user-provided values directly to the SQL query.
+
+This is not the case with SQL strings. Those dynamic queries often involve more than just filtering: sorting and custom column selection are also common.
+
+* Filtering (WHERE): use SQL parameters, as shown above.
+* Sorting and column selection (SELECT, ORDER BY): use a white-list of allowed columns, [as demonstrated in the sample code](https://github.com/ptupitsyn/ignite-dynamic-linq/blob/main/Ignite.DynamicLINQ/Data/CarRepository.cs#L133)
+
+ 
+
 # Performance
 
 Let's see how these 3 approaches compare in terms of performance.
@@ -196,13 +212,6 @@ This is not the case with Dynamic LINQ, which builds a single expression from th
 NOTE: an older post on this blog, [LINQ vs SQL in Ignite.NET: Performance](https://ptupitsyn.github.io/LINQ-vs-SQL-in-Ignite/),
 demonstrates that LINQ can be on par with raw SQL, but this requires using compiled queries, which is not possible when dynamic queries are involved.
 
-
-# More Use Cases
-
-Those dynamic queries often involve more than just filtering: sorting, paging, and custom column selection are also common.
-
-1. Order
-2. Custom column set
 
 # Conclusion
 
