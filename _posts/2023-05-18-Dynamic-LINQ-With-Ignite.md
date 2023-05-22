@@ -116,6 +116,7 @@ void AppendArg(object? value, [CallerArgumentExpression(nameof(value))] string? 
 ```
 
 Full source code, including dynamic column selection, is available on GitHub: [ptupitsyn/ignite-dynamic-linq](https://github.com/ptupitsyn/ignite-dynamic-linq).
+You can try it by running [tests](https://github.com/ptupitsyn/ignite-dynamic-linq/blob/main/Ignite.DynamicLINQ.Tests/CarsTests.cs) in your IDE or with `dotnet test`.
 
 Interestingly, [Dynamic LINQ](https://dynamic-linq.net/overview) works with any `IQueryable`, including Ignite.NET's `ICacheQueryable`. 
 What it does is it parses the string expression and builds an `Expression` tree, which is then passed to the LINQ provider to build the SQL query.
@@ -123,6 +124,8 @@ What it does is it parses the string expression and builds an `Expression` tree,
 We achieved the same result with much less code, which is easier to read and maintain. But is it the right approach?
 
 # Performance
+
+Let's see how these approaches compare in terms of performance.
 
 ```
 |      Method | SearchMode |       Mean | Allocated |
@@ -135,6 +138,8 @@ We achieved the same result with much less code, which is easier to read and mai
 |         Sql |        All |   6.969 us |   2.46 KB |
 ```
 
+Benchmark code is in the same repo: [Program.cs](https://github.com/ptupitsyn/ignite-dynamic-linq/blob/main/Ignite.DynamicLINQ.Benchmarks/Program.cs).
+
 As expected, raw SQL performs much better than LINQ and Dynamic LINQ. 
 
 Interestingly, LINQ with `SearchMode.All` is much slower than `SearchMode.Any`, because we use multiple `Where` expressions conditionally. 
@@ -144,9 +149,12 @@ This is not the case with Dynamic LINQ, which builds a single expression from th
 NOTE: an older post on this blog, [LINQ vs SQL in Ignite.NET: Performance](https://ptupitsyn.github.io/LINQ-vs-SQL-in-Ignite/), 
 demonstrates that LINQ can be on par with raw SQL, but this requires using compiled queries, which is not possible when dynamic queries are involved.
 
-# Why not use SQL directly?
+# Why Not Use SQL Directly?
 
+# More Use Cases
 
+1. Order
+2. Custom column set
 
 # Conclusion
 
