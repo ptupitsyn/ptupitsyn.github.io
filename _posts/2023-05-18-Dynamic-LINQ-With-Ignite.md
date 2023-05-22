@@ -183,8 +183,7 @@ The provider is responsible for query parametrization, we never pass user-provid
 This is not the case with SQL strings. Those dynamic queries often involve more than just filtering: sorting and custom column selection are also common.
 
 * Filtering (WHERE): use SQL parameters, as shown above.
-* Sorting and column selection (SELECT, ORDER BY): use a white-list of allowed columns, [as demonstrated in the sample code](https://github.com/ptupitsyn/ignite-dynamic-linq/blob/main/Ignite.DynamicLINQ/Data/CarRepository.cs#L133)
-
+* Sorting and column selection (SELECT, ORDER BY): use a white-list of allowed columns, [as demonstrated in the sample code](https://github.com/ptupitsyn/ignite-dynamic-linq/blob/main/Ignite.DynamicLINQ/Data/CarRepository.cs#L133).
  
 
 # Performance
