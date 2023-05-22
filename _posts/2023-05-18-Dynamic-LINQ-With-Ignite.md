@@ -118,10 +118,55 @@ void AppendArg(object? value, [CallerArgumentExpression(nameof(value))] string? 
 Full source code, including dynamic column selection, is available on GitHub: [ptupitsyn/ignite-dynamic-linq](https://github.com/ptupitsyn/ignite-dynamic-linq).
 You can try it by running [tests](https://github.com/ptupitsyn/ignite-dynamic-linq/blob/main/Ignite.DynamicLINQ.Tests/CarsTests.cs) in your IDE or with `dotnet test`.
 
-Interestingly, [Dynamic LINQ](https://dynamic-linq.net/overview) works with any `IQueryable`, including Ignite.NET's `ICacheQueryable`. 
-What it does is it parses the string expression and builds an `Expression` tree, which is then passed to the LINQ provider to build the SQL query.
+Note that [Dynamic LINQ](https://dynamic-linq.net/overview) works with any `IQueryable`, including Ignite.NET's `ICacheQueryable` - 
+no specific integration is required. What it does is it parses the string expression and builds an `Expression` tree, 
+which is then passed to the LINQ provider to build the SQL query.
 
 We achieved the same result with much less code, which is easier to read and maintain. But is it the right approach?
+
+# Why Not Use SQL Directly?
+
+With Dynamic LINQ library, we are building strings, which are then parsed into `Expression` trees, which are then converted to SQL.
+
+```
+string -> Expression -> string
+```
+
+It is an abstraction on top of an abstraction. Some of the strings we pass to Dynamic LINQ library even look like SQL: `make = @0 AND model = @1`.
+
+We can easily adapt the code from above to use SQL directly:
+
+```csharp
+var sb = new StringBuilder("SELECT Make, Model, Year FROM Car");
+
+var argIdx = 0;
+var args = new List<object>();
+AppendArg(make);
+AppendArg(model);
+AppendArg(year);
+
+return _igniteService.Cars.Query(new SqlFieldsQuery(sb.ToString(), args.ToArray()))
+    .Select(x => new Car(
+        Val<string>(x, nameof(Car.Make)),
+        Val<string>(x, nameof(Car.Model)),
+        Val<int>(x, nameof(Car.Year))))
+    .ToList();
+
+void AppendArg(object? value, [CallerArgumentExpression(nameof(value))] string? name = default)
+{
+    if (value != null)
+    {
+        sb.Append(argIdx++ == 0
+            ? " WHERE "
+            : searchMode == SearchMode.All ? " AND " : " OR ")
+            .Append($"{name} = ? ");
+
+        args.Add(value);
+    }
+}
+
+T Val<T>(IList<object> row, string name) => cols.IndexOf(name) is var y and >= 0 ? (T)row[y] : default!;
+```
 
 # Performance
 
@@ -140,16 +185,14 @@ Let's see how these approaches compare in terms of performance.
 
 Benchmark code is in the same repo: [Program.cs](https://github.com/ptupitsyn/ignite-dynamic-linq/blob/main/Ignite.DynamicLINQ.Benchmarks/Program.cs).
 
-As expected, raw SQL performs much better than LINQ and Dynamic LINQ. 
+As expected, raw SQL performs much better than LINQ and Dynamic LINQ.
 
-Interestingly, LINQ with `SearchMode.All` is much slower than `SearchMode.Any`, because we use multiple `Where` expressions conditionally. 
+Interestingly, LINQ with `SearchMode.All` is much slower than `SearchMode.Any`, because we use multiple `Where` expressions conditionally.
 This is not the case with Dynamic LINQ, which builds a single expression from the provided string.
 
-
-NOTE: an older post on this blog, [LINQ vs SQL in Ignite.NET: Performance](https://ptupitsyn.github.io/LINQ-vs-SQL-in-Ignite/), 
+NOTE: an older post on this blog, [LINQ vs SQL in Ignite.NET: Performance](https://ptupitsyn.github.io/LINQ-vs-SQL-in-Ignite/),
 demonstrates that LINQ can be on par with raw SQL, but this requires using compiled queries, which is not possible when dynamic queries are involved.
 
-# Why Not Use SQL Directly?
 
 # More Use Cases
 
