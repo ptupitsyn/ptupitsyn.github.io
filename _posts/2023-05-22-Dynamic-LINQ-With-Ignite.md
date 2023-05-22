@@ -3,7 +3,7 @@ layout: post
 title: Dynamic LINQ performance and usability with Ignite.NET and System.Linq.Dynamic.Core
 ---
 
-![Apache Ignite Persistent Store](../images/ignite-dynamic-linq.png) Dynamically building database queries 
+![Apache Ignite and Dynamic LINQ](../images/ignite-dynamic-linq.png) Dynamically building database queries 
 can be necessary for some use cases, such as UI-based filtering. 
 This can get challenging with LINQ-based frameworks such as EF Core and Ignite.NET.
 
