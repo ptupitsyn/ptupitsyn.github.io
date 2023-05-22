@@ -168,12 +168,12 @@ void AppendArg(object? value, [CallerArgumentExpression(nameof(value))] string? 
 T Val<T>(IList<object> row, string name) => cols.IndexOf(name) is var y and >= 0 ? (T)row[y] : default!;
 ```
 
-The usual caveats apply: no compile-time or IDE checks, and extra care is required to avoid SQL injections.
-But we've got rid of 2 layers of abstraction.
+This is still less code than the first LINQ version, and much more flexible. 
+However, the usual caveats apply: no compile-time or IDE checks, and extra care is required to avoid SQL injections.
 
 # Performance
 
-Let's see how these approaches compare in terms of performance.
+Let's see how these 3 approaches compare in terms of performance.
 
 ```
 |      Method | SearchMode |       Mean | Allocated |
@@ -199,6 +199,8 @@ demonstrates that LINQ can be on par with raw SQL, but this requires using compi
 
 # More Use Cases
 
+Those dynamic queries often involve more than just filtering: sorting, paging, and custom column selection are also common.
+
 1. Order
 2. Custom column set
 
@@ -207,4 +209,8 @@ demonstrates that LINQ can be on par with raw SQL, but this requires using compi
 This post is inspired by questions coming from Ignite users and GridGain customers. 
 Everyone loves LINQ for its ease of use and strong typing, but sometimes it gets in the way.
 
-And when an abstraction gets in the way, it is generally a good idea to drop down one level - in this case, use SQL directly.
+And when you feel like you are fighting with an abstraction, it is probably a good idea to drop down one level - in this case, use SQL directly. 
+Which is what I usually recommend for really complex and dynamic queries. 
+Those queries can also be heavy and performance-sensitive, and it is easier to optimize SQL directly instead of tweaking LINQ expressions.
+
+As always, everything is a trade-off. Choose the right tool for the job, and don't be afraid to mix and match.
