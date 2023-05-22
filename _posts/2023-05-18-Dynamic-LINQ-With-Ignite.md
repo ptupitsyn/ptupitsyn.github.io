@@ -3,10 +3,87 @@ layout: post
 title: Dynamic LINQ with Ignite.NET and System.Linq.Dynamic.Core
 ---
 
-![Apache Ignite Persistent Store](../images/ignite-dynamic-linq.png) Some use cases, such as UI-based filtering, require dynamically built database queries. 
+![Apache Ignite Persistent Store](../images/ignite-dynamic-linq.png) Dynamically building database queries 
+can be necessary for some use cases, such as UI-based filtering. 
 This can get challenging with LINQ-based frameworks such as EF Core and Ignite.NET.
 
 # Use Case Example
+
+Let's say we have to build a Web API for searching cars with:
+
+```
+GET /cars?make=Ford&model=Mustang&searchMode=Any
+```
+
+I'm going to use [Apache Ignite.NET](https://ignite.apache.org) as an example, but the same approach can be used with [EF Core](https://learn.microsoft.com/en-us/ef/core/).
+
+The search mode can be `Any` or `All`, and it defines whether we should use `OR` or `AND` in the query. How do we build the query?
+Let's start with retrieving IQueryable from Ignite cache:
+
+```csharp
+public List<Car> GetCars(string? make, string? model, int? year, SearchMode searchMode, string[]? columns = null)
+{
+    ICache<int,Car> igniteCache = _igniteService.Cars;
+    IQueryable<Car> query = igniteCache.AsCacheQueryable().Select(x => x.Value);
+    ...
+}
+```
+
+Depending on the search mode, we need to build a different query:
+
+```csharp
+query = searchMode switch
+{
+    SearchMode.All => FilterAll(),
+    _ => FilterAny()
+};
+```
+
+When `searchMode` is `All`, it is quite easy to combine multiple `Where` calls to achieve "AND" semantics:
+
+```csharp
+IQueryable<Car> FilterAll()
+{
+    if (make != null)
+        query = query.Where(x => x.Make == make);
+
+    if (model != null)
+        query = query.Where(x => x.Model == model);
+
+    if (year != null)
+        query = query.Where(x => x.Year == year);
+
+    return query;
+}
+```
+
+However, when `searchMode` is `Any`, we have to build an `Expression` for a single `Where` call, which gets out of hand quickly:
+
+```csharp
+IQueryable<Car> FilterAny()
+{
+    var parameter = Expression.Parameter(typeof(Car), "x");
+
+    Expression? expr = null;
+
+    if (make != null)
+        expr = Expression.Equal(Expression.PropertyOrField(parameter, "Make"), Expression.Constant(make));
+
+    if (model != null)
+        expr = expr == null
+            ? Expression.Equal(Expression.PropertyOrField(parameter, "Model"), Expression.Constant(model))
+            : Expression.OrElse(expr, Expression.Equal(Expression.PropertyOrField(parameter, "Model"), Expression.Constant(model)));
+
+    if (year != null)
+        expr = expr == null
+            ? Expression.Equal(Expression.PropertyOrField(parameter, "Year"), Expression.Constant(year))
+            : Expression.OrElse(expr, Expression.Equal(Expression.PropertyOrField(parameter, "Year"), Expression.Constant(year)));
+
+    var expression = Expression.Lambda<Func<Car, bool>>(expr!, parameter);
+
+    return query.Where(expression);
+}
+```
 
 # Simplification with System.Linq.Dynamic.Core
 
