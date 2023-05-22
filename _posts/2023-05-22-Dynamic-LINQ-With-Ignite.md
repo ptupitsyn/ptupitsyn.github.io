@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dynamic LINQ performance and usability with Ignite.NET and System.Linq.Dynamic.Core
+title: Dynamic LINQ performance and usability with Ignite.NET and System.Linq.Dynamic
 ---
 
 ![Apache Ignite and Dynamic LINQ](../images/ignite-dynamic-linq.png) Dynamically building database queries 
