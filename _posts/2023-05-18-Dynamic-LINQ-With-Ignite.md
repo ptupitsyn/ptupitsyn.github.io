@@ -87,10 +87,41 @@ IQueryable<Car> FilterAny()
 
 # Simplification with System.Linq.Dynamic.Core
 
-[Dynamic LINQ (System.Linq.Dynamic.Core)](https://github.com/zzzprojects/System.Linq.Dynamic.Core)
+[Dynamic LINQ (System.Linq.Dynamic.Core)](https://github.com/zzzprojects/System.Linq.Dynamic.Core) 
+provides string-based LINQ expression building, which is much easier to use and covers both AND and OR cases:
+
+```csharp
+var whereSb = new StringBuilder();
+var argIdx = 0;
+var args = new List<object>();
+AppendArg(make);
+AppendArg(model);
+AppendArg(year);
+
+query = query.Where(whereSb.ToString(), args.ToArray()); // Ex: make = @0  AND model = @1
+
+void AppendArg(object? value, [CallerArgumentExpression(nameof(value))] string? name = default)
+{
+    if (value != null)
+    {
+        if (argIdx > 0)
+            whereSb.Append(searchMode == SearchMode.All ? " AND " : " OR ");
+
+        whereSb.Append($"{name} = @{argIdx++} ");
+        args.Add(value);
+    }
+}
+```
+
+Interestingly, [Dynamic LINQ](https://dynamic-linq.net/overview) works with any `IQueryable`, including Ignite.NET's `ICacheQueryable`. 
+What it does is it parses the string expression and builds an `Expression` tree, which is then passed to the LINQ provider to build the SQL query.
+
+We achieved the same result with much less code, which is easier to read and maintain.
 
 # TBD
 
 Does it work? - yes
 * Is it a good idea? - not sure
 * If an abstraction gets in the way, drop down one level and just build the SQL yourself
+
+* Benchmark? Link to old LINQ vs SQL benchmark, which used compiled queries, but here we can't use compiled!
