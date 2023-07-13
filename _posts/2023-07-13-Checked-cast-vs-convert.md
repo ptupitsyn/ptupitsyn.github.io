@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Checked cast vs convert in C#
+title: Checked Cast vs Convert in C#
 ---
 
-Let's say we want to convert int to short with bounds check. Is there a difference between `checked((short)x)` and `Convert.ToInt16(x)`?
+Let's say we want to convert `int` to `short` with a bounds check. Is there a difference between `checked((short)x)` and `Convert.ToInt16(x)`?
 
 # Behavior
 
