@@ -30,7 +30,7 @@ async Task<(Batch<T> Batch, string Partition)> AddWithRetryUnmapped(T item)
 }
 ```
 
-This fairly simple change resulted in a 3x memory allocation increase in a basic streamer benchmark (100_000 items). 
+This fairly simple change resulted in a 3x memory allocation increase in a [basic streamer benchmark](https://github.com/apache/ignite-3/blob/5ac19cfb9528ec2a72edd1e5a1ff3d03f24b4537/modules/platforms/dotnet/Apache.Ignite.Benchmarks/Table/DataStreamerBenchmark.cs) (100_000 items). 
 
 ```
 |                    Method | ServerCount |      Mean | Allocated |
