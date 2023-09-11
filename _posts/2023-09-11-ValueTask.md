@@ -3,7 +3,7 @@ layout: post
 title: When ValueTask makes a big difference - DataStreamer in Ignite 3
 ---
 
-`ValueTask` may seem like a micro-optimization, but it is very important on hot paths.
+`ValueTask` may seem like a micro-optimization, but it is very important on hot paths, and easy to miss. Last week I've learned this the hard way.
 
 # DataStreamer
 
