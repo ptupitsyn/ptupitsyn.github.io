@@ -29,4 +29,15 @@ async Task<(Batch<T> Batch, string Partition)> AddWithRetryUnmapped(T item)
 }
 ```
 
-This fairly simple change resulted in a 3x memory allocation increase in a basic streamer benchmark.
+This fairly simple change resulted in a 3x memory allocation increase in a basic streamer benchmark (100_000 items). 
+
+```
+|                    Method | ServerCount |      Mean | Allocated |
+|     DataStreamer (before) |           4 |  32.64 ms |      4 MB |
+|     DataStreamer (after)  |           4 |  36.41 ms |     12 MB |
+```
+
+Luckily, the fix is just as simple: replace `Task` with `ValueTask` in the method signature.
+
+* Schema change is a rare scenario, so `AddWithRetryUnmapped` will complete synchronously most of the time.
+* `Add` is being called in a loop for thousands of items, so even a small allocation adds up quickly.
