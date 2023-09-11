@@ -54,5 +54,5 @@ so the addition of `AddWithRetryUnmapped` does not affect performance when there
 
 # Links
 
-* https://devblogs.microsoft.com/dotnet/understanding-the-whys-whats-and-whens-of-valuetask/
-* https://devblogs.microsoft.com/premier-developer/the-performance-characteristics-of-async-methods/
+* [Understanding the Whys, Whats, and Whens of ValueTask](https://devblogs.microsoft.com/dotnet/understanding-the-whys-whats-and-whens-of-valuetask/)
+* [The performance characteristics of async methods in C#](https://devblogs.microsoft.com/premier-developer/the-performance-characteristics-of-async-methods/)
