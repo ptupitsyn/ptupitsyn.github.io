@@ -5,7 +5,7 @@ title: When ValueTask makes a big difference - DataStreamer in Ignite 3
 
 `ValueTask` may seem like a micro-optimization, but it is very important on hot paths, and easy to miss. Last week I've learned this the hard way.
 
-# DataStreamer
+# Async on Hot Path
 
 While working on [Data Streamer](https://cwiki.apache.org/confluence/display/IGNITE/IEP-102%3A+Data+Streamer) for [Apache Ignite 3](https://ignite.apache.org/), 
 I've added `AddWithRetryUnmapped` wrapper around synchronous `Add` method to [deal with schema updates](https://github.com/apache/ignite-3/commit/5ac19cfb9528ec2a72edd1e5a1ff3d03f24b4537):
@@ -40,8 +40,8 @@ This fairly simple change resulted in a 3x memory allocation increase in a basic
 
 Luckily, the fix is just as simple: replacing `Task` with `ValueTask` in the method signature brings the performance back to normal.
 
-* Schema change is a rare scenario, so `AddWithRetryUnmapped` will complete synchronously most of the time.
-* `Add` is being called in a loop for thousands of items, so even a small allocation adds up quickly.
+* Schema change is a rare scenario, so `AddWithRetryUnmapped` will complete synchronously most of the time
+* `Add` is being called in a loop for thousands of items, so even a small allocation adds up quickly
 
 `ValueTask` has almost no overhead when the method completes synchronously - it is just a small `struct`, 
 so the addition of `AddWithRetryUnmapped` does not affect performance when there are no schema changes.
