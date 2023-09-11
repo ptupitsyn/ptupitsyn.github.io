@@ -7,7 +7,8 @@ title: When ValueTask makes a big difference - DataStreamer in Ignite 3
 
 # DataStreamer
 
-While working on [Data Streamer for Ignite 3](https://cwiki.apache.org/confluence/display/IGNITE/IEP-102%3A+Data+Streamer), I've added `AddWithRetryUnmapped` wrapper around synchronous `Add` method to deal with schema updates:
+While working on [Data Streamer](https://cwiki.apache.org/confluence/display/IGNITE/IEP-102%3A+Data+Streamer) for [Apache Ignite 3](https://ignite.apache.org/), 
+I've added `AddWithRetryUnmapped` wrapper around synchronous `Add` method to [deal with schema updates](https://github.com/apache/ignite-3/commit/5ac19cfb9528ec2a72edd1e5a1ff3d03f24b4537):
 
 ```csharp
 await foreach (var item in data)
