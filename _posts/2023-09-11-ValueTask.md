@@ -49,7 +49,7 @@ so the addition of `AddWithRetryUnmapped` does not affect performance when there
 
 # Conclusion
 
-* Benchmark your code to catch performance regressions
+* Benchmark every change to catch performance regressions
 * Use `ValueTask` when there is any chance that the method will complete synchronously
 
 # Links
