@@ -5,7 +5,7 @@ title: Why do I use Linux for .NET development?
 
 The question of OS and IDE choice for .NET development comes up from time to time. In this post I'll summarize my thoughts on the topic.
 
-In short, Linux works faster, which leads to better productivity. Read on for details. We'll try to avoid opinionated statements, and focus on facts and numbers.
+In short, Linux is faster, which leads to better productivity. Read on for details. We'll try to avoid opinionated statements, and focus on facts and numbers.
 
 # Performance
 
