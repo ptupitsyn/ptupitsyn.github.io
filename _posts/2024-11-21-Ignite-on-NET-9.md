@@ -3,7 +3,7 @@ layout: post
 title: Breaking Change in .NET 9 Crashes Ignite Node
 ---
 
-.NET 9 is out, and it brings a breaking change that causes process crash during Ignite.NET node startup on Windows.
+Old JDK code meets new Intel security feature, JVM + CLR in one process, and a mysterious crash.
 
 # Investigation
 
