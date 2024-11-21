@@ -59,3 +59,8 @@ Java is old. And we are at a dead end.
 
 In fact, Visual Studio debugger gave us a clue earlier with the following message: `Unknown __fastfail() status code: 0x0000000000000030`, 
 which [corresponds](https://www.softwareverify.com/blog/fail-fast-codes/) to `FAST_FAIL_SET_CONTEXT_DENIED` error.
+
+# Solution
+
+Even the latest JDK uses the same tricky CPU detection code which triggers CET and terminates the process, 
+so we have to disable it by adding `<CETCompat>false</CETCompat>` to the `csproj` file for the target project (the one that starts the process).
