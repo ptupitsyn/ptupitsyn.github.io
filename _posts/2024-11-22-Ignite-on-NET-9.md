@@ -62,5 +62,5 @@ which [corresponds](https://www.softwareverify.com/blog/fail-fast-codes/) to `FA
 
 # Solution
 
-Even the latest JDK uses the same tricky CPU detection code which triggers CET and terminates the process, 
+Even the latest JDK uses the same tricky CPU detection code which triggers CET, 
 so we have to disable it by adding `<CETCompat>false</CETCompat>` to the `csproj` file for the target project (the one that starts the process).
