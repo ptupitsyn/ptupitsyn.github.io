@@ -8,7 +8,7 @@ title: Breaking Change in .NET 9 Crashes Ignite Node
 # Investigation
 
 Recently we got a [report](https://lists.apache.org/thread/4080xyvyqljqq0oczj6cf0fskmqjpdzq) from a user that 
-Ignite crashes on startup after .NET 9 upgrade with a mysterious error:
+Ignite crashes after .NET 9 upgrade with a mysterious error:
 
 ```
 process 7692 exited with code -1073740791 (0xc0000409)
