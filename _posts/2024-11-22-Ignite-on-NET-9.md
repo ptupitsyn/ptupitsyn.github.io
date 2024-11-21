@@ -64,3 +64,11 @@ which [corresponds](https://www.softwareverify.com/blog/fail-fast-codes/) to `FA
 
 Even the latest JDK uses the same tricky CPU detection code which triggers CET, 
 so we have to disable it by adding `<CETCompat>false</CETCompat>` to the `csproj` file for the target project (the one that starts the process).
+
+This can't be fixed on Ignite.NET side and has to be done by the user.
+
+# Links
+
+* [Breaking changes in .NET 9](https://learn.microsoft.com/en-us/dotnet/core/compatibility/9.0)
+* [R.I.P ROP: CET Internals in Windows 20H1](https://windows-internals.com/cet-on-windows/)
+* [Offending JDK Code](https://github.com/microsoft/openjdk-jdk11u/blob/release/jdk-11.0.25_9/src/hotspot/cpu/x86/vm_version_x86.cpp#L618)
