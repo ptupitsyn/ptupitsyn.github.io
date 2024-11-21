@@ -33,7 +33,7 @@ Which brings us to [this call](https://github.com/microsoft/openjdk-jdk11u/blob/
 ```
 
 The stub points to a function that is [generated from assembly code at runtime](https://github.com/microsoft/openjdk-jdk11u/blob/release/jdk-11.0.25_9/src/hotspot/cpu/x86/vm_version_x86.cpp#L65). 
-The assembly code performs a lot of tricks to detect CPU capabilities, it is not easy to follow and impossible to debug. It even deals with 386/486 CPUs, which is quite fascinating:
+The assembly code performs a lot of tricks to detect CPU capabilities, it is not easy to follow or debug. It even deals with 386/486 CPUs, which is quite fascinating:
 
 ```c++
     //
