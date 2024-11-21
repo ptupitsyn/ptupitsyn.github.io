@@ -1,4 +1,4 @@
-    ---
+---
 layout: post
 title: Breaking Change in .NET 9 Crashes Ignite Node
 ---
