@@ -48,4 +48,14 @@ The assembly code performs a lot of tricks to detect CPU capabilities, it is not
     __ jccb(Assembler::notEqual, detect_486);
 ```
 
-Java is old.
+Java is old. And we are at a dead end.
+
+## When Everything Else Fails, Read the Manual
+
+[Breaking changes in .NET 9](https://learn.microsoft.com/en-us/dotnet/core/compatibility/9.0) is a long list, but the "Interop" section catches our eye:
+[CET supported by default](https://learn.microsoft.com/en-us/dotnet/core/compatibility/interop/9.0/cet-support).
+
+> If libraries try to change a thread context to any other location, the process is terminated.
+
+In fact, Visual Studio debugger gave us a clue earlier with the following message: `Unknown __fastfail() status code: 0x0000000000000030`, 
+which [corresponds](https://www.softwareverify.com/blog/fail-fast-codes/) to `FAST_FAIL_SET_CONTEXT_DENIED` error.
