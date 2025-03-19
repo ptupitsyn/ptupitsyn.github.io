@@ -64,3 +64,19 @@ Create a new project and add the [Apache.Ignite 3.0](https://www.nuget.org/packa
 dotnet new console
 dotnet add package Apache.Ignite --version 3.0.0
 ```
+
+Replace the contents of `Program.cs` with the following code:
+
+```csharp
+using Apache.Ignite;
+
+var cfg = new IgniteClientConfiguration("localhost:10800");
+IIgniteClient client = await IgniteClient.StartAsync(cfg);
+Console.WriteLine($"Client connected: {client}");
+```
+
+Run the project, the output should be:
+
+```
+Client connected: IgniteClientInternal { Connections = [ ClusterNode { Id = f6536e19-c9c3-4952-b86d-53b677eb0359, Name = defaultNode, Address = 127.0.0.1:10800 } ] }
+```
