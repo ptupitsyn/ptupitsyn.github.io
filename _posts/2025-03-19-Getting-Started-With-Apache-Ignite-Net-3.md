@@ -18,6 +18,7 @@ It also provides additional features like distributed computing, data streaming,
 * Docker
 
 We will run Ignite in Docker and use the [.NET client](https://ignite.apache.org/docs/ignite3/latest/developers-guide/clients/dotnet) to connect to it.
+This guide should work on any OS (Linux, Windows, macOS).
 
 # Start an Ignite Node
 
@@ -83,6 +84,8 @@ Client connected: IgniteClientInternal { Connections = [ ClusterNode { Id = f653
 
 # Execute SQL Queries
 
+Ignite 3 is SQL-first, so you can interact with it using standard SQL queries.
+
 **Create table** using the standard SQL syntax. The first parameter is transaction; `null` means implicit transaction with autocommit.
 
 ```csharp
@@ -111,10 +114,12 @@ The output should be:
 Row: IgniteTuple { ID = 1, NAME = John Doe }
 ```
 
-
 # Conclusion
 
-TBD
+SQL is one way to interact with Ignite 3.0. 
+In the next posts, we will explore other ways to work with data, like key-value APIs, data streamer, object mapping, LINQ, and more.
+
+Stay tuned!
 
 # Links
 
