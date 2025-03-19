@@ -32,7 +32,7 @@ One node is enough for this guide. We will explore how to scale the cluster in a
 # Initialize Ignite Cluster
 
 We have to [initialize the Ignite cluster](https://ignite.apache.org/docs/ignite3/latest/administrators-guide/lifecycle#cluster-initialization) before we can use it.
-This can be done with the [CLI tool](https://ignite.apache.org/docs/ignite3/latest/ignite-cli-tool), but the quickest way is to issue a POST request to the `management/v1/cluster/init` endpoint:
+This can be done with the [CLI tool](https://ignite.apache.org/docs/ignite3/latest/ignite-cli-tool), but to keep this post short, we'll just call the management API directly:
 
 ```shell
 curl -i --request POST --header "Content-Type: application/json" \
