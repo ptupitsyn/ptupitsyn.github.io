@@ -16,4 +16,14 @@ Part 2 of the series on getting started with Apache Ignite.NET 3.0.
 
 # SQL, NoSQL, what is this about?
 
+To give an example, the following calls achieve the same result in Ignite 3:
 
+```sql
+igniteClient.Sql.ExecuteAsync(tx, "select * from Person where id = 1");
+```
+
+```csharp
+personTable.GetKeyValueView<int, Person>().GetAsync(tx, 1)
+```
+
+In both cases, we retrieve the entire row with the key `1` from the `Person` table.
