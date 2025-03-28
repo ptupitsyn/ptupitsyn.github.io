@@ -7,7 +7,7 @@ Apache Ignite 3.0 has been [released recently](https://ignite.apache.org/blog/wh
 This post is a quick and beginner-friendly guide for .NET developers on how to start with the new version.
 
 * [Part 1: Getting Started](https://ptupitsyn.github.io/Getting-Started-With-Apache-Ignite-Net-3/) (this post)
-* Part 2: Key-Value NoSQL API (TBD)
+* Part 2: NoSQL API (TBD)
 * Part 3: SQL (TBD)
 * Part 4: LINQ (TBD)
 * Part 5: Compute (TBD)
