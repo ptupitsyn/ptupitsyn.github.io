@@ -6,6 +6,14 @@ title: Getting Started with Apache Ignite.NET 3.0
 Apache Ignite 3.0 has been [released recently](https://ignite.apache.org/blog/whats-new-in-apache-ignite-3-0.html). 
 This post is a quick and beginner-friendly guide for .NET developers on how to start with the new version.
 
+* Part 1: Getting Started (this post)
+* Part 2: Key-Value NoSQL API (TBD)
+* Part 3: SQL (TBD)
+* Part 4: LINQ (TBD)
+* Part 5: Compute (TBD)
+* Part 6: Data Streamer (TBD)
+* Part 7: Clustering (TBD)
+
 # What is Ignite?
 
 In short, [Apache Ignite](https://ignite.apache.org/) is a distributed SQL database. 
