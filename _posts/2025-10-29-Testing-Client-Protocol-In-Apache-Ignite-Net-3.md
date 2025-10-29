@@ -9,6 +9,10 @@ In this post, we'll explore two approaches we use to write integration tests for
 
 # Proxy Server
 
+```csharp
+Client <--> Proxy <--> Ignite Cluster
+```
+
 Apache Ignite partitions data across multiple nodes in a cluster by computing a hash of the primary key.
 Client drivers understand this partitioning logic and send key-based requests directly to the primary node for a given key - we call this [Partition Awareness](https://ignite.apache.org/docs/ignite3/latest/developers-guide/clients/overview.html#partition-awareness).
 
@@ -48,6 +52,10 @@ With a separate proxy instance for each server node, we can track which requests
 Besides partition awareness, we also test [Colocated Compute](https://ignite.apache.org/docs/ignite3/latest/developers-guide/compute/compute#colocated-computations) calls using this approach.
 
 # Fake Server
+
+```csharp
+Client <--> Fake Server
+```
 
 Taking this idea further, we implemented a fake server that fully emulates the Ignite server protocol.
 This allows us to simulate various server-side scenarios, such as:
