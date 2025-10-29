@@ -67,5 +67,5 @@ But the results are worth it. As a bonus, tests against a fake server are a lot 
 
 # Links
 
-* `IgniteProxy`: https://github.com/apache/ignite-3/blob/main/modules/platforms/dotnet/Apache.Ignite.Tests/IgniteProxy.cs
-* `FakeServer`: https://github.com/apache/ignite-3/blob/main/modules/platforms/dotnet/Apache.Ignite.Tests/FakeServer.cs
+* `IgniteProxy`: [modules/platforms/dotnet/Apache.Ignite.Tests/IgniteProxy.cs](https://github.com/apache/ignite-3/blob/main/modules/platforms/dotnet/Apache.Ignite.Tests/IgniteProxy.cs)
+* `FakeServer`: [main/modules/platforms/dotnet/Apache.Ignite.Tests/FakeServer.cs](https://github.com/apache/ignite-3/blob/main/modules/platforms/dotnet/Apache.Ignite.Tests/FakeServer.cs)
