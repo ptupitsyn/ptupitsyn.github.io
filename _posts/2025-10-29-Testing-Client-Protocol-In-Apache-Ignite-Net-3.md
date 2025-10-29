@@ -57,7 +57,7 @@ This allows us to simulate various server-side scenarios, such as:
 - Complex Ignite-specific things like partition reassignments and hybrid clock propagation
 
 Look at the long list of properties to get an idea of what we can simulate: 
-https://github.com/apache/ignite-3/blob/main/modules/platforms/dotnet/Apache.Ignite.Tests/FakeServer.cs#L106
+[modules/platforms/dotnet/Apache.Ignite.Tests/FakeServer.cs#L106](https://github.com/apache/ignite-3/blob/main/modules/platforms/dotnet/Apache.Ignite.Tests/FakeServer.cs#L106)
 
 Those scenarios are hard or impossible to reproduce in a real cluster.
 
