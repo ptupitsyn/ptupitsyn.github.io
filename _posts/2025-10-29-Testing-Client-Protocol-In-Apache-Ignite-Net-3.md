@@ -50,8 +50,23 @@ Besides partition awareness, we also test [Colocated Compute](https://ignite.apa
 
 # Fake Server
 
-TBD
+Taking this idea further, we implemented a fake server that fully emulates the Ignite server protocol.
+This allows us to simulate various server-side scenarios, such as:
+- Node failures and restarts
+- Delays and timeouts
+- Corrupted or malformed responses
+- Complex Ignite-specific things like partition reassignments and hybrid clock propagation
+
+Look at the long list of properties to get an idea of what we can simulate: 
+https://github.com/apache/ignite-3/blob/main/modules/platforms/dotnet/Apache.Ignite.Tests/FakeServer.cs#L106
+
+Those scenarios are hard or impossible to reproduce in a real cluster.
+
+The downside is that we need to maintain the fake server code as the protocol evolves - it is not as simple as a proxy. 
+But the results are worth it. As a bonus, tests against a fake server are a lot faster and easier to debug.
+
 
 # Links
 
-* TBD
+* `IgniteProxy`: https://github.com/apache/ignite-3/blob/main/modules/platforms/dotnet/Apache.Ignite.Tests/IgniteProxy.cs
+* `FakeServer`: https://github.com/apache/ignite-3/blob/main/modules/platforms/dotnet/Apache.Ignite.Tests/FakeServer.cs
