@@ -1,11 +1,12 @@
 ---
 layout: post
-title: How we test client connection failure modes in Apache Ignite.NET
+title: How we test client protocol in Apache Ignite.NET
 ---
 
-Network failures and connection issues are inevitable in distributed systems. 
-Ignite client drivers are designed to handle all kinds of failures gracefully, but how do we test that?
-In this post, we'll explore two approaches we use to write integration tests for connection failure modes in the Apache Ignite.NET client.
+Client drivers for distributed systems are much more complicated than traditional database drivers. 
+They need to handle data partitioning, cluster topology changes, failover scenarios, and inevitable network issues.
+
+In this post, we'll explore two approaches we use to write integration tests for the Apache Ignite.NET client.
 
 # Proxy Server
 
