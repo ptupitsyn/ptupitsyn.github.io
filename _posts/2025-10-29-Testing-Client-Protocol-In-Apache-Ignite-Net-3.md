@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How we test client protocol in Apache Ignite.NET
+title: How We Test Client Protocol in Apache Ignite.NET
 ---
 
 Client drivers for distributed systems are much more complicated than traditional database drivers. 
