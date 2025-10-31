@@ -59,3 +59,5 @@ This is different from the Ignite 2.x approach, where CLR and JVM were hosted in
   * If the process crashes, it doesn't bring down the whole Ignite node, and it will be restarted automatically.
 * No overhead if there are no .NET jobs.
 * Other executors (Python, C++, Wasm) can coexist on one node without interfering with each other.
+
+Another big improvement is deployment and versioning. TBD
