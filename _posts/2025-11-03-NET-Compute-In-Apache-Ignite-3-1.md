@@ -77,3 +77,36 @@ Key points:
 * Implement the `IComputeJob<TArg, TResult>` interface.
 * Job types must be public and have a public parameterless constructor.
 * Implement `IDisposable` and/or `IAsyncDisposable` if you need to clean up resources, Ignite will call `Dispose`/`DisposeAsync` after job execution.
+
+# Job Execution Modes
+
+## Single Node
+
+TBD
+
+## Colocated
+
+TBD
+
+## Broadcast
+
+TBD
+
+
+# User Scenarios
+
+## Send Code to Data
+
+TBD
+
+## MapReduce
+
+TBD
+
+## Language Interoperability
+
+TBD
+
+# Conclusion
+
+TBD
