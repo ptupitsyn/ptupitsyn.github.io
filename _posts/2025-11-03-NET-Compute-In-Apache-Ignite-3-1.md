@@ -82,16 +82,15 @@ Key points:
 
 ## Single Node
 
-TBD
+Execute a job on a specific node or any node from a given set using `JobTarget.Node(IClusterNode node)` and `JobTarget.AnyNode(params IClusterNode[] nodes)` 
 
 ## Colocated
 
-TBD
+Execute a job on the node where a specific primary key is located using `JobTarget.Colocated<TKey>(QualifiedName tableName, TKey key)`
 
 ## Broadcast
 
-TBD
-
+Execute a job on all specified nodes using `BroadcastJobTarget.Nodes(params IClusterNode[] nodes)` and get results from all nodes.
 
 # User Scenarios
 
@@ -104,6 +103,10 @@ TBD
 TBD
 
 ## Language Interoperability
+
+TBD
+
+## Inter-node Communication
 
 TBD
 
