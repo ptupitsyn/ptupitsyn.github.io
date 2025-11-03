@@ -121,4 +121,4 @@ Java clients can invoke .NET compute jobs and vice versa, enabling polyglot appl
 
 # Conclusion
 
-TBD
+Apache Ignite 3.1's compute support is better than ever. New flexible architecture paves the way for more job executors in the future, such as Java Sidecar, Python, and C++. Stay tuned!
