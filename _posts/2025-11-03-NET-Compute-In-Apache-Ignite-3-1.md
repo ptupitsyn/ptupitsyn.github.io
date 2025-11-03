@@ -96,7 +96,16 @@ Execute a job on all specified nodes using `BroadcastJobTarget.Nodes(params IClu
 
 ## Send Code to Data
 
-TBD
+In a traditional scenario, we load some data from a database, process it in the client application, and write the results back to the database.
+This approach has drawbacks:
+* Data transfer overhead - moving large datasets over the network is slow.
+* Increased lock contention due to longer transactions.
+* Limited scalability - the client application can become a bottleneck.
+
+With compute jobs, we invert the scenario by invoking processing logic directly on the server node where the data resides:
+* Job descriptors and parameters are small, so network overhead is minimal.
+* Only one round-trip is needed to perform any number of data reads and writes.
+* Processing happens close to the data, reducing lock contention.
 
 ## MapReduce
 
