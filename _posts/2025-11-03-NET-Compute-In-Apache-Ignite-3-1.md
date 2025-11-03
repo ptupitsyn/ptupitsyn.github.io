@@ -64,3 +64,16 @@ Another big improvement is explicit deployment and versioning:
 * We have full control over deployment and undeployment with the Management API (available as a REST API or a CLI tool).
 * We can deploy multiple versions of the same assembly and choose which version to use when submitting a compute job.
 * Deployment units are isolated from each other, so there are no assembly conflicts.
+
+# Implementing a Compute Job
+
+Key points:
+* Place the job types in a separate assembly (DLL) 
+  * The assembly must be a "class library" (created with `dotnet new classlib`).
+  * [Ignite 3.1.0 docker image](https://hub.docker.com/layers/apacheignite/ignite/3.1.0/images/sha256-d26bbc56d26f5483b596e966e05af7ddd16cf0cd70b8dd38c4ff418d69e4f520) includes .NET 8 runtime, so target `net8.0`.
+    * With custom images or deployments, newer .NET versions can be used as well.
+* Reference the `Apache.Ignite` NuGet package (v3.1.0 or later).
+  * The referenced version does **not** have to match the server version. As long as the job uses supported APIs, it can run on older or newer server versions.
+* Implement the `IComputeJob<TArg, TResult>` interface.
+* Job types must be public and have a public parameterless constructor.
+* Implement `IDisposable` and/or `IAsyncDisposable` if you need to clean up resources, Ignite will call `Dispose`/`DisposeAsync` after job execution.
