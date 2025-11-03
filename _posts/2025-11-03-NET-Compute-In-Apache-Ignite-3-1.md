@@ -113,11 +113,11 @@ Split a large task into smaller subtasks, execute them in parallel on multiple n
 
 ## Language Interoperability
 
-TBD
+Java clients can invoke .NET compute jobs and vice versa, enabling polyglot applications and team collaboration.
 
 ## Inter-node Communication
 
-TBD
+`JobTarget.Node` effectively sends a message to a specific node and waits for a response, with compute job implementation being the message handler.
 
 # Conclusion
 
