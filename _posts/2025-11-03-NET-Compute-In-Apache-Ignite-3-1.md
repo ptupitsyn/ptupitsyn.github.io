@@ -102,14 +102,14 @@ This approach has drawbacks:
 * Increased lock contention due to longer transactions.
 * Limited scalability - the client application can become a bottleneck.
 
-With compute jobs, we invert the scenario by invoking processing logic directly on the server node where the data resides:
+With colocated compute jobs (`JobTarget.Colocated`), we invert the scenario by invoking processing logic directly on the server node where the data resides:
 * Job descriptors and parameters are small, so network overhead is minimal.
 * Only one round-trip is needed to perform any number of data reads and writes.
 * Processing happens close to the data, reducing lock contention.
 
 ## MapReduce
 
-TBD
+Split a large task into smaller subtasks, execute them in parallel on multiple nodes (`BroadcastJobTarget`), and aggregate the results.
 
 ## Language Interoperability
 
