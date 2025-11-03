@@ -1,9 +1,12 @@
 ---
 layout: post
 title: .NET Compute in Apache Ignite 3.1
+date: 2025-11-03
+author: Pavel Tupitsyn
+categories: [Apache Ignite, .NET, Compute]
 ---
 
-Apache Ignite 3.1 has been released last week, and one of the major new features is .NET Compute support. We can now implement compute jobs in .NET, deploy them to the cluster, and call them from any client. Let's try it out!
+Apache Ignite 3.1 was released last week, and one of the major new features is .NET Compute support. We can now implement compute jobs in .NET, deploy them to the cluster, and call them from any client. Let's try it out!
 
 # Run the Demo
 
@@ -19,7 +22,7 @@ cd ignite3-dotnet-compute
 2. Start the Ignite cluster:
 
 ```shell
-docker-compose up -d
+docker compose up -d
 ```
 
 3. Run the demo:
