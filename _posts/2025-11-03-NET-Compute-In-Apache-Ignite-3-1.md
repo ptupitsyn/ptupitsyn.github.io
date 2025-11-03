@@ -34,11 +34,11 @@ dotnet run
 In the demo, we have:
 * Started a 3-node Ignite cluster in Docker (`docker-compose.yml`)
 * Compiled a .NET library with compute jobs (`IgniteCompute.Jobs.dll`)
-* Deployed it to the cluster via the REST API (`ManagementApi.cs`)
-* And invoked the jobs from a .NET client.
+* Deployed it to the cluster via the REST API (`ManagementApi.DeployAssembly(...)`)
+* And invoked the jobs from a .NET client (`client.Compute.SubmitAsync(...)`).
 
 This is possible because Ignite docker image includes the .NET runtime and a dedicated Compute Executor for .NET jobs.
-When we say `var helloJobDesc = JobDescriptor.Of(new HelloJob())`, Ignite sets the executor type for us, which looks like this under the hood:
+When we say `var helloJobDesc = JobDescriptor.Of(new HelloJob())`, Ignite sets the executor type for us, which looks like this in long form:
 
 ```csharp
 var helloJobDesc = new JobDescriptor<string, string>(typeof(HelloJob).AssemblyQualifiedName!)
@@ -60,4 +60,7 @@ This is different from the Ignite 2.x approach, where CLR and JVM were hosted in
 * No overhead if there are no .NET jobs.
 * Other executors (Python, C++, Wasm) can coexist on one node without interfering with each other.
 
-Another big improvement is deployment and versioning. TBD
+Another big improvement is explicit deployment and versioning:
+* We have full control over deployment and undeployment with the Management API (available as a REST API or a CLI tool).
+* We can deploy multiple versions of the same assembly and choose which version to use when submitting a compute job.
+* Deployment units are isolated from each other, so there are no assembly conflicts.
