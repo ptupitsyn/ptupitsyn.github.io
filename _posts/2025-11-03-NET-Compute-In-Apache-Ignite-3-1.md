@@ -6,7 +6,7 @@ author: Pavel Tupitsyn
 categories: [Apache Ignite, .NET, Compute]
 ---
 
-[Apache Ignite 3.1](https://ignite.apache.org/) was released last week, and one of the major new features is .NET Compute support. We can now implement compute jobs in .NET, deploy them to the cluster, and call them from any client. Let's try it out!
+[Apache Ignite 3.1](https://ignite.apache.org/) was [released](https://ignite.apache.org/blog/whats-new-in-apache-ignite-3-1.html) last week, and one of the major new features is .NET Compute support. We can now implement compute jobs in .NET, deploy them to the cluster, and call them from any client. Let's try it out!
 
 # Run the Demo
 
@@ -129,4 +129,5 @@ Apache Ignite 3.1's compute support is better than ever. New flexible architectu
 # Links
 
 * [Ignite 3.1 Download](https://ignite.apache.org/download.cgi)
+* [Ignite 3.1 Release Blog](https://ignite.apache.org/blog/whats-new-in-apache-ignite-3-1.html)
 * Demo source code: [github.com/ptupitsyn/ignite3-dotnet-compute](https://github.com/ptupitsyn/ignite3-dotnet-compute)
