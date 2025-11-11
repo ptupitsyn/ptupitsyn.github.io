@@ -10,22 +10,22 @@ categories: [Apache Ignite, .NET, Compute]
 
 # Run the Demo
 
-Code first - talk later.
+[Code](https://github.com/ptupitsyn/ignite3-dotnet-compute) first - talk later.
 
-1. Clone:
+Clone:
 
 ```shell
 git clone https://github.com/ptupitsyn/ignite3-dotnet-compute
 cd ignite3-dotnet-compute
 ```
 
-2. Start the Ignite cluster:
+Start the Ignite cluster:
 
 ```shell
 docker compose up -d
 ```
 
-3. Run the demo:
+Run the demo:
 
 ```shell
 cd IgniteCompute
