@@ -12,6 +12,50 @@ In this post we explore how to set up distributed caching in ASP.NET Core applic
 
 # What is Distributed Cache?
 
+A simple caching mechanism stores data in memory to improve performance and reduce the load on the underlying data source.
+However, with multiple instances of an application, each instance has its own separate cache:
+* Every instance has to fetch data from the data source to cache it
+* Data is duplicated in every instance
+* Inconsistencies may arise due to failover and load balancing when different instances have different cached data
+
+```text
+                +----------------------+
+                | Users / Load Balancer|
+                +----------+-----------+
+                           |
+        -------------------+-------------------
+        |                  |                  |
++-------v-------+  +-------v-------+  +-------v-------+
+| App Instance 1|  | App Instance 2|  | App Instance 3|
++-------+-------+  +-------+-------+  +-------+-------+
+        |                  |                  |
+ +------v------+    +------v------+    +------v------+
+ | In-Memory   |    | In-Memory   |    | In-Memory   |
+ | Cache 1     |    | Cache 2     |    | Cache 3     |
+ +-------------+    +-------------+    +-------------+
+```
+
+A distributed cache solves these problems by providing a shared caching layer that all application instances can access:
+
+```text
+                +----------------------+
+                | Users / Load Balancer|
+                +----------+-----------+
+                           |
+        -------------------+-------------------
+        |                  |                  |
++-------v-------+  +-------v-------+  +-------v-------+
+| App Instance 1|  | App Instance 2|  | App Instance 3|
++-------+-------+  +-------+-------+  +-------+-------+
+        |                  |                  |
+        |----------------- |----------------- |
+                           |
+                    +------v------+
+                    | Distributed |
+                    | Cache       |
+                    +-------------+
+```
+
 # Walkthrough
 
 Full source code is available on [GitHub](https://github.com/ptupitsyn/ignite3-dotnet-distributed-cache)
