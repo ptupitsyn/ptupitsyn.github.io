@@ -35,7 +35,7 @@ However, with multiple instances of an application, each instance has its own se
  +-------------+    +-------------+    +-------------+
 ```
 
-A distributed cache is shared:
+A [distributed cache](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/distributed?view=aspnetcore-10.0) is shared:
 * One app instance fetches the data, others can read it
 * Data is stored only once
 * All instances see the same state
@@ -60,12 +60,21 @@ A distributed cache is shared:
                     +-------------+
 ```
 
+[Apache Ignite](https://ignite.apache.org/) is perfect for distributed caching:
+* In-memory storage for low latency
+* Fast key-value API
+* Easy horizontal scalability
+
+With [Apache.Extensions.Caching.Ignite](https://www.nuget.org/packages/Apache.Extensions.Caching.Ignite#readme-body-tab) package, 
+integrating Ignite distributed cache in ASP.NET Core apps is straightforward.
+
+
 # Walkthrough
 
 Full source code is available on [GitHub](https://github.com/ptupitsyn/ignite3-dotnet-distributed-cache)
 
 - Create a new ASP.NET Core project ```dotnet new webapi```
-- Add Ignite NuGet package ```dotnet add package Apache.Extensions.Caching.Ignite```
+- Add Ignite package ```dotnet add package Apache.Extensions.Caching.Ignite```
 - Configure Ignite distributed cache in `Program.cs`:
 ```csharp
 builder.Services
