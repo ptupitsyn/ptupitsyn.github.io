@@ -119,10 +119,13 @@ CREATE TABLE ASPNET_DISTRIBUTED_CACHE (key VARCHAR PRIMARY KEY, val VARBINARY) Z
 
 With this, `IgniteDistributedCache` will use the in-memory table for cache entries.
 
-# Hybrid Cache
-
-TBD
-
 # Conclusion
 
-TBD
+Distributed caching is essential for modern scalable ASP.NET Core applications, and Apache Ignite 3 provides a high-performance solution.
+
+# Links
+
+* [Apache Ignite](https://ignite.apache.org/)
+* [Apache.Extensions.Caching.Ignite](https://www.nuget.org/packages/Apache.Extensions.Caching.Ignite)
+* [Demo Source Code](https://github.com/ptupitsyn/ignite3-dotnet-distributed-cache)
+* [ASP.NET Core Distributed Caching Documentation](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/distributed?view=aspnetcore-10.0)
