@@ -107,13 +107,17 @@ app.MapGet("/weatherforecast",  async (IDistributedCache cache) =>
 
 # In-Memory Ignite Tables
 
-TBD
+By default, Ignite uses disk-based `aipersist` storage engine for tables, and `IgniteDistributedCache` creates a table with the default storage profile.
+
+We typically don't need persistence for caching, so let's create an in-memory table for better performance.
 
 ```sql
+DROP TABLE IF EXISTS ASPNET_DISTRIBUTED_CACHE;
 CREATE ZONE IF NOT EXISTS inmem_zone STORAGE PROFILES ['inmem'];
-
-CREATE TABLE ASPNET_CACHE_INMEM (key VARCHAR PRIMARY KEY, val VARBINARY) ZONE inmem_zone STORAGE PROFILE 'inmem';
+CREATE TABLE ASPNET_DISTRIBUTED_CACHE (key VARCHAR PRIMARY KEY, val VARBINARY) ZONE inmem_zone STORAGE PROFILE 'inmem';
 ```
+
+With this, `IgniteDistributedCache` will use the in-memory table for cache entries.
 
 # Hybrid Cache
 
