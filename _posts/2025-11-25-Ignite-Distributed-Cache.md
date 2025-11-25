@@ -13,9 +13,11 @@ TBD
 
 # What is Distributed Cache?
 
-# Quick Start
+# Walkthrough
 
-- Create a new ASP.NET Core project ```dotnet new webapp -o IgniteDistributedCache```
+Full source code is available on [GitHub](https://github.com/ptupitsyn/ignite3-dotnet-distributed-cache)
+
+- Create a new ASP.NET Core project ```dotnet new webapi```
 - Add Ignite NuGet package ```dotnet add package Apache.Extensions.Caching.Ignite```
 - Configure Ignite distributed cache in `Program.cs`:
 ```csharp
