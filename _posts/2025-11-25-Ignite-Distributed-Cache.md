@@ -1,22 +1,21 @@
 ---
 layout: post
-title: Distributed caching in ASP.NET Core with Apache Ignite 3
-date: 2025-11-03
+title: Distributed Caching in ASP.NET Core with Apache Ignite 3
+date: 2025-11-25
 author: Pavel Tupitsyn
 categories: [Apache Ignite, .NET, Compute]
 ---
 
-Modern applications run on multiple instances to ensure high availability and scalability. 
-A distributed cache is a cache that is shared across all app instances. 
-In this post we explore how to set up distributed caching in ASP.NET Core applications with Apache Ignite 3.
+Distributed caching lets multiple app instances share a single cache store so data is not duplicated and all instances observe a consistent state. 
+In this post, we explore how to set up distributed caching in ASP.NET Core applications using Apache Ignite 3.
 
-# What is Distributed Cache?
+# What is Distributed Caching?
 
 A simple caching mechanism stores data in memory to improve performance and reduce the load on the underlying data source.
 However, with multiple instances of an application, each instance has its own separate cache:
-* Every instance has to fetch data from the data source to cache it
-* Data is duplicated in every instance
-* Inconsistencies may arise due to failover and load balancing when different instances have different cached data
+* Each instance must fetch data from the data source to cache it
+* Data is duplicated in each instance
+* Inconsistencies can arise due to failover and load balancing when different instances have different cached data
 
 ```text
                 +----------------------+
@@ -65,7 +64,7 @@ A [distributed cache](https://learn.microsoft.com/en-us/aspnet/core/performance/
 * Fast key-value API
 * Easy horizontal scalability
 
-With [Apache.Extensions.Caching.Ignite](https://www.nuget.org/packages/Apache.Extensions.Caching.Ignite#readme-body-tab) package, 
+With the [Apache.Extensions.Caching.Ignite](https://www.nuget.org/packages/Apache.Extensions.Caching.Ignite#readme-body-tab) package, 
 integrating Ignite distributed cache in ASP.NET Core apps is straightforward.
 
 
@@ -73,8 +72,8 @@ integrating Ignite distributed cache in ASP.NET Core apps is straightforward.
 
 Full source code is available on [GitHub](https://github.com/ptupitsyn/ignite3-dotnet-distributed-cache)
 
-- Create a new ASP.NET Core project ```dotnet new webapi```
-- Add Ignite package ```dotnet add package Apache.Extensions.Caching.Ignite```
+- Create a new ASP.NET Core project: ```dotnet new webapi```
+- Add Ignite package: ```dotnet add package Apache.Extensions.Caching.Ignite```
 - Configure Ignite distributed cache in `Program.cs`:
 ```csharp
 builder.Services
