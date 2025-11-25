@@ -35,7 +35,11 @@ However, with multiple instances of an application, each instance has its own se
  +-------------+    +-------------+    +-------------+
 ```
 
-A distributed cache solves these problems by providing a shared caching layer that all application instances can access:
+A distributed cache is shared:
+* One app instance fetches the data, others can read it
+* Data is stored only once
+* All instances see the same state
+* Cache survives instance restarts
 
 ```text
                 +----------------------+
