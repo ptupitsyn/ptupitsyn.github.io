@@ -6,10 +6,9 @@ author: Pavel Tupitsyn
 categories: [Apache Ignite, .NET, Compute]
 ---
 
-TBD
-- Use in-memory table
-- Set up distrib cache
-- Advise on hybrid cache
+Modern applications run on multiple instances to ensure high availability and scalability. 
+A distributed cache is a cache that is shared across all app instances. 
+In this post we explore how to set up distributed caching in ASP.NET Core applications with Apache Ignite 3.
 
 # What is Distributed Cache?
 
