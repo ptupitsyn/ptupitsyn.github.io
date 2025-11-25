@@ -48,3 +48,21 @@ app.MapGet("/weatherforecast",  async (IDistributedCache cache) =>
         return forecast;
     });
 ```
+
+# In-Memory Ignite Tables
+
+TBD
+
+```sql
+CREATE ZONE IF NOT EXISTS inmem_zone STORAGE PROFILES ['inmem'];
+
+CREATE TABLE ASPNET_CACHE_INMEM (key VARCHAR PRIMARY KEY, val VARBINARY) ZONE inmem_zone STORAGE PROFILE 'inmem';
+```
+
+# Hybrid Cache
+
+TBD
+
+# Conclusion
+
+TBD
