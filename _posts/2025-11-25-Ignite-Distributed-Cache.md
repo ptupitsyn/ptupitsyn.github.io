@@ -6,6 +6,8 @@ author: Pavel Tupitsyn
 categories: [Apache Ignite, .NET, Compute]
 ---
 
+TODO: DO NOT PUBLISH, UNUSABLE WITHOUT https://issues.apache.org/jira/browse/IGNITE-23973
+
 Distributed caching lets multiple app instances share a single cache store so data is not duplicated and all instances observe a consistent state. 
 In this post, we explore how to set up distributed caching in ASP.NET Core applications using Apache Ignite 3.
 
