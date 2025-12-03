@@ -70,6 +70,6 @@ VisualVM screenshot:
 Note that every connection exchanges a heartbeat message every 10 seconds, so the system is not idle, 
 we are handling about 20k (very simple) requests per second, but this barely requires any CPU.
 
-# Code
+# Conclusion
 
-https://gist.github.com/ptupitsyn/86056d4143811ba5dde6b2d1704fa948
+Ignite client connections are very lightweight, so open as many as your application requires and keep them open for the best performance!
