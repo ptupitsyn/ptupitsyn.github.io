@@ -13,7 +13,7 @@ categories: [Apache Ignite]
 A common capacity planning question we get from users is: "How many client connections can one Ignite node maintain?" 
 
 With traditional relational databases, the common knowledge is:
-* Client connection is single-threaded and short-lived. "Open -> Do work -> Close" is the typical pattern.
+* Client connection is typically single-threaded and short-lived. "Open -> Do work -> Close" is the usual pattern.
 * The server can handle a limited number of concurrent connections.
   * [Postgres defaults to 100](https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-MAX-CONNECTIONS) `max_connections`.
   * Each connection has significant memory overhead ([a few MBs](https://blog.anarazel.de/2020/10/07/measuring-the-memory-overhead-of-a-postgres-connection/)).
@@ -21,7 +21,7 @@ With traditional relational databases, the common knowledge is:
 
 [Apache Ignite](https://ignite.apache.org/) is quite different:
 * Client connections are long-lived, multiplexed, and thread-safe. Quite often, a single client connection is enough for the entire application lifetime.
-* On the server side, each client connection has a small memory footprint (tens of KBs).
+* On the server side, each client connection has a small memory footprint (a few KB).
 
 This approach with cheap long-lived connections provides low latency and great scalability for applications:
 * The connection is always open and responds to queries immediately.
@@ -37,8 +37,7 @@ Let's see how many concurrent client connections a single Ignite 3 node can hand
 
 I'm going to use the [binary distribution](https://ignite.apache.org/download.cgi) of Apache Ignite 3.1.0 for this test.
 
-The default node configuration is good enough, the only thing I changed were logging levels in `etc/ignite.java.util.logging.properties` - 
-change from `INFO` to `WARNING` for all loggers to reduce logging overhead.
+The default node configuration is good enough, the only thing I changed was the logging level in `etc/ignite.java.util.logging.properties` to reduce logging overhead.
 
 ## Client
 
@@ -50,7 +49,7 @@ The full program is on GitHub: https://gist.github.com/ptupitsyn/86056d4143811ba
 ### Ephemeral Port Exhaustion
 
 In the program you can notice the trick with multiple localhost addresses (`127.0.0.1`, `127.0.0.2`, etc). 
-Without it, after about ~28k connections, the program fails with a `SocketException (99): Cannot assign requested address` exception.
+Without it, after about 28k connections, the program fails with a `SocketException (99): Cannot assign requested address` exception.
 
 Basically, every TCP connection has a source `IP:port` pair and the port is chosen from the ephemeral port range (usually 32768-60999 on Linux).
 We can't have more connections on the same address than the number of ephemeral ports available. Using multiple localhost addresses works around this limitation.
@@ -67,8 +66,8 @@ VisualVM screenshot:
 
 ![2025-12-04-How-Many-Client-Connections-Can-Ignite-Handle.png](2025-12-04-How-Many-Client-Connections-Can-Ignite-Handle.png)
 
-Note that every connection exchanges a heartbeat message every 10 seconds, so the system is not idle, 
-we are handling about 20k (very simple) requests per second, but this barely requires any CPU.
+Note that each connection exchanges a heartbeat message every 10 seconds, so the system is not completely idle. 
+We have about 20k small requests per second, but this barely requires any CPU.
 
 # Conclusion
 
