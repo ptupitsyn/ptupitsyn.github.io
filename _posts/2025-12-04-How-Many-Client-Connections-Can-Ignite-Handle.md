@@ -57,7 +57,18 @@ We can't have more connections on the same address than the number of ephemeral 
 
 # Results
 
+I'm starting to get weird errors and timeouts at about 250k (yes, 250 thousand) connections with default settings. 
+At **200k connections** the system is stable and responsive, so I decided to stop the test there.
+
+Initial memory usage of the Ignite node was about 200 MB, and with 200k active connections it was about 900 MB after a full GC. 
+Which gives us about **3.5 KB per connection**.
+
+VisualVM screenshot:
+
 ![2025-12-04-How-Many-Client-Connections-Can-Ignite-Handle.png](2025-12-04-How-Many-Client-Connections-Can-Ignite-Handle.png)
+
+Note that every connection exchanges a heartbeat message every 10 seconds, so the system is not idle, 
+we are handling about 20k (very simple) requests per second, but this barely requires any CPU.
 
 # Code
 
