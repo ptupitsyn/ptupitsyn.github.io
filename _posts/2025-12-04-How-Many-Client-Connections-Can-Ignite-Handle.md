@@ -17,3 +17,7 @@ categories: [Apache Ignite]
 # Results
 
 ![2025-12-04-How-Many-Client-Connections-Can-Ignite-Handle.png](2025-12-04-How-Many-Client-Connections-Can-Ignite-Handle.png)
+
+# Code
+
+https://gist.github.com/ptupitsyn/86056d4143811ba5dde6b2d1704fa948
