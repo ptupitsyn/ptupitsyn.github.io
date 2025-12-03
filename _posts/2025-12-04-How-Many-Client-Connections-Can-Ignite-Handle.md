@@ -66,6 +66,12 @@ VisualVM screenshot:
 
 ![2025-12-04-How-Many-Client-Connections-Can-Ignite-Handle.png](2025-12-04-How-Many-Client-Connections-Can-Ignite-Handle.png)
 
+Client log:
+```
+Connected 200000 connections in 00:02:49.2601996
+Verified connectivity in 00:00:09.1446883
+```
+
 Note that each connection exchanges a heartbeat message every 10 seconds, so the system is not completely idle. 
 We have about 20k small requests per second, but this barely requires any CPU.
 
