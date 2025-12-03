@@ -25,6 +25,7 @@ With traditional relational databases, the common knowledge is:
 
 This approach with cheap long-lived connections provides low latency and great scalability for applications:
 * The connection is always open and responds to queries immediately.
+* Multiple queries can be executed concurrently over the same connection (multiplexing).
 * No need for an external connection pool.
 * Query metadata is cached by the client connection, improving performance for repeated queries.
  
