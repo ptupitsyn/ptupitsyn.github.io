@@ -45,6 +45,6 @@ Run multiple instances of the app in different terminal windows to test it out.
 * Backpressure is built in: if the consumer is slow, the polling pauses.
 * Native LINQ support (like `SelectMany` above to unroll batches).
 
-
-
 # Scalability
+
+This toy app can actually handle thousands of users and millions of messages per minute without any changes.
