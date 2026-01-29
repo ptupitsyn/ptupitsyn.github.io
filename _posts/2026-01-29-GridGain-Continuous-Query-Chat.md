@@ -47,4 +47,8 @@ Run multiple instances of the app in different terminal windows to test it out.
 
 # Scalability
 
-This toy app can actually handle thousands of users and millions of messages per minute without any changes.
+This toy app can actually handle thousands of users and millions of messages per minute without any changes, 
+given enough cluster resources, thanks to GridGain's distributed architecture:
+* Automatic partitioning (sharding) of data across cluster nodes.
+* Client partition awareness (direct requests to the primary replica).
+* Lightweight and persistent connections between clients and server nodes (one node can handle [hundreds of thousands of clients](https://ignite.apache.org/blog/apache-ignite-3-client-connections-handling.html)).
