@@ -4,6 +4,7 @@ title: Simplest Chat App Ever with GridGain Continuous Query
 date: 2026-01-29
 author: Pavel Tupitsyn
 categories: [GridGain, .NET, ContinuousQuery]
+header-img: https://raw.githubusercontent.com/ptupitsyn/ptupitsyn.github.io/master/images/chat_100px.png
 ---
 
 Scalable distributed chat app in 13 lines of code? Yes, please!
