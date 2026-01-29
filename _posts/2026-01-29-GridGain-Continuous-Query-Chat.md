@@ -8,7 +8,7 @@ categories: [GridGain, .NET, ContinuousQuery]
 
 Scalable distributed chat app in 13 lines of code? Yes, please!
 
-# Show Me the Code
+# The Code
 
 Put the code below into a `chat.cs` file and run it with `dotnet run chat.cs <your-name>`:
 
