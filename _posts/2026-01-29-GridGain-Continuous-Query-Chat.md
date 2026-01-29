@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Simplest Chat App Ever with GridGain Continuous Query
-date: 2025-11-03
+date: 2026-01-29
 author: Pavel Tupitsyn
 categories: [GridGain, .NET, ContinuousQuery]
 ---
