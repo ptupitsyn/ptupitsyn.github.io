@@ -6,11 +6,11 @@ author: Pavel Tupitsyn
 categories: [GridGain, .NET, ContinuousQuery]
 ---
 
-Scalable distributed chat app in just 13 lines of code? Yes, please!
+Scalable distributed chat app in 13 lines of code? Yes, please!
 
 # Show Me the Code
 
-Put the code below into a `chat.cs` file and run it with `dotnet run chat.cs <your-name>` (requires .NET 10):
+Put the code below into a `chat.cs` file and run it with `dotnet run chat.cs <your-name>`:
 
 ```csharp
 #:package GridGain.Ignite@9.1.16
@@ -32,6 +32,9 @@ while (true)
 ```
 
 Run multiple instances of the app in different terminal windows to test it out.
+
+* Requires .NET 10+ (for [single-file apps](https://devblogs.microsoft.com/dotnet/announcing-dotnet-run-app/))
+* Assumes GridGain server is running on `localhost:10800`
 
 # How It Works
 
