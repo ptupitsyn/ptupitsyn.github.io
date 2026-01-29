@@ -54,3 +54,7 @@ given enough cluster resources, thanks to GridGain's distributed architecture:
 * Client partition awareness (direct requests to the primary replica).
 * Lightweight, persistent, multiplexed client connections (one node can handle [hundreds of thousands of clients](https://ignite.apache.org/blog/apache-ignite-3-client-connections-handling.html)).
 * Efficient continuous query mechanism with built-in batching and flow control.
+
+# Conclusion
+
+I think this is a good example of a "pit of success", where the simplest approach is also the best one.
