@@ -35,10 +35,11 @@ Run multiple instances of the app in different terminal windows to test it out.
 
 # How It Works
 
-[Continuous Query](https://www.gridgain.com/docs/gridgain9/latest/developers-guide/continuous-queries) is at the heart of this app.
-`QueryContinuouslyAsync` returns an `IAsyncEnumerable` of change events happening in the table.
+[Continuous Query](https://www.gridgain.com/docs/gridgain9/latest/developers-guide/continuous-queries) is at the heart of this app:
+* Guarantees exactly-once delivery of change events.
+* Can return previous events (show chat history on startup).
 
-`IAsyncEnumerable` is one of my favorite abstractions. It is so simple and powerful:
+`QueryContinuouslyAsync` returns an `IAsyncEnumerable` of change events happening in the table. `IAsyncEnumerable` is one of my favorite abstractions. It is so simple and powerful:
 * Clean and easy to use.
 * Non-blocking.
 * Natural cancellation (`break`).
@@ -51,4 +52,5 @@ This toy app can actually handle thousands of users and millions of messages per
 given enough cluster resources, thanks to GridGain's distributed architecture:
 * Automatic partitioning (sharding) of data across cluster nodes.
 * Client partition awareness (direct requests to the primary replica).
-* Lightweight and persistent connections between clients and server nodes (one node can handle [hundreds of thousands of clients](https://ignite.apache.org/blog/apache-ignite-3-client-connections-handling.html)).
+* Lightweight, persistent, multiplexed client connections (one node can handle [hundreds of thousands of clients](https://ignite.apache.org/blog/apache-ignite-3-client-connections-handling.html)).
+* Efficient continuous query mechanism with built-in batching and flow control.
