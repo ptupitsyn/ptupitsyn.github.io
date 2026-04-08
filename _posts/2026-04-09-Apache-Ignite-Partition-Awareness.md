@@ -25,5 +25,18 @@ Simply, the client knows how to find the right node for a given key.
 ## Connection Management
 
 * The client has a list of server addresses.
+* At all times, the client tries to keep a connection to every known server node (background task).
 * As long as at least one connection is alive, the client is operational.
 * Any client request can be sent to any server node. The server will forward it to the right node if needed.
+
+## Request Routing
+
+1. Determine the target node name for a request based on the key's partition.
+2. Get an active connection by node name
+   * If the connection is active, send the request.
+   * If the connection does not exist or is inactive, send the request to a random node and let it forward the request to the right node.
+
+Key idea: **it is cheaper to use an active connection**, even if it is not the right node, than to open a new connection to the right node.
+* Opening a new connection is expensive (TCP handshake, authentication, etc.)
+* Opening a new connection does not always succeed (network issues, node down, etc.)
+* Partition assignment can be stale
