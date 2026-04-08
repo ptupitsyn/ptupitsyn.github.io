@@ -40,3 +40,7 @@ Key idea: **it is cheaper to use an active connection**, even if it is not the r
 * Opening a new connection is expensive (TCP handshake, authentication, etc.)
 * Opening a new connection does not always succeed (network issues, node down, etc.)
 * Partition assignment can be stale
+
+In other words, we work with what we have. A good analogy is water pipes. The water flows where it can. If the direct pipe is blocked, it will find another way.
+
+TODO: A picture with pipes and a plumber (connection manager) opening those pipes.
