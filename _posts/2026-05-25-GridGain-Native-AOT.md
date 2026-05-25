@@ -10,3 +10,9 @@ categories: [GridGain, .NET, ContinuousQuery, SQL]
 
 # What is Native AOT?
 
+In short, this mode compiles .NET code to native machine code ahead of time (AOT) instead of just-in-time (JIT).
+
+* Same as C++, Rust, Go, and unlike normal .NET and Java.
+* Single binary, no dependencies.
+* Faster startup time and lower memory usage.
+* Smaller deployment size.
